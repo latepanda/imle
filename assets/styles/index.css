@@ -39,7 +39,7 @@
       width: calc(var(--size) * 2.5);
       aspect-ratio: 230 / 97;
       height: auto;
-      margin-bottom: 2.5rem;
+      margin: 1.5rem;
     }
 
     h1 {
