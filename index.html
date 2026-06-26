@@ -12,7 +12,19 @@
   <link href="assets/styles/index.css" rel="stylesheet">
 </head>
 <body>
-  <img src="assets/images/logo.svg" width="230" height="97" />
-  <h1>I AM ELLIE</h1>
+  <header class="site-header">
+    <img class="site-logo" alt="I.M.L.E logo" src="assets/images/logo.svg" width="230" height="97" />
+  </header>
+
+  <main class="hero" aria-labelledby="page-title">
+    <nav class="hero-actions" aria-label="Ellie links">
+      <a class="pill-link" target="_blank" href="https://wedding.imle.uk">Link to Ellie&apos;s Wedding</a>
+      <a class="pill-link" target="_blank" href="https://cv.imle.uk">Link to Ellie&apos;s CV</a>
+      <a class="chat-link" target="_blank" href="https://chat.imle.uk" aria-label="Open conversation with Ellie's AI Chatbot">
+        <span class="chat-placeholder" aria-hidden="true">Chat to Ellie&apos;s AI</span>
+        <span class="chat-button">Open conversation</span>
+      </a>
+    </nav>
+  </main>
 </body>
 </html>
