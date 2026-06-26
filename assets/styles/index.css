@@ -12,10 +12,12 @@
       --accent-grey: #d8d8d8;
       --muted: rgba(240, 240, 240, 0.68);
       --surface: rgba(255, 255, 255, 0.08);
-      --surface-strong: rgba(255, 255, 255, 0.16);
-      --stroke: rgba(255, 255, 255, 0.22);
+      --surface-strong: rgba(255, 255, 255, 0.14);
+      --surface-top: rgba(255, 255, 255, 0.2);
+      --stroke: rgba(255, 255, 255, 0.16);
+      --brand-gradient: linear-gradient(135deg, #7f559d, #d871bb 54%, #d19292);
       --bg-gradient: linear-gradient(135deg, #080808, #191919 42%, #0d0d0d 100%);
-      --size: clamp(2.5rem, 10vw, 10rem);
+      --size: clamp(3.2rem, 12vw, 10rem);
     }
 
     * {
@@ -96,10 +98,11 @@
     }
 
     .site-header {
-      align-items: left;
+      align-items: flex-start;
       display: flex;
-      justify-content: left;
+      justify-content: flex-start;
       padding-block-start: clamp(0.25rem, 2.5vh, 1.75rem);
+      padding-left: clamp(0.25rem, 2.5vh, 1.75rem);
       position: relative;
       width: 100%;
       z-index: 1;
@@ -119,7 +122,7 @@
       flex-direction: column;
       justify-content: center;
       margin-block-start: clamp(1rem, 8vh, 5rem);
-      max-width: min(100%, 72rem);
+      max-width: min(100%, 78rem);
       padding-block-end: clamp(4rem, 14vh, 9rem);
       position: relative;
       transform: translateY(-4vh);
@@ -127,16 +130,24 @@
       z-index: 1;
     }
 
+    .hero-kicker {
+      color: var(--muted);
+      font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      margin-block-end: clamp(0.7rem, 2vw, 1.15rem);
+      text-transform: uppercase;
+    }
+
     h1 {
       animation: subtleShift 5s ease-in-out infinite alternate;
       color: var(--accent);
       font-size: var(--size);
       font-weight: 900;
-      letter-spacing: 0.1em;
+      letter-spacing: 0;
       line-height: 1;
       position: relative;
       text-align: center;
-      text-transform: uppercase;
       text-wrap: balance;
       user-select: none;
       filter: drop-shadow(0 -5px 10px #000);
@@ -145,7 +156,7 @@
     /* Subtle glow effect */
     h1::after {
       color: #ffffff22;
-      content: "I AM ELLIE";
+      content: "Hi, I'm Ellie";
       filter: blur(20px);
       left: 0;
       position: absolute;
@@ -154,94 +165,123 @@
       z-index: -1;
     }
 
+    .hero-summary {
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 700;
+      margin-block-start: clamp(0.75rem, 1.8vw, 1rem);
+      max-width: 38rem;
+      text-align: center;
+      text-wrap: balance;
+    }
+
     .hero-actions {
-      align-items: stretch;
-      display: flex;
-      flex-wrap: nowrap;
-      gap: clamp(0.4rem, 1.2vw, 0.75rem);
-      justify-content: center;
-      margin-block-start: clamp(1.2rem, 3vw, 2.25rem);
-      max-width: min(100%, 58rem);
+      margin-block-start: clamp(1.35rem, 4vw, 2.8rem);
+      max-width: min(100%, 68rem);
       width: 100%;
     }
 
-    .pill-link,
-    .chat-link {
+    .action-list {
+      display: grid;
+      gap: clamp(0.65rem, 2vw, 1rem);
+      grid-template-columns: 1fr;
+      list-style: none;
+      padding: 0;
+      width: 100%;
+    }
+
+    .action-card {
       align-items: center;
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      background: var(--surface);
+      background:
+        linear-gradient(180deg, var(--surface-top), transparent 160%),
+        var(--surface);
       border: 1px solid var(--stroke);
+      border-radius: 1.25rem;
+      box-shadow: 0 1.1rem 2.6rem rgba(0, 0, 0, 0.26);
       color: var(--accent);
-      display: inline-flex;
-      font-size: clamp(0.76rem, 1.5vw, 0.95rem);
-      font-weight: 700;
-      min-height: clamp(2.75rem, 5vw, 3.25rem);
+      display: grid;
+      gap: 0.85rem;
+      grid-template-columns: 2.75rem 1fr;
+      min-height: 5.25rem;
+      padding: clamp(0.9rem, 2.2vw, 1.15rem);
       text-decoration: none;
       transition:
         background-color 180ms ease,
+        box-shadow 180ms ease,
         border-color 180ms ease,
         color 180ms ease,
         transform 180ms ease;
     }
 
-    .pill-link {
-      border-radius: 999px;
-      flex: 0 0 auto;
-      justify-content: center;
-      letter-spacing: 0.02em;
-      padding-inline: clamp(0.85rem, 2vw, 1.35rem);
-    }
-
-    .chat-link {
-      border-radius: 999px;
-      flex: 1 1 24rem;
-      justify-content: space-between;
-      max-width: 31rem;
-      min-width: min(50vw, 19rem);
-      overflow: hidden;
-      padding: 0.25rem;
-    }
-
-    .chat-placeholder {
-      color: var(--muted);
-      flex: 1;
-      font-weight: 600;
-      min-width: 0;
-      overflow: hidden;
-      padding-inline: clamp(0.8rem, 2vw, 1.1rem);
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .chat-button {
+    .action-icon {
       align-items: center;
-      align-self: stretch;
-      background: rgba(240, 240, 240, 0.92);
-      border-radius: 999px;
-      color: #090909;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.95rem;
       display: inline-flex;
-      flex: 0 0 auto;
+      height: 2.75rem;
       justify-content: center;
-      padding-inline: clamp(0.75rem, 2vw, 1.15rem);
+      width: 2.75rem;
+    }
+
+    .action-icon svg {
+      fill: none;
+      height: 1.35rem;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.9;
+      width: 1.35rem;
+    }
+
+    .action-title,
+    .action-meta {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .action-title {
+      font-size: clamp(0.96rem, 2.4vw, 1.05rem);
+      font-weight: 850;
+      line-height: 1.15;
       white-space: nowrap;
     }
 
-    .pill-link:hover,
-    .chat-link:hover {
+    .action-meta {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-block-start: 0.25rem;
+      white-space: nowrap;
+    }
+
+    .action-card-chat {
+      background:
+        linear-gradient(135deg, rgba(127, 85, 157, 0.35), rgba(216, 113, 187, 0.2) 56%, rgba(209, 146, 146, 0.22)),
+        var(--surface-strong);
+      border-color: rgba(240, 240, 240, 0.28);
+    }
+
+    .action-card-chat .action-icon {
+      background: var(--brand-gradient);
+      border-color: transparent;
+      color: #fff;
+    }
+
+    .action-card:hover {
       background: var(--surface-strong);
       border-color: rgba(255, 255, 255, 0.42);
-      transform: translateY(-1px);
+      box-shadow: 0 1.35rem 3rem rgba(0, 0, 0, 0.34);
+      transform: translateY(-0.12rem);
     }
 
-    .pill-link:focus-visible,
-    .chat-link:focus-visible {
+    .action-card:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 4px;
-    }
-
-    .chat-link:hover .chat-button {
-      background: #fff;
     }
 
     @keyframes subtleShift {
@@ -269,8 +309,7 @@
       body::before,
       body::after,
       h1,
-      .pill-link,
-      .chat-link {
+      .action-card {
         animation: none;
         transition: none;
       }
@@ -281,34 +320,24 @@
         padding-inline: clamp(0.75rem, 3vw, 1rem);
       }
 
+      .site-header {
+        padding-left: 0;
+      }
+
       .hero {
         padding-block-end: clamp(3rem, 10vh, 5rem);
         transform: translateY(-3vh);
       }
+    }
 
-      .hero-actions {
-        gap: 0.4rem;
+    @media (min-width: 42rem) {
+      .action-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+    }
 
-      .pill-link {
-        padding-inline: 0.7rem;
-      }
-
-      .chat-link {
-        min-width: 9.75rem;
-      }
-
-      .chat-placeholder {
-        padding-inline: 0.7rem;
-      }
-
-      .chat-button {
-        font-size: 0;
-        padding-inline: 0.8rem;
-      }
-
-      .chat-button::after {
-        content: "Open";
-        font-size: clamp(0.76rem, 1.5vw, 0.95rem);
+    @media (min-width: 66rem) {
+      .action-list {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
     }
