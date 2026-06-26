@@ -52,6 +52,10 @@ a:focus-visible {
   outline-offset: 0.18rem;
 }
 
+.redacted-contact {
+  cursor: default;
+}
+
 .cv-page {
   background: white;
   margin-inline: auto;
@@ -370,5 +374,9 @@ a:focus-visible {
 
   .cv-page {
     max-width: none;
+  }
+
+  a {
+    text-decoration: none;
   }
 }

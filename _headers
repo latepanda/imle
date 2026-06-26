@@ -1,0 +1,7 @@
+/assets/files/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: private, no-store
+
+/assets/Ellie-CV-2026.pdf
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: private, no-store
