@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_data/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_data/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_data/favicon-16x16.png">
+  <link rel="manifest" href="favicon_data/site.webmanifest">
+  <link rel="preload" href="assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <title>Ellie McCallum CV</title>
+  <link href="assets/styles/cv.css" rel="stylesheet">
+</head>
+<body>
+  <main class="cv-page" aria-labelledby="cv-title">
+    <header class="cv-hero">
+      <div class="cv-mark" aria-hidden="true">
+        <img src="assets/images/logo.svg" alt="" width="230" height="97" />
+      </div>
+
+      <div class="cv-intro">
+        <h1 id="cv-title">Hi, I'm Ellie ████</h1>
+        <p>I have been designing and building apps, websites, and games for 16+ years. My professional passion is user-focused UI/UX design and developing products with a strong emphasis on accessibility.</p>
+      </div>
+    </header>
+
+    <section class="highlights" aria-label="Career highlights">
+      <article class="highlight">
+        <span class="highlight-icon" aria-hidden="true">
+          <img src="assets/images/user.svg" width="100px" height="100px" alt="" />
+        </span>
+        <h2>16+ years of professional experience</h2>
+      </article>
+
+      <article class="highlight">
+        <span class="highlight-icon" aria-hidden="true">
+          <img src="assets/images/design.svg" width="100px" height="100px" alt="" />
+        </span>
+        <h2>Wireframing, prototyping &amp; user testing</h2>
+      </article>
+
+      <article class="highlight">
+        <span class="highlight-icon" aria-hidden="true">
+          <img src="assets/images/mentor.svg" width="100px" height="100px" alt="" />
+        </span>
+        <h2>Mentoring &amp; supporting junior developers</h2>
+      </article>
+    </section>
+
+    <div class="cv-body">
+      <aside class="sidebar" aria-label="Skills and contact details">
+        <section class="card skills-card" aria-labelledby="skills-title">
+          <h2 id="skills-title">Skills</h2>
+
+          <section class="skill-group">
+            <h3>UI/UX Design &amp; Front-end Engineering</h3>
+            <p>Figma · Balsamiq · WCAG · Core Web Vitals · User Testing · Accessibility Design · Wireframing · Prototyping · Web Performance · React · TypeScript · JavaScript · HTML5 · CSS3 · SCSS · React Testing Library · Cypress</p>
+          </section>
+
+          <section class="skill-group">
+            <h3>Full-stack &amp; CMS Engineering</h3>
+            <p>Ruby on Rails · Laravel · PHP · MySQL · CloudFlare (Workers/Pages/R2) · RSpec · WordPress</p>
+          </section>
+
+          <section class="skill-group">
+            <h3>Digital Products, Analytics &amp; Creative tools</h3>
+            <p>Google Analytics (GA4) · Google Tag Manager · Google Search Console · Search Engine Optimisation (SEO) · Microsoft Clarity · DaVinci Resolve</p>
+          </section>
+        </section>
+
+        <section class="card contact-card" aria-labelledby="contact-title">
+          <form class="cv-request" action="/api/request-cv" method="post">
+            <h3>Request full CV</h3>
+
+            <label for="requester-email">Email address</label>
+            <input
+              id="requester-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required
+            />
+
+            <div
+              class="cf-turnstile"
+              data-sitekey="YOUR_TURNSTILE_SITE_KEY"
+              data-theme="light"
+            ></div>
+
+            <button type="submit">Download full CV</button>
+
+            <p class="cv-request-note">
+              The public version is redacted. The full PDF is served after verification.
+            </p>
+          </form>
+
+          <script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            async
+            defer
+          ></script>
+        </section>
+      </aside>
+
+      <section class="experience card" aria-labelledby="experience-title">
+        <h2 id="experience-title">Experience</h2>
+
+        <ol class="timeline">
+          <li class="timeline-item">
+            <p class="timeline-date">2019 - Now</p>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <article class="timeline-content">
+              <h3>Front-end Engineer <span>| ██████ █████</span></h3>
+              <ul>
+                <li>Subject-matter expert across multiple apps</li>
+                <li>Mentoring junior front-end developers</li>
+                <li>Expanding our front-end component library</li>
+                <li>Collaborating on responsive UI/UX projects</li>
+                <li>Contributing to design workshops</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="timeline-item">
+            <p class="timeline-date">2017 - 2019</p>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <article class="timeline-content">
+              <h3>CEO &amp; Co-founder <span>| ████ █████</span></h3>
+              <ul>
+                <li>Led a cross-functional team of 6</li>
+                <li>Facilitated user testing and feedback sessions</li>
+                <li>Designed, prototyped &amp; tested our flagship game</li>
+                <li>Secured &amp; delivered external client contracts</li>
+                <li>Showcased at industry events, including GDC</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="timeline-item">
+            <p class="timeline-date">2016 - 2017</p>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <article class="timeline-content">
+              <h3>Lead Developer <span>| ████████</span></h3>
+              <ul>
+                <li>Led knowledge sharing sessions with team</li>
+                <li>Collaborated with stakeholders &amp; clients</li>
+                <li>Designed a reusable &amp; modular app framework</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="timeline-item">
+            <p class="timeline-date">2015 - 2015</p>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <article class="timeline-content">
+              <h3>Applications Developer <span>| █████</span></h3>
+              <ul>
+                <li>Designed &amp; built social media web app</li>
+                <li>Built user auth with Facebook SDK</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="timeline-item">
+            <p class="timeline-date">2014 - 2015</p>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <article class="timeline-content">
+              <h3>Graduate Developer <span>| ██████</span></h3>
+              <ul>
+                <li>Modernised ██████.com into a single-page app</li>
+                <li>Built APIs for various iOS apps</li>
+                <li>Built AR showroom app with Unity3D</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="timeline-item">
+            <p class="timeline-date">2010 - 2014</p>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <article class="timeline-content">
+              <h3>BSc Games Development <span>| ███</span></h3>
+              <ul>
+                <li>Graduated from ███ in Jul '14</li>
+                <li>First Class honours with distinction</li>
+                <li>Awarded the universities court medal</li>
+                <li>Researched into intuitive UI/UX design</li>
+              </ul>
+            </article>
+          </li>
+        </ol>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
