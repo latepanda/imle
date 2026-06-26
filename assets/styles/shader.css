@@ -1,0 +1,158 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/assets/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf) format('ttf');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+:root {
+  --accent: #f0f0f0;
+  --accent-grey: #d8d8d8;
+  --bg-gradient: linear-gradient(135deg, #080808, #191919 42%, #0d0d0d 100%);
+  --size: clamp(2.5rem, 10vw, 10rem);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  align-items: center;
+  background: var(--bg-gradient);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  justify-content: center;
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.fake-shader::before,
+.fake-shader::after {
+  animation: mercuryDrift 38s ease-in-out infinite alternate;
+  content: "";
+  inset: -28vmax;
+  pointer-events: none;
+  position: fixed;
+  z-index: -2;
+}
+
+.fake-shader::before {
+  background:
+    radial-gradient(ellipse at 16% 24%, rgba(255, 255, 255, 0.4), transparent 28%),
+    radial-gradient(ellipse at 68% 18%, rgba(190, 190, 190, 0.28), transparent 31%),
+    radial-gradient(ellipse at 34% 72%, rgba(245, 245, 245, 0.22), transparent 34%),
+    radial-gradient(ellipse at 82% 76%, rgba(115, 115, 115, 0.4), transparent 30%),
+    radial-gradient(ellipse at 48% 48%, rgba(25, 25, 25, 0.88), transparent 48%);
+  filter: blur(56px) contrast(1.55) saturate(0);
+  opacity: 0.74;
+  transform: translate3d(-2%, -1%, 0) rotate(0deg) scale(1.06);
+  will-change: transform;
+}
+
+.fake-shader::after {
+  animation-duration: 52s;
+  animation-direction: alternate-reverse;
+  background:
+    conic-gradient(from 130deg at 50% 50%,
+      rgba(255, 255, 255, 0.18),
+      rgba(72, 72, 72, 0.14),
+      rgba(225, 225, 225, 0.2),
+      rgba(18, 18, 18, 0.34),
+      rgba(255, 255, 255, 0.18));
+  filter: blur(72px) contrast(1.35) saturate(0);
+  mix-blend-mode: soft-light;
+  opacity: 0.45;
+  transform: translate3d(3%, 2%, 0) rotate(16deg) scale(1.18);
+  z-index: -1;
+  will-change: transform;
+}
+
+@supports not (background: conic-gradient(from 0deg, #000, #fff)) {
+  .fake-shader::after {
+    background:
+      radial-gradient(ellipse at 30% 40%, rgba(255, 255, 255, 0.16), transparent 34%),
+      radial-gradient(ellipse at 70% 58%, rgba(32, 32, 32, 0.3), transparent 40%);
+  }
+}
+
+.fake-shader > * {
+  position: relative;
+  z-index: 1;
+}
+
+img {
+  aspect-ratio: 230 / 97;
+  filter: drop-shadow(0 -5px 10px #000);
+  height: auto;
+  margin: 1.5rem;
+  width: calc(var(--size) * 2.5);
+}
+
+h1 {
+  animation: subtleShift 5s ease-in-out infinite alternate;
+  color: var(--accent);
+  filter: drop-shadow(0 -5px 10px #000);
+  font-size: var(--size);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  text-wrap: balance;
+  user-select: none;
+}
+
+h1::after {
+  color: #ffffff22;
+  content: "I AM ELLIE";
+  filter: blur(20px);
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: scale(1.05);
+  z-index: -1;
+}
+
+@keyframes subtleShift {
+  from {
+    color: var(--accent);
+  }
+
+  to {
+    color: var(--accent-grey);
+  }
+}
+
+@keyframes mercuryDrift {
+  0% {
+    transform: translate3d(-3%, -2%, 0) rotate(0deg) scale(1.06);
+  }
+
+  50% {
+    transform: translate3d(2%, 3%, 0) rotate(14deg) scale(1.16);
+  }
+
+  100% {
+    transform: translate3d(4%, -1%, 0) rotate(26deg) scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fake-shader::before,
+  .fake-shader::after,
+  h1 {
+    animation: none;
+  }
+}
