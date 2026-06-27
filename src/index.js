@@ -1,6 +1,11 @@
 const PDF_OBJECT_KEY = "Ellie-CV-2026.pdf";
 const PDF_DOWNLOAD_NAME = "Ellie-McCallum-CV.pdf";
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const SUBDOMAIN_HOME_PAGES = {
+  "cv.imle.uk": "/cv.html",
+  "ux.imle.uk": "/ux.html",
+  "chat.imle.uk": "/chat.html",
+};
 
 export default {
   async fetch(request, env) {
@@ -19,10 +24,24 @@ export default {
       return handleCvRequest(request, env);
     }
 
+    const assetRequest = rewriteSubdomainHomeRequest(request, url);
+
     // Everything else is served from the built static assets.
-    return env.ASSETS.fetch(request);
+    return env.ASSETS.fetch(assetRequest);
   },
 };
+
+function rewriteSubdomainHomeRequest(request, url) {
+  const pagePath = SUBDOMAIN_HOME_PAGES[url.hostname];
+
+  if (!pagePath || url.pathname !== "/") {
+    return request;
+  }
+
+  const assetUrl = new URL(request.url);
+  assetUrl.pathname = pagePath;
+  return new Request(assetUrl, request);
+}
 
 async function handleCvRequest(request, env) {
   const form = await request.formData();

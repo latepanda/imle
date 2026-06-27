@@ -3,6 +3,20 @@
 	"name": "imle",
 	"compatibility_date": "2026-06-27",
 	"main": "src/index.js",
+	"routes": [
+		{
+			"pattern": "cv.imle.uk",
+			"zone_name": "imle.uk"
+		},
+		{
+			"pattern": "ux.imle.uk",
+			"zone_name": "imle.uk"
+		},
+		{
+			"pattern": "chat.imle.uk",
+			"zone_name": "imle.uk"
+		}
+	],
 	"assets": {
 		"directory": "public",
 		"binding": "ASSETS",
