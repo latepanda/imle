@@ -2588,14 +2588,134 @@ a {
 
 @media (forced-colors: active) {
 
+  .mc-theme,
+  .mc-panel,
+  .mc-section-card,
+  .mc-card,
+  .mc-action-card,
+  .mc-icon-card,
+  .mc-document-card,
+  .mc-code-example,
+  .mc-docs-nav,
+  .mc-alert,
+  .mc-status-panel,
+  .mc-chat-preview {
+    background: Canvas;
+    box-shadow: none;
+    color: CanvasText;
+  }
+
   .mc-button,
   .mc-action-card,
   .mc-panel,
   .mc-section-card,
+  .mc-card,
+  .mc-alert,
+  .mc-badge,
+  .mc-icon,
   .mc-icon-card,
   .mc-document-card,
+  .mc-code-example,
+  .mc-docs-nav,
+  .mc-docs-menu__summary,
+  .mc-status-pill,
+  .mc-action-card__icon,
   .mc-form__control {
     border: 1px solid CanvasText;
+  }
+
+  .mc-button,
+  .mc-button--primary,
+  .mc-button--secondary,
+  .mc-button--ghost,
+  .mc-docs-menu__summary {
+    background: ButtonFace;
+    color: ButtonText;
+  }
+
+  .mc-button:hover,
+  .mc-action-card:hover,
+  .mc-docs-menu__summary:hover,
+  .mc-docs-nav__link:hover {
+    background: Highlight;
+    border-color: HighlightText;
+    color: HighlightText;
+    transform: none;
+  }
+
+  .mc-action-card,
+  .mc-action-card--featured,
+  .mc-icon,
+  .mc-icon--brand,
+  .mc-action-card__icon,
+  .mc-action-card--featured .mc-action-card__icon,
+  .mc-badge,
+  .mc-badge--brand,
+  .mc-badge--muted,
+  .mc-badge--danger,
+  .mc-status-pill {
+    background: Canvas;
+    box-shadow: none;
+    color: CanvasText;
+  }
+
+  .mc-button .mc-icon-glyph {
+    background: ButtonText;
+    color: ButtonText;
+    forced-color-adjust: none;
+  }
+
+  .mc-icon .mc-icon-glyph,
+  .mc-action-card__icon .mc-icon-glyph {
+    background: CanvasText;
+    color: CanvasText;
+    forced-color-adjust: none;
+  }
+
+  .mc-button:hover .mc-icon-glyph,
+  .mc-action-card:hover .mc-icon-glyph {
+    background: HighlightText;
+    color: HighlightText;
+    forced-color-adjust: none;
+  }
+
+  .mc-status-pill__dot,
+  .mc-chat-preview__dot,
+  .mc-chat-preview__message {
+    background: CanvasText;
+    box-shadow: none;
+    forced-color-adjust: none;
+  }
+
+  .mc-form__control,
+  .mc-form__select {
+    background: Field;
+    color: FieldText;
+  }
+
+  .mc-form__control:focus {
+    border-color: Highlight;
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+  }
+
+  .mc-text-muted,
+  .mc-body-copy,
+  .mc-lead,
+  .mc-card__text,
+  .mc-card__footer,
+  .mc-action-card__meta,
+  .mc-icon-card__label,
+  .mc-status-panel p,
+  .mc-status-pill,
+  .mc-form__hint {
+    color: CanvasText;
+  }
+
+  .mc-docs-nav__link[aria-current="page"],
+  .mc-docs-nav__link:hover {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
   }
 
   .mc-theme--mercury::before,
