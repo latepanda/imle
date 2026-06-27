@@ -1,0 +1,43 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "imle",
+	"compatibility_date": "2026-06-27",
+	"main": "src/index.js",
+	"routes": [
+		{
+			"pattern": "mercury.imle.uk",
+			"zone_name": "imle.uk"
+		},
+		{
+			"pattern": "cv.imle.uk",
+			"zone_name": "imle.uk"
+		},
+		{
+			"pattern": "ux.imle.uk",
+			"zone_name": "imle.uk"
+		},
+		{
+			"pattern": "chat.imle.uk",
+			"zone_name": "imle.uk"
+		}
+	],
+	"assets": {
+		"directory": "public",
+		"binding": "ASSETS",
+		"not_found_handling": "404-page"
+	},
+	"r2_buckets": [
+		{
+			"binding": "PRIVATE_CV_BUCKET",
+			"bucket_name": "imle-private-cv"
+		}
+	],
+	"d1_databases": [
+		{
+			"binding": "imle_cv_requests",
+			"database_name": "imle-cv-requests",
+			"database_id": "6cb30a5a-216c-40d1-ac21-49d1a3f6424a",
+			"remote": true
+		}
+	]
+}

@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_data/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_data/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_data/favicon-16x16.png">
+  <link rel="manifest" href="favicon_data/site.webmanifest">
+  <link rel="preload" href="/assets/fonts/Inter/Inter-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/assets/fonts/Inter/Inter-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <title>Mercury Beta</title>
+  <link href="assets/styles/design.css" rel="stylesheet">
+</head>
+<body class="mc-theme mc-theme--dark mc-theme--mercury">
+  <a class="mc-skip-link" href="#main-content">Skip to content</a>
+
+  <header class="mc-site-header" aria-label="Site header">
+    <a class="mc-brand" href="https://www.imle.uk" aria-label="Return to the IMLE homepage">
+      <span class="mc-brand__logo" aria-hidden="true"></span>
+    </a>
+    <div class="mc-top-actions" aria-label="Mercury actions">
+      <button class="mc-button mc-button--secondary" type="button" data-theme-toggle aria-pressed="false">
+        <span data-theme-toggle-label>Light mode</span>
+      </button>
+      <a class="mc-button mc-button--primary" href="assets/styles/design.css" download="mercury.css">
+        Download Mercury<sup>Beta</sup>
+      </a>
+    </div>
+  </header>
+
+  <div class="mc-docs-layout">
+    <aside class="mc-docs-sidebar" aria-label="Design system menu">
+      <details class="mc-docs-menu mc-docs-menu--page" data-docs-menu>
+        <summary class="mc-docs-menu__summary">
+          <span class="mc-docs-menu__icon" aria-hidden="true"></span>
+          <span>Menu</span>
+        </summary>
+        <nav class="mc-docs-nav" aria-labelledby="docs-menu-title">
+          <h2 id="docs-menu-title" class="mc-docs-nav__title">Mercury</h2>
+          <ul class="mc-docs-nav__list">
+            <li><a class="mc-docs-nav__link" href="#overview">Overview</a></li>
+            <li><a class="mc-docs-nav__link" href="#tokens">Tokens</a></li>
+            <li><a class="mc-docs-nav__link" href="#colours">Colours</a></li>
+            <li><a class="mc-docs-nav__link" href="#variables">CSS variables</a></li>
+            <li><a class="mc-docs-nav__link" href="#breakpoints">Breakpoints</a></li>
+            <li><a class="mc-docs-nav__link" href="#spacing">Spacing</a></li>
+            <li><a class="mc-docs-nav__link" href="#layout">Layout</a></li>
+            <li><a class="mc-docs-nav__link" href="#motion">Motion</a></li>
+            <li><a class="mc-docs-nav__link" href="#accessibility">Accessibility</a></li>
+            <li><a class="mc-docs-nav__link" href="#typography">Typography</a></li>
+            <li><a class="mc-docs-nav__link" href="#buttons">Buttons</a></li>
+            <li><a class="mc-docs-nav__link" href="#badges">Badges</a></li>
+            <li><a class="mc-docs-nav__link" href="#icons">Icons</a></li>
+            <li><a class="mc-docs-nav__link" href="#cards-core">Cards</a></li>
+            <li><a class="mc-docs-nav__link" href="#cards">Action cards</a></li>
+            <li><a class="mc-docs-nav__link" href="#forms">Forms</a></li>
+            <li><a class="mc-docs-nav__link" href="#status">Status panels</a></li>
+            <li><a class="mc-docs-nav__link" href="#documents">Documents</a></li>
+            <li><a class="mc-docs-nav__link" href="#utilities">Utilities</a></li>
+          </ul>
+        </nav>
+      </details>
+    </aside>
+
+  <main id="main-content" class="mc-style-guide">
+    <section class="mc-hero mc-hero--compact" aria-labelledby="guide-title">
+      <p class="mc-eyebrow">Mercury library</p>
+      <h1 id="guide-title" class="mc-hero__title">Mercury</h1>
+      <p class="mc-hero__summary">
+        A modular, mobile-first class utility library by <a href="https://www.imle.uk">Ellie</a>.
+      </p>
+    </section>
+
+    <section id="overview" class="mc-style-section" aria-labelledby="overview-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Getting started</p>
+        <h2 id="overview-title">Page setup</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card">
+          <p class="mc-lead">Use the mc-theme classes on the body, then compose pages from the blocks shown below.</p>
+          <p class="mc-body-copy">The library keeps page background, focus states, responsive spacing, and motion preferences consistent across the site.</p>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;link href="assets/styles/mercury.css" rel="stylesheet"&gt;
+
+&lt;body class="mc-theme mc-theme--mercury"&gt;
+  &lt;a class="mc-skip-link" href="#main-content"&gt;Skip to content&lt;/a&gt;
+  &lt;main id="main-content" class="mc-container"&gt;
+    &lt;section class="mc-hero"&gt;...&lt;/section&gt;
+    &lt;section class="mc-section-card"&gt;...&lt;/section&gt;
+  &lt;/main&gt;
+&lt;/body&gt;</code></pre>
+
+        <div class="mc-section-card">
+          <h3>Theme classes</h3>
+          <table>
+            <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-theme</code></td><td>Base Mercury page theme.</td><td><code>&lt;body class="mc-theme"&gt;</code></td></tr>
+              <tr><td><code>mc-theme--dark</code></td><td>Dark colour-scheme mode.</td><td><code>&lt;body class="mc-theme mc-theme--dark"&gt;</code></td></tr>
+              <tr><td><code>mc-theme--light</code></td><td>Light colour-scheme mode.</td><td><code>&lt;body class="mc-theme mc-theme--light"&gt;</code></td></tr>
+              <tr><td><code>mc-theme--mercury</code></td><td>Animated Mercury page background.</td><td><code>&lt;body class="mc-theme mc-theme--mercury"&gt;</code></td></tr>
+              <tr><td><code>mc-theme--paper</code></td><td>Light document palette. <span class="mc-text-warning">(Experimental)</span></td><td><code>&lt;body class="mc-theme mc-theme--paper"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>System light mode</h3>
+          <p class="mc-body-copy">Mercury uses <code>@media (prefers-color-scheme: light)</code> to remap the core colour variables between light and dark mode depending on the users system preference.</p>
+          <div class="mc-alert mc-alert--info mc-mt-5">
+            Use the theme toggle in this guide to preview the same variable remap without changing your system settings.
+          </div>
+          <pre class="mc-code-example mc-mt-5" tabindex="0"><code>@media (prefers-color-scheme: light) {
+  :root {
+    --mc-color-bg: #efe7f4;
+    --mc-color-accent: #17121c;
+    --mc-color-muted: #5c5067;
+    --mc-color-paper: #ffffff;
+  }
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="tokens" class="mc-style-section" aria-labelledby="tokens-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Foundations</p>
+        <h2 id="tokens-title">Tokens</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-swatch-grid" aria-label="Colour tokens">
+          <article class="mc-swatch">
+            <span class="mc-swatch__sample mc-swatch__sample--accent"></span>
+            <h3>Accent</h3>
+            <p>Primary foreground on dark surfaces.</p>
+          </article>
+          <article class="mc-swatch">
+            <span class="mc-swatch__sample mc-swatch__sample--muted"></span>
+            <h3>Muted</h3>
+            <p>Secondary text and soft metadata.</p>
+          </article>
+          <article class="mc-swatch">
+            <span class="mc-swatch__sample mc-swatch__sample--brand"></span>
+            <h3>Brand gradient</h3>
+            <p>Key actions, active states, and logo-adjacent accents.</p>
+          </article>
+          <article class="mc-swatch">
+            <span class="mc-swatch__sample mc-swatch__sample--paper"></span>
+            <h3>Paper</h3>
+            <p>CV and document-style content surfaces.</p>
+          </article>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Token-based component preview</h3>
+          <div class="mc-bg-surface mc-border mc-rounded-lg mc-p-5">
+            <p class="mc-m-0 mc-fw-700">Custom component</p>
+            <p class="mc-body-copy">This preview uses the same colour, border, radius, and spacing tokens shown in the code below.</p>
+          </div>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>.mc-custom-component {
+  color: var(--mc-color-accent);
+  background: var(--mc-color-surface);
+  border: 1px solid var(--mc-color-stroke);
+  border-radius: var(--mc-radius-lg);
+  padding: var(--mc-space-5);
+}</code></pre>
+      </div>
+    </section>
+
+    <section id="colours" class="mc-style-section" aria-labelledby="colours-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Foundations</p>
+        <h2 id="colours-title">Colours</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card">
+          <h3>Brand colours</h3>
+          <div class="mc-grid mc-grid--4 mc-g-3">
+            <div class="mc-bg-brand mc-rounded-md mc-p-4">
+              <p class="mc-m-0 mc-fw-700">Brand gradient</p>
+            </div>
+            <div class="mc-bg-paper mc-border mc-rounded-md mc-p-4">
+              <p class="mc-m-0 mc-text-ink mc-fw-700">Paper</p>
+            </div>
+            <div class="mc-bg-surface mc-border mc-rounded-md mc-p-4">
+              <p class="mc-m-0 mc-text-accent mc-fw-700">Surface</p>
+            </div>
+            <div class="mc-bg-surface-strong mc-border mc-rounded-md mc-p-4">
+              <p class="mc-m-0 mc-text-accent mc-fw-700">Strong surface</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Text colour utilities</h3>
+          <div class="mc-stack">
+            <p class="mc-m-0 mc-text-accent">Accent text for primary foreground content.</p>
+            <p class="mc-m-0 mc-text-muted">Muted text for secondary information.</p>
+            <p class="mc-m-0 mc-text-brand">Brand text for small accents.</p>
+            <p class="mc-m-0 mc-text-error">Error text for validation or destructive states.</p>
+            <p class="mc-m-0 mc-text-success">Success text for confirmed actions.</p>
+            <p class="mc-m-0 mc-text-warning">Warning text for cautionary states.</p>
+            <p class="mc-m-0 mc-text-info">Info text for neutral guidance.</p>
+            <p class="mc-m-0 mc-bg-paper mc-text-soft-ink mc-rounded-md mc-p-3">Soft ink text on paper.</p>
+          </div>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Semantic alerts</h3>
+          <div class="mc-stack">
+            <p class="mc-alert mc-alert--error">There was a problem sending the form. Check the highlighted fields and try again.</p>
+            <p class="mc-alert mc-alert--success">Your request has been received.</p>
+            <p class="mc-alert mc-alert--warning">This section is still being reviewed.</p>
+            <p class="mc-alert mc-alert--info">Mercury colour utilities adapt between light and dark themes.</p>
+          </div>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;p class="mc-alert mc-alert--error"&gt;
+  There was a problem sending the form.
+&lt;/p&gt;
+
+&lt;p class="mc-text-error"&gt;Email address is required.&lt;/p&gt;
+
+&lt;div class="mc-bg-error mc-border-error mc-rounded-md mc-p-4"&gt;
+  Error summary content.
+&lt;/div&gt;</code></pre>
+
+        <div class="mc-section-card">
+          <h3>Colour utility classes</h3>
+          <table>
+            <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-text-ink</code>, <code>mc-text-soft-ink</code></td><td>Dark text colours for paper/light surfaces.</td><td><code>&lt;p class="mc-text-ink"&gt;</code></td></tr>
+              <tr><td><code>mc-text-accent</code>, <code>mc-text-muted</code>, <code>mc-text-brand</code></td><td>Theme foreground and brand text colours.</td><td><code>&lt;p class="mc-text-brand"&gt;</code></td></tr>
+              <tr><td><code>mc-text-error</code>, <code>mc-text-success</code>, <code>mc-text-warning</code>, <code>mc-text-info</code></td><td>Semantic text colours that adapt across themes.</td><td><code>&lt;p class="mc-text-error"&gt;</code></td></tr>
+              <tr><td><code>mc-bg-surface</code>, <code>mc-bg-surface-strong</code>, <code>mc-bg-paper</code>, <code>mc-bg-brand</code></td><td>Reusable surface and brand backgrounds.</td><td><code>&lt;div class="mc-bg-surface"&gt;</code></td></tr>
+              <tr><td><code>mc-bg-error</code>, <code>mc-bg-success</code>, <code>mc-bg-warning</code>, <code>mc-bg-info</code></td><td>Semantic background fills.</td><td><code>&lt;div class="mc-bg-error"&gt;</code></td></tr>
+              <tr><td><code>mc-border-error</code>, <code>mc-border-success</code>, <code>mc-border-warning</code>, <code>mc-border-info</code></td><td>Semantic border colours.</td><td><code>&lt;div class="mc-border-error"&gt;</code></td></tr>
+              <tr><td><code>mc-alert</code>, <code>mc-alert--error</code>, <code>mc-alert--success</code>, <code>mc-alert--warning</code>, <code>mc-alert--info</code></td><td>Accessible status-message blocks.</td><td><code>&lt;p class="mc-alert mc-alert--error"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="variables" class="mc-style-section" aria-labelledby="variables-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Customize</p>
+        <h2 id="variables-title">CSS variables</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card">
+          <h3>Available tokens</h3>
+          <table>
+            <thead><tr><th scope="col">Variable</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>--mc-color-ink</code>, <code>--mc-color-soft-ink</code></td><td>Dark text colours.</td><td><code>color: var(--mc-color-ink);</code></td></tr>
+              <tr><td><code>--mc-color-bg</code>, <code>--mc-color-bg-soft</code></td><td>Base dark backgrounds.</td><td><code>background: var(--mc-color-bg);</code></td></tr>
+              <tr><td><code>--mc-color-accent</code>, <code>--mc-color-accent-soft</code>, <code>--mc-color-muted</code></td><td>Foreground and secondary foreground colours.</td><td><code>color: var(--mc-color-muted);</code></td></tr>
+              <tr><td><code>--mc-color-surface</code>, <code>--mc-color-surface-strong</code>, <code>--mc-color-surface-top</code>, <code>--mc-color-stroke</code></td><td>Glass and dark card surfaces.</td><td><code>border: 1px solid var(--mc-color-stroke);</code></td></tr>
+              <tr><td><code>--mc-color-purple</code>, <code>--mc-color-deep-purple</code>, <code>--mc-color-pink</code>, <code>--mc-color-rose</code></td><td>Brand accent family.</td><td><code>color: var(--mc-color-pink);</code></td></tr>
+              <tr><td><code>--mc-color-lilac</code>, <code>--mc-color-line</code>, <code>--mc-color-paper</code></td><td>Light document palette.</td><td><code>background: var(--mc-color-paper);</code></td></tr>
+              <tr><td><code>--mc-color-error</code>, <code>--mc-color-error-bg</code>, <code>--mc-color-error-stroke</code></td><td>Error foreground, background, and border colours.</td><td><code>color: var(--mc-color-error);</code></td></tr>
+              <tr><td><code>--mc-color-success</code>, <code>--mc-color-success-bg</code>, <code>--mc-color-success-stroke</code></td><td>Success foreground, background, and border colours.</td><td><code>background: var(--mc-color-success-bg);</code></td></tr>
+              <tr><td><code>--mc-color-warning</code>, <code>--mc-color-warning-bg</code>, <code>--mc-color-warning-stroke</code></td><td>Warning foreground, background, and border colours.</td><td><code>border-color: var(--mc-color-warning-stroke);</code></td></tr>
+              <tr><td><code>--mc-color-info</code>, <code>--mc-color-info-bg</code>, <code>--mc-color-info-stroke</code></td><td>Info foreground, background, and border colours.</td><td><code>color: var(--mc-color-info);</code></td></tr>
+              <tr><td><code>--mc-gradient-brand</code>, <code>--mc-gradient-rule</code>, <code>--mc-gradient-bg</code></td><td>Brand, divider, and page gradients.</td><td><code>background: var(--mc-gradient-brand);</code></td></tr>
+              <tr><td><code>--mc-font-body</code>, <code>--mc-font-display</code></td><td>Font family stacks.</td><td><code>font-family: var(--mc-font-body);</code></td></tr>
+              <tr><td><code>--mc-step-1</code> to <code>--mc-step-display</code></td><td>Fluid type scale.</td><td><code>font-size: var(--mc-step-3);</code></td></tr>
+              <tr><td><code>--mc-space-1</code> to <code>--mc-space-8</code></td><td>Spacing scale.</td><td><code>padding: var(--mc-space-5);</code></td></tr>
+              <tr><td><code>--mc-gutter-0</code> to <code>--mc-gutter-5</code></td><td>Grid gutter scale.</td><td><code>gap: var(--mc-gutter-4);</code></td></tr>
+              <tr><td><code>--mc-radius-sm</code>, <code>--mc-radius-md</code>, <code>--mc-radius-lg</code>, <code>--mc-radius-xl</code>, <code>--mc-radius-pill</code></td><td>Radius scale.</td><td><code>border-radius: var(--mc-radius-lg);</code></td></tr>
+              <tr><td><code>--mc-shadow-glass</code>, <code>--mc-shadow-soft</code></td><td>Elevation tokens.</td><td><code>box-shadow: var(--mc-shadow-soft);</code></td></tr>
+              <tr><td><code>--mc-page-width</code>, <code>--mc-content-width</code></td><td>Layout width tokens.</td><td><code>max-width: var(--mc-content-width);</code></td></tr>
+              <tr><td><code>--mc-breakpoint-sm</code>, <code>--mc-breakpoint-md</code>, <code>--mc-breakpoint-lg</code>, <code>--mc-breakpoint-xl</code></td><td>Documented breakpoint values.</td><td><code>/* 36rem, 48rem, 66rem, 80rem */</code></td></tr>
+              <tr><td><code>--mc-transition</code></td><td>Standard motion duration/easing.</td><td><code>transition: transform var(--mc-transition);</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Variable example preview</h3>
+          <div class="mc-bg-surface mc-rounded-lg mc-p-5">
+            <p class="mc-m-0 mc-fw-700">Page card</p>
+            <p class="mc-body-copy">A compact surface using shared Mercury variables for colour, radius, and spacing.</p>
+          </div>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>.my-page-card {
+  color: var(--mc-color-accent);
+  background: var(--mc-color-surface);
+  border-radius: var(--mc-radius-lg);
+  padding: var(--mc-space-5);
+}</code></pre>
+      </div>
+    </section>
+
+    <section id="breakpoints" class="mc-style-section" aria-labelledby="breakpoints-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Layout</p>
+        <h2 id="breakpoints-title">Breakpoints</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card">
+          <h3>Breakpoint scale</h3>
+          <table>
+            <thead><tr><th scope="col">Token</th><th scope="col">Width</th><th scope="col">Used by</th></tr></thead>
+            <tbody>
+              <tr><td><code>--mc-breakpoint-sm</code></td><td><code>36rem</code></td><td>Small layouts and narrow containers.</td></tr>
+              <tr><td><code>--mc-breakpoint-md</code></td><td><code>48rem</code></td><td>Medium layout shifts.</td></tr>
+              <tr><td><code>--mc-breakpoint-lg</code></td><td><code>66rem</code></td><td>Desktop navigation, four-card actions, timeline layout.</td></tr>
+              <tr><td><code>--mc-breakpoint-xl</code></td><td><code>80rem</code></td><td>Wide container option.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Adaptive card layout</h3>
+          <p class="mc-body-copy">Use <code>mc-layout-adaptive</code> when a group should move from one column, to two columns, to three columns as space becomes available.</p>
+          <div class="mc-layout-adaptive mc-mt-5">
+            <div class="mc-spacing-demo__item mc-p-4">Mobile: 1 column</div>
+            <div class="mc-spacing-demo__item mc-p-4">Tablet: 2 columns</div>
+            <div class="mc-spacing-demo__item mc-p-4">Desktop: 3 columns</div>
+          </div>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Split layout</h3>
+          <p class="mc-body-copy">Use <code>mc-layout-split</code> for pages that stack on mobile and become a sidebar/content layout on desktop.</p>
+          <div class="mc-layout-split mc-mt-5">
+            <aside class="mc-layout-split__aside mc-bg-surface mc-border mc-rounded-md mc-p-4">
+              <p class="mc-m-0 mc-fw-700">Sidebar</p>
+              <p class="mc-body-copy">Filters, menus, notes, or metadata.</p>
+            </aside>
+            <div class="mc-layout-split__main mc-bg-surface mc-border mc-rounded-md mc-p-4">
+              <p class="mc-m-0 mc-fw-700">Main content</p>
+              <p class="mc-body-copy">Primary page content with room to breathe.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Responsive containers</h3>
+          <div class="mc-stack">
+            <div class="mc-container-sm mc-bg-surface mc-border mc-rounded-md mc-p-3">Small container: <code>mc-container-sm</code></div>
+            <div class="mc-container-md mc-bg-surface mc-border mc-rounded-md mc-p-3">Medium container: <code>mc-container-md</code></div>
+            <div class="mc-container-lg mc-bg-surface mc-border mc-rounded-md mc-p-3">Large container: <code>mc-container-lg</code></div>
+            <div class="mc-container-xl mc-bg-surface mc-border mc-rounded-md mc-p-3">Wide container: <code>mc-container-xl</code></div>
+            <div class="mc-container-breakout mc-bg-surface mc-border mc-rounded-md mc-p-3">Breakout container: <code>mc-container-breakout</code></div>
+          </div>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;section class="mc-container-lg"&gt;
+  &lt;div class="mc-layout-adaptive"&gt;
+    &lt;article&gt;Mobile 1 / tablet 2 / desktop 3&lt;/article&gt;
+    &lt;article&gt;...&lt;/article&gt;
+    &lt;article&gt;...&lt;/article&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="mc-layout-split"&gt;
+  &lt;aside class="mc-layout-split__aside"&gt;Filters&lt;/aside&gt;
+  &lt;div class="mc-layout-split__main"&gt;Results&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+
+        <div class="mc-section-card">
+          <h3>Breakpoint layout classes</h3>
+          <table>
+            <thead><tr><th scope="col">Class</th><th scope="col">Behaviour</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-layout-adaptive</code></td><td>One column by default, two columns at <code>42rem</code>, three columns at <code>66rem</code>.</td><td><code>&lt;div class="mc-layout-adaptive"&gt;</code></td></tr>
+              <tr><td><code>mc-layout-split</code></td><td>Stacks by default, then becomes a sidebar/content layout at <code>66rem</code>.</td><td><code>&lt;section class="mc-layout-split"&gt;</code></td></tr>
+              <tr><td><code>mc-layout-split__aside</code>, <code>mc-layout-split__main</code></td><td>Named split-layout columns with overflow-safe sizing.</td><td><code>&lt;aside class="mc-layout-split__aside"&gt;</code></td></tr>
+              <tr><td><code>mc-container-sm</code>, <code>mc-container-md</code>, <code>mc-container-lg</code>, <code>mc-container-xl</code></td><td>Centered containers capped at the documented breakpoint widths.</td><td><code>&lt;section class="mc-container-lg"&gt;</code></td></tr>
+              <tr><td><code>mc-container-breakout</code></td><td>Lets content escape the normal section padding while keeping internal responsive padding.</td><td><code>&lt;div class="mc-container-breakout"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="spacing" class="mc-style-section" aria-labelledby="spacing-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Layout</p>
+        <h2 id="spacing-title">Spacing utilities</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card mc-flow">
+          <p class="mc-lead">Use shared spacing tokens and utility classes for consistent page rhythm.</p>
+          <h3>Padding examples</h3>
+          <div class="mc-spacing-demo mc-stack mc-stack--lg">
+            <div class="mc-spacing-demo__item mc-p-3">Padding 3</div>
+            <div class="mc-spacing-demo__item mc-p-4">Padding 4</div>
+            <div class="mc-spacing-demo__item mc-p-5">Padding 5</div>
+          </div>
+          <h3>Margin examples</h3>
+          <div class="mc-spacing-demo mc-stack mc-stack--lg">
+            <div class="mc-spacing-demo__frame">
+              <div class="mc-spacing-demo__item mc-mt-4 mc-p-3">Margin top 4</div>
+            </div>
+            <div class="mc-spacing-demo__frame">
+              <div class="mc-spacing-demo__item mc-mb-4 mc-p-3">Margin bottom 4</div>
+            </div>
+            <div class="mc-spacing-demo__frame mc-p-3">
+              <div class="mc-spacing-demo__item mc-m-0 mc-p-3">Margin 0</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Rendered spacing example</h3>
+          <section class="mc-container mc-py-7 mc-bg-surface mc-border mc-rounded-md">
+            <div class="mc-stack mc-stack--lg">
+              <h4 class="mc-m-0">Section title</h4>
+              <p class="mc-m-0">Consistent vertical spacing between children.</p>
+            </div>
+          </section>
+          <div class="mc-cluster mc-gap-3 mc-mt-5">
+            <span class="mc-badge mc-badge--brand">Cluster item</span>
+            <span class="mc-badge mc-badge--muted">Cluster item</span>
+            <span class="mc-badge mc-badge--danger">Cluster item</span>
+          </div>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;section class="mc-container mc-py-7"&gt;
+  &lt;div class="mc-stack mc-stack--lg"&gt;
+    &lt;h2&gt;Section title&lt;/h2&gt;
+    &lt;p&gt;Consistent vertical spacing between children.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;div class="mc-cluster mc-gap-3"&gt;...&lt;/div&gt;
+
+&lt;div class="mc-spacing-demo__item mc-mt-4 mc-p-3"&gt;
+  Margin top 4 with padding 3
+&lt;/div&gt;</code></pre>
+
+        <div class="mc-section-card">
+          <h3>Spacing scale</h3>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Class</th>
+                <th scope="col">Effect</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>mc-p-0</code></td><td>Sets all padding to zero.</td><td><code>&lt;div class="mc-p-0"&gt;</code></td></tr>
+              <tr><td><code>mc-p-1</code>, <code>mc-p-2</code>, <code>mc-p-3</code>, <code>mc-p-4</code>, <code>mc-p-5</code>, <code>mc-p-6</code></td><td>Applies all-side padding from the Mercury spacing scale.</td><td><code>&lt;div class="mc-p-5"&gt;</code></td></tr>
+              <tr><td><code>mc-px-4</code>, <code>mc-px-5</code></td><td>Applies inline padding.</td><td><code>&lt;section class="mc-px-5"&gt;</code></td></tr>
+              <tr><td><code>mc-py-5</code>, <code>mc-py-6</code>, <code>mc-py-7</code></td><td>Applies block padding.</td><td><code>&lt;section class="mc-py-7"&gt;</code></td></tr>
+              <tr><td><code>mc-m-0</code></td><td>Removes all margin.</td><td><code>&lt;h2 class="mc-m-0"&gt;</code></td></tr>
+              <tr><td><code>mc-mx-auto</code></td><td>Centers a fixed-width element horizontally.</td><td><code>&lt;div class="mc-mx-auto"&gt;</code></td></tr>
+              <tr><td><code>mc-mt-4</code>, <code>mc-mt-5</code></td><td>Applies margin-block-start.</td><td><code>&lt;div class="mc-mt-5"&gt;</code></td></tr>
+              <tr><td><code>mc-mb-4</code>, <code>mc-mb-5</code></td><td>Applies margin-block-end.</td><td><code>&lt;div class="mc-mb-5"&gt;</code></td></tr>
+              <tr><td><code>mc-gap-1</code>, <code>mc-gap-2</code>, <code>mc-gap-3</code>, <code>mc-gap-4</code>, <code>mc-gap-5</code></td><td>Applies gap to grid or flex layouts.</td><td><code>&lt;div class="mc-cluster mc-gap-3"&gt;</code></td></tr>
+              <tr><td><code>mc-stack</code>, <code>mc-stack--sm</code>, <code>mc-stack--lg</code></td><td>Vertical stack layout and size variants.</td><td><code>&lt;div class="mc-stack mc-stack--sm"&gt;</code></td></tr>
+              <tr><td><code>mc-flow</code>, <code>mc-cluster</code></td><td>Flow spacing and wrapping inline layout.</td><td><code>&lt;div class="mc-flow"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="layout" class="mc-style-section" aria-labelledby="layout-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Layout</p>
+        <h2 id="layout-title">Containers, grid, gutters, and flex</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card">
+          <h3>Containers</h3>
+          <table>
+            <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-container</code></td><td>Default centered content width.</td><td><code>&lt;main class="mc-container"&gt;</code></td></tr>
+              <tr><td><code>mc-container-sm</code></td><td>Small centered container.</td><td><code>&lt;section class="mc-container-sm"&gt;</code></td></tr>
+              <tr><td><code>mc-container-md</code></td><td>Medium centered container.</td><td><code>&lt;section class="mc-container-md"&gt;</code></td></tr>
+              <tr><td><code>mc-container-lg</code></td><td>Large centered container.</td><td><code>&lt;section class="mc-container-lg"&gt;</code></td></tr>
+              <tr><td><code>mc-container-xl</code></td><td>Wide centered container.</td><td><code>&lt;section class="mc-container-xl"&gt;</code></td></tr>
+              <tr><td><code>mc-container-fluid</code></td><td>Full-width container with responsive padding.</td><td><code>&lt;section class="mc-container-fluid"&gt;</code></td></tr>
+              <tr><td><code>mc-container-breakout</code></td><td>Breaks out of parent section padding while preserving internal padding.</td><td><code>&lt;div class="mc-container-breakout"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Grid system</h3>
+          <div class="mc-row mc-g-3">
+            <div class="mc-col-12 mc-col-sm-6 mc-col-lg-3"><div class="mc-spacing-demo__item mc-p-3">12 / sm 6 / lg 3</div></div>
+            <div class="mc-col-12 mc-col-sm-6 mc-col-lg-6"><div class="mc-spacing-demo__item mc-p-3">12 / sm 6 / lg 6</div></div>
+            <div class="mc-col-12 mc-col-lg-3"><div class="mc-spacing-demo__item mc-p-3">12 / lg 3</div></div>
+          </div>
+          <table class="mc-mt-5">
+            <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-grid</code></td><td>Generic CSS grid wrapper.</td><td><code>&lt;div class="mc-grid"&gt;</code></td></tr>
+              <tr><td><code>mc-grid--2</code>, <code>mc-grid--3</code>, <code>mc-grid--4</code></td><td>Responsive grids that start as one column, then expand at tablet and desktop widths.</td><td><code>&lt;div class="mc-grid mc-grid--3"&gt;</code></td></tr>
+              <tr><td><code>mc-row</code></td><td>12-column grid row.</td><td><code>&lt;div class="mc-row mc-g-4"&gt;</code></td></tr>
+              <tr><td><code>mc-col</code></td><td>Auto full-width column.</td><td><code>&lt;div class="mc-col"&gt;</code></td></tr>
+              <tr><td><code>mc-col-1</code>, <code>mc-col-2</code>, <code>mc-col-3</code>, <code>mc-col-4</code>, <code>mc-col-5</code>, <code>mc-col-6</code>, <code>mc-col-7</code>, <code>mc-col-8</code>, <code>mc-col-9</code>, <code>mc-col-10</code>, <code>mc-col-11</code>, <code>mc-col-12</code></td><td>Column span utilities.</td><td><code>&lt;div class="mc-col-6"&gt;</code></td></tr>
+              <tr><td><code>mc-col-sm-6</code></td><td>Six-column span at the small layout media query used by Mercury.</td><td><code>&lt;div class="mc-col-12 mc-col-sm-6"&gt;</code></td></tr>
+              <tr><td><code>mc-col-md-6</code></td><td>Six-column span at the desktop media query used by Mercury.</td><td><code>&lt;div class="mc-col-12 mc-col-md-6"&gt;</code></td></tr>
+              <tr><td><code>mc-col-lg-3</code>, <code>mc-col-lg-4</code>, <code>mc-col-lg-6</code></td><td>Quarter, third, and half-width desktop columns.</td><td><code>&lt;div class="mc-col-12 mc-col-lg-6"&gt;</code></td></tr>
+              <tr><td><code>mc-g-0</code>, <code>mc-g-1</code>, <code>mc-g-2</code>, <code>mc-g-3</code>, <code>mc-g-4</code>, <code>mc-g-5</code></td><td>Grid gutter utilities.</td><td><code>&lt;div class="mc-row mc-g-3"&gt;</code></td></tr>
+              <tr><td><code>mc-layout-adaptive</code></td><td>Responsive one/two/three-column layout.</td><td><code>&lt;div class="mc-layout-adaptive"&gt;</code></td></tr>
+              <tr><td><code>mc-layout-split</code>, <code>mc-layout-split__aside</code>, <code>mc-layout-split__main</code></td><td>Responsive sidebar/content layout.</td><td><code>&lt;section class="mc-layout-split"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;section class="mc-container-lg"&gt;
+  &lt;div class="mc-row mc-g-3"&gt;
+    &lt;div class="mc-col-12 mc-col-sm-6 mc-col-lg-3"&gt;...&lt;/div&gt;
+    &lt;div class="mc-col-12 mc-col-sm-6 mc-col-lg-6"&gt;...&lt;/div&gt;
+    &lt;div class="mc-col-12 mc-col-lg-3"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+      </div>
+    </section>
+
+    <section id="motion" class="mc-style-section" aria-labelledby="motion-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Accessibility</p>
+        <h2 id="motion-title">Reduced animation</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card">
+          <p class="mc-lead">Animations stop automatically for people using reduced-motion preferences.</p>
+          <p class="mc-body-copy">Add <code>mc-motion-static</code> to the body or a container when a page needs animation disabled regardless of system settings.</p>
+        </div>
+
+        <div class="mc-section-card mc-motion-static">
+          <h3>Static motion preview</h3>
+          <p class="mc-body-copy">This card carries <code>mc-motion-static</code>, so transitions and background animation are suppressed inside it.</p>
+          <div class="mc-mt-5">
+            <a class="mc-button mc-button--secondary" href="#motion">
+              <span class="mc-button__icon mc-icon-glyph mc-icon-glyph--block" aria-hidden="true"></span>
+              <span>Motion disabled</span>
+            </a>
+          </div>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;body class="mc-theme mc-theme--dark mc-theme--mercury mc-motion-static"&gt;
+  ...
+&lt;/body&gt;</code></pre>
+      </div>
+    </section>
+
+    <section id="accessibility" class="mc-style-section" aria-labelledby="accessibility-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Accessibility</p>
+        <h2 id="accessibility-title">Focus, reduced motion, and hidden text</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card">
+          <h3>Accessibility classes and behaviours</h3>
+          <table>
+            <thead><tr><th scope="col">Class or feature</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>:focus-visible</code></td><td>Global keyboard focus ring.</td><td><code>&lt;a href="#"&gt;Focusable link&lt;/a&gt;</code></td></tr>
+              <tr><td><code>mc-skip-link</code></td><td>Skip navigation for keyboard users.</td><td><code>&lt;a class="mc-skip-link" href="#main-content"&gt;</code></td></tr>
+              <tr><td><code>mc-visually-hidden</code></td><td>Accessible text that is visually hidden.</td><td><code>&lt;span class="mc-visually-hidden"&gt;Current status:&lt;/span&gt;</code></td></tr>
+              <tr><td><code>mc-motion-static</code></td><td>Stops animations and transitions by class.</td><td><code>&lt;body class="mc-motion-static"&gt;</code></td></tr>
+              <tr><td><code>prefers-reduced-motion</code></td><td>Automatically stops motion for users who request it.</td><td><code>@media (prefers-reduced-motion: reduce)</code></td></tr>
+              <tr><td><code>forced-colors</code></td><td>Uses system colours, preserves borders, removes decorative layers, and keeps masked icons visible.</td><td><code>@media (forced-colors: active)</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Status pill with hidden context</h3>
+          <p class="mc-status-pill">
+            <span class="mc-visually-hidden">Status:</span>
+            <span class="mc-status-pill__dot" aria-hidden="true"></span>
+            Offline for development
+          </p>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;p class="mc-status-pill"&gt;
+  &lt;span class="mc-visually-hidden"&gt;Status:&lt;/span&gt;
+  &lt;span class="mc-status-pill__dot" aria-hidden="true"&gt;&lt;/span&gt;
+  Offline for development
+&lt;/p&gt;</code></pre>
+      </div>
+    </section>
+
+    <section id="typography" class="mc-style-section" aria-labelledby="type-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Typography</p>
+        <h2 id="type-title">Text styles</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card">
+          <p class="mc-eyebrow">Portfolio intro</p>
+          <h2 class="mc-display-title">Hi, I'm Ellie</h2>
+          <p class="mc-lead">
+            I design and build accessible, user-focused products with a strong front-end engineering foundation.
+          </p>
+          <p class="mc-body-copy">
+            Body copy uses Inter regular, with comfortable line-height and restrained contrast for readability over the mercury background.
+          </p>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;p class="mc-eyebrow"&gt;Portfolio intro&lt;/p&gt;
+&lt;h1 class="mc-display-title"&gt;Hi, I'm Ellie&lt;/h1&gt;
+&lt;p class="mc-lead"&gt;I design and build accessible products.&lt;/p&gt;
+&lt;p class="mc-body-copy"&gt;Secondary supporting copy goes here.&lt;/p&gt;</code></pre>
+
+        <div class="mc-section-card">
+          <h3>Typography classes</h3>
+          <table>
+            <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-hero</code>, <code>mc-hero--compact</code></td><td>Hero layout and compact variant.</td><td><code>&lt;section class="mc-hero mc-hero--compact"&gt;</code></td></tr>
+              <tr><td><code>mc-hero__title</code>, <code>mc-hero__summary</code></td><td>Hero heading and supporting copy.</td><td><code>&lt;h1 class="mc-hero__title"&gt;</code></td></tr>
+              <tr><td><code>mc-display-title</code></td><td>Large display heading.</td><td><code>&lt;h2 class="mc-display-title"&gt;</code></td></tr>
+              <tr><td><code>mc-lead</code>, <code>mc-body-copy</code></td><td>Lead and muted body copy.</td><td><code>&lt;p class="mc-lead"&gt;</code></td></tr>
+              <tr><td><code>mc-eyebrow</code>, <code>mc-eyebrow--paper</code></td><td>Uppercase label and paper variant.</td><td><code>&lt;p class="mc-eyebrow"&gt;</code></td></tr>
+              <tr><td><code>mc-fs-1</code>, <code>mc-fs-2</code>, <code>mc-fs-3</code>, <code>mc-fs-4</code>, <code>mc-fs-5</code></td><td>Font-size utilities.</td><td><code>&lt;p class="mc-fs-3"&gt;</code></td></tr>
+              <tr><td><code>mc-fw-400</code>, <code>mc-fw-700</code></td><td>Font-weight utilities.</td><td><code>&lt;strong class="mc-fw-700"&gt;</code></td></tr>
+              <tr><td><code>mc-text-start</code>, <code>mc-text-center</code>, <code>mc-text-end</code></td><td>Text alignment utilities.</td><td><code>&lt;p class="mc-text-center"&gt;</code></td></tr>
+              <tr><td><code>mc-text-accent</code>, <code>mc-text-muted</code>, <code>mc-text-brand</code></td><td>Text colour utilities.</td><td><code>&lt;p class="mc-text-muted"&gt;</code></td></tr>
+              <tr><td><code>mc-text-wrap</code>, <code>mc-text-nowrap</code>, <code>mc-text-truncate</code></td><td>Text wrapping and truncation utilities.</td><td><code>&lt;p class="mc-text-truncate"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="buttons" class="mc-style-section" aria-labelledby="buttons-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Actions</p>
+        <h2 id="buttons-title">Buttons and links</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card">
+          <div class="mc-component-row" aria-label="Button examples">
+            <a class="mc-button mc-button--primary" href="https://cv.imle.uk">
+              <span class="mc-button__icon mc-icon-glyph mc-icon-glyph--doc" aria-hidden="true"></span>
+              <span>View CV</span>
+            </a>
+            <a class="mc-button mc-button--secondary" href="https://ux.imle.uk">
+              <span class="mc-button__icon mc-icon-glyph mc-icon-glyph--pc" aria-hidden="true"></span>
+              <span>UX Studies</span>
+            </a>
+            <button class="mc-button mc-button--ghost" type="button">
+              <span class="mc-button__icon mc-icon-glyph mc-icon-glyph--chat" aria-hidden="true"></span>
+              <span>Open conversation</span>
+            </button>
+          </div>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;a class="mc-button mc-button--primary" href="/cv.html"&gt;
+  &lt;span class="mc-button__icon mc-icon-glyph mc-icon-glyph--doc" aria-hidden="true"&gt;&lt;/span&gt;
+  &lt;span&gt;View CV&lt;/span&gt;
+&lt;/a&gt;
+
+&lt;button class="mc-button mc-button--ghost" type="button"&gt;
+  &lt;span&gt;Open conversation&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+      </div>
+    </section>
+
+    <section id="badges" class="mc-style-section" aria-labelledby="badges-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Components</p>
+        <h2 id="badges-title">Badges</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card">
+          <div class="mc-cluster mc-gap-3">
+            <span class="mc-badge mc-badge--brand">Brand</span>
+            <span class="mc-badge mc-badge--muted">Muted</span>
+            <span class="mc-badge mc-badge--danger">Offline</span>
+          </div>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;span class="mc-badge mc-badge--brand"&gt;Brand&lt;/span&gt;
+&lt;span class="mc-badge mc-badge--muted"&gt;Muted&lt;/span&gt;
+&lt;span class="mc-badge mc-badge--danger"&gt;Offline&lt;/span&gt;</code></pre>
+
+        <div class="mc-section-card">
+          <h3>Badge classes</h3>
+          <table>
+            <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-badge</code></td><td>Base compact badge.</td><td><code>&lt;span class="mc-badge"&gt;</code></td></tr>
+              <tr><td><code>mc-badge--brand</code></td><td>Gradient brand badge.</td><td><code>&lt;span class="mc-badge mc-badge--brand"&gt;</code></td></tr>
+              <tr><td><code>mc-badge--muted</code></td><td>Subtle neutral badge.</td><td><code>&lt;span class="mc-badge mc-badge--muted"&gt;</code></td></tr>
+              <tr><td><code>mc-badge--danger</code></td><td>Rose/offline badge.</td><td><code>&lt;span class="mc-badge mc-badge--danger"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="icons" class="mc-style-section" aria-labelledby="icons-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Visual language</p>
+        <h2 id="icons-title">Icons</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card">
+          <ul class="mc-icon-grid mc-grid mc-grid--3 mc-g-3" aria-label="Mercury icon set">
+            <li class="mc-icon-card">
+              <span class="mc-icon" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--doc"></span>
+              </span>
+              <span class="mc-icon-card__label">Document</span>
+            </li>
+            <li class="mc-icon-card">
+              <span class="mc-icon mc-icon--brand" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--chat"></span>
+              </span>
+              <span class="mc-icon-card__label">Chat</span>
+            </li>
+            <li class="mc-icon-card">
+              <span class="mc-icon" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--design"></span>
+              </span>
+              <span class="mc-icon-card__label">Design</span>
+            </li>
+            <li class="mc-icon-card">
+              <span class="mc-icon" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--photos"></span>
+              </span>
+              <span class="mc-icon-card__label">Photos</span>
+            </li>
+            <li class="mc-icon-card">
+              <span class="mc-icon" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--pc"></span>
+              </span>
+              <span class="mc-icon-card__label">Computer</span>
+            </li>
+            <li class="mc-icon-card">
+              <span class="mc-icon" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--block"></span>
+              </span>
+              <span class="mc-icon-card__label">Block</span>
+            </li>
+            <li class="mc-icon-card">
+              <span class="mc-icon" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--user"></span>
+              </span>
+              <span class="mc-icon-card__label">User border</span>
+            </li>
+            <li class="mc-icon-card">
+              <span class="mc-icon" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--mentor"></span>
+              </span>
+              <span class="mc-icon-card__label">Mentor border</span>
+            </li>
+            <li class="mc-icon-card">
+              <span class="mc-icon" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--design-border"></span>
+              </span>
+              <span class="mc-icon-card__label">Design border</span>
+            </li>
+          </ul>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;span class="mc-icon" aria-hidden="true"&gt;
+  &lt;span class="mc-icon-glyph mc-icon-glyph--chat"&gt;&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;a class="mc-button mc-button--secondary" href="/chat.html"&gt;
+  &lt;span class="mc-button__icon mc-icon-glyph mc-icon-glyph--chat" aria-hidden="true"&gt;&lt;/span&gt;
+  &lt;span&gt;Chat&lt;/span&gt;
+&lt;/a&gt;</code></pre>
+
+        <div class="mc-section-card">
+          <h3>Icon classes</h3>
+          <table>
+            <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-icon</code>, <code>mc-icon--brand</code></td><td>Icon frame and brand frame variant.</td><td><code>&lt;span class="mc-icon"&gt;</code></td></tr>
+              <tr><td><code>mc-icon-grid</code>, <code>mc-grid</code>, <code>mc-grid--3</code></td><td>Icon showcase layout: two columns on mobile, then a 3x3 grid from tablet widths upward.</td><td><code>&lt;ul class="mc-icon-grid mc-grid mc-grid--3"&gt;</code></td></tr>
+              <tr><td><code>mc-icon-glyph</code></td><td>CSS-mask icon that uses current text colour.</td><td><code>&lt;span class="mc-icon-glyph"&gt;</code></td></tr>
+              <tr><td><code>mc-icon-glyph--block</code>, <code>mc-icon-glyph--chat</code>, <code>mc-icon-glyph--design-border</code>, <code>mc-icon-glyph--design</code>, <code>mc-icon-glyph--doc</code>, <code>mc-icon-glyph--mentor</code>, <code>mc-icon-glyph--pc</code>, <code>mc-icon-glyph--photos</code>, <code>mc-icon-glyph--user</code></td><td>Available Mercury icon masks.</td><td><code>&lt;span class="mc-icon-glyph mc-icon-glyph--chat"&gt;</code></td></tr>
+              <tr><td><code>mc-button__icon</code>, <code>mc-action-card__icon</code></td><td>Icon placement inside actions.</td><td><code>&lt;span class="mc-button__icon mc-icon-glyph mc-icon-glyph--doc"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="cards-core" class="mc-style-section" aria-labelledby="cards-core-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Components</p>
+        <h2 id="cards-core-title">Cards</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-grid mc-grid--3">
+          <article class="mc-card">
+            <div class="mc-card__body">
+              <h3 class="mc-card__title">Default card</h3>
+              <p class="mc-card__text">A quiet dark surface for general content.</p>
+            </div>
+            <div class="mc-card__footer">Footer</div>
+          </article>
+          <article class="mc-card mc-card--glass">
+            <div class="mc-card__body">
+              <h3 class="mc-card__title">Glass card</h3>
+              <p class="mc-card__text">A stronger Mercury surface for feature moments.</p>
+            </div>
+          </article>
+          <article class="mc-card mc-card--paper">
+            <div class="mc-card__body">
+              <h3 class="mc-card__title">Paper card</h3>
+              <p class="mc-card__text">A light surface for CV/document layouts.</p>
+            </div>
+          </article>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;article class="mc-card mc-card--glass"&gt;
+  &lt;div class="mc-card__body"&gt;
+    &lt;h3 class="mc-card__title"&gt;Card title&lt;/h3&gt;
+    &lt;p class="mc-card__text"&gt;Card text.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="mc-card__footer"&gt;Footer&lt;/div&gt;
+&lt;/article&gt;</code></pre>
+
+        <div class="mc-section-card">
+          <h3>Card classes</h3>
+          <table>
+            <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-card</code></td><td>Base card surface.</td><td><code>&lt;article class="mc-card"&gt;</code></td></tr>
+              <tr><td><code>mc-card--glass</code></td><td>Glass variant.</td><td><code>&lt;article class="mc-card mc-card--glass"&gt;</code></td></tr>
+              <tr><td><code>mc-card--paper</code></td><td>Light paper variant.</td><td><code>&lt;article class="mc-card mc-card--paper"&gt;</code></td></tr>
+              <tr><td><code>mc-card__body</code></td><td>Card content padding.</td><td><code>&lt;div class="mc-card__body"&gt;</code></td></tr>
+              <tr><td><code>mc-card__title</code></td><td>Card title style.</td><td><code>&lt;h3 class="mc-card__title"&gt;</code></td></tr>
+              <tr><td><code>mc-card__text</code></td><td>Card body text.</td><td><code>&lt;p class="mc-card__text"&gt;</code></td></tr>
+              <tr><td><code>mc-card__footer</code></td><td>Separated card footer.</td><td><code>&lt;div class="mc-card__footer"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="cards" class="mc-style-section" aria-labelledby="cards-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Navigation</p>
+        <h2 id="cards-title">Action cards</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card">
+          <ul class="mc-action-grid" aria-label="Portfolio destinations">
+            <li>
+              <a class="mc-action-card" href="https://wedding.imle.uk">
+                <span class="mc-action-card__icon" aria-hidden="true">
+                  <span class="mc-icon-glyph mc-icon-glyph--photos"></span>
+                </span>
+                <span class="mc-action-card__content">
+                  <span class="mc-action-card__title">Wedding</span>
+                  <span class="mc-action-card__meta">Gallery archive</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="mc-action-card" href="https://cv.imle.uk">
+                <span class="mc-action-card__icon" aria-hidden="true">
+                  <span class="mc-icon-glyph mc-icon-glyph--doc"></span>
+                </span>
+                <span class="mc-action-card__content">
+                  <span class="mc-action-card__title">CV</span>
+                  <span class="mc-action-card__meta">Experience summary</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="mc-action-card" href="https://ux.imle.uk">
+                <span class="mc-action-card__icon" aria-hidden="true">
+                  <span class="mc-icon-glyph mc-icon-glyph--design"></span>
+                </span>
+                <span class="mc-action-card__content">
+                  <span class="mc-action-card__title">UX Studies</span>
+                  <span class="mc-action-card__meta">Research notes</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="mc-action-card mc-action-card--featured" href="https://chat.imle.uk">
+                <span class="mc-action-card__icon" aria-hidden="true">
+                  <span class="mc-icon-glyph mc-icon-glyph--chat"></span>
+                </span>
+                <span class="mc-action-card__content">
+                  <span class="mc-action-card__title">ELLIE</span>
+                  <span class="mc-action-card__meta">AI chatbot</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;ul class="mc-action-grid" aria-label="Portfolio destinations"&gt;
+  &lt;li&gt;
+    &lt;a class="mc-action-card mc-action-card--featured" href="/chat.html"&gt;
+      &lt;span class="mc-action-card__icon" aria-hidden="true"&gt;
+        &lt;span class="mc-icon-glyph mc-icon-glyph--chat"&gt;&lt;/span&gt;
+      &lt;/span&gt;
+      &lt;span class="mc-action-card__content"&gt;
+        &lt;span class="mc-action-card__title"&gt;ELLIE&lt;/span&gt;
+        &lt;span class="mc-action-card__meta"&gt;AI chatbot&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+        <div class="mc-section-card">
+          <h3>Action grid classes</h3>
+          <table>
+            <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-action-grid</code></td><td>Responsive destination-card grid.</td><td><code>&lt;ul class="mc-action-grid"&gt;</code></td></tr>
+              <tr><td><code>mc-action-grid--home</code></td><td>Homepage five-card layout: one column, two columns, then centered three-over-two desktop rows.</td><td><code>&lt;ul class="mc-action-grid mc-action-grid--home"&gt;</code></td></tr>
+              <tr><td><code>mc-action-card</code>, <code>mc-action-card--featured</code></td><td>Destination card and featured variant.</td><td><code>&lt;a class="mc-action-card"&gt;</code></td></tr>
+              <tr><td><code>mc-action-card__icon</code>, <code>mc-action-card__content</code>, <code>mc-action-card__title</code>, <code>mc-action-card__meta</code></td><td>Action card internal elements.</td><td><code>&lt;span class="mc-action-card__title"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="forms" class="mc-style-section" aria-labelledby="forms-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Forms</p>
+        <h2 id="forms-title">Inputs and verification panels</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card">
+          <form class="mc-form mc-panel mc-panel--paper" action="#" method="post">
+            <div class="mc-form__group">
+              <label class="mc-form__label" for="example-email">Email address</label>
+              <input class="mc-form__control" id="example-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+            </div>
+
+            <div class="mc-form__group">
+              <label class="mc-form__label" for="example-message">Message</label>
+              <textarea class="mc-form__control mc-form__control--textarea" id="example-message" name="message" rows="4" placeholder="What would you like to ask?"></textarea>
+            </div>
+
+            <div class="mc-form__group">
+              <label class="mc-form__label" for="example-select">Reason</label>
+              <select class="mc-form__control mc-form__select" id="example-select" name="reason">
+                <option>CV request</option>
+                <option>Portfolio question</option>
+                <option>UX case study</option>
+              </select>
+            </div>
+
+            <div class="mc-form-check">
+              <input class="mc-form-check__input" id="example-check" type="checkbox" />
+              <label class="mc-form-check__label" for="example-check">Send me a copy</label>
+            </div>
+
+            <div>
+              <div class="mc-form-check mc-form-check--inline">
+                <input class="mc-form-check__input" id="example-radio-one" name="example-radio" type="radio" />
+                <label class="mc-form-check__label" for="example-radio-one">Email</label>
+              </div>
+              <div class="mc-form-check mc-form-check--inline">
+                <input class="mc-form-check__input" id="example-radio-two" name="example-radio" type="radio" />
+                <label class="mc-form-check__label" for="example-radio-two">Call</label>
+              </div>
+            </div>
+
+            <button class="mc-button mc-button--primary" type="submit">Submit request</button>
+            <p class="mc-form__hint">Use helper text for privacy, verification, or validation guidance.</p>
+          </form>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;form class="mc-form mc-panel mc-panel--paper" action="/api/request-cv" method="post"&gt;
+  &lt;div class="mc-form__group"&gt;
+    &lt;label class="mc-form__label" for="requester-email"&gt;Email address&lt;/label&gt;
+    &lt;input class="mc-form__control" id="requester-email" name="email" type="email" autocomplete="email" required&gt;
+  &lt;/div&gt;
+
+  &lt;button class="mc-button mc-button--primary" type="submit"&gt;Submit request&lt;/button&gt;
+  &lt;p class="mc-form__hint"&gt;Helper text goes here.&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+
+        <div class="mc-section-card">
+          <h3>Form classes</h3>
+          <table>
+            <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-form</code></td><td>Form grid layout.</td><td><code>&lt;form class="mc-form"&gt;</code></td></tr>
+              <tr><td><code>mc-form__group</code></td><td>Groups a label and control.</td><td><code>&lt;div class="mc-form__group"&gt;</code></td></tr>
+              <tr><td><code>mc-form__label</code></td><td>Label styling.</td><td><code>&lt;label class="mc-form__label"&gt;</code></td></tr>
+              <tr><td><code>mc-form__control</code></td><td>Base text/select/textarea control.</td><td><code>&lt;input class="mc-form__control"&gt;</code></td></tr>
+              <tr><td><code>mc-form__control--textarea</code></td><td>Textarea size variant.</td><td><code>&lt;textarea class="mc-form__control mc-form__control--textarea"&gt;</code></td></tr>
+              <tr><td><code>mc-form__select</code></td><td>Select arrow styling.</td><td><code>&lt;select class="mc-form__control mc-form__select"&gt;</code></td></tr>
+              <tr><td><code>mc-form__hint</code></td><td>Helper text.</td><td><code>&lt;p class="mc-form__hint"&gt;</code></td></tr>
+              <tr><td><code>mc-form-check</code></td><td>Checkbox/radio row.</td><td><code>&lt;div class="mc-form-check"&gt;</code></td></tr>
+              <tr><td><code>mc-form-check--inline</code></td><td>Inline checkbox/radio row.</td><td><code>&lt;div class="mc-form-check mc-form-check--inline"&gt;</code></td></tr>
+              <tr><td><code>mc-form-check__input</code></td><td>Checkbox/radio input.</td><td><code>&lt;input class="mc-form-check__input" type="checkbox"&gt;</code></td></tr>
+              <tr><td><code>mc-form-check__label</code></td><td>Checkbox/radio label.</td><td><code>&lt;label class="mc-form-check__label"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="status" class="mc-style-section" aria-labelledby="status-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">System states</p>
+        <h2 id="status-title">Offline and coming soon panels</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card">
+          <article class="mc-status-panel mc-panel mc-panel--glass">
+            <div class="mc-status-panel__media" aria-hidden="true">
+              <div class="mc-chat-preview">
+                <span class="mc-chat-preview__dot"></span>
+                <span class="mc-chat-preview__dot"></span>
+                <span class="mc-chat-preview__dot"></span>
+                <span class="mc-chat-preview__message"></span>
+                <span class="mc-chat-preview__message mc-chat-preview__message--user"></span>
+                <span class="mc-chat-preview__message mc-chat-preview__message--short"></span>
+              </div>
+            </div>
+            <div class="mc-status-panel__content">
+              <p class="mc-status-pill">
+                <span class="mc-status-pill__dot" aria-hidden="true"></span>
+                Offline for development
+              </p>
+              <h3>ELLIE will be back soon</h3>
+              <p>Use this pattern for pages that are intentionally unavailable but still need to feel polished and clear.</p>
+            </div>
+          </article>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;article class="mc-status-panel mc-panel mc-panel--glass"&gt;
+  &lt;div class="mc-status-panel__media" aria-hidden="true"&gt;
+    &lt;div class="mc-chat-preview"&gt;
+      &lt;span class="mc-chat-preview__message"&gt;&lt;/span&gt;
+      &lt;span class="mc-chat-preview__message mc-chat-preview__message--user"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="mc-status-panel__content"&gt;
+    &lt;p class="mc-status-pill"&gt;
+      &lt;span class="mc-status-pill__dot" aria-hidden="true"&gt;&lt;/span&gt;
+      Offline for development
+    &lt;/p&gt;
+    &lt;h1&gt;ELLIE will be back soon&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+      </div>
+    </section>
+
+    <section id="documents" class="mc-style-section mc-style-section--paper" aria-labelledby="document-title">
+      <div class="mc-section-heading mc-section-heading--paper">
+        <p class="mc-eyebrow mc-eyebrow--paper">Document surfaces</p>
+        <h2 id="document-title">CV-style components</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-document-layout">
+          <article class="mc-document-card">
+            <h3 class="mc-document-card__title">Skills</h3>
+            <div class="mc-rule" aria-hidden="true"></div>
+            <p class="mc-document-card__subtitle">UI/UX Design and Front-end Engineering</p>
+            <p>Figma, WCAG, user testing, accessibility design, prototyping, React, TypeScript, CSS, and performance.</p>
+          </article>
+
+          <article class="mc-document-card">
+            <h3 class="mc-document-card__title">Experience</h3>
+            <div class="mc-rule" aria-hidden="true"></div>
+            <ol class="mc-timeline">
+              <li class="mc-timeline__item">
+                <p class="mc-timeline__date">2019 - Now</p>
+                <span class="mc-timeline__dot" aria-hidden="true"></span>
+                <div class="mc-timeline__content">
+                  <h4>Front-end Engineer <span>| Business</span></h4>
+                  <p>Subject-matter expert across accessible responsive products.</p>
+                </div>
+              </li>
+              <li class="mc-timeline__item">
+                <p class="mc-timeline__date">2017 - 2019</p>
+                <span class="mc-timeline__dot" aria-hidden="true"></span>
+                <div class="mc-timeline__content">
+                  <h4>CEO and Co-founder <span>| Company</span></h4>
+                  <p>Led product discovery, prototypes, testing, and delivery.</p>
+                </div>
+              </li>
+            </ol>
+          </article>
+        </div>
+
+        <pre class="mc-code-example mc-code-example--paper" tabindex="0"><code>&lt;article class="mc-document-card"&gt;
+  &lt;h2 class="mc-document-card__title"&gt;Experience&lt;/h2&gt;
+  &lt;div class="mc-rule" aria-hidden="true"&gt;&lt;/div&gt;
+
+  &lt;ol class="mc-timeline"&gt;
+    &lt;li class="mc-timeline__item"&gt;
+      &lt;p class="mc-timeline__date"&gt;2019 - Now&lt;/p&gt;
+      &lt;span class="mc-timeline__dot" aria-hidden="true"&gt;&lt;/span&gt;
+      &lt;div class="mc-timeline__content"&gt;
+        &lt;h3&gt;Front-end Engineer &lt;span&gt;| Company&lt;/span&gt;&lt;/h3&gt;
+        &lt;p&gt;Accessible product delivery and design systems.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/article&gt;</code></pre>
+      </div>
+    </section>
+
+    <section id="utilities" class="mc-style-section" aria-labelledby="utilities-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Utilities</p>
+        <h2 id="utilities-title">Display, flex, positioning, borders, overflow, and docs helpers</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card">
+          <h3>Display and flex</h3>
+          <div class="mc-d-flex mc-flex-wrap mc-items-center mc-justify-between mc-gap-3 mc-mb-5">
+            <span class="mc-badge mc-badge--brand">Flexible</span>
+            <span class="mc-badge mc-badge--muted">Wrapped</span>
+            <span class="mc-badge mc-badge--danger">Aligned</span>
+          </div>
+          <table>
+            <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-d-none</code>, <code>mc-d-block</code>, <code>mc-d-flex</code>, <code>mc-d-grid</code></td><td>Display utilities.</td><td><code>&lt;div class="mc-d-flex"&gt;</code></td></tr>
+              <tr><td><code>mc-flex-row</code>, <code>mc-flex-column</code>, <code>mc-flex-wrap</code></td><td>Flex direction and wrapping.</td><td><code>&lt;div class="mc-d-flex mc-flex-wrap"&gt;</code></td></tr>
+              <tr><td><code>mc-items-start</code>, <code>mc-items-center</code>, <code>mc-items-end</code></td><td>Flex/grid align-items utilities.</td><td><code>&lt;div class="mc-d-flex mc-items-center"&gt;</code></td></tr>
+              <tr><td><code>mc-justify-start</code>, <code>mc-justify-center</code>, <code>mc-justify-end</code>, <code>mc-justify-between</code></td><td>Flex/grid justify-content utilities.</td><td><code>&lt;div class="mc-d-flex mc-justify-between"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Positioning and z-index</h3>
+          <div class="mc-position-relative mc-border mc-rounded-lg mc-p-5 mc-overflow-hidden">
+            <span class="mc-badge mc-badge--brand mc-position-absolute mc-top-0 mc-end-0">Top end</span>
+            <p class="mc-m-0 mc-mt-5">Position utilities are intentionally small and predictable.</p>
+          </div>
+          <table class="mc-mt-5">
+            <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-position-relative</code>, <code>mc-position-absolute</code>, <code>mc-position-fixed</code>, <code>mc-position-sticky</code></td><td>Position utilities.</td><td><code>&lt;div class="mc-position-relative"&gt;</code></td></tr>
+              <tr><td><code>mc-top-0</code>, <code>mc-end-0</code>, <code>mc-bottom-0</code>, <code>mc-start-0</code></td><td>Zero inset helpers.</td><td><code>&lt;span class="mc-position-absolute mc-top-0 mc-end-0"&gt;</code></td></tr>
+              <tr><td><code>mc-z-1</code>, <code>mc-z-2</code>, <code>mc-z-3</code></td><td>Z-index helpers.</td><td><code>&lt;div class="mc-z-2"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Borders, radius, and overflow</h3>
+          <div class="mc-grid mc-grid--3 mc-g-3">
+            <div class="mc-border mc-rounded-sm mc-p-3">Small</div>
+            <div class="mc-border-brand mc-rounded-md mc-p-3">Brand</div>
+            <div class="mc-border mc-rounded-pill mc-p-3 mc-text-center">Pill</div>
+          </div>
+          <table class="mc-mt-5">
+            <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-border</code>, <code>mc-border-0</code>, <code>mc-border-top</code>, <code>mc-border-brand</code></td><td>Border utilities.</td><td><code>&lt;div class="mc-border-brand"&gt;</code></td></tr>
+              <tr><td><code>mc-rounded-sm</code>, <code>mc-rounded-md</code>, <code>mc-rounded-lg</code>, <code>mc-rounded-pill</code></td><td>Radius utilities.</td><td><code>&lt;div class="mc-rounded-lg"&gt;</code></td></tr>
+              <tr><td><code>mc-overflow-auto</code>, <code>mc-overflow-hidden</code>, <code>mc-overflow-visible</code>, <code>mc-overflow-scroll</code></td><td>Overflow utilities.</td><td><code>&lt;div class="mc-overflow-auto"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Dropdown menu</h3>
+          <details class="mc-docs-menu">
+            <summary class="mc-docs-menu__summary">
+              <span class="mc-docs-menu__icon" aria-hidden="true"></span>
+              <span>Menu</span>
+            </summary>
+            <nav class="mc-docs-nav" aria-label="Example dropdown menu">
+              <ul class="mc-docs-nav__list">
+                <li><a class="mc-docs-nav__link" href="#overview">Overview</a></li>
+                <li><a class="mc-docs-nav__link" href="#layout">Layout</a></li>
+                <li><a class="mc-docs-nav__link" href="#utilities">Utilities</a></li>
+              </ul>
+            </nav>
+          </details>
+
+          <pre class="mc-code-example mc-mt-5" tabindex="0"><code>&lt;details class="mc-docs-menu"&gt;
+  &lt;summary class="mc-docs-menu__summary"&gt;
+    &lt;span class="mc-docs-menu__icon" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;span&gt;Menu&lt;/span&gt;
+  &lt;/summary&gt;
+  &lt;nav class="mc-docs-nav" aria-label="Example menu"&gt;
+    &lt;ul class="mc-docs-nav__list"&gt;
+      &lt;li&gt;&lt;a class="mc-docs-nav__link" href="#overview"&gt;Overview&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/details&gt;</code></pre>
+
+          <table class="mc-mt-5">
+            <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-docs-menu</code>, <code>mc-docs-menu--page</code></td><td>Disclosure wrapper for compact documentation menus and page-level menu variant.</td><td><code>&lt;details class="mc-docs-menu"&gt;</code></td></tr>
+              <tr><td><code>mc-docs-menu__summary</code></td><td>Accessible menu trigger using native summary semantics.</td><td><code>&lt;summary class="mc-docs-menu__summary"&gt;</code></td></tr>
+              <tr><td><code>mc-docs-menu__icon</code></td><td>CSS burger icon for the menu trigger.</td><td><code>&lt;span class="mc-docs-menu__icon"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Documentation scaffolding</h3>
+          <table>
+            <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-page-shell</code>, <code>mc-page-main</code>, <code>mc-page-main--center</code></td><td>Full-height page shell and centered main layout.</td><td><code>&lt;body class="mc-theme mc-page-shell"&gt;</code></td></tr>
+              <tr><td><code>mc-docs-layout</code>, <code>mc-docs-sidebar</code>, <code>mc-style-guide</code>, <code>mc-top-actions</code></td><td>Docs page shell and top action bar.</td><td><code>&lt;div class="mc-docs-layout"&gt;</code></td></tr>
+              <tr><td><code>mc-docs-nav</code>, <code>mc-docs-nav__title</code>, <code>mc-docs-nav__list</code>, <code>mc-docs-nav__link</code></td><td>Docs navigation.</td><td><code>&lt;nav class="mc-docs-nav"&gt;</code></td></tr>
+              <tr><td><code>mc-style-section</code>, <code>mc-style-section--paper</code>, <code>mc-section-heading</code>, <code>mc-section-heading--paper</code></td><td>Docs/content section structure.</td><td><code>&lt;section class="mc-style-section"&gt;</code></td></tr>
+              <tr><td><code>mc-component-doc</code>, <code>mc-code-example</code>, <code>mc-code-example--paper</code></td><td>Rendered example and code layout.</td><td><code>&lt;pre class="mc-code-example"&gt;&lt;code&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  </div>
+  <script>
+    const themeToggle = document.querySelector('[data-theme-toggle]');
+    const themeToggleLabel = document.querySelector('[data-theme-toggle-label]');
+    const docsMenu = document.querySelector('[data-docs-menu]');
+    const docsMenuLinks = document.querySelectorAll('.mc-docs-nav__link');
+    const desktopMenuQuery = window.matchMedia('(min-width: 66rem)');
+
+    function setMercuryTheme(theme) {
+      const isLight = theme === 'light';
+      document.body.classList.toggle('mc-theme--light', isLight);
+      document.body.classList.toggle('mc-theme--dark', !isLight);
+      themeToggle.setAttribute('aria-pressed', String(isLight));
+      themeToggleLabel.textContent = isLight ? 'Dark mode' : 'Light mode';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      setMercuryTheme(document.body.classList.contains('mc-theme--light') ? 'dark' : 'light');
+    });
+
+    function setDocsMenuState(event) {
+      if (!docsMenu) {
+        return;
+      }
+
+      docsMenu.open = event.matches;
+    }
+
+    setDocsMenuState(desktopMenuQuery);
+    if (typeof desktopMenuQuery.addEventListener === 'function') {
+      desktopMenuQuery.addEventListener('change', setDocsMenuState);
+    } else {
+      desktopMenuQuery.addListener(setDocsMenuState);
+    }
+
+    docsMenuLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        if (!desktopMenuQuery.matches && docsMenu) {
+          docsMenu.open = false;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
