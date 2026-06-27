@@ -11,13 +11,11 @@ const SUBDOMAIN_HOME_PAGES = {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const host = request.headers.get("Host") || url.hostname;
+    const pagePath = SUBDOMAIN_HOME_PAGES[host];
 
-    if (url.pathname === "/" && url.hostname in SUBDOMAIN_HOME_PAGES) {
-      // Rewrite the pathname to your target static HTML file
-      url.pathname = SUBDOMAIN_HOME_PAGES[url.hostname];
-      
-      // Fetch the asset directly using the modified URL
-      return env.ASSETS.fetch(url);
+    if (pagePath && (url.pathname === "/" || url.pathname === "/index.html")) {
+      url.pathname = pagePath;
     }
 
     if (url.pathname === "/api/request-cv") {
@@ -34,7 +32,7 @@ export default {
     }
 
     // Everything else is served from the built static assets.
-    return env.ASSETS.fetch(assetRequest);
+    return env.ASSETS.fetch(new Request(url.toString(), request));
   },
 };
 
