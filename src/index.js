@@ -12,6 +12,14 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    if (url.pathname === "/" && url.hostname in SUBDOMAIN_HOME_PAGES) {
+      // Rewrite the pathname to your target static HTML file
+      url.pathname = SUBDOMAIN_HOME_PAGES[url.hostname];
+      
+      // Fetch the asset directly using the modified URL
+      return env.ASSETS.fetch(url);
+    }
+
     if (url.pathname === "/api/request-cv") {
       if (request.method !== "POST") {
         return new Response("Method not allowed", {
@@ -25,24 +33,10 @@ export default {
       return handleCvRequest(request, env);
     }
 
-    const assetRequest = rewriteSubdomainHomeRequest(request, url);
-
     // Everything else is served from the built static assets.
     return env.ASSETS.fetch(assetRequest);
   },
 };
-
-function rewriteSubdomainHomeRequest(request, url) {
-  const pagePath = SUBDOMAIN_HOME_PAGES[url.hostname];
-
-  if (!pagePath || url.pathname !== "/") {
-    return request;
-  }
-
-  const assetUrl = new URL(request.url);
-  assetUrl.pathname = pagePath;
-  return new Request(assetUrl, request);
-}
 
 async function handleCvRequest(request, env) {
   const form = await request.formData();
