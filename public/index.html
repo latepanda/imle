@@ -3,76 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_data/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_data/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_data/favicon-16x16.png">
-    <link rel="manifest" href="favicon_data/site.webmanifest">
-    <link rel="preload" href="/assets/fonts/Inter/Inter-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-    <link rel="preload" href="/assets/fonts/Inter/Inter-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_data/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_data/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_data/favicon-16x16.png">
+  <link rel="manifest" href="favicon_data/site.webmanifest">
+  <link rel="preload" href="/assets/fonts/Inter/Inter-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/assets/fonts/Inter/Inter-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <title>I AM ELLIE</title>
-  <link href="assets/styles/index.css" rel="stylesheet">
+  <link href="assets/styles/design.css" rel="stylesheet">
 </head>
-<body>
-  <header class="site-header">
-    <img class="site-logo" alt="I.M.L.E logo" src="assets/images/logo.svg" width="230" height="97" />
+<body class="mc-theme mc-theme--dark mc-theme--mercury mc-page-shell">
+  <a class="mc-skip-link" href="#main-content">Skip to content</a>
+
+  <header class="mc-site-header" aria-label="Site header">
+    <a class="mc-brand" href="/" aria-label="Return to the IMLE homepage">
+      <span class="mc-brand__logo" aria-hidden="true"></span>
+    </a>
   </header>
 
-  <main class="hero" aria-labelledby="page-title">
-    <p class="hero-kicker">My repository of projects</p>
-    <h1 id="page-title">Hi, I'm Ellie</h1>
-    <p class="hero-summary">Designer, front-end engineer, accessibility-led builder.</p>
+  <main id="main-content" class="mc-page-main mc-page-main--center mc-container-xl" aria-labelledby="page-title">
+    <section class="mc-hero mc-hero--compact">
+      <p class="mc-eyebrow">My repository of projects</p>
+      <h1 id="page-title" class="mc-hero__title">Hi, I'm Ellie</h1>
+      <p class="mc-hero__summary">Designer, front-end engineer, accessibility-led builder.</p>
 
-    <nav class="hero-actions" aria-label="Featured destinations">
-      <ul class="action-list">
-        <li>
-          <a class="action-card" target="_blank" rel="noopener noreferrer" href="https://wedding.imle.uk">
-            <span class="action-icon" aria-hidden="true">
-              <img alt="" src="assets/images/photos.svg" height="24" width="24" />
-            </span>
-            <span>
-              <span class="action-title">Wedding Gallery</span>
-              <span class="action-meta">Photos & moments</span>
-            </span>
-          </a>
-        </li>
+      <nav class="mc-container-lg mc-mt-5" aria-label="Featured destinations">
+        <ul class="mc-action-grid mc-action-grid--home">
+          <li>
+            <a class="mc-action-card" target="_blank" rel="noopener noreferrer" href="https://wedding.imle.uk">
+              <span class="mc-action-card__icon" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--photos"></span>
+              </span>
+              <span class="mc-action-card__content">
+                <span class="mc-action-card__title">Wedding Gallery</span>
+                <span class="mc-action-card__meta">Photos and moments</span>
+              </span>
+            </a>
+          </li>
 
-        <li>
-          <a class="action-card" target="_blank" rel="noopener noreferrer" href="https://cv.imle.uk">
-            <span class="action-icon" aria-hidden="true">
-              <img alt="" src="assets/images/doc.svg" height="24" width="24" />
-            </span>
-            <span>
-              <span class="action-title">CV</span>
-              <span class="action-meta">Experience & skills</span>
-            </span>
-          </a>
-        </li>
+          <li>
+            <a class="mc-action-card" href="/design.html">
+              <span class="mc-action-card__icon" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--design"></span>
+              </span>
+              <span class="mc-action-card__content">
+                <span class="mc-action-card__title">Mercury</span>
+                <span class="mc-action-card__meta">Design system</span>
+              </span>
+            </a>
+          </li>
 
-        <li>
-          <a class="action-card" rel="noopener noreferrer" href="https://ux.imle.uk">
-            <span class="action-icon" aria-hidden="true">
-              <img alt="" src="assets/images/pc.svg" height="24" width="24" />
-            </span>
-            <span>
-              <span class="action-title">UX Case Studies</span>
-              <span class="action-meta">Research & outcomes</span>
-            </span>
-          </a>
-        </li>
+          <li>
+            <a class="mc-action-card" target="_blank" rel="noopener noreferrer" href="https://cv.imle.uk">
+              <span class="mc-action-card__icon" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--doc"></span>
+              </span>
+              <span class="mc-action-card__content">
+                <span class="mc-action-card__title">CV</span>
+                <span class="mc-action-card__meta">Experience and skills</span>
+              </span>
+            </a>
+          </li>
 
-        <li>
-          <a class="action-card action-card-chat" rel="noopener noreferrer" href="https://chat.imle.uk">
-            <span class="action-icon" aria-hidden="true">
-              <img alt="" src="assets/images/chat.svg" height="24" width="24" />
-            </span>
-            <span>
-              <span class="action-title">Live chat to Ellie</span>
-              <span class="action-meta">Open conversation</span>
-            </span>
-          </a>
-        </li>
-      </ul>
-    </nav>
+          <li>
+            <a class="mc-action-card" href="https://ux.imle.uk">
+              <span class="mc-action-card__icon" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--design"></span>
+              </span>
+              <span class="mc-action-card__content">
+                <span class="mc-action-card__title">UX Case Studies</span>
+                <span class="mc-action-card__meta">Research and outcomes</span>
+              </span>
+            </a>
+          </li>
+
+          <li>
+            <a class="mc-action-card mc-action-card--featured" href="https://chat.imle.uk">
+              <span class="mc-action-card__icon" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--chat"></span>
+              </span>
+              <span class="mc-action-card__content">
+                <span class="mc-action-card__title">Live chat to Ellie</span>
+                <span class="mc-action-card__meta">Open conversation</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </section>
   </main>
 </body>
 </html>

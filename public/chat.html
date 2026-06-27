@@ -10,45 +10,44 @@
   <link rel="preload" href="/assets/fonts/Inter/Inter-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/assets/fonts/Inter/Inter-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <title>ELLIE Chat Offline</title>
-  <link href="assets/styles/chat.css" rel="stylesheet">
+  <link href="assets/styles/design.css" rel="stylesheet">
 </head>
-<body>
-  <header class="site-header">
-    <a class="brand-link" href="/" aria-label="Return to the IMLE homepage">
-      <img class="site-logo" alt="I.M.L.E logo" src="assets/images/logo.svg" width="230" height="97" />
+<body class="mc-theme mc-theme--dark mc-theme--mercury mc-page-shell">
+  <a class="mc-skip-link" href="#main-content">Skip to content</a>
+
+  <header class="mc-site-header" aria-label="Site header">
+    <a class="mc-brand" href="/" aria-label="Return to the IMLE homepage">
+      <span class="mc-brand__logo" aria-hidden="true"></span>
     </a>
   </header>
 
-  <main class="chat-page" aria-labelledby="chat-title">
-    <section class="offline-panel" aria-live="polite">
-      <p class="status-pill">
-        <span class="status-dot" aria-hidden="true"></span>
-        System offline
-      </p>
-
-      <div class="chat-shell" aria-hidden="true">
-        <div class="chat-shell-header">
-          <span></span>
-          <span></span>
-          <span></span>
+  <main id="main-content" class="mc-page-main mc-page-main--center mc-container-lg" aria-labelledby="chat-title">
+    <article class="mc-status-panel mc-panel mc-panel--glass" aria-live="polite">
+      <div class="mc-status-panel__media" aria-hidden="true">
+        <div class="mc-chat-preview">
+          <span class="mc-chat-preview__dot"></span>
+          <span class="mc-chat-preview__dot"></span>
+          <span class="mc-chat-preview__dot"></span>
+          <span class="mc-chat-preview__message"></span>
+          <span class="mc-chat-preview__message mc-chat-preview__message--user"></span>
+          <span class="mc-chat-preview__message mc-chat-preview__message--short"></span>
         </div>
-        <div class="message message-bot"></div>
-        <div class="message message-user"></div>
-        <div class="message message-bot short"></div>
-        <div class="composer-disabled"></div>
       </div>
 
-      <div class="offline-copy">
-        <p class="eyebrow">Electronic Large Language Intelligence Emulation (ELLIE)</p>
+      <div class="mc-status-panel__content">
+        <p class="mc-status-pill">
+          <span class="mc-status-pill__dot" aria-hidden="true"></span>
+          System offline
+        </p>
+        <p class="mc-eyebrow">Electronic Large Language Intelligence Emulation (ELLIE)</p>
         <h1 id="chat-title">Offline for development</h1>
         <p>
-          This chat interface will soon allow visitors to interview Ellie. Ask questions about her portfolio, CV, and her case studies.
-          For now, the system is paused while it is being developed and tested for safety.
+          This chat interface will soon allow visitors to interview Ellie. Ask questions about her portfolio,
+          CV, and case studies. For now, the system is paused while it is being developed and tested for safety.
         </p>
+        <a class="mc-button mc-button--primary" href="/">Back to homepage</a>
       </div>
-
-      <a class="home-link" href="http://www.imle.uk">Back to homepage</a>
-    </section>
+    </article>
   </main>
 </body>
 </html>
