@@ -549,7 +549,7 @@
           <p class="mc-body-copy">This card carries <code>mc-motion-static</code>, so transitions and background animation are suppressed inside it.</p>
           <div class="mc-mt-5">
             <a class="mc-button mc-button--secondary" href="#motion">
-              <span class="mc-button__icon mc-icon-glyph mc-icon-glyph--design" aria-hidden="true"></span>
+              <span class="mc-button__icon mc-icon-glyph mc-icon-glyph--block" aria-hidden="true"></span>
               <span>Motion disabled</span>
             </a>
           </div>
@@ -721,7 +721,7 @@
 
       <div class="mc-component-doc">
         <div class="mc-section-card">
-          <ul class="mc-icon-grid" aria-label="Mercury icon set">
+          <ul class="mc-icon-grid mc-grid mc-grid--3 mc-g-3" aria-label="Mercury icon set">
             <li class="mc-icon-card">
               <span class="mc-icon" aria-hidden="true">
                 <span class="mc-icon-glyph mc-icon-glyph--doc"></span>
@@ -754,9 +754,27 @@
             </li>
             <li class="mc-icon-card">
               <span class="mc-icon" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--block"></span>
+              </span>
+              <span class="mc-icon-card__label">Block</span>
+            </li>
+            <li class="mc-icon-card">
+              <span class="mc-icon" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--user"></span>
+              </span>
+              <span class="mc-icon-card__label">User border</span>
+            </li>
+            <li class="mc-icon-card">
+              <span class="mc-icon" aria-hidden="true">
                 <span class="mc-icon-glyph mc-icon-glyph--mentor"></span>
               </span>
-              <span class="mc-icon-card__label">Mentor</span>
+              <span class="mc-icon-card__label">Mentor border</span>
+            </li>
+            <li class="mc-icon-card">
+              <span class="mc-icon" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--design-border"></span>
+              </span>
+              <span class="mc-icon-card__label">Design border</span>
             </li>
           </ul>
         </div>
@@ -776,8 +794,9 @@
             <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
             <tbody>
               <tr><td><code>mc-icon</code>, <code>mc-icon--brand</code></td><td>Icon frame and brand frame variant.</td><td><code>&lt;span class="mc-icon"&gt;</code></td></tr>
+              <tr><td><code>mc-icon-grid</code>, <code>mc-grid</code>, <code>mc-grid--3</code></td><td>Icon showcase layout: two columns on mobile, then a 3x3 grid from tablet widths upward.</td><td><code>&lt;ul class="mc-icon-grid mc-grid mc-grid--3"&gt;</code></td></tr>
               <tr><td><code>mc-icon-glyph</code></td><td>CSS-mask icon that uses current text colour.</td><td><code>&lt;span class="mc-icon-glyph"&gt;</code></td></tr>
-              <tr><td><code>mc-icon-glyph--chat</code>, <code>mc-icon-glyph--design</code>, <code>mc-icon-glyph--design-borderless</code>, <code>mc-icon-glyph--doc</code>, <code>mc-icon-glyph--mentor</code>, <code>mc-icon-glyph--pc</code>, <code>mc-icon-glyph--photos</code>, <code>mc-icon-glyph--user</code></td><td>Available Mercury icon masks.</td><td><code>&lt;span class="mc-icon-glyph mc-icon-glyph--chat"&gt;</code></td></tr>
+              <tr><td><code>mc-icon-glyph--block</code>, <code>mc-icon-glyph--chat</code>, <code>mc-icon-glyph--design-border</code>, <code>mc-icon-glyph--design</code>, <code>mc-icon-glyph--doc</code>, <code>mc-icon-glyph--mentor</code>, <code>mc-icon-glyph--pc</code>, <code>mc-icon-glyph--photos</code>, <code>mc-icon-glyph--user</code></td><td>Available Mercury icon masks.</td><td><code>&lt;span class="mc-icon-glyph mc-icon-glyph--chat"&gt;</code></td></tr>
               <tr><td><code>mc-button__icon</code>, <code>mc-action-card__icon</code></td><td>Icon placement inside actions.</td><td><code>&lt;span class="mc-button__icon mc-icon-glyph mc-icon-glyph--doc"&gt;</code></td></tr>
             </tbody>
           </table>
