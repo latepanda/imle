@@ -40,6 +40,18 @@
   --mc-color-lilac: #efe7f4;
   --mc-color-line: #e7daee;
   --mc-color-paper: #ffffff;
+  --mc-color-error: #f2b8b5;
+  --mc-color-error-bg: rgba(155, 85, 95, 0.2);
+  --mc-color-error-stroke: rgba(242, 184, 181, 0.42);
+  --mc-color-success: #a8d8b8;
+  --mc-color-success-bg: rgba(70, 126, 91, 0.2);
+  --mc-color-success-stroke: rgba(168, 216, 184, 0.42);
+  --mc-color-warning: #f1cf8b;
+  --mc-color-warning-bg: rgba(146, 105, 25, 0.22);
+  --mc-color-warning-stroke: rgba(241, 207, 139, 0.44);
+  --mc-color-info: #a9c9f5;
+  --mc-color-info-bg: rgba(69, 111, 166, 0.22);
+  --mc-color-info-stroke: rgba(169, 201, 245, 0.42);
   --mc-gradient-brand: linear-gradient(135deg, #73548b, #9d3f83 54%, #9b555f);
   --mc-gradient-rule: linear-gradient(90deg, #7f559d, #d871bb 55%, #d19292);
   --mc-gradient-bg: linear-gradient(135deg, #080808, #191919 42%, #0d0d0d 100%);
@@ -161,6 +173,18 @@ a {
   --mc-color-lilac: #efe7f4;
   --mc-color-line: #d5c3df;
   --mc-color-paper: #ffffff;
+  --mc-color-error: #8b2635;
+  --mc-color-error-bg: #f9e7ea;
+  --mc-color-error-stroke: #d99aa4;
+  --mc-color-success: #2f6f48;
+  --mc-color-success-bg: #e4f3e9;
+  --mc-color-success-stroke: #9ecfac;
+  --mc-color-warning: #72520d;
+  --mc-color-warning-bg: #f8efd8;
+  --mc-color-warning-stroke: #d6b86b;
+  --mc-color-info: #315f96;
+  --mc-color-info-bg: #e6effb;
+  --mc-color-info-stroke: #a9c5e8;
   --mc-gradient-brand: linear-gradient(135deg, #73548b, #9d3f83 54%, #9b555f);
   --mc-gradient-rule: linear-gradient(90deg, #73548b, #d871bb 55%, #d19292);
   --mc-gradient-bg: linear-gradient(135deg, #ffffff, #efe7f4 46%, #faf7fc 100%);
@@ -460,6 +484,28 @@ a {
   max-width: none;
 }
 
+.mc-container-breakout {
+  margin-inline: calc(clamp(1rem, 3vw, 2rem) * -1);
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
+.mc-layout-adaptive {
+  display: grid;
+  gap: var(--mc-space-4);
+  grid-template-columns: 1fr;
+}
+
+.mc-layout-split {
+  display: grid;
+  gap: var(--mc-space-4);
+  grid-template-columns: 1fr;
+}
+
+.mc-layout-split__aside,
+.mc-layout-split__main {
+  min-width: 0;
+}
+
 .mc-flow > * + * {
   margin-block-start: var(--mc-flow-space, var(--mc-space-4));
 }
@@ -654,6 +700,10 @@ a {
 .mc-border-0 { border: 0; }
 .mc-border-top { border-block-start: 1px solid var(--mc-color-stroke); }
 .mc-border-brand { border: 1px solid rgba(216, 113, 187, 0.45); }
+.mc-border-error { border: 1px solid var(--mc-color-error-stroke); }
+.mc-border-success { border: 1px solid var(--mc-color-success-stroke); }
+.mc-border-warning { border: 1px solid var(--mc-color-warning-stroke); }
+.mc-border-info { border: 1px solid var(--mc-color-info-stroke); }
 .mc-rounded-sm { border-radius: var(--mc-radius-sm); }
 .mc-rounded-md { border-radius: var(--mc-radius-md); }
 .mc-rounded-lg { border-radius: var(--mc-radius-lg); }
@@ -667,9 +717,23 @@ a {
 .mc-text-start { text-align: start; }
 .mc-text-center { text-align: center; }
 .mc-text-end { text-align: end; }
+.mc-text-ink { color: var(--mc-color-ink); }
+.mc-text-soft-ink { color: var(--mc-color-soft-ink); }
 .mc-text-accent { color: var(--mc-color-accent); }
 .mc-text-muted { color: var(--mc-color-muted); }
 .mc-text-brand { color: var(--mc-color-pink); }
+.mc-text-error { color: var(--mc-color-error); }
+.mc-text-success { color: var(--mc-color-success); }
+.mc-text-warning { color: var(--mc-color-warning); }
+.mc-text-info { color: var(--mc-color-info); }
+.mc-bg-surface { background: var(--mc-color-surface); color: var(--mc-color-accent); }
+.mc-bg-surface-strong { background: var(--mc-color-surface-strong); color: var(--mc-color-accent); }
+.mc-bg-paper { background: var(--mc-color-paper); color: var(--mc-color-ink); }
+.mc-bg-brand { background: var(--mc-gradient-brand); color: #fff; }
+.mc-bg-error { background: var(--mc-color-error-bg); color: var(--mc-color-error); }
+.mc-bg-success { background: var(--mc-color-success-bg); color: var(--mc-color-success); }
+.mc-bg-warning { background: var(--mc-color-warning-bg); color: var(--mc-color-warning); }
+.mc-bg-info { background: var(--mc-color-info-bg); color: var(--mc-color-info); }
 .mc-text-wrap { text-wrap: wrap; }
 .mc-text-nowrap { white-space: nowrap; }
 .mc-text-truncate {
@@ -685,6 +749,39 @@ a {
 .mc-fs-5 { font-size: var(--mc-step-5); }
 .mc-fw-400 { font-weight: 400; }
 .mc-fw-700 { font-weight: 700; }
+
+.mc-alert {
+  border: 1px solid var(--mc-color-stroke);
+  border-radius: var(--mc-radius-md);
+  color: var(--mc-color-accent);
+  font-size: var(--mc-step-2);
+  font-weight: 700;
+  padding: var(--mc-space-4);
+}
+
+.mc-alert--error {
+  background: var(--mc-color-error-bg);
+  border-color: var(--mc-color-error-stroke);
+  color: var(--mc-color-error);
+}
+
+.mc-alert--success {
+  background: var(--mc-color-success-bg);
+  border-color: var(--mc-color-success-stroke);
+  color: var(--mc-color-success);
+}
+
+.mc-alert--warning {
+  background: var(--mc-color-warning-bg);
+  border-color: var(--mc-color-warning-stroke);
+  color: var(--mc-color-warning);
+}
+
+.mc-alert--info {
+  background: var(--mc-color-info-bg);
+  border-color: var(--mc-color-info-stroke);
+  color: var(--mc-color-info);
+}
 
 .mc-visually-hidden {
   clip: rect(0 0 0 0);
@@ -704,6 +801,12 @@ a {
   border-radius: var(--mc-radius-md);
   color: var(--mc-color-accent);
   font-weight: 700;
+}
+
+.mc-spacing-demo__frame {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed var(--mc-color-stroke);
+  border-radius: var(--mc-radius-md);
 }
 
 .mc-style-guide {
@@ -807,6 +910,14 @@ a {
   font-size: var(--mc-step-3);
   line-height: 1.2;
   margin: 0 0 var(--mc-space-4);
+}
+
+.mc-section-card > h3:not(:first-child) {
+  margin-block-start: var(--mc-space-5);
+}
+
+.mc-section-card > .mc-status-pill {
+  margin-block-start: var(--mc-space-4);
 }
 
 .mc-section-card table {
@@ -1546,6 +1657,10 @@ a {
 }
 
 @media (min-width: 42rem) {
+  .mc-layout-adaptive {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .mc-site-header {
     align-items: flex-start;
     flex-direction: row;
@@ -1585,6 +1700,15 @@ a {
 }
 
 @media (min-width: 66rem) {
+  .mc-layout-adaptive {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mc-layout-split {
+    align-items: start;
+    grid-template-columns: minmax(12rem, 0.72fr) minmax(0, 1.6fr);
+  }
+
   .mc-grid--3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1668,6 +1792,10 @@ a {
     grid-column: span 4;
   }
 
+  .mc-col-lg-6 {
+    grid-column: span 6;
+  }
+
   .mc-timeline::before {
     background: var(--mc-color-purple);
     bottom: 0.55rem;
@@ -1719,6 +1847,18 @@ a {
     --mc-color-lilac: #efe7f4;
     --mc-color-line: #d5c3df;
     --mc-color-paper: #ffffff;
+    --mc-color-error: #8b2635;
+    --mc-color-error-bg: #f9e7ea;
+    --mc-color-error-stroke: #d99aa4;
+    --mc-color-success: #2f6f48;
+    --mc-color-success-bg: #e4f3e9;
+    --mc-color-success-stroke: #9ecfac;
+    --mc-color-warning: #72520d;
+    --mc-color-warning-bg: #f8efd8;
+    --mc-color-warning-stroke: #d6b86b;
+    --mc-color-info: #315f96;
+    --mc-color-info-bg: #e6effb;
+    --mc-color-info-stroke: #a9c5e8;
     --mc-gradient-brand: linear-gradient(135deg, #73548b, #9d3f83 54%, #9b555f);
     --mc-gradient-rule: linear-gradient(90deg, #73548b, #d871bb 55%, #d19292);
     --mc-gradient-bg: linear-gradient(135deg, #ffffff, #efe7f4 46%, #faf7fc 100%);
@@ -2049,6 +2189,26 @@ a {
   border-color: rgba(115, 84, 139, 0.48);
   color: var(--mc-color-deep-purple);
 }
+
+/* Keep spacing utilities late in the cascade so they compose with component defaults. */
+.mc-p-0 { padding: 0; }
+.mc-p-1 { padding: var(--mc-space-1); }
+.mc-p-2 { padding: var(--mc-space-2); }
+.mc-p-3 { padding: var(--mc-space-3); }
+.mc-p-4 { padding: var(--mc-space-4); }
+.mc-p-5 { padding: var(--mc-space-5); }
+.mc-p-6 { padding: var(--mc-space-6); }
+.mc-px-4 { padding-inline: var(--mc-space-4); }
+.mc-px-5 { padding-inline: var(--mc-space-5); }
+.mc-py-5 { padding-block: var(--mc-space-5); }
+.mc-py-6 { padding-block: var(--mc-space-6); }
+.mc-py-7 { padding-block: var(--mc-space-7); }
+.mc-m-0 { margin: 0; }
+.mc-mx-auto { margin-inline: auto; }
+.mc-mt-4 { margin-block-start: var(--mc-space-4); }
+.mc-mt-5 { margin-block-start: var(--mc-space-5); }
+.mc-mb-4 { margin-block-end: var(--mc-space-4); }
+.mc-mb-5 { margin-block-end: var(--mc-space-5); }
 
 .mc-motion-static,
 .mc-motion-static *,

@@ -41,6 +41,7 @@
           <ul class="mc-docs-nav__list">
             <li><a class="mc-docs-nav__link" href="#overview">Overview</a></li>
             <li><a class="mc-docs-nav__link" href="#tokens">Tokens</a></li>
+            <li><a class="mc-docs-nav__link" href="#colours">Colours</a></li>
             <li><a class="mc-docs-nav__link" href="#variables">CSS variables</a></li>
             <li><a class="mc-docs-nav__link" href="#breakpoints">Breakpoints</a></li>
             <li><a class="mc-docs-nav__link" href="#spacing">Spacing</a></li>
@@ -67,7 +68,7 @@
       <p class="mc-eyebrow">Mercury library</p>
       <h1 id="guide-title" class="mc-hero__title">Mercury</h1>
       <p class="mc-hero__summary">
-        A reusable, mobile-first class library for the portfolio, CV, chat, and UX study pages.
+        A modular, mobile-first class utility library by <a href="https://www.imle.uk">Ellie</a>.
       </p>
     </section>
 
@@ -83,9 +84,9 @@
           <p class="mc-body-copy">The library keeps page background, focus states, responsive spacing, and motion preferences consistent across the site.</p>
         </div>
 
-        <pre class="mc-code-example" tabindex="0"><code>&lt;link href="assets/styles/design.css" rel="stylesheet"&gt;
+        <pre class="mc-code-example" tabindex="0"><code>&lt;link href="assets/styles/mercury.css" rel="stylesheet"&gt;
 
-&lt;body class="mc-theme mc-theme--dark mc-theme--mercury"&gt;
+&lt;body class="mc-theme mc-theme--mercury"&gt;
   &lt;a class="mc-skip-link" href="#main-content"&gt;Skip to content&lt;/a&gt;
   &lt;main id="main-content" class="mc-container"&gt;
     &lt;section class="mc-hero"&gt;...&lt;/section&gt;
@@ -102,14 +103,17 @@
               <tr><td><code>mc-theme--dark</code></td><td>Dark colour-scheme mode.</td><td><code>&lt;body class="mc-theme mc-theme--dark"&gt;</code></td></tr>
               <tr><td><code>mc-theme--light</code></td><td>Light colour-scheme mode.</td><td><code>&lt;body class="mc-theme mc-theme--light"&gt;</code></td></tr>
               <tr><td><code>mc-theme--mercury</code></td><td>Animated Mercury page background.</td><td><code>&lt;body class="mc-theme mc-theme--mercury"&gt;</code></td></tr>
-              <tr><td><code>mc-theme--paper</code></td><td>Light document palette.</td><td><code>&lt;body class="mc-theme mc-theme--paper"&gt;</code></td></tr>
+              <tr><td><code>mc-theme--paper</code></td><td>Light document palette. <span class="mc-text-warning">(Experimental)</span></td><td><code>&lt;body class="mc-theme mc-theme--paper"&gt;</code></td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="mc-section-card">
           <h3>System light mode</h3>
-          <p class="mc-body-copy">Mercury uses <code>@media (prefers-color-scheme: light)</code> to remap the core colour variables to a light palette based on the document/CV surfaces.</p>
+          <p class="mc-body-copy">Mercury uses <code>@media (prefers-color-scheme: light)</code> to remap the core colour variables between light and dark mode depending on the users system preference.</p>
+          <div class="mc-alert mc-alert--info mc-mt-5">
+            Use the theme toggle in this guide to preview the same variable remap without changing your system settings.
+          </div>
           <pre class="mc-code-example mc-mt-5" tabindex="0"><code>@media (prefers-color-scheme: light) {
   :root {
     --mc-color-bg: #efe7f4;
@@ -152,6 +156,14 @@
           </article>
         </div>
 
+        <div class="mc-section-card">
+          <h3>Token-based component preview</h3>
+          <div class="mc-bg-surface mc-border mc-rounded-lg mc-p-5">
+            <p class="mc-m-0 mc-fw-700">Custom component</p>
+            <p class="mc-body-copy">This preview uses the same colour, border, radius, and spacing tokens shown in the code below.</p>
+          </div>
+        </div>
+
         <pre class="mc-code-example" tabindex="0"><code>.mc-custom-component {
   color: var(--mc-color-accent);
   background: var(--mc-color-surface);
@@ -159,6 +171,83 @@
   border-radius: var(--mc-radius-lg);
   padding: var(--mc-space-5);
 }</code></pre>
+      </div>
+    </section>
+
+    <section id="colours" class="mc-style-section" aria-labelledby="colours-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Foundations</p>
+        <h2 id="colours-title">Colours</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card">
+          <h3>Brand colours</h3>
+          <div class="mc-grid mc-grid--4 mc-g-3">
+            <div class="mc-bg-brand mc-rounded-md mc-p-4">
+              <p class="mc-m-0 mc-fw-700">Brand gradient</p>
+            </div>
+            <div class="mc-bg-paper mc-border mc-rounded-md mc-p-4">
+              <p class="mc-m-0 mc-text-ink mc-fw-700">Paper</p>
+            </div>
+            <div class="mc-bg-surface mc-border mc-rounded-md mc-p-4">
+              <p class="mc-m-0 mc-text-accent mc-fw-700">Surface</p>
+            </div>
+            <div class="mc-bg-surface-strong mc-border mc-rounded-md mc-p-4">
+              <p class="mc-m-0 mc-text-accent mc-fw-700">Strong surface</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Text colour utilities</h3>
+          <div class="mc-stack">
+            <p class="mc-m-0 mc-text-accent">Accent text for primary foreground content.</p>
+            <p class="mc-m-0 mc-text-muted">Muted text for secondary information.</p>
+            <p class="mc-m-0 mc-text-brand">Brand text for small accents.</p>
+            <p class="mc-m-0 mc-text-error">Error text for validation or destructive states.</p>
+            <p class="mc-m-0 mc-text-success">Success text for confirmed actions.</p>
+            <p class="mc-m-0 mc-text-warning">Warning text for cautionary states.</p>
+            <p class="mc-m-0 mc-text-info">Info text for neutral guidance.</p>
+            <p class="mc-m-0 mc-bg-paper mc-text-soft-ink mc-rounded-md mc-p-3">Soft ink text on paper.</p>
+          </div>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Semantic alerts</h3>
+          <div class="mc-stack">
+            <p class="mc-alert mc-alert--error">There was a problem sending the form. Check the highlighted fields and try again.</p>
+            <p class="mc-alert mc-alert--success">Your request has been received.</p>
+            <p class="mc-alert mc-alert--warning">This section is still being reviewed.</p>
+            <p class="mc-alert mc-alert--info">Mercury colour utilities adapt between light and dark themes.</p>
+          </div>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;p class="mc-alert mc-alert--error"&gt;
+  There was a problem sending the form.
+&lt;/p&gt;
+
+&lt;p class="mc-text-error"&gt;Email address is required.&lt;/p&gt;
+
+&lt;div class="mc-bg-error mc-border-error mc-rounded-md mc-p-4"&gt;
+  Error summary content.
+&lt;/div&gt;</code></pre>
+
+        <div class="mc-section-card">
+          <h3>Colour utility classes</h3>
+          <table>
+            <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-text-ink</code>, <code>mc-text-soft-ink</code></td><td>Dark text colours for paper/light surfaces.</td><td><code>&lt;p class="mc-text-ink"&gt;</code></td></tr>
+              <tr><td><code>mc-text-accent</code>, <code>mc-text-muted</code>, <code>mc-text-brand</code></td><td>Theme foreground and brand text colours.</td><td><code>&lt;p class="mc-text-brand"&gt;</code></td></tr>
+              <tr><td><code>mc-text-error</code>, <code>mc-text-success</code>, <code>mc-text-warning</code>, <code>mc-text-info</code></td><td>Semantic text colours that adapt across themes.</td><td><code>&lt;p class="mc-text-error"&gt;</code></td></tr>
+              <tr><td><code>mc-bg-surface</code>, <code>mc-bg-surface-strong</code>, <code>mc-bg-paper</code>, <code>mc-bg-brand</code></td><td>Reusable surface and brand backgrounds.</td><td><code>&lt;div class="mc-bg-surface"&gt;</code></td></tr>
+              <tr><td><code>mc-bg-error</code>, <code>mc-bg-success</code>, <code>mc-bg-warning</code>, <code>mc-bg-info</code></td><td>Semantic background fills.</td><td><code>&lt;div class="mc-bg-error"&gt;</code></td></tr>
+              <tr><td><code>mc-border-error</code>, <code>mc-border-success</code>, <code>mc-border-warning</code>, <code>mc-border-info</code></td><td>Semantic border colours.</td><td><code>&lt;div class="mc-border-error"&gt;</code></td></tr>
+              <tr><td><code>mc-alert</code>, <code>mc-alert--error</code>, <code>mc-alert--success</code>, <code>mc-alert--warning</code>, <code>mc-alert--info</code></td><td>Accessible status-message blocks.</td><td><code>&lt;p class="mc-alert mc-alert--error"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
@@ -180,6 +269,10 @@
               <tr><td><code>--mc-color-surface</code>, <code>--mc-color-surface-strong</code>, <code>--mc-color-surface-top</code>, <code>--mc-color-stroke</code></td><td>Glass and dark card surfaces.</td><td><code>border: 1px solid var(--mc-color-stroke);</code></td></tr>
               <tr><td><code>--mc-color-purple</code>, <code>--mc-color-deep-purple</code>, <code>--mc-color-pink</code>, <code>--mc-color-rose</code></td><td>Brand accent family.</td><td><code>color: var(--mc-color-pink);</code></td></tr>
               <tr><td><code>--mc-color-lilac</code>, <code>--mc-color-line</code>, <code>--mc-color-paper</code></td><td>Light document palette.</td><td><code>background: var(--mc-color-paper);</code></td></tr>
+              <tr><td><code>--mc-color-error</code>, <code>--mc-color-error-bg</code>, <code>--mc-color-error-stroke</code></td><td>Error foreground, background, and border colours.</td><td><code>color: var(--mc-color-error);</code></td></tr>
+              <tr><td><code>--mc-color-success</code>, <code>--mc-color-success-bg</code>, <code>--mc-color-success-stroke</code></td><td>Success foreground, background, and border colours.</td><td><code>background: var(--mc-color-success-bg);</code></td></tr>
+              <tr><td><code>--mc-color-warning</code>, <code>--mc-color-warning-bg</code>, <code>--mc-color-warning-stroke</code></td><td>Warning foreground, background, and border colours.</td><td><code>border-color: var(--mc-color-warning-stroke);</code></td></tr>
+              <tr><td><code>--mc-color-info</code>, <code>--mc-color-info-bg</code>, <code>--mc-color-info-stroke</code></td><td>Info foreground, background, and border colours.</td><td><code>color: var(--mc-color-info);</code></td></tr>
               <tr><td><code>--mc-gradient-brand</code>, <code>--mc-gradient-rule</code>, <code>--mc-gradient-bg</code></td><td>Brand, divider, and page gradients.</td><td><code>background: var(--mc-gradient-brand);</code></td></tr>
               <tr><td><code>--mc-font-body</code>, <code>--mc-font-display</code></td><td>Font family stacks.</td><td><code>font-family: var(--mc-font-body);</code></td></tr>
               <tr><td><code>--mc-step-1</code> to <code>--mc-step-display</code></td><td>Fluid type scale.</td><td><code>font-size: var(--mc-step-3);</code></td></tr>
@@ -192,6 +285,14 @@
               <tr><td><code>--mc-transition</code></td><td>Standard motion duration/easing.</td><td><code>transition: transform var(--mc-transition);</code></td></tr>
             </tbody>
           </table>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Variable example preview</h3>
+          <div class="mc-bg-surface mc-rounded-lg mc-p-5">
+            <p class="mc-m-0 mc-fw-700">Page card</p>
+            <p class="mc-body-copy">A compact surface using shared Mercury variables for colour, radius, and spacing.</p>
+          </div>
         </div>
 
         <pre class="mc-code-example" tabindex="0"><code>.my-page-card {
@@ -223,11 +324,68 @@
           </table>
         </div>
 
-        <pre class="mc-code-example" tabindex="0"><code>@media (min-width: 66rem) {
-  .custom-layout {
-    grid-template-columns: 16rem 1fr;
-  }
-}</code></pre>
+        <div class="mc-section-card">
+          <h3>Adaptive card layout</h3>
+          <p class="mc-body-copy">Use <code>mc-layout-adaptive</code> when a group should move from one column, to two columns, to three columns as space becomes available.</p>
+          <div class="mc-layout-adaptive mc-mt-5">
+            <div class="mc-spacing-demo__item mc-p-4">Mobile: 1 column</div>
+            <div class="mc-spacing-demo__item mc-p-4">Tablet: 2 columns</div>
+            <div class="mc-spacing-demo__item mc-p-4">Desktop: 3 columns</div>
+          </div>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Split layout</h3>
+          <p class="mc-body-copy">Use <code>mc-layout-split</code> for pages that stack on mobile and become a sidebar/content layout on desktop.</p>
+          <div class="mc-layout-split mc-mt-5">
+            <aside class="mc-layout-split__aside mc-bg-surface mc-border mc-rounded-md mc-p-4">
+              <p class="mc-m-0 mc-fw-700">Sidebar</p>
+              <p class="mc-body-copy">Filters, menus, notes, or metadata.</p>
+            </aside>
+            <div class="mc-layout-split__main mc-bg-surface mc-border mc-rounded-md mc-p-4">
+              <p class="mc-m-0 mc-fw-700">Main content</p>
+              <p class="mc-body-copy">Primary page content with room to breathe.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Responsive containers</h3>
+          <div class="mc-stack">
+            <div class="mc-container-sm mc-bg-surface mc-border mc-rounded-md mc-p-3">Small container: <code>mc-container-sm</code></div>
+            <div class="mc-container-md mc-bg-surface mc-border mc-rounded-md mc-p-3">Medium container: <code>mc-container-md</code></div>
+            <div class="mc-container-lg mc-bg-surface mc-border mc-rounded-md mc-p-3">Large container: <code>mc-container-lg</code></div>
+            <div class="mc-container-xl mc-bg-surface mc-border mc-rounded-md mc-p-3">Wide container: <code>mc-container-xl</code></div>
+            <div class="mc-container-breakout mc-bg-surface mc-border mc-rounded-md mc-p-3">Breakout container: <code>mc-container-breakout</code></div>
+          </div>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;section class="mc-container-lg"&gt;
+  &lt;div class="mc-layout-adaptive"&gt;
+    &lt;article&gt;Mobile 1 / tablet 2 / desktop 3&lt;/article&gt;
+    &lt;article&gt;...&lt;/article&gt;
+    &lt;article&gt;...&lt;/article&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="mc-layout-split"&gt;
+  &lt;aside class="mc-layout-split__aside"&gt;Filters&lt;/aside&gt;
+  &lt;div class="mc-layout-split__main"&gt;Results&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+
+        <div class="mc-section-card">
+          <h3>Breakpoint layout classes</h3>
+          <table>
+            <thead><tr><th scope="col">Class</th><th scope="col">Behaviour</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-layout-adaptive</code></td><td>One column by default, two columns at <code>42rem</code>, three columns at <code>66rem</code>.</td><td><code>&lt;div class="mc-layout-adaptive"&gt;</code></td></tr>
+              <tr><td><code>mc-layout-split</code></td><td>Stacks by default, then becomes a sidebar/content layout at <code>66rem</code>.</td><td><code>&lt;section class="mc-layout-split"&gt;</code></td></tr>
+              <tr><td><code>mc-layout-split__aside</code>, <code>mc-layout-split__main</code></td><td>Named split-layout columns with overflow-safe sizing.</td><td><code>&lt;aside class="mc-layout-split__aside"&gt;</code></td></tr>
+              <tr><td><code>mc-container-sm</code>, <code>mc-container-md</code>, <code>mc-container-lg</code>, <code>mc-container-xl</code></td><td>Centered containers capped at the documented breakpoint widths.</td><td><code>&lt;section class="mc-container-lg"&gt;</code></td></tr>
+              <tr><td><code>mc-container-breakout</code></td><td>Lets content escape the normal section padding while keeping internal responsive padding.</td><td><code>&lt;div class="mc-container-breakout"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
@@ -240,10 +398,38 @@
       <div class="mc-component-doc">
         <div class="mc-section-card mc-flow">
           <p class="mc-lead">Use shared spacing tokens and utility classes for consistent page rhythm.</p>
+          <h3>Padding examples</h3>
           <div class="mc-spacing-demo mc-stack mc-stack--lg">
             <div class="mc-spacing-demo__item mc-p-3">Padding 3</div>
             <div class="mc-spacing-demo__item mc-p-4">Padding 4</div>
             <div class="mc-spacing-demo__item mc-p-5">Padding 5</div>
+          </div>
+          <h3>Margin examples</h3>
+          <div class="mc-spacing-demo mc-stack mc-stack--lg">
+            <div class="mc-spacing-demo__frame">
+              <div class="mc-spacing-demo__item mc-mt-4 mc-p-3">Margin top 4</div>
+            </div>
+            <div class="mc-spacing-demo__frame">
+              <div class="mc-spacing-demo__item mc-mb-4 mc-p-3">Margin bottom 4</div>
+            </div>
+            <div class="mc-spacing-demo__frame mc-p-3">
+              <div class="mc-spacing-demo__item mc-m-0 mc-p-3">Margin 0</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Rendered spacing example</h3>
+          <section class="mc-container mc-py-7 mc-bg-surface mc-border mc-rounded-md">
+            <div class="mc-stack mc-stack--lg">
+              <h4 class="mc-m-0">Section title</h4>
+              <p class="mc-m-0">Consistent vertical spacing between children.</p>
+            </div>
+          </section>
+          <div class="mc-cluster mc-gap-3 mc-mt-5">
+            <span class="mc-badge mc-badge--brand">Cluster item</span>
+            <span class="mc-badge mc-badge--muted">Cluster item</span>
+            <span class="mc-badge mc-badge--danger">Cluster item</span>
           </div>
         </div>
 
@@ -254,7 +440,11 @@
   &lt;/div&gt;
 &lt;/section&gt;
 
-&lt;div class="mc-cluster mc-gap-3"&gt;...&lt;/div&gt;</code></pre>
+&lt;div class="mc-cluster mc-gap-3"&gt;...&lt;/div&gt;
+
+&lt;div class="mc-spacing-demo__item mc-mt-4 mc-p-3"&gt;
+  Margin top 4 with padding 3
+&lt;/div&gt;</code></pre>
 
         <div class="mc-section-card">
           <h3>Spacing scale</h3>
@@ -302,6 +492,7 @@
               <tr><td><code>mc-container-lg</code></td><td>Large centered container.</td><td><code>&lt;section class="mc-container-lg"&gt;</code></td></tr>
               <tr><td><code>mc-container-xl</code></td><td>Wide centered container.</td><td><code>&lt;section class="mc-container-xl"&gt;</code></td></tr>
               <tr><td><code>mc-container-fluid</code></td><td>Full-width container with responsive padding.</td><td><code>&lt;section class="mc-container-fluid"&gt;</code></td></tr>
+              <tr><td><code>mc-container-breakout</code></td><td>Breaks out of parent section padding while preserving internal padding.</td><td><code>&lt;div class="mc-container-breakout"&gt;</code></td></tr>
             </tbody>
           </table>
         </div>
@@ -309,9 +500,9 @@
         <div class="mc-section-card">
           <h3>Grid system</h3>
           <div class="mc-row mc-g-3">
-            <div class="mc-col-12 mc-col-sm-6 mc-col-lg-4"><div class="mc-spacing-demo__item mc-p-3">12 / sm 6 / lg 4</div></div>
-            <div class="mc-col-12 mc-col-sm-6 mc-col-lg-4"><div class="mc-spacing-demo__item mc-p-3">12 / sm 6 / lg 4</div></div>
-            <div class="mc-col-12 mc-col-lg-4"><div class="mc-spacing-demo__item mc-p-3">12 / lg 4</div></div>
+            <div class="mc-col-12 mc-col-sm-6 mc-col-lg-3"><div class="mc-spacing-demo__item mc-p-3">12 / sm 6 / lg 3</div></div>
+            <div class="mc-col-12 mc-col-sm-6 mc-col-lg-6"><div class="mc-spacing-demo__item mc-p-3">12 / sm 6 / lg 6</div></div>
+            <div class="mc-col-12 mc-col-lg-3"><div class="mc-spacing-demo__item mc-p-3">12 / lg 3</div></div>
           </div>
           <table class="mc-mt-5">
             <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
@@ -323,17 +514,19 @@
               <tr><td><code>mc-col-1</code>, <code>mc-col-2</code>, <code>mc-col-3</code>, <code>mc-col-4</code>, <code>mc-col-5</code>, <code>mc-col-6</code>, <code>mc-col-7</code>, <code>mc-col-8</code>, <code>mc-col-9</code>, <code>mc-col-10</code>, <code>mc-col-11</code>, <code>mc-col-12</code></td><td>Column span utilities.</td><td><code>&lt;div class="mc-col-6"&gt;</code></td></tr>
               <tr><td><code>mc-col-sm-6</code></td><td>Six-column span at the small layout media query used by Mercury.</td><td><code>&lt;div class="mc-col-12 mc-col-sm-6"&gt;</code></td></tr>
               <tr><td><code>mc-col-md-6</code></td><td>Six-column span at the desktop media query used by Mercury.</td><td><code>&lt;div class="mc-col-12 mc-col-md-6"&gt;</code></td></tr>
-              <tr><td><code>mc-col-lg-3</code>, <code>mc-col-lg-4</code></td><td>Quarter and third width desktop columns.</td><td><code>&lt;div class="mc-col-12 mc-col-lg-4"&gt;</code></td></tr>
+              <tr><td><code>mc-col-lg-3</code>, <code>mc-col-lg-4</code>, <code>mc-col-lg-6</code></td><td>Quarter, third, and half-width desktop columns.</td><td><code>&lt;div class="mc-col-12 mc-col-lg-6"&gt;</code></td></tr>
               <tr><td><code>mc-g-0</code>, <code>mc-g-1</code>, <code>mc-g-2</code>, <code>mc-g-3</code>, <code>mc-g-4</code>, <code>mc-g-5</code></td><td>Grid gutter utilities.</td><td><code>&lt;div class="mc-row mc-g-3"&gt;</code></td></tr>
+              <tr><td><code>mc-layout-adaptive</code></td><td>Responsive one/two/three-column layout.</td><td><code>&lt;div class="mc-layout-adaptive"&gt;</code></td></tr>
+              <tr><td><code>mc-layout-split</code>, <code>mc-layout-split__aside</code>, <code>mc-layout-split__main</code></td><td>Responsive sidebar/content layout.</td><td><code>&lt;section class="mc-layout-split"&gt;</code></td></tr>
             </tbody>
           </table>
         </div>
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;section class="mc-container-lg"&gt;
   &lt;div class="mc-row mc-g-3"&gt;
-    &lt;div class="mc-col-12 mc-col-sm-6 mc-col-lg-4"&gt;...&lt;/div&gt;
-    &lt;div class="mc-col-12 mc-col-sm-6 mc-col-lg-4"&gt;...&lt;/div&gt;
-    &lt;div class="mc-col-12 mc-col-lg-4"&gt;...&lt;/div&gt;
+    &lt;div class="mc-col-12 mc-col-sm-6 mc-col-lg-3"&gt;...&lt;/div&gt;
+    &lt;div class="mc-col-12 mc-col-sm-6 mc-col-lg-6"&gt;...&lt;/div&gt;
+    &lt;div class="mc-col-12 mc-col-lg-3"&gt;...&lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;</code></pre>
       </div>
@@ -349,6 +542,17 @@
         <div class="mc-section-card">
           <p class="mc-lead">Animations stop automatically for people using reduced-motion preferences.</p>
           <p class="mc-body-copy">Add <code>mc-motion-static</code> to the body or a container when a page needs animation disabled regardless of system settings.</p>
+        </div>
+
+        <div class="mc-section-card mc-motion-static">
+          <h3>Static motion preview</h3>
+          <p class="mc-body-copy">This card carries <code>mc-motion-static</code>, so transitions and background animation are suppressed inside it.</p>
+          <div class="mc-mt-5">
+            <a class="mc-button mc-button--secondary" href="#motion">
+              <span class="mc-button__icon mc-icon-glyph mc-icon-glyph--design" aria-hidden="true"></span>
+              <span>Motion disabled</span>
+            </a>
+          </div>
         </div>
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;body class="mc-theme mc-theme--dark mc-theme--mercury mc-motion-static"&gt;
@@ -377,6 +581,15 @@
               <tr><td><code>forced-colors</code></td><td>Preserves borders and removes decorative background layers in forced-colour mode.</td><td><code>@media (forced-colors: active)</code></td></tr>
             </tbody>
           </table>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Status pill with hidden context</h3>
+          <p class="mc-status-pill">
+            <span class="mc-visually-hidden">Status:</span>
+            <span class="mc-status-pill__dot" aria-hidden="true"></span>
+            Offline for development
+          </p>
         </div>
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;p class="mc-status-pill"&gt;
@@ -439,20 +652,20 @@
 
       <div class="mc-component-doc">
         <div class="mc-section-card">
-        <div class="mc-component-row" aria-label="Button examples">
-          <a class="mc-button mc-button--primary" href="https://cv.imle.uk">
-            <span class="mc-button__icon mc-icon-glyph mc-icon-glyph--doc" aria-hidden="true"></span>
-            <span>View CV</span>
-          </a>
-          <a class="mc-button mc-button--secondary" href="https://ux.imle.uk">
-            <span class="mc-button__icon mc-icon-glyph mc-icon-glyph--pc" aria-hidden="true"></span>
-            <span>UX Studies</span>
-          </a>
-          <button class="mc-button mc-button--ghost" type="button">
-            <span class="mc-button__icon mc-icon-glyph mc-icon-glyph--chat" aria-hidden="true"></span>
-            <span>Open conversation</span>
-          </button>
-        </div>
+          <div class="mc-component-row" aria-label="Button examples">
+            <a class="mc-button mc-button--primary" href="https://cv.imle.uk">
+              <span class="mc-button__icon mc-icon-glyph mc-icon-glyph--doc" aria-hidden="true"></span>
+              <span>View CV</span>
+            </a>
+            <a class="mc-button mc-button--secondary" href="https://ux.imle.uk">
+              <span class="mc-button__icon mc-icon-glyph mc-icon-glyph--pc" aria-hidden="true"></span>
+              <span>UX Studies</span>
+            </a>
+            <button class="mc-button mc-button--ghost" type="button">
+              <span class="mc-button__icon mc-icon-glyph mc-icon-glyph--chat" aria-hidden="true"></span>
+              <span>Open conversation</span>
+            </button>
+          </div>
         </div>
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;a class="mc-button mc-button--primary" href="/cv.html"&gt;
@@ -636,51 +849,51 @@
       <div class="mc-component-doc">
         <div class="mc-section-card">
           <ul class="mc-action-grid" aria-label="Portfolio destinations">
-          <li>
-            <a class="mc-action-card" href="https://wedding.imle.uk">
-              <span class="mc-action-card__icon" aria-hidden="true">
-                <span class="mc-icon-glyph mc-icon-glyph--photos"></span>
-              </span>
-              <span class="mc-action-card__content">
-                <span class="mc-action-card__title">Wedding</span>
-                <span class="mc-action-card__meta">Gallery archive</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="mc-action-card" href="https://cv.imle.uk">
-              <span class="mc-action-card__icon" aria-hidden="true">
-                <span class="mc-icon-glyph mc-icon-glyph--doc"></span>
-              </span>
-              <span class="mc-action-card__content">
-                <span class="mc-action-card__title">CV</span>
-                <span class="mc-action-card__meta">Experience summary</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="mc-action-card" href="https://ux.imle.uk">
-              <span class="mc-action-card__icon" aria-hidden="true">
-                <span class="mc-icon-glyph mc-icon-glyph--design"></span>
-              </span>
-              <span class="mc-action-card__content">
-                <span class="mc-action-card__title">UX Studies</span>
-                <span class="mc-action-card__meta">Research notes</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="mc-action-card mc-action-card--featured" href="https://chat.imle.uk">
-              <span class="mc-action-card__icon" aria-hidden="true">
-                <span class="mc-icon-glyph mc-icon-glyph--chat"></span>
-              </span>
-              <span class="mc-action-card__content">
-                <span class="mc-action-card__title">ELLIE</span>
-                <span class="mc-action-card__meta">AI chatbot</span>
-              </span>
-            </a>
-          </li>
-        </ul>
+            <li>
+              <a class="mc-action-card" href="https://wedding.imle.uk">
+                <span class="mc-action-card__icon" aria-hidden="true">
+                  <span class="mc-icon-glyph mc-icon-glyph--photos"></span>
+                </span>
+                <span class="mc-action-card__content">
+                  <span class="mc-action-card__title">Wedding</span>
+                  <span class="mc-action-card__meta">Gallery archive</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="mc-action-card" href="https://cv.imle.uk">
+                <span class="mc-action-card__icon" aria-hidden="true">
+                  <span class="mc-icon-glyph mc-icon-glyph--doc"></span>
+                </span>
+                <span class="mc-action-card__content">
+                  <span class="mc-action-card__title">CV</span>
+                  <span class="mc-action-card__meta">Experience summary</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="mc-action-card" href="https://ux.imle.uk">
+                <span class="mc-action-card__icon" aria-hidden="true">
+                  <span class="mc-icon-glyph mc-icon-glyph--design"></span>
+                </span>
+                <span class="mc-action-card__content">
+                  <span class="mc-action-card__title">UX Studies</span>
+                  <span class="mc-action-card__meta">Research notes</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="mc-action-card mc-action-card--featured" href="https://chat.imle.uk">
+                <span class="mc-action-card__icon" aria-hidden="true">
+                  <span class="mc-icon-glyph mc-icon-glyph--chat"></span>
+                </span>
+                <span class="mc-action-card__content">
+                  <span class="mc-action-card__title">ELLIE</span>
+                  <span class="mc-action-card__meta">AI chatbot</span>
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;ul class="mc-action-grid" aria-label="Portfolio destinations"&gt;
@@ -720,45 +933,45 @@
 
       <div class="mc-component-doc">
         <div class="mc-section-card">
-        <form class="mc-form mc-panel mc-panel--paper" action="#" method="post">
-          <div class="mc-form__group">
-            <label class="mc-form__label" for="example-email">Email address</label>
-            <input class="mc-form__control" id="example-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
-          </div>
-
-          <div class="mc-form__group">
-            <label class="mc-form__label" for="example-message">Message</label>
-            <textarea class="mc-form__control mc-form__control--textarea" id="example-message" name="message" rows="4" placeholder="What would you like to ask?"></textarea>
-          </div>
-
-          <div class="mc-form__group">
-            <label class="mc-form__label" for="example-select">Reason</label>
-            <select class="mc-form__control mc-form__select" id="example-select" name="reason">
-              <option>CV request</option>
-              <option>Portfolio question</option>
-              <option>UX case study</option>
-            </select>
-          </div>
-
-          <div class="mc-form-check">
-            <input class="mc-form-check__input" id="example-check" type="checkbox" />
-            <label class="mc-form-check__label" for="example-check">Send me a copy</label>
-          </div>
-
-          <div>
-            <div class="mc-form-check mc-form-check--inline">
-              <input class="mc-form-check__input" id="example-radio-one" name="example-radio" type="radio" />
-              <label class="mc-form-check__label" for="example-radio-one">Email</label>
+          <form class="mc-form mc-panel mc-panel--paper" action="#" method="post">
+            <div class="mc-form__group">
+              <label class="mc-form__label" for="example-email">Email address</label>
+              <input class="mc-form__control" id="example-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
             </div>
-            <div class="mc-form-check mc-form-check--inline">
-              <input class="mc-form-check__input" id="example-radio-two" name="example-radio" type="radio" />
-              <label class="mc-form-check__label" for="example-radio-two">Call</label>
-            </div>
-          </div>
 
-          <button class="mc-button mc-button--primary" type="submit">Submit request</button>
-          <p class="mc-form__hint">Use helper text for privacy, verification, or validation guidance.</p>
-        </form>
+            <div class="mc-form__group">
+              <label class="mc-form__label" for="example-message">Message</label>
+              <textarea class="mc-form__control mc-form__control--textarea" id="example-message" name="message" rows="4" placeholder="What would you like to ask?"></textarea>
+            </div>
+
+            <div class="mc-form__group">
+              <label class="mc-form__label" for="example-select">Reason</label>
+              <select class="mc-form__control mc-form__select" id="example-select" name="reason">
+                <option>CV request</option>
+                <option>Portfolio question</option>
+                <option>UX case study</option>
+              </select>
+            </div>
+
+            <div class="mc-form-check">
+              <input class="mc-form-check__input" id="example-check" type="checkbox" />
+              <label class="mc-form-check__label" for="example-check">Send me a copy</label>
+            </div>
+
+            <div>
+              <div class="mc-form-check mc-form-check--inline">
+                <input class="mc-form-check__input" id="example-radio-one" name="example-radio" type="radio" />
+                <label class="mc-form-check__label" for="example-radio-one">Email</label>
+              </div>
+              <div class="mc-form-check mc-form-check--inline">
+                <input class="mc-form-check__input" id="example-radio-two" name="example-radio" type="radio" />
+                <label class="mc-form-check__label" for="example-radio-two">Call</label>
+              </div>
+            </div>
+
+            <button class="mc-button mc-button--primary" type="submit">Submit request</button>
+            <p class="mc-form__hint">Use helper text for privacy, verification, or validation guidance.</p>
+          </form>
         </div>
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;form class="mc-form mc-panel mc-panel--paper" action="/api/request-cv" method="post"&gt;
@@ -801,26 +1014,26 @@
 
       <div class="mc-component-doc">
         <div class="mc-section-card">
-        <article class="mc-status-panel mc-panel mc-panel--glass">
-          <div class="mc-status-panel__media" aria-hidden="true">
-            <div class="mc-chat-preview">
-              <span class="mc-chat-preview__dot"></span>
-              <span class="mc-chat-preview__dot"></span>
-              <span class="mc-chat-preview__dot"></span>
-              <span class="mc-chat-preview__message"></span>
-              <span class="mc-chat-preview__message mc-chat-preview__message--user"></span>
-              <span class="mc-chat-preview__message mc-chat-preview__message--short"></span>
+          <article class="mc-status-panel mc-panel mc-panel--glass">
+            <div class="mc-status-panel__media" aria-hidden="true">
+              <div class="mc-chat-preview">
+                <span class="mc-chat-preview__dot"></span>
+                <span class="mc-chat-preview__dot"></span>
+                <span class="mc-chat-preview__dot"></span>
+                <span class="mc-chat-preview__message"></span>
+                <span class="mc-chat-preview__message mc-chat-preview__message--user"></span>
+                <span class="mc-chat-preview__message mc-chat-preview__message--short"></span>
+              </div>
             </div>
-          </div>
-          <div class="mc-status-panel__content">
-            <p class="mc-status-pill">
-              <span class="mc-status-pill__dot" aria-hidden="true"></span>
-              Offline for development
-            </p>
-            <h3>ELLIE will be back soon</h3>
-            <p>Use this pattern for pages that are intentionally unavailable but still need to feel polished and clear.</p>
-          </div>
-        </article>
+            <div class="mc-status-panel__content">
+              <p class="mc-status-pill">
+                <span class="mc-status-pill__dot" aria-hidden="true"></span>
+                Offline for development
+              </p>
+              <h3>ELLIE will be back soon</h3>
+              <p>Use this pattern for pages that are intentionally unavailable but still need to feel polished and clear.</p>
+            </div>
+          </article>
         </div>
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;article class="mc-status-panel mc-panel mc-panel--glass"&gt;
