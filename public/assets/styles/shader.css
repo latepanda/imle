@@ -1,10 +1,17 @@
 @font-face {
   font-family: 'Inter';
   font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/Inter/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(/assets/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf) format('ttf');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  src: url('/assets/fonts/Inter/Inter-Bold.ttf') format('truetype');
 }
 
 :root {
@@ -104,7 +111,7 @@ h1 {
   color: var(--accent);
   filter: drop-shadow(0 -5px 10px #000);
   font-size: var(--size);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0.1em;
   line-height: 1;
   position: relative;

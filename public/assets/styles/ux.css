@@ -1,9 +1,17 @@
 @font-face {
   font-family: 'Inter';
   font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/Inter/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(/assets/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf) format('ttf');
+  src: url('/assets/fonts/Inter/Inter-Bold.ttf') format('truetype');
 }
 
 :root {
@@ -147,7 +155,7 @@ body::after {
   color: var(--muted);
   display: inline-flex;
   font-size: 0.85rem;
-  font-weight: 800;
+  font-weight: 700;
   gap: 0.55rem;
   justify-self: center;
   letter-spacing: 0.08em;
@@ -238,7 +246,7 @@ body::after {
 .eyebrow {
   color: var(--muted);
   font-size: clamp(0.76rem, 2vw, 0.9rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.12em;
   margin-block-end: 0.85rem;
   text-transform: uppercase;
@@ -247,7 +255,7 @@ body::after {
 h1 {
   color: var(--accent);
   font-size: clamp(2.6rem, 12vw, 5rem);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0;
   line-height: 0.95;
   text-wrap: balance;

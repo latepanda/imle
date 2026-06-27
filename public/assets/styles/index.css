@@ -1,10 +1,17 @@
 @font-face {
   font-family: 'Inter';
   font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/Inter/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(/assets/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf) format('ttf');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  src: url('/assets/fonts/Inter/Inter-Bold.ttf') format('truetype');
 }
 
 :root {
@@ -133,7 +140,7 @@
     .hero-kicker {
       color: var(--muted);
       font-size: clamp(0.75rem, 1.5vw, 0.9rem);
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: 0.18em;
       margin-block-end: clamp(0.7rem, 2vw, 1.15rem);
       text-transform: uppercase;
@@ -143,7 +150,7 @@
       animation: subtleShift 5s ease-in-out infinite alternate;
       color: var(--accent);
       font-size: var(--size);
-      font-weight: 900;
+      font-weight: 700;
       letter-spacing: 0;
       line-height: 1;
       position: relative;
