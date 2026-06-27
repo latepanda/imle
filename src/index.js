@@ -2,6 +2,7 @@ const PDF_OBJECT_KEY = "Ellie-CV-2026.pdf";
 const PDF_DOWNLOAD_NAME = "Ellie-McCallum-CV.pdf";
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const SUBDOMAIN_HOME_PAGES = {
+  "mercury.imle.uk": "/design.html",
   "cv.imle.uk": "/cv.html",
   "ux.imle.uk": "/ux.html",
   "chat.imle.uk": "/chat.html",

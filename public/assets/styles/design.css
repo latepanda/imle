@@ -1028,12 +1028,20 @@ a {
   --mc-icon-url: url('../images/design.svg');
 }
 
+.mc-icon-glyph--design-borderless {
+  --mc-icon-url: url('../images/design-borderless.svg');
+}
+
 .mc-icon-glyph--doc {
   --mc-icon-url: url('../images/doc.svg');
 }
 
 .mc-icon-glyph--mentor {
   --mc-icon-url: url('../images/mentor.svg');
+}
+
+.mc-icon-glyph--user {
+  --mc-icon-url: url('../images/user.svg');
 }
 
 .mc-icon-glyph--pc {
@@ -1470,7 +1478,7 @@ a {
   margin: var(--mc-space-5) 0 var(--mc-space-2);
 }
 
-.mc-document-card p {
+.mc-document-card p:not(.mc-document-card__subtitle) {
   margin: 0;
 }
 

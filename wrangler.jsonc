@@ -5,6 +5,10 @@
 	"main": "src/index.js",
 	"routes": [
 		{
+			"pattern": "mercury.imle.uk",
+			"zone_name": "imle.uk"
+		},
+		{
 			"pattern": "cv.imle.uk",
 			"zone_name": "imle.uk"
 		},
