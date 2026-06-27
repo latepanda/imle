@@ -5,19 +5,19 @@
 	"main": "src/index.js",
 	"routes": [
 		{
-			"pattern": "mercury.imle.uk",
+			"pattern": "mercury.imle.uk/*",
 			"zone_name": "imle.uk"
 		},
 		{
-			"pattern": "cv.imle.uk",
+			"pattern": "cv.imle.uk/*",
 			"zone_name": "imle.uk"
 		},
 		{
-			"pattern": "ux.imle.uk",
+			"pattern": "ux.imle.uk/*",
 			"zone_name": "imle.uk"
 		},
 		{
-			"pattern": "chat.imle.uk",
+			"pattern": "chat.imle.uk/*",
 			"zone_name": "imle.uk"
 		}
 	],
