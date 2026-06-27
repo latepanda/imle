@@ -1,0 +1,9 @@
+node_modules
+.git
+.agents
+.codex
+tmp
+src
+package.json
+package-lock.json
+wrangler.jsonc

@@ -2,8 +2,16 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "imle",
   "compatibility_date": "2026-06-27",
+  "main": "src/index.js",
   "assets": {
-    "directory": ".",
+    "directory": "public",
+    "binding": "ASSETS",
     "not_found_handling": "404-page"
-  }
+  },
+  "r2_buckets": [
+    {
+      "binding": "PRIVATE_CV_BUCKET",
+      "bucket_name": "imle-private-cv"
+    }
+  ]
 }
