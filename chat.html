@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_data/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_data/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_data/favicon-16x16.png">
+  <link rel="manifest" href="favicon_data/site.webmanifest">
+  <link rel="preload" href="fonts/Inter/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <title>ELLIE Chat Offline</title>
+  <link href="assets/styles/chat.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand-link" href="/" aria-label="Return to the IMLE homepage">
+      <img class="site-logo" alt="I.M.L.E logo" src="assets/images/logo.svg" width="230" height="97" />
+    </a>
+  </header>
+
+  <main class="chat-page" aria-labelledby="chat-title">
+    <section class="offline-panel" aria-live="polite">
+      <p class="status-pill">
+        <span class="status-dot" aria-hidden="true"></span>
+        System offline
+      </p>
+
+      <div class="chat-shell" aria-hidden="true">
+        <div class="chat-shell-header">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="message message-bot"></div>
+        <div class="message message-user"></div>
+        <div class="message message-bot short"></div>
+        <div class="composer-disabled"></div>
+      </div>
+
+      <div class="offline-copy">
+        <p class="eyebrow">Electronic Large Language Intelligence Emulation (ELLIE)</p>
+        <h1 id="chat-title">Offline for development</h1>
+        <p>
+          This chat interface will soon allow visitors to interview Ellie. Ask questions about her portfolio, CV, and her case studies.
+          For now, the system is paused while it is being developed and tested for safety.
+        </p>
+      </div>
+
+      <a class="home-link" href="http://www.imle.uk">Back to homepage</a>
+    </section>
+  </main>
+</body>
+</html>
