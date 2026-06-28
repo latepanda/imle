@@ -21,6 +21,12 @@
 			"zone_name": "imle.uk"
 		}
 	],
+	"observability": {
+		"logs": {
+		"enabled": true,
+		"invocation_logs": true
+		}
+	},
 	"assets": {
 		"directory": "public",
 		"binding": "ASSETS",
