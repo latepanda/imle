@@ -14,8 +14,9 @@ export default {
     const host = request.headers.get("Host") || url.hostname;
     const pagePath = SUBDOMAIN_HOME_PAGES[host];
 
-    if (pagePath && (url.pathname === "/" || url.pathname === "/index.html")) {
-      url.pathname = pagePath;
+    if (url.pathname === "/" && url.hostname in SUBDOMAIN_HOME_PAGES) {
+      url.pathname = SUBDOMAIN_HOME_PAGES[url.hostname];
+      return env.ASSETS.fetch(url);
     }
 
     if (url.pathname === "/api/request-cv") {
@@ -32,7 +33,7 @@ export default {
     }
 
     // Everything else is served from the built static assets.
-    return env.ASSETS.fetch(new Request(url.toString(), request));
+    return env.ASSETS.fetch(request);
   },
 };
 
