@@ -13,8 +13,11 @@ export default {
     const url = new URL(request.url);
     const host = request.headers.get("Host") || url.hostname;
     const pagePath = SUBDOMAIN_HOME_PAGES[host];
+    console.log("Incoming Request Hostname:", url.hostname);
+    console.log("Incoming Request Pathname:", url.pathname);
 
     if (url.pathname === "/" && url.hostname in SUBDOMAIN_HOME_PAGES) {
+      console.log("Match found! Rewriting to:", SUBDOMAIN_HOME_PAGES[url.hostname]);
       url.pathname = SUBDOMAIN_HOME_PAGES[url.hostname];
       return env.ASSETS.fetch(url);
     }
