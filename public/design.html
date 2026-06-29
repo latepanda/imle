@@ -1198,7 +1198,10 @@
 &lt;/div&gt;</code></pre>
 
         <div class="mc-section-card">
-          <article class="mc-card mc-project-card">
+          <article class="mc-card mc-project-card mc-project-card--media-top">
+            <div class="mc-project-card__media" aria-hidden="true">
+              <span class="mc-icon-glyph mc-icon-glyph--image"></span>
+            </div>
             <div class="mc-card__body mc-project-card__body">
               <header class="mc-project-card__header">
                 <span class="mc-icon mc-icon--brand" aria-hidden="true">
@@ -1206,12 +1209,7 @@
                 </span>
                 <h2 class="mc-project-card__title">Project card</h2>
               </header>
-              <div class="mc-project-card__content">
-                <div class="mc-project-card__media" aria-hidden="true">
-                  <span class="mc-icon-glyph mc-icon-glyph--image"></span>
-                </div>
-                <p class="mc-project-card__description">Use project cards for destinations that need a title, visual cue, description, and footer link.</p>
-              </div>
+              <p class="mc-project-card__description">Use project cards for destinations that need a title, visual cue, description, and footer link.</p>
             </div>
             <footer class="mc-card__footer">
               <a class="mc-button mc-button--link mc-button--sm mc-button--start mc-button--block" target="_blank" rel="noopener noreferrer" href="https://mercury.imle.uk" aria-label="Open Mercury in a new tab">
@@ -1222,7 +1220,10 @@
           </article>
         </div>
 
-        <pre class="mc-code-example" tabindex="0"><code>&lt;article class="mc-card mc-project-card"&gt;
+        <pre class="mc-code-example" tabindex="0"><code>&lt;article class="mc-card mc-project-card mc-project-card--media-top"&gt;
+  &lt;div class="mc-project-card__media" aria-hidden="true"&gt;
+    &lt;span class="mc-icon-glyph mc-icon-glyph--image"&gt;&lt;/span&gt;
+  &lt;/div&gt;
   &lt;div class="mc-card__body mc-project-card__body"&gt;
     &lt;header class="mc-project-card__header"&gt;
       &lt;span class="mc-icon mc-icon--brand" aria-hidden="true"&gt;
@@ -1230,12 +1231,7 @@
       &lt;/span&gt;
       &lt;h2 class="mc-project-card__title"&gt;Project card&lt;/h2&gt;
     &lt;/header&gt;
-    &lt;div class="mc-project-card__content"&gt;
-      &lt;div class="mc-project-card__media" aria-hidden="true"&gt;
-        &lt;span class="mc-icon-glyph mc-icon-glyph--image"&gt;&lt;/span&gt;
-      &lt;/div&gt;
-      &lt;p class="mc-project-card__description"&gt;Use project cards for destinations that need a title, visual cue, description, and footer link.&lt;/p&gt;
-    &lt;/div&gt;
+    &lt;p class="mc-project-card__description"&gt;Use project cards for destinations that need a title, visual cue, description, and footer link.&lt;/p&gt;
   &lt;/div&gt;
   &lt;footer class="mc-card__footer"&gt;
     &lt;a class="mc-button mc-button--link mc-button--sm mc-button--start mc-button--block" target="_blank" rel="noopener noreferrer" href="https://mercury.imle.uk" aria-label="Open Mercury in a new tab"&gt;
@@ -1243,6 +1239,133 @@
       &lt;span class="mc-button__icon mc-button__icon--end mc-icon-glyph mc-icon-glyph--new-window" aria-hidden="true"&gt;&lt;/span&gt;
     &lt;/a&gt;
   &lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+
+        <div class="mc-section-card">
+          <h3>Media positions</h3>
+        <div class="mc-grid mc-grid--3">
+          <article class="mc-card mc-project-card mc-project-card--media-top">
+            <div class="mc-project-card__media" aria-hidden="true">
+              <div class="mc-placeholder-window">
+                  <span class="mc-placeholder-window__dot"></span>
+                  <span class="mc-placeholder-window__bar" data-percentage="80"></span>
+                  <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="60"></span>
+                </div>
+              </div>
+              <div class="mc-card__body mc-project-card__body">
+                <header class="mc-project-card__header">
+                  <span class="mc-icon mc-icon--brand" aria-hidden="true">
+                    <span class="mc-icon-glyph mc-icon-glyph--design"></span>
+                  </span>
+                  <h3 class="mc-project-card__title">Top media</h3>
+                </header>
+                <p class="mc-project-card__description">The preview sits above the content.</p>
+              </div>
+            </article>
+            <article class="mc-card mc-project-card mc-project-card--media-left">
+              <div class="mc-project-card__media" aria-hidden="true">
+                <div class="mc-placeholder-window">
+                  <span class="mc-placeholder-window__dot"></span>
+                  <span class="mc-placeholder-window__bar" data-percentage="80"></span>
+                  <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="60"></span>
+                </div>
+              </div>
+              <div class="mc-card__body mc-project-card__body">
+                <header class="mc-project-card__header">
+                  <span class="mc-icon mc-icon--brand" aria-hidden="true">
+                    <span class="mc-icon-glyph mc-icon-glyph--design"></span>
+                  </span>
+                  <h3 class="mc-project-card__title">Left media</h3>
+                </header>
+                <p class="mc-project-card__description">The preview sits to the left of the text.</p>
+              </div>
+            </article>
+            <article class="mc-card mc-project-card mc-project-card--media-right">
+              <div class="mc-project-card__media" aria-hidden="true">
+                <div class="mc-placeholder-window">
+                  <span class="mc-placeholder-window__dot"></span>
+                  <span class="mc-placeholder-window__bar" data-percentage="80"></span>
+                  <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="60"></span>
+                </div>
+              </div>
+              <div class="mc-card__body mc-project-card__body">
+                <header class="mc-project-card__header">
+                  <span class="mc-icon mc-icon--brand" aria-hidden="true">
+                    <span class="mc-icon-glyph mc-icon-glyph--chat"></span>
+                  </span>
+                  <h3 class="mc-project-card__title">Right media</h3>
+                </header>
+                <p class="mc-project-card__description">The preview sits to the right of the text.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Breakpoint scale</h3>
+          <p>Use <code>mc-project-card--media-top</code> as the default stacked layout, then switch to a left or right media layout with a breakpoint-prefixed modifier at <code>sm</code>, <code>md</code>, <code>lg</code>, or <code>xl</code>.</p>
+          <div class="mc-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Breakpoint</th>
+                  <th scope="col">Top</th>
+                  <th scope="col">Left</th>
+                  <th scope="col">Right</th>
+                  <th scope="col">Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><code>sm</code> <span class="mc-table-meta">36rem</span></th>
+                  <td><code>sm:mc-project-card--media-top</code></td>
+                  <td><code>sm:mc-project-card--media-left</code></td>
+                  <td><code>sm:mc-project-card--media-right</code></td>
+                  <td><code>&lt;article class="mc-card mc-project-card mc-project-card--media-top sm:mc-project-card--media-left"&gt;</code></td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>md</code> <span class="mc-table-meta">48rem</span></th>
+                  <td><code>md:mc-project-card--media-top</code></td>
+                  <td><code>md:mc-project-card--media-left</code></td>
+                  <td><code>md:mc-project-card--media-right</code></td>
+                  <td><code>&lt;article class="mc-card mc-project-card mc-project-card--media-top md:mc-project-card--media-right"&gt;</code></td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>lg</code> <span class="mc-table-meta">66rem</span></th>
+                  <td><code>lg:mc-project-card--media-top</code></td>
+                  <td><code>lg:mc-project-card--media-left</code></td>
+                  <td><code>lg:mc-project-card--media-right</code></td>
+                  <td><code>&lt;article class="mc-card mc-project-card mc-project-card--media-top lg:mc-project-card--media-left"&gt;</code></td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>xl</code> <span class="mc-table-meta">80rem</span></th>
+                  <td><code>xl:mc-project-card--media-top</code></td>
+                  <td><code>xl:mc-project-card--media-left</code></td>
+                  <td><code>xl:mc-project-card--media-right</code></td>
+                  <td><code>&lt;article class="mc-card mc-project-card mc-project-card--media-top xl:mc-project-card--media-right"&gt;</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;article class="mc-card mc-project-card mc-project-card--media-top lg:mc-project-card--media-left xl:mc-project-card--media-right"&gt;
+  &lt;div class="mc-project-card__media" aria-hidden="true"&gt;
+    &lt;div class="mc-placeholder-window"&gt;
+      &lt;span class="mc-placeholder-window__dot"&gt;&lt;/span&gt;
+      &lt;span class="mc-placeholder-window__bar" data-percentage="80"&gt;&lt;/span&gt;
+      &lt;span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="60"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="mc-card__body mc-project-card__body"&gt;
+    &lt;header class="mc-project-card__header"&gt;
+      &lt;span class="mc-icon mc-icon--brand" aria-hidden="true"&gt;
+        &lt;span class="mc-icon-glyph mc-icon-glyph--design"&gt;&lt;/span&gt;
+      &lt;/span&gt;
+      &lt;h3 class="mc-project-card__title"&gt;Top, then left on lg, then right on xl&lt;/h3&gt;
+    &lt;/header&gt;
+    &lt;p class="mc-project-card__description"&gt;Stack the base media-top class with breakpoint-prefixed modifiers to change the layout at each scale.&lt;/p&gt;
+  &lt;/div&gt;
 &lt;/article&gt;</code></pre>
 
         <div class="mc-section-card">
@@ -1259,7 +1382,8 @@
               <tr><td><code>mc-card__footer</code></td><td>Separated card footer.</td><td><code>&lt;div class="mc-card__footer"&gt;</code></td></tr>
               <tr><td><code>mc-project-grid</code></td><td>Responsive project-card grid with a full-width final item from tablet size upward.</td><td><code>&lt;ul class="mc-project-grid mc-grid mc-g--3"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-project-card</code></li><li><code>mc-project-card--featured</code></li></ul></td><td>Project card shell and featured treatment.</td><td><code>&lt;article class="mc-card mc-project-card"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-project-card__body</code></li><li><code>mc-project-card__header</code></li><li><code>mc-project-card__title</code></li><li><code>mc-project-card__content</code></li><li><code>mc-project-card__media</code></li><li><code>mc-project-card__description</code></li></ul></td><td>Project card internal layout elements.</td><td><code>&lt;div class="mc-project-card__content"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-project-card--media-top</code></li><li><code>mc-project-card--media-left</code></li><li><code>mc-project-card--media-right</code></li><li><code>sm:mc-project-card--media-top</code></li><li><code>sm:mc-project-card--media-left</code></li><li><code>sm:mc-project-card--media-right</code></li><li><code>md:mc-project-card--media-top</code></li><li><code>md:mc-project-card--media-left</code></li><li><code>md:mc-project-card--media-right</code></li><li><code>lg:mc-project-card--media-top</code></li><li><code>lg:mc-project-card--media-left</code></li><li><code>lg:mc-project-card--media-right</code></li><li><code>xl:mc-project-card--media-top</code></li><li><code>xl:mc-project-card--media-left</code></li><li><code>xl:mc-project-card--media-right</code></li></ul></td><td>Controls whether the media sits above, to the left, or to the right of the content, including breakpoint-prefixed overrides at every Mercury breakpoint.</td><td><code>&lt;article class="mc-card mc-project-card mc-project-card--media-top sm:mc-project-card--media-left lg:mc-project-card--media-right"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-project-card__body</code></li><li><code>mc-project-card__header</code></li><li><code>mc-project-card__title</code></li><li><code>mc-project-card__media</code></li><li><code>mc-project-card__description</code></li></ul></td><td>Project card internal layout elements.</td><td><code>&lt;div class="mc-project-card__body"&gt;</code></td></tr>
             </tbody>
           </table>
         </div>
@@ -1597,9 +1721,9 @@
             <span class="mc-placeholder-window__dot"></span>
             <span class="mc-placeholder-window__dot"></span>
             <span class="mc-placeholder-window__dot"></span>
-            <span class="mc-placeholder-window__bar"></span>
-            <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent"></span>
-            <span class="mc-placeholder-window__bar mc-placeholder-window__bar--short"></span>
+            <span class="mc-placeholder-window__bar" data-percentage="80"></span>
+            <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="60"></span>
+            <span class="mc-placeholder-window__bar" data-percentage="50"></span>
           </div>
         </div>
 
@@ -1607,9 +1731,9 @@
   &lt;span class="mc-placeholder-window__dot"&gt;&lt;/span&gt;
   &lt;span class="mc-placeholder-window__dot"&gt;&lt;/span&gt;
   &lt;span class="mc-placeholder-window__dot"&gt;&lt;/span&gt;
-  &lt;span class="mc-placeholder-window__bar"&gt;&lt;/span&gt;
-  &lt;span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent"&gt;&lt;/span&gt;
-  &lt;span class="mc-placeholder-window__bar mc-placeholder-window__bar--short"&gt;&lt;/span&gt;
+  &lt;span class="mc-placeholder-window__bar" data-percentage="80"&gt;&lt;/span&gt;
+  &lt;span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="60"&gt;&lt;/span&gt;
+  &lt;span class="mc-placeholder-window__bar" data-percentage="50"&gt;&lt;/span&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="mc-section-card">
@@ -1671,7 +1795,7 @@
           <table class="mc-table">
             <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
             <tbody>
-              <tr><td><ul class="mc-token-list"><li><code>mc-placeholder-window</code></li><li><code>mc-placeholder-window__dot</code></li><li><code>mc-placeholder-window__bar</code></li><li><code>mc-placeholder-window__bar--accent</code></li><li><code>mc-placeholder-window__bar--short</code></li></ul></td><td>Generic message or browser-window skeleton.</td><td><code>&lt;div class="mc-placeholder-window"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-placeholder-window</code></li><li><code>mc-placeholder-window__dot</code></li><li><code>mc-placeholder-window__bar</code></li><li><code>mc-placeholder-window__bar--accent</code></li><li><code>mc-placeholder-window__bar[data-percentage="10-100"]</code></li></ul></td><td>Generic message or browser-window skeleton.</td><td><code>&lt;div class="mc-placeholder-window"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-placeholder-card</code></li><li><code>mc-placeholder-icon</code></li><li><code>mc-placeholder-title</code></li></ul></td><td>Card-style placeholder composition for coming-soon pages.</td><td><code>&lt;div class="mc-placeholder-card"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-placeholder-grid</code></li><li><code>mc-placeholder-block</code></li><li><code>mc-placeholder-block--sm</code></li><li><code>mc-placeholder-block--lg</code></li><li><code>mc-placeholder-block--pill</code></li><li><code>mc-placeholder-block--fill</code></li><li><code>mc-placeholder-block--accent</code></li></ul></td><td>Simple reusable placeholder shapes and modifiers.</td><td><code>&lt;span class="mc-placeholder-block"&gt;</code></td></tr>
             </tbody>
@@ -1694,9 +1818,9 @@
                 <span class="mc-placeholder-window__dot"></span>
                 <span class="mc-placeholder-window__dot"></span>
                 <span class="mc-placeholder-window__dot"></span>
-                <span class="mc-placeholder-window__bar"></span>
-                <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent"></span>
-                <span class="mc-placeholder-window__bar mc-placeholder-window__bar--short"></span>
+                <span class="mc-placeholder-window__bar" data-percentage="80"></span>
+                <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="60"></span>
+                <span class="mc-placeholder-window__bar" data-percentage="50"></span>
               </div>
             </div>
             <div class="mc-status-panel__content">
@@ -1716,9 +1840,9 @@
       &lt;span class="mc-placeholder-window__dot"&gt;&lt;/span&gt;
       &lt;span class="mc-placeholder-window__dot"&gt;&lt;/span&gt;
       &lt;span class="mc-placeholder-window__dot"&gt;&lt;/span&gt;
-      &lt;span class="mc-placeholder-window__bar"&gt;&lt;/span&gt;
-      &lt;span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent"&gt;&lt;/span&gt;
-      &lt;span class="mc-placeholder-window__bar mc-placeholder-window__bar--short"&gt;&lt;/span&gt;
+      &lt;span class="mc-placeholder-window__bar" data-percentage="80"&gt;&lt;/span&gt;
+      &lt;span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="60"&gt;&lt;/span&gt;
+      &lt;span class="mc-placeholder-window__bar" data-percentage="50"&gt;&lt;/span&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="mc-status-panel__content"&gt;
