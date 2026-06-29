@@ -885,6 +885,7 @@ a {
   font-weight: 700;
   gap: var(--mc-space-2);
   justify-content: center;
+  min-width: 0;
   min-height: 3rem;
   padding: 0.8rem 1.1rem;
   text-align: center;
@@ -929,13 +930,16 @@ a {
 }
 
 .mc-button__icon--end {
+  flex: 0 0 auto;
   margin-inline-start: auto;
 }
 
 .mc-button__label {
+  display: block;
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .mc-icon-glyph {
@@ -983,6 +987,10 @@ a {
 
 .mc-icon-glyph--photos {
   --mc-icon-url: url('../images/photos.svg');
+}
+
+.mc-icon-glyph--image {
+  --mc-icon-url: url('../images/image.svg');
 }
 
 .mc-icon-glyph--new-window {
@@ -1244,6 +1252,113 @@ a {
 .mc-card__footer {
   border-block-start: 1px solid rgba(255, 255, 255, 0.1);
   padding: var(--mc-space-4) var(--mc-space-5);
+}
+
+.mc-project-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mc-project-card {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+}
+
+.mc-project-card__hero {
+  max-height: 500px;
+}
+
+.mc-project-card__background {
+  /* position: absolute; */
+  inset: 0;
+  object-fit: contain;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+.mc-project-card--featured {
+  background:
+    linear-gradient(135deg, rgba(158, 91, 190, 0.28), rgba(216, 113, 187, 0.18)),
+    var(--mc-color-surface);
+}
+
+.mc-project-card__body {
+  display: grid;
+  gap: var(--mc-space-4);
+}
+
+.mc-project-card__header {
+  align-items: center;
+  display: grid;
+  gap: var(--mc-space-3);
+  grid-template-columns: 3rem minmax(0, 1fr);
+}
+
+.mc-project-card__title {
+  color: var(--mc-color-accent);
+  font-size: var(--mc-step-3);
+  line-height: 1.15;
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mc-project-card__content {
+  display: grid;
+  gap: var(--mc-space-3);
+}
+
+.mc-project-card__media {
+  align-items: center;
+  aspect-ratio: 16 / 9;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 150%),
+    rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--mc-radius-md);
+  color: var(--mc-color-muted);
+  display: grid;
+  min-width: 0;
+  place-items: center;
+}
+
+.mc-project-card__media .mc-icon-glyph {
+  height: clamp(2.5rem, 12vw, 4.5rem);
+  opacity: 0.78;
+  width: clamp(2.5rem, 12vw, 4.5rem);
+}
+
+.mc-project-card__description {
+  align-self: center;
+  color: var(--mc-color-muted);
+  font-size: var(--mc-step-1);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.mc-theme--light .mc-project-card--featured {
+  background:
+    linear-gradient(135deg, rgba(158, 91, 190, 0.14), rgba(216, 113, 187, 0.12)),
+    rgba(250, 247, 252, 0.96);
+}
+
+.mc-theme--light .mc-project-card__title {
+  color: var(--mc-color-ink);
+}
+
+.mc-theme:not(.mc-theme--dark) .mc-project-card__media,
+.mc-theme--light .mc-project-card__media {
+  background:
+    linear-gradient(180deg, rgba(127, 85, 157, 0.06), transparent 150%),
+    rgba(255, 255, 255, 0.62);
+  border-color: var(--mc-color-stroke);
+  color: var(--mc-color-soft-ink);
 }
 
 .mc-form {
@@ -1619,6 +1734,14 @@ a {
 
   .mc-icon-grid.mc-grid--3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mc-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mc-project-grid>li:last-child {
+    grid-column: 1 / -1;
   }
 
   .mc-action-grid {
@@ -2772,6 +2895,8 @@ a {
   .mc-status-panel,
   .mc-placeholder-window,
   .mc-placeholder-card,
+  .mc-project-card,
+  .mc-project-card__media,
   .mc-consent-banner {
     background: Canvas;
     box-shadow: none;
@@ -2793,6 +2918,7 @@ a {
   .mc-docs-menu__summary,
   .mc-status-pill,
   .mc-action-card__icon,
+  .mc-project-card__media,
   .mc-form__control,
   .mc-placeholder-window,
   .mc-placeholder-card,
@@ -2823,6 +2949,7 @@ a {
 
   .mc-action-card,
   .mc-action-card--featured,
+  .mc-project-card--featured,
   .mc-icon,
   .mc-icon--brand,
   .mc-action-card__icon,
@@ -2845,6 +2972,7 @@ a {
 
   .mc-icon .mc-icon-glyph,
   .mc-action-card__icon .mc-icon-glyph,
+  .mc-project-card__media .mc-icon-glyph,
   .mc-placeholder-icon .mc-icon-glyph {
     background: CanvasText;
     color: CanvasText;

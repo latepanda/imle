@@ -1018,6 +1018,12 @@
             </li>
             <li class="mc-icon-card">
               <span class="mc-icon" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--image"></span>
+              </span>
+              <span class="mc-icon-card__label">image</span>
+            </li>
+            <li class="mc-icon-card">
+              <span class="mc-icon" aria-hidden="true">
                 <span class="mc-icon-glyph mc-icon-glyph--pc"></span>
               </span>
               <span class="mc-icon-card__label">pc</span>
@@ -1082,6 +1088,12 @@
   &lt;/li&gt;
   &lt;li class="mc-icon-card"&gt;
     &lt;span class="mc-icon" aria-hidden="true"&gt;
+      &lt;span class="mc-icon-glyph mc-icon-glyph--image"&gt;&lt;/span&gt;
+    &lt;/span&gt;
+    &lt;span class="mc-icon-card__label"&gt;image&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class="mc-icon-card"&gt;
+    &lt;span class="mc-icon" aria-hidden="true"&gt;
       &lt;span class="mc-icon-glyph mc-icon-glyph--pc"&gt;&lt;/span&gt;
     &lt;/span&gt;
     &lt;span class="mc-icon-card__label"&gt;computer&lt;/span&gt;
@@ -1124,9 +1136,9 @@
             <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
             <tbody>
               <tr><td><ul class="mc-token-list"><li><code>mc-icon</code></li><li><code>mc-icon--brand</code></li></ul></td><td>Icon frame and brand frame variant.</td><td><code>&lt;span class="mc-icon"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-icon-grid</code></li><li><code>mc-grid</code></li><li><code>mc-grid--3</code></li></ul></td><td>Icon showcase layout: two columns on mobile, then a 3x3 grid from tablet widths upward.</td><td><code>&lt;ul class="mc-icon-grid mc-grid mc-grid--3"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-icon-grid</code></li><li><code>mc-grid</code></li><li><code>mc-grid--3</code></li></ul></td><td>Icon showcase layout: two columns on mobile, then three columns from tablet widths upward.</td><td><code>&lt;ul class="mc-icon-grid mc-grid mc-grid--3"&gt;</code></td></tr>
               <tr><td><code>mc-icon-glyph</code></td><td>CSS-mask icon that uses current text colour.</td><td><code>&lt;span class="mc-icon-glyph"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-icon-glyph--block</code></li><li><code>mc-icon-glyph--chat</code></li><li><code>mc-icon-glyph--design-border</code></li><li><code>mc-icon-glyph--design</code></li><li><code>mc-icon-glyph--doc</code></li><li><code>mc-icon-glyph--mentor-border</code></li><li><code>mc-icon-glyph--pc</code></li><li><code>mc-icon-glyph--photos</code></li><li><code>mc-icon-glyph--user-border</code></li></ul></td><td>Available Mercury icon masks.</td><td><code>&lt;span class="mc-icon-glyph mc-icon-glyph--chat"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-icon-glyph--block</code></li><li><code>mc-icon-glyph--chat</code></li><li><code>mc-icon-glyph--design-border</code></li><li><code>mc-icon-glyph--design</code></li><li><code>mc-icon-glyph--doc</code></li><li><code>mc-icon-glyph--image</code></li><li><code>mc-icon-glyph--mentor-border</code></li><li><code>mc-icon-glyph--new-window</code></li><li><code>mc-icon-glyph--pc</code></li><li><code>mc-icon-glyph--photos</code></li><li><code>mc-icon-glyph--user-border</code></li></ul></td><td>Available Mercury icon masks.</td><td><code>&lt;span class="mc-icon-glyph mc-icon-glyph--chat"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-button__icon</code></li><li><code>mc-action-card__icon</code></li></ul></td><td>Icon placement inside actions.</td><td><code>&lt;span class="mc-button__icon mc-icon-glyph mc-icon-glyph--doc"&gt;</code></td></tr>
             </tbody>
           </table>
@@ -1186,6 +1198,54 @@
 &lt;/div&gt;</code></pre>
 
         <div class="mc-section-card">
+          <article class="mc-card mc-project-card">
+            <div class="mc-card__body mc-project-card__body">
+              <header class="mc-project-card__header">
+                <span class="mc-icon mc-icon--brand" aria-hidden="true">
+                  <span class="mc-icon-glyph mc-icon-glyph--design"></span>
+                </span>
+                <h2 class="mc-project-card__title">Project card</h2>
+              </header>
+              <div class="mc-project-card__content">
+                <div class="mc-project-card__media" aria-hidden="true">
+                  <span class="mc-icon-glyph mc-icon-glyph--image"></span>
+                </div>
+                <p class="mc-project-card__description">Use project cards for destinations that need a title, visual cue, description, and footer link.</p>
+              </div>
+            </div>
+            <footer class="mc-card__footer">
+              <a class="mc-button mc-button--link mc-button--sm mc-button--start mc-button--block" target="_blank" rel="noopener noreferrer" href="https://mercury.imle.uk" aria-label="Open Mercury in a new tab">
+                <span class="mc-button__label">Open project with a longer label</span>
+                <span class="mc-button__icon mc-button__icon--end mc-icon-glyph mc-icon-glyph--new-window" aria-hidden="true"></span>
+              </a>
+            </footer>
+          </article>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;article class="mc-card mc-project-card"&gt;
+  &lt;div class="mc-card__body mc-project-card__body"&gt;
+    &lt;header class="mc-project-card__header"&gt;
+      &lt;span class="mc-icon mc-icon--brand" aria-hidden="true"&gt;
+        &lt;span class="mc-icon-glyph mc-icon-glyph--design"&gt;&lt;/span&gt;
+      &lt;/span&gt;
+      &lt;h2 class="mc-project-card__title"&gt;Project card&lt;/h2&gt;
+    &lt;/header&gt;
+    &lt;div class="mc-project-card__content"&gt;
+      &lt;div class="mc-project-card__media" aria-hidden="true"&gt;
+        &lt;span class="mc-icon-glyph mc-icon-glyph--image"&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;p class="mc-project-card__description"&gt;Use project cards for destinations that need a title, visual cue, description, and footer link.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;footer class="mc-card__footer"&gt;
+    &lt;a class="mc-button mc-button--link mc-button--sm mc-button--start mc-button--block" target="_blank" rel="noopener noreferrer" href="https://mercury.imle.uk" aria-label="Open Mercury in a new tab"&gt;
+      &lt;span class="mc-button__label"&gt;Open project with a longer label&lt;/span&gt;
+      &lt;span class="mc-button__icon mc-button__icon--end mc-icon-glyph mc-icon-glyph--new-window" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+
+        <div class="mc-section-card">
           <h3>Card classes</h3>
           <table>
             <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
@@ -1197,6 +1257,9 @@
               <tr><td><code>mc-card__title</code></td><td>Card title style.</td><td><code>&lt;h3 class="mc-card__title"&gt;</code></td></tr>
               <tr><td><code>mc-card__text</code></td><td>Card body text.</td><td><code>&lt;p class="mc-card__text"&gt;</code></td></tr>
               <tr><td><code>mc-card__footer</code></td><td>Separated card footer.</td><td><code>&lt;div class="mc-card__footer"&gt;</code></td></tr>
+              <tr><td><code>mc-project-grid</code></td><td>Responsive project-card grid with a full-width final item from tablet size upward.</td><td><code>&lt;ul class="mc-project-grid mc-grid mc-g--3"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-project-card</code></li><li><code>mc-project-card--featured</code></li></ul></td><td>Project card shell and featured treatment.</td><td><code>&lt;article class="mc-card mc-project-card"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-project-card__body</code></li><li><code>mc-project-card__header</code></li><li><code>mc-project-card__title</code></li><li><code>mc-project-card__content</code></li><li><code>mc-project-card__media</code></li><li><code>mc-project-card__description</code></li></ul></td><td>Project card internal layout elements.</td><td><code>&lt;div class="mc-project-card__content"&gt;</code></td></tr>
             </tbody>
           </table>
         </div>
