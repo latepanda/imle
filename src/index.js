@@ -2,6 +2,7 @@ const PDF_OBJECT_KEY = "Ellie-CV-2026.pdf";
 const PDF_DOWNLOAD_NAME = "Ellie-McCallum-CV.pdf";
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const SUBDOMAIN_HOME_PAGES = {
+  "www.imle.uk": "/index.html",
   "mercury.imle.uk": "/design.html",
   "cv.imle.uk": "/cv.html",
   "ux.imle.uk": "/ux.html",
@@ -14,10 +15,10 @@ export default {
     const host = request.headers.get("Host") || url.hostname;
     const pagePath = SUBDOMAIN_HOME_PAGES[host];
 
-    if (url.pathname === "/" && url.hostname in SUBDOMAIN_HOME_PAGES) {
-      url.pathname = SUBDOMAIN_HOME_PAGES[url.hostname];
-      return env.ASSETS.fetch(url);
-    }
+    // if (url.pathname === "/" && url.hostname in SUBDOMAIN_HOME_PAGES) {
+    //   url.pathname = SUBDOMAIN_HOME_PAGES[url.hostname];
+    //   return env.ASSETS.fetch(url);
+    // }
 
     if (url.pathname === "/api/request-cv") {
       if (request.method !== "POST") {

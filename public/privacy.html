@@ -16,7 +16,7 @@
   <link rel="manifest" href="favicon_data/site.webmanifest">
   <link rel="preload" href="/assets/fonts/Inter/Inter-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/assets/fonts/Inter/Inter-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-  <title>ELLIE Chat Offline</title>
+  <title>Privacy</title>
   <link href="assets/styles/design.css" rel="stylesheet">
 </head>
 <body class="mc-theme mc-theme--mercury mc-page-shell">
@@ -28,31 +28,31 @@
     </a>
   </header>
 
-  <main id="main-content" class="mc-page-main mc-page-main--center mc-container mc-container--lg" aria-labelledby="chat-title">
-    <article class="mc-status-panel mc-panel mc-panel--glass" aria-live="polite">
-      <div class="mc-status-panel__media" aria-hidden="true">
-        <div class="mc-placeholder-window">
-          <span class="mc-placeholder-window__dot"></span>
-          <span class="mc-placeholder-window__dot"></span>
-          <span class="mc-placeholder-window__dot"></span>
-          <span class="mc-placeholder-window__bar" data-percentage="80"></span>
-          <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="60"></span>
-          <span class="mc-placeholder-window__bar" data-percentage="50"></span>
+  <main id="main-content" class="mc-page-main mc-page-main--center mc-container mc-container--sm" aria-labelledby="privacy-title">
+    <article class="mc-panel">
+      <div class="mc-stack mc-stack--lg">
+        <div class="mc-stack mc-stack--sm">
+          <p class="mc-eyebrow mc-eyebrow--paper">Privacy</p>
         </div>
-      </div>
-
-      <div class="mc-status-panel__content">
-        <p class="mc-status-pill">
-          <span class="mc-status-pill__dot" aria-hidden="true"></span>
-          System offline
-        </p>
-        <p class="mc-eyebrow">Electronic Large Language Intelligence Emulation (ELLIE)</p>
-        <h1 id="chat-title">Offline for development</h1>
-        <p>
-          This chat interface will soon allow visitors to interview Ellie. Ask questions about her portfolio,
-          CV, and case studies. For now, the system is paused while it is being developed and tested for safety.
-        </p>
-        <a class="mc-button mc-button--primary" href="https://www.imle.uk">Back to homepage</a>
+          <p class="mc-body-copy">
+            To collect analytics I use three external services
+            <ul style="list-style-type: square;">
+              <li>Google Tag Manager</li>
+              <li>Google Analytics</li>
+              <li>Microsoft Clarity</li>
+            </ul>
+            I collect anonymised events such as
+            <ul style="list-style-type: square;">
+              <li>Page views</li>
+              <li>Scroll behaviour</li>
+              <li>Page clicks</li>
+              <li>User journeys</li>
+            </ul>
+            I collect your email address, IP address, and timestamp when you request the full version of my CV. This data is stored securly in a D1 Database on Cloudflare and your data is automatically deleted after 30 days.
+          </p>
+        <a class="mc-button mc-button--link mc-button--sm mc-button--start" href="http://www.imle.uk">
+          Back to homepage
+        </a>
       </div>
     </article>
   </main>

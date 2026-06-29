@@ -1,6 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    function readStoredConsent() {
+      try {
+        return localStorage.getItem('imleConsent');
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function storeConsent(choice) {
+      try {
+        localStorage.setItem('imleConsent', choice);
+      } catch (error) {
+        return;
+      }
+    }
+
+    const storedConsent = readStoredConsent();
+    const consentGranted = storedConsent === 'accepted';
+    const consentState = consentGranted ? 'granted' : 'denied';
+
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+
+    if (storedConsent) {
+      gtag('consent', 'update', {
+        ad_storage: consentState,
+        analytics_storage: consentState,
+        ad_user_data: consentState,
+        ad_personalization: consentState
+      });
+
+      dataLayer.push({
+        event: 'imle_consent_update',
+        consent_choice: storedConsent,
+        ad_storage: consentState,
+        analytics_storage: consentState,
+        ad_user_data: consentState,
+        ad_personalization: consentState
+      });
+    }
+  </script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -30,74 +79,214 @@
 
   <main id="main-content" class="mc-page-main mc-page-main--center mc-container mc-container--xl" aria-labelledby="page-title">
     <section class="mc-hero mc-hero--compact">
-      <p class="mc-eyebrow">My repository of projects</p>
-      <h1 id="page-title" class="mc-hero__title">Hi, I'm Ellie</h1>
-      <p class="mc-hero__summary">Glasgow based UI/UX designer, accessibility-led front-end engineer, and maker of things.</p>
 
-      <nav class="mc-container mc-container--lg mc-mt--5" aria-label="Featured destinations">
-        <ul class="mc-action-grid mc-action-grid--home">
+        <p class="mc-eyebrow mc-text--brand">My repository of projects</p>
+        <h1 id="page-title" class="mc-hero__title">Hi, I'm Ellie</h1>
+        <p class="mc-hero__summary">Glasgow based UI/UX designer, accessibility-led front-end engineer, and maker of things.</p>
+
+      <nav class="mc-container mc-container--lg mc-mt--5 mc-text--start" aria-label="Featured destinations">
+        <ul class="mc-project-grid mc-grid mc-g--3">
           <li>
-            <a class="mc-action-card" target="_blank" rel="noopener noreferrer" href="https://wedding.imle.uk">
-              <span class="mc-action-card__icon" aria-hidden="true">
-                <span class="mc-icon-glyph mc-icon-glyph--photos"></span>
-              </span>
-              <span class="mc-action-card__content">
-                <span class="mc-action-card__title">Wedding Gallery</span>
-                <span class="mc-action-card__meta">Photos and moments</span>
-              </span>
-            </a>
+            <article class="mc-card mc-project-card mc-project-card--media-top">
+              <div class="mc-project-card__media" aria-hidden="true">
+                <img alt="" src="assets/images/wedding.jpeg" width="500" height="500" />
+              </div>
+              <div class="mc-card__body mc-project-card__body">
+                <header class="mc-project-card__header">
+                  <span class="mc-icon mc-icon--custom" aria-hidden="true">
+                    <img alt="" src="assets/images/wedding-fav-icon.png" width="192" height="192" />
+                  </span>
+                  <h2 class="mc-project-card__title">Wedding Gallery App</h2>
+                </header>
+                <p class="mc-project-card__description">In the presence of those they hold most dear, Stephen and Elisabeth promised their lives to each other. Navigating every challenge and celebrating every success together, they move forward through life as one.</p>
+              </div>
+              <footer class="mc-card__footer">
+                <a class="mc-button mc-button--link mc-button--sm mc-button--start mc-button--block" target="_blank" rel="noopener noreferrer" href="https://wedding.imle.uk" aria-label="Open Wedding Gallery in a new tab">
+                  <span class="mc-button__label">Open wedding gallery</span>
+                  <span class="mc-button__icon mc-button__icon--end mc-icon-glyph mc-icon-glyph--new-window" aria-hidden="true"></span>
+                </a>
+              </footer>
+            </article>
           </li>
 
           <li>
-            <a class="mc-action-card" href="https://mercury.imle.uk">
-              <span class="mc-action-card__icon" aria-hidden="true">
-                <span class="mc-icon-glyph mc-icon-glyph--design"></span>
-              </span>
-              <span class="mc-action-card__content">
-                <span class="mc-action-card__title">Mercury</span>
-                <span class="mc-action-card__meta">Design system</span>
-              </span>
-            </a>
+            <article class="mc-card mc-project-card mc-project-card--media-top">
+              <div class="mc-project-card__media" aria-hidden="true">
+                <div class="mc-placeholder-window">
+                  <span class="mc-placeholder-window__dot"></span>
+                  <span class="mc-placeholder-window__dot"></span>
+                  <span class="mc-placeholder-window__dot"></span>
+                  <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="80"></span>
+                  <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="60"></span>
+                  <span class="mc-placeholder-window__bar" data-percentage="50"></span>
+                  <span class="mc-placeholder-window__bar" data-percentage="80"></span>
+                  <span class="mc-placeholder-window__bar" data-percentage="100"></span>
+                  <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="60"></span>
+                </div>
+              </div>
+              <div class="mc-card__body mc-project-card__body">
+                <header class="mc-project-card__header">
+                  <span class="mc-icon mc-icon--brand" aria-hidden="true">
+                    <span class="mc-icon-glyph mc-icon-glyph--design"></span>
+                  </span>
+                  <h2 class="mc-project-card__title">Mercury</h2>
+                </header>
+                <p class="mc-project-card__description">The early stages of a modular, mobile-first class-light library for semantic HTML. Mercury is the design system currently powering this site.</p>
+              </div>
+              <footer class="mc-card__footer">
+                <a class="mc-button mc-button--link mc-button--sm mc-button--start mc-button--block" href="https://mercury.imle.uk">
+                  <span class="mc-button__label">Explore Mercury</span>
+                </a>
+              </footer>
+            </article>
           </li>
 
           <li>
-            <a class="mc-action-card" target="_blank" rel="noopener noreferrer" href="https://cv.imle.uk">
-              <span class="mc-action-card__icon" aria-hidden="true">
+            <article class="mc-card mc-project-card mc-project-card--media-top">
+              <div class="mc-project-card__media" aria-hidden="true">
                 <span class="mc-icon-glyph mc-icon-glyph--doc"></span>
-              </span>
-              <span class="mc-action-card__content">
-                <span class="mc-action-card__title">CV</span>
-                <span class="mc-action-card__meta">Experience and skills</span>
-              </span>
-            </a>
+              </div>
+              <div class="mc-card__body mc-project-card__body">
+                <header class="mc-project-card__header">
+                  <span class="mc-icon mc-icon--brand" aria-hidden="true">
+                    <span class="mc-icon-glyph mc-icon-glyph--doc"></span>
+                  </span>
+                  <h2 class="mc-project-card__title">CV</h2>
+                </header>
+                <p class="mc-project-card__description">I have been designing and building apps, websites, and games for 16+ years. My professional passion is user-focused UI/UX design and developing products with a strong emphasis on accessibility..</p>
+              </div>
+              <footer class="mc-card__footer">
+                <a class="mc-button mc-button--link mc-button--sm mc-button--start mc-button--block" target="_blank" rel="noopener noreferrer" href="https://cv.imle.uk" aria-label="Open CV in a new tab">
+                  <span class="mc-button__label">Open CV</span>
+                  <span class="mc-button__icon mc-button__icon--end mc-icon-glyph mc-icon-glyph--new-window" aria-hidden="true"></span>
+                </a>
+              </footer>
+            </article>
           </li>
 
           <li>
-            <a class="mc-action-card" href="https://ux.imle.uk">
-              <span class="mc-action-card__icon" aria-hidden="true">
+            <article class="mc-card mc-project-card mc-project-card--media-top">
+              <div class="mc-project-card__media" aria-hidden="true">
                 <span class="mc-icon-glyph mc-icon-glyph--pc"></span>
-              </span>
-              <span class="mc-action-card__content">
-                <span class="mc-action-card__title">UX Case Studies</span>
-                <span class="mc-action-card__meta">Research and outcomes</span>
-              </span>
-            </a>
+              </div>
+              <div class="mc-card__body mc-project-card__body">
+                <header class="mc-project-card__header">
+                  <span class="mc-icon mc-icon--brand" aria-hidden="true">
+                    <span class="mc-icon-glyph mc-icon-glyph--pc"></span>
+                  </span>
+                  <h2 class="mc-project-card__title">UX Case Studies</h2>
+                </header>
+                <p class="mc-project-card__description">This space will soon share selected UX research, design decisions, accessibility thinking, and outcomes from my portfolio. The studies are not quite ready to go online yet, but they are on the way.</p>
+              </div>
+              <footer class="mc-card__footer">
+                <a class="mc-button mc-button--link mc-button--sm mc-button--start mc-button--block" rel="noopener noreferrer" href="https://ux.imle.uk" aria-label="Open UX case studies in a new tab">
+                  <span class="mc-button__label">View case studies</span>
+                </a>
+              </footer>
+            </article>
           </li>
 
           <li>
-            <a class="mc-action-card mc-action-card--featured" href="https://chat.imle.uk">
-              <span class="mc-action-card__icon" aria-hidden="true">
-                <span class="mc-icon-glyph mc-icon-glyph--chat"></span>
-              </span>
-              <span class="mc-action-card__content">
-                <span class="mc-action-card__title">Live chat to Ellie</span>
-                <span class="mc-action-card__meta">Open conversation</span>
-              </span>
-            </a>
+            <article class="mc-card mc-project-card mc-project-card--featured mc-project-card--media-top sm:mc-project-card--media-left">
+              <div class="mc-project-card__media" aria-hidden="true">
+                <div class="mc-placeholder-window">
+                  <span class="mc-placeholder-window__dot"></span>
+                  <span class="mc-placeholder-window__dot"></span>
+                  <span class="mc-placeholder-window__dot"></span>
+                  <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="80"></span>
+                  <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="60"></span>
+                  <span class="mc-placeholder-window__bar" data-percentage="50"></span>
+                  <span class="mc-placeholder-window__bar" data-percentage="80"></span>
+                  <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="70"></span>
+                  <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="50"></span>
+                </div>
+              </div>
+              <div class="mc-card__body mc-project-card__body">
+                <header class="mc-project-card__header">
+                  <span class="mc-icon mc-icon--brand" aria-hidden="true">
+                    <span class="mc-icon-glyph mc-icon-glyph--chat"></span>
+                  </span>
+                  <div class="mc-cluster mc-gap--5">
+                    <h2 class="mc-project-card__title">Live chat to Ellie</h2>
+                    <p class="mc-status-pill">
+                      <span class="mc-status-pill__dot" aria-hidden="true"></span>
+                      Offline for development
+                    </p>
+                  </div>
+                </header>
+                <p class="mc-project-card__description">Electronic Large Language Intelligence Emulation (ELLIE).
+                  <br>This is my experimental chatbot. The idea is that you'll eventually be able to interview it. The chatbot is offline while development continues.
+                </p>
+              </div>
+              <footer class="mc-card__footer">
+                <a class="mc-button mc-button--link mc-button--sm mc-button--start mc-button--block" href="https://chat.imle.uk">
+                  <span class="mc-button__label">Open conversation</span>
+                </a>
+              </footer>
+            </article>
           </li>
         </ul>
       </nav>
     </section>
   </main>
+
+  <section class="mc-consent-banner" data-consent-banner hidden aria-labelledby="consent-title">
+    <div class="mc-stack mc-stack--sm">
+      <h2 id="consent-title" class="mc-m--0 mc-fs--2">Please help me improve</h2>
+      <p class="mc-m--0 mc-text--muted mc-fs--1">
+        I collect anonymous analytics to understand how people use my projects and make them better. I'll only do this if you say it's okay.
+        <a class="mc-button mc-button--link mc-button--sm" href="/privacy.html">
+          Learn more
+        </a>
+      </p>
+    </div>
+    <div class="mc-grid mc-grid--cols-2 mc-g--2" aria-label="Analytics consent choices">
+      <button class="mc-button mc-button--secondary mc-button--sm mc-button--block" type="button" data-consent-choice="rejected">
+        No thanks
+      </button>
+      <button class="mc-button mc-button--secondary mc-button--sm mc-button--block" type="button" data-consent-choice="accepted">
+        Yes, that's okay
+      </button>
+    </div>
+  </section>
+
+  <script>
+    const consentBanner = document.querySelector('[data-consent-banner]');
+    const consentButtons = document.querySelectorAll('[data-consent-choice]');
+
+    function updateConsent(choice) {
+      const state = choice === 'accepted' ? 'granted' : 'denied';
+
+      storeConsent(choice);
+
+      gtag('consent', 'update', {
+        ad_storage: state,
+        analytics_storage: state,
+        ad_user_data: state,
+        ad_personalization: state
+      });
+
+      dataLayer.push({
+        event: 'imle_consent_update',
+        consent_choice: choice,
+        ad_storage: state,
+        analytics_storage: state,
+        ad_user_data: state,
+        ad_personalization: state
+      });
+
+      consentBanner.hidden = true;
+    }
+
+    if (consentBanner && !readStoredConsent()) {
+      consentBanner.hidden = false;
+    }
+
+    consentButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        updateConsent(button.dataset.consentChoice);
+      });
+    });
+  </script>
 </body>
 </html>
