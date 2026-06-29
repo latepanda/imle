@@ -1,6 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    function readStoredConsent() {
+      try {
+        return localStorage.getItem('imleConsent');
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function storeConsent(choice) {
+      try {
+        localStorage.setItem('imleConsent', choice);
+      } catch (error) {
+        return;
+      }
+    }
+
+    const storedConsent = readStoredConsent();
+    const consentGranted = storedConsent === 'accepted';
+    const consentState = consentGranted ? 'granted' : 'denied';
+
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+
+    if (storedConsent) {
+      gtag('consent', 'update', {
+        ad_storage: consentState,
+        analytics_storage: consentState,
+        ad_user_data: consentState,
+        ad_personalization: consentState
+      });
+
+      dataLayer.push({
+        event: 'imle_consent_update',
+        consent_choice: storedConsent,
+        ad_storage: consentState,
+        analytics_storage: consentState,
+        ad_user_data: consentState,
+        ad_personalization: consentState
+      });
+    }
+  </script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -30,26 +79,27 @@
 
   <main id="main-content" class="mc-page-main mc-page-main--center mc-container mc-container--xl" aria-labelledby="page-title">
     <section class="mc-hero mc-hero--compact">
-      <p class="mc-eyebrow">My repository of projects</p>
+      <p class="mc-eyebrow mc-text--brand">My repository of projects</p>
       <h1 id="page-title" class="mc-hero__title">Hi, I'm Ellie</h1>
       <p class="mc-hero__summary">Glasgow based UI/UX designer, accessibility-led front-end engineer, and maker of things.</p>
 
       <nav class="mc-container mc-container--lg mc-mt--5" aria-label="Featured destinations">
         <ul class="mc-action-grid mc-action-grid--home">
           <li>
-            <a class="mc-action-card" target="_blank" rel="noopener noreferrer" href="https://wedding.imle.uk">
+            <a class="mc-action-card mc-button--start" target="_blank" rel="noopener noreferrer" href="https://wedding.imle.uk">
               <span class="mc-action-card__icon" aria-hidden="true">
                 <span class="mc-icon-glyph mc-icon-glyph--photos"></span>
               </span>
               <span class="mc-action-card__content">
                 <span class="mc-action-card__title">Wedding Gallery</span>
                 <span class="mc-action-card__meta">Photos and moments</span>
+                <span class="mc-button__icon mc-button__icon--end mc-icon-glyph mc-icon-glyph--new-window" aria-hidden="true"></span>
               </span>
             </a>
           </li>
 
           <li>
-            <a class="mc-action-card" href="https://mercury.imle.uk">
+            <a class="mc-action-card mc-button--start" href="https://mercury.imle.uk">
               <span class="mc-action-card__icon" aria-hidden="true">
                 <span class="mc-icon-glyph mc-icon-glyph--design"></span>
               </span>
@@ -61,19 +111,20 @@
           </li>
 
           <li>
-            <a class="mc-action-card" target="_blank" rel="noopener noreferrer" href="https://cv.imle.uk">
+            <a class="mc-action-card mc-button--start" target="_blank" rel="noopener noreferrer" href="https://cv.imle.uk">
               <span class="mc-action-card__icon" aria-hidden="true">
                 <span class="mc-icon-glyph mc-icon-glyph--doc"></span>
               </span>
               <span class="mc-action-card__content">
                 <span class="mc-action-card__title">CV</span>
                 <span class="mc-action-card__meta">Experience and skills</span>
+                <span class="mc-button__icon mc-button__icon--end mc-icon-glyph mc-icon-glyph--new-window" aria-hidden="true"></span>
               </span>
             </a>
           </li>
 
           <li>
-            <a class="mc-action-card" href="https://ux.imle.uk">
+            <a class="mc-action-card mc-button--start" href="https://ux.imle.uk">
               <span class="mc-action-card__icon" aria-hidden="true">
                 <span class="mc-icon-glyph mc-icon-glyph--pc"></span>
               </span>
@@ -85,7 +136,7 @@
           </li>
 
           <li>
-            <a class="mc-action-card mc-action-card--featured" href="https://chat.imle.uk">
+            <a class="mc-action-card mc-button--start mc-action-card--featured" href="https://chat.imle.uk">
               <span class="mc-action-card__icon" aria-hidden="true">
                 <span class="mc-icon-glyph mc-icon-glyph--chat"></span>
               </span>
@@ -99,5 +150,64 @@
       </nav>
     </section>
   </main>
+
+  <section class="mc-consent-banner" data-consent-banner hidden aria-labelledby="consent-title">
+    <div class="mc-stack mc-stack--sm">
+      <h2 id="consent-title" class="mc-m--0 mc-fs--2">Please help me improve</h2>
+      <p class="mc-m--0 mc-text--muted mc-fs--1">
+        I collect anonymous analytics to understand how people use my projects and make them better. I'll only do this if you say it's okay.
+        <a class="mc-button mc-button--link mc-button--sm" href="/privacy.html">
+          Learn more
+        </a>
+      </p>
+    </div>
+    <div class="mc-grid mc-grid--cols-2 mc-g--2" aria-label="Analytics consent choices">
+      <button class="mc-button mc-button--secondary mc-button--sm mc-button--block" type="button" data-consent-choice="rejected">
+        No thanks
+      </button>
+      <button class="mc-button mc-button--secondary mc-button--sm mc-button--block" type="button" data-consent-choice="accepted">
+        Yes, that's okay
+      </button>
+    </div>
+  </section>
+
+  <script>
+    const consentBanner = document.querySelector('[data-consent-banner]');
+    const consentButtons = document.querySelectorAll('[data-consent-choice]');
+
+    function updateConsent(choice) {
+      const state = choice === 'accepted' ? 'granted' : 'denied';
+
+      storeConsent(choice);
+
+      gtag('consent', 'update', {
+        ad_storage: state,
+        analytics_storage: state,
+        ad_user_data: state,
+        ad_personalization: state
+      });
+
+      dataLayer.push({
+        event: 'imle_consent_update',
+        consent_choice: choice,
+        ad_storage: state,
+        analytics_storage: state,
+        ad_user_data: state,
+        ad_personalization: state
+      });
+
+      consentBanner.hidden = true;
+    }
+
+    if (consentBanner && !readStoredConsent()) {
+      consentBanner.hidden = false;
+    }
+
+    consentButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        updateConsent(button.dataset.consentChoice);
+      });
+    });
+  </script>
 </body>
 </html>
