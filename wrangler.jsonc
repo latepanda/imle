@@ -3,6 +3,7 @@
 	"name": "imle",
 	"compatibility_date": "2026-06-27",
 	"main": "src/index.js",
+	"preview_urls": true,
 	"routes": [
 		{
 			"pattern": "mercury.imle.uk/*",
