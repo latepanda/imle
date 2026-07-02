@@ -27,9 +27,13 @@
       <span class="mc-brand__logo" aria-hidden="true"></span>
     </a>
     <div class="mc-top-actions" aria-label="Mercury actions">
-      <button class="mc-button mc-button--secondary" type="button" data-theme-toggle aria-pressed="false">
-        <span data-theme-toggle-label>Light mode</span>
-      </button>
+      <label class="mc-visually-hidden" for="theme-select">Theme</label>
+      <select class="mc-form__control mc-theme-select" id="theme-select" data-theme-select aria-label="Preview Mercury theme">
+        <option value="dark-mercury">Dark Mercury</option>
+        <option value="light-mercury">Light Mercury</option>
+        <option value="paper">Paper</option>
+        <option value="grumbler">Grumbler</option>
+      </select>
       <a class="mc-button mc-button--primary" href="assets/styles/design.css" download="mercury.css">
         Download Mercury<sup>&#40;&alpha;lpha&#41;</sup>
       </a>
@@ -90,8 +94,35 @@
 
       <div class="mc-component-doc">
         <div class="mc-section-card">
-          <p class="mc-lead">Use the mc-theme classes on the body, then compose pages from the blocks shown below.</p>
-          <p class="mc-body-copy">The library keeps page background, focus states, responsive spacing, and motion preferences consistent across the site.</p>
+          <p class="mc-lead">Import Mercury to get styled semantic HTML first, then append utility and component classes only where the layout needs more control.</p>
+          <p class="mc-body-copy">The library keeps browser defaults, page background, focus states, responsive spacing, and motion preferences consistent across the site.</p>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Classless-first HTML</h3>
+          <p>Raw headings, paragraphs, links, lists, blockquotes, buttons, inputs, code, and tables receive a Mercury baseline without extra classes.</p>
+          <pre class="mc-code-example mc-mt--5" tabindex="0"><code>&lt;main&gt;
+  &lt;h1&gt;Semantic page title&lt;/h1&gt;
+  &lt;p&gt;Mercury styles plain HTML first. Add utilities only when the default rhythm needs a deliberate adjustment.&lt;/p&gt;
+  &lt;button type="button"&gt;Continue&lt;/button&gt;
+&lt;/main&gt;</code></pre>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Cascade architecture</h3>
+          <table>
+            <thead><tr><th scope="col">Layer</th><th scope="col">Purpose</th></tr></thead>
+            <tbody>
+              <tr><td><code>mercury.fonts</code></td><td>Local font faces.</td></tr>
+              <tr><td><code>mercury.tokens</code></td><td>Themeable CSS variables and normalized aliases.</td></tr>
+              <tr><td><code>mercury.reset</code></td><td>Browser reset and inherited defaults.</td></tr>
+              <tr><td><code>mercury.base</code></td><td>Classless semantic element styling.</td></tr>
+              <tr><td><code>mercury.themes</code></td><td>Theme classes such as dark, light, paper, Mercury, and Grumbler.</td></tr>
+              <tr><td><code>mercury.components</code></td><td>Reusable components and page-specific component sets.</td></tr>
+              <tr><td><code>mercury.utilities</code></td><td>Late utility overrides.</td></tr>
+              <tr><td><code>mercury.a11y</code></td><td>Reduced motion and forced-colours support.</td></tr>
+            </tbody>
+          </table>
         </div>
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;link href="assets/styles/mercury.css" rel="stylesheet"&gt;
@@ -121,6 +152,7 @@
               <tr><td><code>mc-theme--light</code></td><td>Light colour-scheme mode.</td><td><code>&lt;body class="mc-theme mc-theme--light"&gt;</code></td></tr>
               <tr><td><code>mc-theme--mercury</code></td><td>Animated Mercury page background.</td><td><code>&lt;body class="mc-theme mc-theme--mercury"&gt;</code></td></tr>
               <tr><td><code>mc-theme--paper</code></td><td>Light document palette. <span class="mc-text--warning">(Experimental)</span></td><td><code>&lt;body class="mc-theme mc-theme--paper"&gt;</code></td></tr>
+              <tr><td><code>mc-theme--grumbler</code></td><td>Warm case-study palette and Grumbler case components.</td><td><code>&lt;body class="mc-theme mc-theme--grumbler"&gt;</code></td></tr>
             </tbody>
           </table>
         </div>
@@ -252,6 +284,42 @@
 &lt;/div&gt;</code></pre>
 
         <div class="mc-section-card">
+          <h3>Colour tokens</h3>
+          <ul class="mc-color-chip-list">
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-ink);"></span><code>--mc-color-ink</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-soft-ink);"></span><code>--mc-color-soft-ink</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-bg);"></span><code>--mc-color-bg</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-bg-soft);"></span><code>--mc-color-bg-soft</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-accent);"></span><code>--mc-color-accent</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-accent-soft);"></span><code>--mc-color-accent-soft</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-muted);"></span><code>--mc-color-muted</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-surface);"></span><code>--mc-color-surface</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-surface-strong);"></span><code>--mc-color-surface-strong</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-surface-top);"></span><code>--mc-color-surface-top</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-stroke);"></span><code>--mc-color-stroke</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-purple);"></span><code>--mc-color-purple</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-deep-purple);"></span><code>--mc-color-deep-purple</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-pink);"></span><code>--mc-color-pink</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-rose);"></span><code>--mc-color-rose</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-lilac);"></span><code>--mc-color-lilac</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-line);"></span><code>--mc-color-line</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-paper);"></span><code>--mc-color-paper</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-error);"></span><code>--mc-color-error</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-error-bg);"></span><code>--mc-color-error-bg</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-error-stroke);"></span><code>--mc-color-error-stroke</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-success);"></span><code>--mc-color-success</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-success-bg);"></span><code>--mc-color-success-bg</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-success-stroke);"></span><code>--mc-color-success-stroke</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-warning);"></span><code>--mc-color-warning</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-warning-bg);"></span><code>--mc-color-warning-bg</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-warning-stroke);"></span><code>--mc-color-warning-stroke</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-info);"></span><code>--mc-color-info</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-info-bg);"></span><code>--mc-color-info-bg</code></li>
+            <li class="mc-color-chip"><span class="mc-color-chip__sample" style="--mc-chip-color: var(--mc-color-info-stroke);"></span><code>--mc-color-info-stroke</code></li>
+          </ul>
+        </div>
+
+        <div class="mc-section-card">
           <h3>Text colour utilities</h3>
           <div class="mc-stack">
             <p class="mc-m--0 mc-text--accent">Accent text for primary foreground content.</p>
@@ -336,11 +404,15 @@
               <tr><td><ul class="mc-token-list"><li><code>--mc-gradient-brand</code></li><li><code>--mc-gradient-rule</code></li><li><code>--mc-gradient-bg</code></li></ul></td><td>Brand, divider, and page gradients.</td><td><code>background: var(--mc-gradient-brand);</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>--mc-font-body</code></li><li><code>--mc-font-display</code></li></ul></td><td>Font family stacks.</td><td><code>font-family: var(--mc-font-body);</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>--mc-step-[1-5]</code></li><li><code>--mc-step-display</code></li></ul></td><td>Fluid type scale.</td><td><code>font-size: var(--mc-step-3);</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>--mc-space-[1-8]</code></li></ul></td><td>Spacing scale.</td><td><code>padding: var(--mc-space-5);</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>--mc-fs-[0-5]</code></li><li><code>--mc-fs-display</code></li></ul></td><td>Normalized aliases for the fluid type scale.</td><td><code>font-size: var(--mc-fs-3);</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>--mc-fw-regular</code></li><li><code>--mc-fw-bold</code></li></ul></td><td>Named font-weight aliases.</td><td><code>font-weight: var(--mc-fw-bold);</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>--mc-lh-solid</code></li><li><code>--mc-lh-heading</code></li><li><code>--mc-lh-body</code></li></ul></td><td>Line-height scale.</td><td><code>line-height: var(--mc-lh-body);</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>--mc-space-[1-9]</code></li></ul></td><td>Spacing scale.</td><td><code>padding: var(--mc-space-5);</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>--mc-gutter-[0-5]</code></li></ul></td><td>Grid gutter scale.</td><td><code>gap: var(--mc-gutter-4);</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>--mc-radius-sm</code></li><li><code>--mc-radius-md</code></li><li><code>--mc-radius-lg</code></li><li><code>--mc-radius-xl</code></li><li><code>--mc-radius-pill</code></li></ul></td><td>Radius scale.</td><td><code>border-radius: var(--mc-radius-lg);</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>--mc-shadow-glass</code></li><li><code>--mc-shadow-soft</code></li></ul></td><td>Elevation tokens.</td><td><code>box-shadow: var(--mc-shadow-soft);</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>--mc-page-width</code></li><li><code>--mc-content-width</code></li></ul></td><td>Layout width tokens.</td><td><code>max-width: var(--mc-content-width);</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>--mc-border-width</code></li></ul></td><td>Default border width.</td><td><code>border: var(--mc-border-width) solid var(--mc-color-stroke);</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>--mc-shadow-xs</code></li><li><code>--mc-shadow-soft</code></li><li><code>--mc-shadow-md</code></li><li><code>--mc-shadow-glass</code></li></ul></td><td>Elevation tokens.</td><td><code>box-shadow: var(--mc-shadow-soft);</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>--mc-page-width</code></li><li><code>--mc-content-width</code></li><li><code>--mc-size-container-[sm-xl]</code></li></ul></td><td>Layout width tokens.</td><td><code>max-width: var(--mc-content-width);</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>--mc-breakpoint-sm</code></li><li><code>--mc-breakpoint-md</code></li><li><code>--mc-breakpoint-lg</code></li><li><code>--mc-breakpoint-xl</code></li></ul></td><td>Documented breakpoint values.</td><td><code>/* 36rem, 48rem, 66rem, 80rem */</code></td></tr>
               <tr><td><code>--mc-transition</code></td><td>Standard motion duration/easing.</td><td><code>transition: transform var(--mc-transition);</code></td></tr>
             </tbody>
@@ -1018,7 +1090,7 @@
             </li>
             <li class="mc-icon-card">
               <span class="mc-icon" aria-hidden="true">
-                <span class="mc-icon-glyph mc-icon-glyph--image"></span>
+                <span class="mc-icon-glyph mc-icon-glyph--imle-logo"></span>
               </span>
               <span class="mc-icon-card__label">image</span>
             </li>
@@ -1088,7 +1160,7 @@
   &lt;/li&gt;
   &lt;li class="mc-icon-card"&gt;
     &lt;span class="mc-icon" aria-hidden="true"&gt;
-      &lt;span class="mc-icon-glyph mc-icon-glyph--image"&gt;&lt;/span&gt;
+      &lt;span class="mc-icon-glyph mc-icon-glyph--imle-logo"&gt;&lt;/span&gt;
     &lt;/span&gt;
     &lt;span class="mc-icon-card__label"&gt;image&lt;/span&gt;
   &lt;/li&gt;
@@ -1138,7 +1210,7 @@
               <tr><td><ul class="mc-token-list"><li><code>mc-icon</code></li><li><code>mc-icon--brand</code></li></ul></td><td>Icon frame and brand frame variant.</td><td><code>&lt;span class="mc-icon"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-icon-grid</code></li><li><code>mc-grid</code></li><li><code>mc-grid--3</code></li></ul></td><td>Icon showcase layout: two columns on mobile, then three columns from tablet widths upward.</td><td><code>&lt;ul class="mc-icon-grid mc-grid mc-grid--3"&gt;</code></td></tr>
               <tr><td><code>mc-icon-glyph</code></td><td>CSS-mask icon that uses current text colour.</td><td><code>&lt;span class="mc-icon-glyph"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-icon-glyph--block</code></li><li><code>mc-icon-glyph--chat</code></li><li><code>mc-icon-glyph--design-border</code></li><li><code>mc-icon-glyph--design</code></li><li><code>mc-icon-glyph--doc</code></li><li><code>mc-icon-glyph--image</code></li><li><code>mc-icon-glyph--mentor-border</code></li><li><code>mc-icon-glyph--new-window</code></li><li><code>mc-icon-glyph--pc</code></li><li><code>mc-icon-glyph--photos</code></li><li><code>mc-icon-glyph--user-border</code></li></ul></td><td>Available Mercury icon masks.</td><td><code>&lt;span class="mc-icon-glyph mc-icon-glyph--chat"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-icon-glyph--block</code></li><li><code>mc-icon-glyph--chat</code></li><li><code>mc-icon-glyph--design-border</code></li><li><code>mc-icon-glyph--design</code></li><li><code>mc-icon-glyph--doc</code></li><li><code>mc-icon-glyph--imle-logo</code></li><li><code>mc-icon-glyph--mentor-border</code></li><li><code>mc-icon-glyph--new-window</code></li><li><code>mc-icon-glyph--pc</code></li><li><code>mc-icon-glyph--photos</code></li><li><code>mc-icon-glyph--user-border</code></li></ul></td><td>Available Mercury icon masks.</td><td><code>&lt;span class="mc-icon-glyph mc-icon-glyph--chat"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-button__icon</code></li><li><code>mc-action-card__icon</code></li></ul></td><td>Icon placement inside actions.</td><td><code>&lt;span class="mc-button__icon mc-icon-glyph mc-icon-glyph--doc"&gt;</code></td></tr>
             </tbody>
           </table>
@@ -1200,7 +1272,7 @@
         <div class="mc-section-card">
           <article class="mc-card mc-project-card mc-project-card--media-top">
             <div class="mc-project-card__media" aria-hidden="true">
-              <span class="mc-icon-glyph mc-icon-glyph--image"></span>
+              <span class="mc-icon-glyph mc-icon-glyph--imle-logo"></span>
             </div>
             <div class="mc-card__body mc-project-card__body">
               <header class="mc-project-card__header">
@@ -1222,7 +1294,7 @@
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;article class="mc-card mc-project-card mc-project-card--media-top"&gt;
   &lt;div class="mc-project-card__media" aria-hidden="true"&gt;
-    &lt;span class="mc-icon-glyph mc-icon-glyph--image"&gt;&lt;/span&gt;
+    &lt;span class="mc-icon-glyph mc-icon-glyph--imle-logo"&gt;&lt;/span&gt;
   &lt;/div&gt;
   &lt;div class="mc-card__body mc-project-card__body"&gt;
     &lt;header class="mc-project-card__header"&gt;
@@ -1938,6 +2010,20 @@
 
       <div class="mc-component-doc">
         <div class="mc-section-card">
+          <h3>Utility API rules</h3>
+          <p>Utilities use the <code>mc-</code> prefix, a property group, and a double-dash value. Responsive variants prepend the breakpoint and escaped colon in CSS, for example <code>md:mc-d--grid</code>.</p>
+          <table>
+            <thead><tr><th scope="col">Pattern</th><th scope="col">Example</th><th scope="col">Meaning</th></tr></thead>
+            <tbody>
+              <tr><td><code>mc-{group}--{value}</code></td><td><code>mc-p--5</code></td><td>Set one property group directly.</td></tr>
+              <tr><td><code>mc-{axis}--{value}</code></td><td><code>mc-mt--4</code></td><td>Set one logical spacing axis.</td></tr>
+              <tr><td><code>{breakpoint}:mc-{group}--{value}</code></td><td><code>lg:mc-grid--4</code></td><td>Apply the utility from that breakpoint upward.</td></tr>
+              <tr><td><code>mc-{group}--auto</code></td><td><code>mc-mx--auto</code></td><td>Use keyword values where they are predictable.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mc-section-card">
           <h3>Display and flex</h3>
           <div class="mc-d--flex mc-flex--wrap mc-items--center mc-justify--between mc-gap--3 mc-mb--5">
             <span class="mc-badge mc-badge--brand">Flexible</span>
@@ -1958,6 +2044,28 @@
               <tr><td><ul class="mc-token-list"><li><code>mc-justify--start</code></li><li><code>mc-justify--center</code></li><li><code>mc-justify--end</code></li><li><code>mc-justify--between</code></li></ul></td><td>Flex/grid justify-content utilities.</td><td><code>&lt;div class="mc-d--flex mc-justify--between"&gt;</code></td></tr>
             </tbody>
           </table>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Responsive variants</h3>
+          <p>Use <code>sm:</code>, <code>md:</code>, <code>lg:</code>, and <code>xl:</code> prefixes for breakpoint-specific display, spacing, width, text alignment, and grid utilities.</p>
+          <div class="mc-d--grid md:mc-grid--2 lg:mc-grid--4 mc-g--3">
+            <div class="mc-bg--surface mc-border mc-rounded--md mc-p--4">Default single column</div>
+            <div class="mc-bg--surface mc-border mc-rounded--md mc-p--4">Two columns at md</div>
+            <div class="mc-bg--surface mc-border mc-rounded--md mc-p--4">Four columns at lg</div>
+            <div class="mc-bg--surface mc-border mc-rounded--md mc-p--4">Same markup</div>
+          </div>
+          <pre class="mc-code-example mc-mt--5" tabindex="0"><code>&lt;div class="mc-d--grid md:mc-grid--2 lg:mc-grid--4 mc-g--3"&gt;
+  &lt;div class="mc-bg--surface mc-border mc-rounded--md mc-p--4"&gt;Default single column&lt;/div&gt;
+  &lt;div class="mc-bg--surface mc-border mc-rounded--md mc-p--4"&gt;Two columns at md&lt;/div&gt;
+  &lt;div class="mc-bg--surface mc-border mc-rounded--md mc-p--4"&gt;Four columns at lg&lt;/div&gt;
+  &lt;div class="mc-bg--surface mc-border mc-rounded--md mc-p--4"&gt;Same markup&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+        <div class="mc-section-card">
+          <h3>Utility source of truth</h3>
+          <p>The expected utility selector surface is tracked by <code>scripts/generate-mercury-utilities.mjs</code>. Run <code>npm run check:mercury-utilities</code> after changing the utility layer to catch missing selectors.</p>
         </div>
 
         <div class="mc-section-card">
@@ -2060,22 +2168,34 @@
   </main>
   </div>
   <script>
-    const themeToggle = document.querySelector('[data-theme-toggle]');
-    const themeToggleLabel = document.querySelector('[data-theme-toggle-label]');
+    const themeSelect = document.querySelector('[data-theme-select]');
     const docsMenu = document.querySelector('[data-docs-menu]');
     const docsMenuLinks = document.querySelectorAll('.mc-docs-nav__link');
     const desktopMenuQuery = window.matchMedia('(min-width: 66rem)');
 
     function setMercuryTheme(theme) {
-      const isLight = theme === 'light';
-      document.body.classList.toggle('mc-theme--light', isLight);
-      document.body.classList.toggle('mc-theme--dark', !isLight);
-      themeToggle.setAttribute('aria-pressed', String(isLight));
-      themeToggleLabel.textContent = isLight ? 'Dark mode' : 'Light mode';
+      document.body.classList.remove('mc-theme--dark', 'mc-theme--light', 'mc-theme--paper', 'mc-theme--mercury', 'mc-theme--grumbler');
+
+      if (theme === 'light-mercury') {
+        document.body.classList.add('mc-theme--light', 'mc-theme--mercury');
+        return;
+      }
+
+      if (theme === 'paper') {
+        document.body.classList.add('mc-theme--paper');
+        return;
+      }
+
+      if (theme === 'grumbler') {
+        document.body.classList.add('mc-theme--grumbler');
+        return;
+      }
+
+      document.body.classList.add('mc-theme--dark', 'mc-theme--mercury');
     }
 
-    themeToggle.addEventListener('click', () => {
-      setMercuryTheme(document.body.classList.contains('mc-theme--light') ? 'dark' : 'light');
+    themeSelect?.addEventListener('change', (event) => {
+      setMercuryTheme(event.target.value);
     });
 
     function setDocsMenuState(event) {
