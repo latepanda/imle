@@ -20,9 +20,8 @@
   <link rel="preload" href="/assets/fonts/WesternIsles/WesternIsles-Light.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <title>UX Case Study - The Grumbler</title>
   <link href="assets/styles/design.css" rel="stylesheet">
-  <link href="assets/styles/ux-grumbler.css" rel="stylesheet">
 </head>
-<body class="mc-theme mc-page-shell gr-case-study">
+<body class="mc-theme mc-page-shell mc-theme--grumbler">
   <a class="mc-skip-link" href="#main-content">Skip to content</a>
 
   <header class="mc-site-header" aria-label="Site header">
@@ -32,28 +31,28 @@
   </header>
 
   <main id="main-content" class="mc-page-main">
-    <section id="cover" class="gr-hero" aria-labelledby="case-study-title">
-      <div class="gr-hero__content">
-        <p class="gr-kicker">UX case study</p>
+    <section id="cover" class="mc-case-hero" aria-labelledby="case-study-title">
+      <div class="mc-case-hero__content">
+        <p class="mc-case-kicker">UX case study</p>
         <h1 id="case-study-title">The Grumbler</h1>
-        <p class="gr-hero__summary">
+        <p class="mc-case-hero__summary">
           A UX case study about making a puzzle tutorial clearer, kinder, and less annoying without taking the solve away from the player.
         </p>
-        <ul class="gr-hero__meta" aria-label="Case study metadata">
+        <ul class="mc-case-hero__meta" aria-label="Case study metadata">
           <li>Game UX</li>
           <li>Indie puzzle platformer</li>
           <li>Tutorial redesign</li>
         </ul>
-        <ul class="gr-hero__stats" aria-label="Headline outcomes">
-          <li class="gr-stat">
+        <ul class="mc-case-hero__stats" aria-label="Headline outcomes">
+          <li class="mc-case-stat">
             <strong>40%</strong>
             <span>more players were able to complete puzzle 5</span>
           </li>
-          <li class="gr-stat">
+          <li class="mc-case-stat">
             <strong>Hint exit</strong>
             <span>highest performing upgrade in the tested tutorial changes</span>
           </li>
-          <li class="gr-stat">
+          <li class="mc-case-stat">
             <strong>5 min</strong>
             <span>target solve time after the guidance pass</span>
           </li>
@@ -61,32 +60,32 @@
       </div>
     </section>
 
-    <div class="gr-page">
-      <div class="gr-container">
-        <section id="abstract" class="gr-section" aria-labelledby="abstract-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">Abstract summary</p>
+    <div class="mc-case-page">
+      <div class="mc-case-container">
+        <section id="abstract" class="mc-case-section" aria-labelledby="abstract-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Abstract summary</p>
             <h2 id="abstract-title">Teaching without taking over</h2>
             <p>
               The Grumbler is a small indie 2D puzzle platformer about a hungry stomach monster moving through food, switches, enemies, and exits. Players understood the character and the basic movement quickly, but puzzle 5 was where things started to break down. The game was asking them to connect too many lessons at once, and the tutorial was not doing enough to help them recover when they got stuck.
             </p>
           </div>
-          <div class="gr-grid gr-grid--2">
-            <div class="gr-card">
+          <div class="mc-case-grid mc-case-grid--2">
+            <div class="mc-case-card">
               <h3>Study result</h3>
               <p>
                 The most useful change was turning the level exit into a contextual hint portal until the puzzle had actually been solved. Once the right condition was met, that same object became the real exit. It meant players had somewhere obvious to go when they were thinking, "What am I missing?", without throwing a big tutorial pop-up in their face.
               </p>
             </div>
-            <blockquote class="gr-quote">
+            <blockquote class="mc-case-quote">
               "The exit finally felt like it was talking to me instead of judging me for not knowing the trick."
               <cite>Playtest participant, post-redesign session</cite>
             </blockquote>
           </div>
         </section>
 
-        <nav id="contents" class="gr-section" aria-labelledby="contents-title">
-          <div class="gr-toc">
+        <nav id="contents" class="mc-case-section" aria-labelledby="contents-title">
+          <div class="mc-case-toc">
             <h2 id="contents-title">Table of Contents</h2>
             <ol>
               <li><a href="#problem">Problem statement</a></li>
@@ -111,9 +110,9 @@
           </div>
         </nav>
 
-        <section id="problem" class="gr-section" aria-labelledby="problem-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">Problem statement</p>
+        <section id="problem" class="mc-case-section" aria-labelledby="problem-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Problem statement</p>
             <h2 id="problem-title">Puzzle 5 was asking for too much too soon</h2>
             <p>
               Players were reaching the fifth puzzle with basic movement knowledge, but they were not confident enough to read the exit, switch state, enemy timing, and hint toggle as one connected system. The puzzle itself was not the real problem. The issue was that the tutorial did not answer the next obvious question at the point where players became confused.
@@ -122,8 +121,8 @@
               This puzzle originally appeared as level 3. User analysis showed it was trying to teach too many concepts at once, so I moved it to level 5 and added two puzzle levels before it. Those extra levels slowed the learning curve down and taught the core ideas separately before asking players to combine them.
             </p>
           </div>
-          <div class="gr-media-grid">
-            <article class="gr-media-card">
+          <div class="mc-case-media-grid">
+            <article class="mc-case-media-card">
               <figure>
                 <img src="assets/images/grumbler/level-1.png" alt="Early level in The Grumbler showing the character, a button prompt, a gap, and a simple platform challenge." width="1920" height="1440">
                 <figcaption>
@@ -132,7 +131,7 @@
                 </figcaption>
               </figure>
             </article>
-            <article class="gr-media-card">
+            <article class="mc-case-media-card">
               <figure>
                 <img src="assets/images/grumbler/level-5.png" alt="Level 5 in The Grumbler with suspended switches, a level exit marker, enemy, and the Grumbler character." width="1920" height="1440">
                 <figcaption>
@@ -144,86 +143,86 @@
           </div>
         </section>
 
-        <section id="objectives" class="gr-section" aria-labelledby="objectives-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">Objectives and goals</p>
+        <section id="objectives" class="mc-case-section" aria-labelledby="objectives-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Objectives and goals</p>
             <h2 id="objectives-title">Help players move forward without solving it for them</h2>
           </div>
-          <div class="gr-grid gr-grid--3">
-            <article class="gr-card">
+          <div class="mc-case-grid mc-case-grid--3">
+            <article class="mc-case-card">
               <h3>Player learning</h3>
               <p>Make the exit communicate what was still missing, then reward the player with a clear state change once they had solved the puzzle.</p>
             </article>
-            <article class="gr-card">
+            <article class="mc-case-card">
               <h3>Progression</h3>
               <p>Get more players through puzzle 5 without flattening the logic or making the answer feel handed over.</p>
             </article>
-            <article class="gr-card">
+            <article class="mc-case-card">
               <h3>Production fit</h3>
               <p>Use the level objects, UI language, and art constraints that already existed, because this was a small indie game and the fix needed to be realistic.</p>
             </article>
           </div>
         </section>
 
-        <section id="process" class="gr-section" aria-labelledby="process-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">Process outline</p>
+        <section id="process" class="mc-case-section" aria-labelledby="process-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Process outline</p>
             <h2 id="process-title">Turning stuck moments into design decisions</h2>
           </div>
-          <div class="gr-grid gr-grid--4">
-            <article class="gr-card">
+          <div class="mc-case-grid mc-case-grid--4">
+            <article class="mc-case-card">
               <h3>1. Diagnose</h3>
               <p>I looked at fail points, abandon points, hint toggles, time on level, repeated deaths, and what players said while they were trying to work it out.</p>
             </article>
-            <article class="gr-card">
+            <article class="mc-case-card">
               <h3>2. Model</h3>
               <p>I mapped the concepts puzzle 5 relied on and found where the earlier levels were under-teaching cause and effect.</p>
             </article>
-            <article class="gr-card">
+            <article class="mc-case-card">
               <h3>3. Prototype</h3>
               <p>I tested contextual exit hints, stronger completion feedback, clearer hint language, and earlier foreshadowing.</p>
             </article>
-            <article class="gr-card">
+            <article class="mc-case-card">
               <h3>4. Measure</h3>
               <p>I compared completion, solve time, hint use, and confidence between the original tutorial and the improved build.</p>
             </article>
           </div>
         </section>
 
-        <section id="business" class="gr-section" aria-labelledby="business-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">Business challenges</p>
+        <section id="business" class="mc-case-section" aria-labelledby="business-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Business challenges</p>
             <h2 id="business-title">The solution had to fit a small game</h2>
           </div>
-          <div class="gr-grid gr-grid--2">
-            <article class="gr-card">
+          <div class="mc-case-grid mc-case-grid--2">
+            <article class="mc-case-card">
               <h3>Retention risk</h3>
               <p>Level 5 was early enough that a bad experience could make players decide the game was unclear before they had seen enough of it.</p>
             </article>
-            <article class="gr-card">
+            <article class="mc-case-card">
               <h3>Scope control</h3>
               <p>A big tutorial rebuild, new voiceover, or a pile of new animation work would have been the wrong answer. Reusing the exit object kept the fix focused.</p>
             </article>
-            <article class="gr-card">
+            <article class="mc-case-card">
               <h3>Identity protection</h3>
               <p>The Grumbler works because it is silly and handmade. The tutorial could not suddenly become a sterile onboarding system that felt like it belonged in another game.</p>
             </article>
-            <article class="gr-card">
+            <article class="mc-case-card">
               <h3>Difficulty promise</h3>
               <p>It still needed to feel like a puzzle platformer. The goal was guidance, not auto-solving.</p>
             </article>
           </div>
         </section>
 
-        <section id="audience" class="gr-section" aria-labelledby="audience-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">Target audience</p>
+        <section id="audience" class="mc-case-section" aria-labelledby="audience-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Target audience</p>
             <h2 id="audience-title">Curious players who would try things, but not forever</h2>
             <p>
               The audience for this study was players who were happy to experiment, but only while the game felt fair. The recruited participant group was white Scottish university students, predominantly male, with one female participant. They were close to the audience I expected for the game: curious, game-literate, and very quick to spot when a puzzle felt unclear rather than difficult.
             </p>
           </div>
-          <ul class="gr-pill-row" aria-label="Target audience traits">
+          <ul class="mc-pill-row" aria-label="Target audience traits">
             <li>PC and handheld players</li>
             <li>Short-session play</li>
             <li>Humor-led indie game appeal</li>
@@ -233,30 +232,30 @@
           </ul>
         </section>
 
-        <section id="research" class="gr-section" aria-labelledby="research-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">Research type</p>
+        <section id="research" class="mc-case-section" aria-labelledby="research-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Research type</p>
             <h2 id="research-title">Mixed method: quantitative and qualitative</h2>
             <p>
               I used quantitative data to see where progression was failing, then observation and questionnaires to understand why. That distinction mattered. I did not want to make the puzzle easier just because people were failing it. I wanted to know whether the failure was earned.
             </p>
           </div>
-          <div class="gr-grid gr-grid--3">
-            <article class="gr-card">
+          <div class="mc-case-grid mc-case-grid--3">
+            <article class="mc-case-card">
               <h3>Quantitative</h3>
               <p>I tracked completion rate, level duration, retries, deaths, hint toggles, exit interactions before completion, and abandon rate.</p>
             </article>
-            <article class="gr-card">
+            <article class="mc-case-card">
               <h3>Observations</h3>
               <p>Participants kept saying the same kind of thing at the exit. They could see the goal, but they did not know what the game wanted from them before it would let them leave.</p>
             </article>
-            <article class="gr-card">
+            <article class="mc-case-card">
               <h3>Questionnaire</h3>
               <p>The post-level questions focused on fairness, confidence, remembered objective, and whether the exit made sense.</p>
             </article>
           </div>
-          <div class="gr-table-wrap" style="margin-block-start: 1rem;">
-            <table class="gr-table">
+          <div class="mc-table-wrap" style="margin-block-start: 1rem;">
+            <table class="mc-case-table">
               <caption>Research summary from the tutorial improvement study.</caption>
               <thead>
                 <tr>
@@ -290,13 +289,13 @@
           </div>
         </section>
 
-        <section id="needs" class="gr-section" aria-labelledby="needs-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">User needs / Features and functionalities</p>
+        <section id="needs" class="mc-case-section" aria-labelledby="needs-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">User needs / Features and functionalities</p>
             <h2 id="needs-title">What players needed the tutorial to do</h2>
           </div>
-          <div class="gr-table-wrap">
-            <table class="gr-table">
+          <div class="mc-table-wrap">
+            <table class="mc-case-table">
               <caption>User needs translated into changes I could actually build.</caption>
               <thead>
                 <tr>
@@ -342,46 +341,46 @@
           </div>
         </section>
 
-        <section id="challenges" class="gr-section" aria-labelledby="challenges-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">User challenges</p>
+        <section id="challenges" class="mc-case-section" aria-labelledby="challenges-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">User challenges</p>
             <h2 id="challenges-title">Where the puzzle lost people</h2>
           </div>
-          <div class="gr-grid gr-grid--3">
-            <article class="gr-card">
+          <div class="mc-case-grid mc-case-grid--3">
+            <article class="mc-case-card">
               <h3>False completion</h3>
               <p>Players reached the exit before solving the puzzle and thought the game had failed to respond.</p>
             </article>
-            <article class="gr-card">
+            <article class="mc-case-card">
               <h3>Hidden dependency</h3>
               <p>The sequence depended on object state, enemy position, and switch order, but those links were too quiet.</p>
             </article>
-            <article class="gr-card">
+            <article class="mc-case-card">
               <h3>Help avoidance</h3>
               <p>Some players ignored the hint toggle because it felt like a setting, not help that belonged to the current puzzle.</p>
             </article>
-            <article class="gr-card">
+            <article class="mc-case-card">
               <h3>Repeated fail loop</h3>
               <p>When a plan failed, players repeated the same jump or attack timing instead of questioning the rule.</p>
             </article>
-            <article class="gr-card">
+            <article class="mc-case-card">
               <h3>Unclear success state</h3>
               <p>The difference between "this is your objective" and "this is now usable" needed to be much stronger.</p>
             </article>
-            <article class="gr-card">
+            <article class="mc-case-card">
               <h3>Break in tone</h3>
               <p>Generic tutorial text would have broken the stomach-world tone. The help needed to feel like it belonged there.</p>
             </article>
           </div>
         </section>
 
-        <section id="competitors" class="gr-section" aria-labelledby="competitors-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">Competitor analysis</p>
+        <section id="competitors" class="mc-case-section" aria-labelledby="competitors-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Competitor analysis</p>
             <h2 id="competitors-title">Looking at older puzzle-platformer patterns without copying them</h2>
           </div>
-          <div class="gr-table-wrap">
-            <table class="gr-table">
+          <div class="mc-table-wrap">
+            <table class="mc-case-table">
               <caption>Competitor features and unique opportunities for The Grumbler.</caption>
               <thead>
                 <tr>
@@ -427,104 +426,104 @@
           </div>
         </section>
 
-        <section id="personas" class="gr-section" aria-labelledby="personas-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">User personas</p>
+        <section id="personas" class="mc-case-section" aria-labelledby="personas-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">User personas</p>
             <h2 id="personas-title">Four player mindsets</h2>
             <p>
               These personas are grounded in the study context rather than a broad market segment. They represent white Scottish university students, with a mostly male participant group and one female participant.
             </p>
           </div>
-          <div class="gr-grid gr-grid--2">
-            <article class="gr-card gr-persona">
+          <div class="mc-case-grid mc-case-grid--2">
+            <article class="mc-case-card mc-case-persona">
               <h3>Calum MacLeod</h3>
               <h4>Personal details</h4>
-              <ul class="gr-persona__meta">
+              <ul class="mc-case-persona__meta">
                 <li>Age: 20</li>
                 <li>Location: Glasgow, Scotland</li>
                 <li>Education: BSc Games Development undergraduate</li>
                 <li>Employment: Part-time cinema assistant</li>
               </ul>
-              <p><span class="gr-highlight">Personality description:</span> Curious, playful, and quick to try things, but just as quick to lose interest when progress feels random.</p>
+              <p><span class="mc-highlight">Personality description:</span> Curious, playful, and quick to try things, but just as quick to lose interest when progress feels random.</p>
               <h4>A day in the life</h4>
-              <ul class="gr-list">
+              <ul class="mc-case-list">
                 <li>Plays short indie games between lectures and lab work.</li>
                 <li>Shares funny moments with friends on Discord.</li>
                 <li>Skips long tutorial text and prefers to learn by trying.</li>
               </ul>
-              <p><span class="gr-highlight">Pain points with current problem:</span> Gets frustrated when a playful game suddenly feels like coursework.</p>
-              <p class="gr-persona__quote">"I do not mind failing if I can tell what I learned."</p>
+              <p><span class="mc-highlight">Pain points with current problem:</span> Gets frustrated when a playful game suddenly feels like coursework.</p>
+              <p class="mc-case-persona__quote">"I do not mind failing if I can tell what I learned."</p>
             </article>
 
-            <article class="gr-card gr-persona">
+            <article class="mc-case-card mc-case-persona">
               <h3>Fraser Campbell</h3>
               <h4>Personal details</h4>
-              <ul class="gr-persona__meta">
+              <ul class="mc-case-persona__meta">
                 <li>Age: 21</li>
                 <li>Location: Dundee, Scotland</li>
                 <li>Education: BSc Computer Games Technology undergraduate</li>
                 <li>Employment: Part-time bar staff</li>
               </ul>
-              <p><span class="gr-highlight">Personality description:</span> Analytical and completion-focused. He is fine with challenge, but not with rules that feel inconsistent.</p>
+              <p><span class="mc-highlight">Personality description:</span> Analytical and completion-focused. He is fine with challenge, but not with rules that feel inconsistent.</p>
               <h4>A day in the life</h4>
-              <ul class="gr-list">
+              <ul class="mc-case-list">
                 <li>Plays puzzle games in evening sessions after coursework.</li>
                 <li>Tests rules deliberately before moving on.</li>
                 <li>Notices unclear feedback quickly.</li>
               </ul>
-              <p><span class="gr-highlight">Pain points with current problem:</span> Treats unclear feedback as a bug and starts losing trust in the level.</p>
-              <p class="gr-persona__quote">"Show me the rule once and I will do the work."</p>
+              <p><span class="mc-highlight">Pain points with current problem:</span> Treats unclear feedback as a bug and starts losing trust in the level.</p>
+              <p class="mc-case-persona__quote">"Show me the rule once and I will do the work."</p>
             </article>
 
-            <article class="gr-card gr-persona">
+            <article class="mc-case-card mc-case-persona">
               <h3>Eilidh Robertson</h3>
               <h4>Personal details</h4>
-              <ul class="gr-persona__meta">
+              <ul class="mc-case-persona__meta">
                 <li>Age: 19</li>
                 <li>Location: Edinburgh, Scotland</li>
                 <li>Education: BA Digital Media undergraduate</li>
                 <li>Employment: Part-time retail assistant</li>
               </ul>
-              <p><span class="gr-highlight">Personality description:</span> Expressive, social, and sensitive to pacing. She enjoys the humour, but only while the game keeps moving.</p>
+              <p><span class="mc-highlight">Personality description:</span> Expressive, social, and sensitive to pacing. She enjoys the humour, but only while the game keeps moving.</p>
               <h4>A day in the life</h4>
-              <ul class="gr-list">
+              <ul class="mc-case-list">
                 <li>Plays indie games with flatmates between seminars.</li>
                 <li>Talks through puzzle logic while playing.</li>
                 <li>Needs the game state to be readable when returning after interruptions.</li>
               </ul>
-              <p><span class="gr-highlight">Pain points with current problem:</span> Dead time during confusion makes the game feel less charming and more arbitrary.</p>
-              <p class="gr-persona__quote">"A hint can still be funny if it arrives in character."</p>
+              <p><span class="mc-highlight">Pain points with current problem:</span> Dead time during confusion makes the game feel less charming and more arbitrary.</p>
+              <p class="mc-case-persona__quote">"A hint can still be funny if it arrives in character."</p>
             </article>
 
-            <article class="gr-card gr-persona">
+            <article class="mc-case-card mc-case-persona">
               <h3>Lewis Stewart</h3>
               <h4>Personal details</h4>
-              <ul class="gr-persona__meta">
+              <ul class="mc-case-persona__meta">
                 <li>Age: 22</li>
                 <li>Location: Aberdeen, Scotland</li>
                 <li>Education: Fourth-year Computer Science undergraduate</li>
                 <li>Employment: Student ambassador</li>
               </ul>
-              <p><span class="gr-highlight">Personality description:</span> Methodical and time-poor. He likes clever mechanics, but not repeating the same unclear section.</p>
+              <p><span class="mc-highlight">Personality description:</span> Methodical and time-poor. He likes clever mechanics, but not repeating the same unclear section.</p>
               <h4>A day in the life</h4>
-              <ul class="gr-list">
+              <ul class="mc-case-list">
                 <li>Plays PC and handheld games between classes and society events.</li>
                 <li>Resumes after interruptions and forgets small clues.</li>
                 <li>Uses hint settings when they feel like part of the game rather than a failure state.</li>
               </ul>
-              <p><span class="gr-highlight">Pain points with current problem:</span> Needs quick reorientation after stepping away, otherwise the puzzle loses him.</p>
-              <p class="gr-persona__quote">"Respect my time, but do not remove the puzzle."</p>
+              <p><span class="mc-highlight">Pain points with current problem:</span> Needs quick reorientation after stepping away, otherwise the puzzle loses him.</p>
+              <p class="mc-case-persona__quote">"Respect my time, but do not remove the puzzle."</p>
             </article>
           </div>
         </section>
 
-        <section id="task-map" class="gr-section" aria-labelledby="task-map-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">Task mapping table</p>
+        <section id="task-map" class="mc-case-section" aria-labelledby="task-map-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Task mapping table</p>
             <h2 id="task-map-title">The four moments that mattered most</h2>
           </div>
-          <div class="gr-table-wrap">
-            <table class="gr-table">
+          <div class="mc-table-wrap">
+            <table class="mc-case-table">
               <caption>Task, environment, challenges, emotions, thoughts, urgency level, and design opportunity.</caption>
               <thead>
                 <tr>
@@ -579,38 +578,38 @@
           </div>
         </section>
 
-        <section id="eisenhower" class="gr-section" aria-labelledby="eisenhower-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">Decision Matrix</p>
+        <section id="eisenhower" class="mc-case-section" aria-labelledby="eisenhower-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Decision Matrix</p>
           </div>
-          <div class="gr-matrix" role="img" aria-label="Eisenhower matrix showing urgent and important tutorial improvements.">
-            <article class="gr-quadrant">
-              <h3><span class="gr-dot gr-dot--green" aria-hidden="true"></span>Do first: urgent and important</h3>
-              <ul class="gr-list">
+          <div class="mc-case-matrix" role="img" aria-label="Eisenhower matrix showing urgent and important tutorial improvements.">
+            <article class="mc-case-quadrant">
+              <h3><span class="mc-dot mc-dot--green" aria-hidden="true"></span>Do first: urgent and important</h3>
+              <ul class="mc-case-list">
                 <li>Contextual exit hint portal.</li>
                 <li>Clear solved versus unsolved exit state.</li>
                 <li>Short hint copy for puzzle 5.</li>
               </ul>
             </article>
-            <article class="gr-quadrant">
-              <h3><span class="gr-dot gr-dot--yellow" aria-hidden="true"></span>Schedule: important, less urgent</h3>
-              <ul class="gr-list">
+            <article class="mc-case-quadrant">
+              <h3><span class="mc-dot mc-dot--yellow" aria-hidden="true"></span>Schedule: important, less urgent</h3>
+              <ul class="mc-case-list">
                 <li>Level 1 foreshadowing of state-change exits.</li>
                 <li>Improved hint settings copy.</li>
                 <li>Better analytics event naming.</li>
               </ul>
             </article>
-            <article class="gr-quadrant">
-              <h3><span class="gr-dot gr-dot--blue" aria-hidden="true"></span>Delegate: urgent, lower impact</h3>
-              <ul class="gr-list">
+            <article class="mc-case-quadrant">
+              <h3><span class="mc-dot mc-dot--blue" aria-hidden="true"></span>Delegate: urgent, lower impact</h3>
+              <ul class="mc-case-list">
                 <li>Small visual polish pass for hint bubbles.</li>
                 <li>QA pass on portal collision states.</li>
                 <li>Text proofreading across tutorial levels.</li>
               </ul>
             </article>
-            <article class="gr-quadrant">
-              <h3><span class="gr-dot gr-dot--red" aria-hidden="true"></span>Eliminate: lower urgency and impact</h3>
-              <ul class="gr-list">
+            <article class="mc-case-quadrant">
+              <h3><span class="mc-dot mc-dot--red" aria-hidden="true"></span>Eliminate: lower urgency and impact</h3>
+              <ul class="mc-case-list">
                 <li>New cutscene tutorial.</li>
                 <li>Full companion guide character.</li>
                 <li>Large redesign of the level layout.</li>
@@ -619,150 +618,150 @@
           </div>
         </section>
 
-        <section id="five-whys" class="gr-section" aria-labelledby="five-whys-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">5 Whys analysis graph</p>
+        <section id="five-whys" class="mc-case-section" aria-labelledby="five-whys-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">5 Whys analysis graph</p>
             <p>
               This was part of the root cause analysis. I kept asking why the previous answer was happening until the problem stopped being "players are bad at the puzzle" and became "I am trying to teach them too fast."
             </p>
           </div>
-          <div class="gr-five-whys" role="img" aria-label="5 Whys analysis. Problem: users are struggling to complete level 3. Why: because they are struggling to solve the puzzle. Why: because they are not combining all the information available. Why: There is too much going on at once, causing cognitive overload. Why: because the level is too complex for this stage in the game. Root cause: I am trying to teach them too fast.">
-            <div class="gr-why-step gr-why-step--problem">
-              <span class="gr-why-step__label">Problem</span>
+          <div class="mc-case-five-whys" role="img" aria-label="5 Whys analysis. Problem: users are struggling to complete level 3. Why: because they are struggling to solve the puzzle. Why: because they are not combining all the information available. Why: There is too much going on at once, causing cognitive overload. Why: because the level is too complex for this stage in the game. Root cause: I am trying to teach them too fast.">
+            <div class="mc-case-why-step mc-case-why-step--problem">
+              <span class="mc-case-why-step__label">Problem</span>
               <p>Users are struggling to complete level 3.</p>
             </div>
-            <div class="gr-why-step">
-              <span class="gr-why-step__label">Why?</span>
+            <div class="mc-case-why-step">
+              <span class="mc-case-why-step__label">Why?</span>
               <p>Because they are struggling to solve the puzzle.</p>
             </div>
-            <div class="gr-why-step">
-              <span class="gr-why-step__label">Why?</span>
+            <div class="mc-case-why-step">
+              <span class="mc-case-why-step__label">Why?</span>
               <p>Because they are not combining all the information available.</p>
             </div>
-            <div class="gr-why-step">
-              <span class="gr-why-step__label">Why?</span>
+            <div class="mc-case-why-step">
+              <span class="mc-case-why-step__label">Why?</span>
               <p>There is too much going on at once, causing cognitive overload.</p>
             </div>
-            <div class="gr-why-step">
-              <span class="gr-why-step__label">Why?</span>
+            <div class="mc-case-why-step">
+              <span class="mc-case-why-step__label">Why?</span>
               <p>Because the level is too complex for this stage in the game.</p>
             </div>
-            <div class="gr-why-step gr-why-step--root">
-              <span class="gr-why-step__label">Root cause</span>
+            <div class="mc-case-why-step mc-case-why-step--root">
+              <span class="mc-case-why-step__label">Root cause</span>
               <p>Because I am trying to teach them too fast.</p>
             </div>
           </div>
         </section>
 
-        <section id="root-cause" class="gr-section" aria-labelledby="root-cause-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">Root cause analysis</p>
+        <section id="root-cause" class="mc-case-section" aria-labelledby="root-cause-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Root cause analysis</p>
           </div>
-          <div class="gr-cause-map" role="img" aria-label="Root cause analysis from observed failure to tutorial cause.">
-            <div class="gr-cause-node">
+          <div class="mc-case-cause-map" role="img" aria-label="Root cause analysis from observed failure to tutorial cause.">
+            <div class="mc-case-cause-node">
               <strong>Observed failure</strong>
               <span>Players abandoned the puzzle or repeated the same failed attempt.</span>
             </div>
-            <div class="gr-cause-node">
+            <div class="mc-case-cause-node">
               <strong>Immediate cause</strong>
               <span>They reached the exit before solving the puzzle and did not know why it was blocked.</span>
             </div>
-            <div class="gr-cause-node">
+            <div class="mc-case-cause-node">
               <strong>System cause</strong>
               <span>The hinting was separate from the object that created the question.</span>
             </div>
-            <div class="gr-cause-node">
+            <div class="mc-case-cause-node">
               <strong>Root cause</strong>
               <span>The tutorial taught mechanics individually, but not state-based exit behaviour at the point of need.</span>
             </div>
           </div>
         </section>
 
-        <section id="task-flows" class="gr-section" aria-labelledby="task-flows-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">Task flows</p>
+        <section id="task-flows" class="mc-case-section" aria-labelledby="task-flows-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Task flows</p>
             <h2 id="task-flows-title">Two flows: getting stuck and getting unstuck</h2>
           </div>
-          <div class="gr-grid gr-grid--2">
-            <article class="gr-flow-card">
+          <div class="mc-case-grid mc-case-grid--2">
+            <article class="mc-case-flow-card">
               <h3>Scenario 1: Original level 5 flow</h3>
-              <div class="gr-flow">
-                <div class="gr-flow__step"><b>1</b><span>The player sees the exit and assumes it is already usable.</span></div>
-                <div class="gr-flow__step"><b>2</b><span>They experiment with switches and enemy timing.</span></div>
-                <div class="gr-flow__step"><b>3</b><span>They return to the exit before solving the required state.</span></div>
-                <div class="gr-flow__step"><b>4</b><span>The exit does not answer the question, so they repeat old actions or quit.</span></div>
+              <div class="mc-case-flow">
+                <div class="mc-case-flow__step"><b>1</b><span>The player sees the exit and assumes it is already usable.</span></div>
+                <div class="mc-case-flow__step"><b>2</b><span>They experiment with switches and enemy timing.</span></div>
+                <div class="mc-case-flow__step"><b>3</b><span>They return to the exit before solving the required state.</span></div>
+                <div class="mc-case-flow__step"><b>4</b><span>The exit does not answer the question, so they repeat old actions or quit.</span></div>
               </div>
             </article>
-            <article class="gr-flow-card">
+            <article class="mc-case-flow-card">
               <h3>Scenario 2: Improved hint-exit flow</h3>
-              <div class="gr-flow">
-                <div class="gr-flow__step"><b>1</b><span>The player sees the exit marked as an unsolved hint portal.</span></div>
-                <div class="gr-flow__step"><b>2</b><span>They interact with it and get a short contextual nudge.</span></div>
-                <div class="gr-flow__step"><b>3</b><span>They complete the switch and enemy sequence with clearer intent.</span></div>
-                <div class="gr-flow__step"><b>4</b><span>The portal changes to an exit state, confirming that they can now progress.</span></div>
+              <div class="mc-case-flow">
+                <div class="mc-case-flow__step"><b>1</b><span>The player sees the exit marked as an unsolved hint portal.</span></div>
+                <div class="mc-case-flow__step"><b>2</b><span>They interact with it and get a short contextual nudge.</span></div>
+                <div class="mc-case-flow__step"><b>3</b><span>They complete the switch and enemy sequence with clearer intent.</span></div>
+                <div class="mc-case-flow__step"><b>4</b><span>The portal changes to an exit state, confirming that they can now progress.</span></div>
               </div>
             </article>
           </div>
         </section>
 
-        <section id="prototypes" class="gr-section" aria-labelledby="prototypes-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">Designs / Prototypes</p>
+        <section id="prototypes" class="mc-case-section" aria-labelledby="prototypes-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Designs / Prototypes</p>
             <h2 id="prototypes-title">The design that worked best: a portal that teaches, then exits</h2>
             <p>
               I avoided adding another tutorial overlay. Instead, I gave new behaviour to an object players already understood was important.
             </p>
           </div>
-          <div class="gr-media-grid">
-            <article class="gr-media-card">
+          <div class="mc-case-media-grid">
+            <article class="mc-case-media-card">
               <figure>
-                <div class="gr-annotated">
+                <div class="mc-annotated">
                   <img src="assets/images/grumbler/level-5.png" alt="Prototype before completion, showing the level 5 exit as a hint marker above the puzzle." width="1920" height="1440">
-                  <span class="gr-pin gr-pin--portal" aria-label="Annotation 1">1</span>
-                  <span class="gr-pin gr-pin--hint" aria-label="Annotation 2">2</span>
+                  <span class="mc-pin mc-pin--portal" aria-label="Annotation 1">1</span>
+                  <span class="mc-pin mc-pin--hint" aria-label="Annotation 2">2</span>
                 </div>
                 <figcaption>
                   <h3>Before completion</h3>
-                  <p><span class="gr-highlight">1.</span> The exit shows a hint state instead of pretending it is usable. <span class="gr-highlight">2.</span> The hint toggle stays visible, but the contextual portal carries the main support.</p>
+                  <p><span class="mc-highlight">1.</span> The exit shows a hint state instead of pretending it is usable. <span class="mc-highlight">2.</span> The hint toggle stays visible, but the contextual portal carries the main support.</p>
                 </figcaption>
               </figure>
             </article>
-            <article class="gr-media-card">
+            <article class="mc-case-media-card">
               <figure>
-                <div class="gr-annotated">
+                <div class="mc-annotated">
                   <img src="assets/images/grumbler/level-5-complete.png" alt="Prototype after completion, showing the level 5 exit as a completed portal with the puzzle resolved." width="1920" height="1440">
-                  <span class="gr-pin gr-pin--state" aria-label="Annotation 1">1</span>
-                  <span class="gr-pin gr-pin--reward" aria-label="Annotation 2">2</span>
+                  <span class="mc-pin mc-pin--state" aria-label="Annotation 1">1</span>
+                  <span class="mc-pin mc-pin--reward" aria-label="Annotation 2">2</span>
                 </div>
                 <figcaption>
                   <h3>After completion</h3>
-                  <p><span class="gr-highlight">1.</span> The portal changes to its completion state. <span class="gr-highlight">2.</span> The resolved enemy state and clear route reinforce that the player solved the level.</p>
+                  <p><span class="mc-highlight">1.</span> The portal changes to its completion state. <span class="mc-highlight">2.</span> The resolved enemy state and clear route reinforce that the player solved the level.</p>
                 </figcaption>
               </figure>
             </article>
           </div>
-          <div class="gr-grid gr-grid--3" style="margin-block-start: 1rem;">
-            <article class="gr-card">
+          <div class="mc-case-grid mc-case-grid--3" style="margin-block-start: 1rem;">
+            <article class="mc-case-card">
               <h3>Prototype rule</h3>
               <p>If the puzzle condition is false, the portal gives the next useful hint. If the condition is true, it exits the level.</p>
             </article>
-            <article class="gr-card">
+            <article class="mc-case-card">
               <h3>Hint copy rule</h3>
               <p>Hints use one action verb, one object clue, and no full solution. The player still has to do the solve.</p>
             </article>
-            <article class="gr-card">
+            <article class="mc-case-card">
               <h3>Feedback rule</h3>
               <p>The icon, sound, collision, and objective text change together so the state cannot be missed.</p>
             </article>
           </div>
         </section>
 
-        <section id="index" class="gr-section" aria-labelledby="index-title">
-          <div class="gr-section__header">
-            <p class="gr-kicker">Index</p>
+        <section id="index" class="mc-case-section" aria-labelledby="index-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Index</p>
             <h2 id="index-title">Case study index</h2>
           </div>
-          <ul class="gr-index-list">
+          <ul class="mc-case-index-list">
             <li><a href="#abstract">Abstract summary</a></li>
             <li><a href="#business">Business challenges</a></li>
             <li><a href="#competitors">Competitor analysis</a></li>
@@ -779,9 +778,9 @@
           </ul>
         </section>
 
-        <section id="last-page" class="gr-section" aria-labelledby="last-page-title">
-          <article class="gr-last">
-            <div class="gr-last__copy">
+        <section id="last-page" class="mc-case-section" aria-labelledby="last-page-title">
+          <article class="mc-case-last">
+            <div class="mc-case-last__copy">
               <h2 id="last-page-title">Outcome: clearer learning, faster progress</h2>
               <p>
                 The improvement worked because it respected what the player was already trying to do. When players went to the exit too early, the game no longer stayed silent. It answered with a small, contextual hint. When players solved the puzzle, that same object transformed into the exit. That simple state change produced the strongest measured result: a 40% increase in players able to complete puzzle 5.
