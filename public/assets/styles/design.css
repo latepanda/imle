@@ -3247,6 +3247,7 @@ mark {
   border: 1px solid rgba(255, 244, 223, 0.2);
   border-radius: 8px;
   padding: 1rem;
+  margin-block-start: var(--mc-space-1);
 }
 
 .mc-case-stat strong {
