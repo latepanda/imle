@@ -457,9 +457,9 @@
           <h3>Adaptive card layout</h3>
           <p class="mc-body-copy">Use <code>mc-layout mc-layout--adaptive</code> when a group should move from one column, to two columns, to three columns as space becomes available.</p>
           <div class="mc-layout mc-layout--adaptive mc-mt--5">
-            <div class="mc-spacing-demo__item mc-p--4">Mobile: 1 column</div>
-            <div class="mc-spacing-demo__item mc-p--4">Tablet: 2 columns</div>
-            <div class="mc-spacing-demo__item mc-p--4">Desktop: 3 columns</div>
+            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--4">Mobile: 1 column</div>
+            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--4">Tablet: 2 columns</div>
+            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--4">Desktop: 3 columns</div>
           </div>
         </div>
 
@@ -490,9 +490,9 @@
         </div>
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;div class="mc-layout mc-layout--adaptive mc-mt--5"&gt;
-  &lt;div class="mc-spacing-demo__item mc-p--4"&gt;Mobile: 1 column&lt;/div&gt;
-  &lt;div class="mc-spacing-demo__item mc-p--4"&gt;Tablet: 2 columns&lt;/div&gt;
-  &lt;div class="mc-spacing-demo__item mc-p--4"&gt;Desktop: 3 columns&lt;/div&gt;
+  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--4"&gt;Mobile: 1 column&lt;/div&gt;
+  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--4"&gt;Tablet: 2 columns&lt;/div&gt;
+  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--4"&gt;Desktop: 3 columns&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class="mc-layout mc-layout--split mc-mt--5"&gt;
@@ -540,40 +540,40 @@
         <div class="mc-section-card mc-flow">
           <p class="mc-lead">Use shared spacing tokens and utility classes for consistent page rhythm.</p>
           <h3>Padding examples</h3>
-          <div class="mc-spacing-demo mc-stack mc-stack--lg">
-            <div class="mc-spacing-demo__item mc-p--3">Padding 3</div>
-            <div class="mc-spacing-demo__item mc-p--4">Padding 4</div>
-            <div class="mc-spacing-demo__item mc-p--5">Padding 5</div>
+          <div class="mc-stack mc-stack--lg">
+            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--3">Padding 3</div>
+            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--4">Padding 4</div>
+            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--5">Padding 5</div>
           </div>
           <h3>Margin examples</h3>
-          <div class="mc-spacing-demo mc-stack mc-stack--lg">
-            <div class="mc-spacing-demo__frame">
-              <div class="mc-spacing-demo__item mc-mt--4 mc-p--3">Margin top 4</div>
+          <div class="mc-stack mc-stack--lg">
+            <div class="mc-bg--surface mc-border mc-rounded--md">
+              <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-mt--4 mc-p--3">Margin top 4</div>
             </div>
-            <div class="mc-spacing-demo__frame">
-              <div class="mc-spacing-demo__item mc-mb--4 mc-p--3">Margin bottom 4</div>
+            <div class="mc-bg--surface mc-border mc-rounded--md">
+              <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-mb--4 mc-p--3">Margin bottom 4</div>
             </div>
-            <div class="mc-spacing-demo__frame mc-p--3">
-              <div class="mc-spacing-demo__item mc-m--0 mc-p--3">Margin 0</div>
+            <div class="mc-bg--surface mc-border mc-rounded--md mc-p--3">
+              <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-m--0 mc-p--3">Margin 0</div>
             </div>
           </div>
         </div>
 
-        <pre class="mc-code-example" tabindex="0"><code>&lt;div class="mc-spacing-demo mc-stack mc-stack--lg"&gt;
-  &lt;div class="mc-spacing-demo__item mc-p--3"&gt;Padding 3&lt;/div&gt;
-  &lt;div class="mc-spacing-demo__item mc-p--4"&gt;Padding 4&lt;/div&gt;
-  &lt;div class="mc-spacing-demo__item mc-p--5"&gt;Padding 5&lt;/div&gt;
+        <pre class="mc-code-example" tabindex="0"><code>&lt;div class="mc-stack mc-stack--lg"&gt;
+  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--3"&gt;Padding 3&lt;/div&gt;
+  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--4"&gt;Padding 4&lt;/div&gt;
+  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--5"&gt;Padding 5&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class="mc-spacing-demo mc-stack mc-stack--lg"&gt;
-  &lt;div class="mc-spacing-demo__frame"&gt;
-    &lt;div class="mc-spacing-demo__item mc-mt--4 mc-p--3"&gt;Margin top 4&lt;/div&gt;
+&lt;div class="mc-stack mc-stack--lg"&gt;
+  &lt;div class="mc-bg--surface mc-border mc-rounded--md"&gt;
+    &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-mt--4 mc-p--3"&gt;Margin top 4&lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class="mc-spacing-demo__frame"&gt;
-    &lt;div class="mc-spacing-demo__item mc-mb--4 mc-p--3"&gt;Margin bottom 4&lt;/div&gt;
+  &lt;div class="mc-bg--surface mc-border mc-rounded--md"&gt;
+    &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-mb--4 mc-p--3"&gt;Margin bottom 4&lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class="mc-spacing-demo__frame mc-p--3"&gt;
-    &lt;div class="mc-spacing-demo__item mc-m--0 mc-p--3"&gt;Margin 0&lt;/div&gt;
+  &lt;div class="mc-bg--surface mc-border mc-rounded--md mc-p--3"&gt;
+    &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-m--0 mc-p--3"&gt;Margin 0&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
@@ -605,7 +605,7 @@
   &lt;span class="mc-badge mc-badge--danger"&gt;Cluster item&lt;/span&gt;
 &lt;/div&gt;
 
-&lt;div class="mc-spacing-demo__item mc-mt--4 mc-p--3"&gt;
+&lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-mt--4 mc-p--3"&gt;
   Margin top 4
 &lt;/div&gt;</code></pre>
 
@@ -663,9 +663,9 @@
         <div class="mc-section-card">
           <h3>Grid system</h3>
           <div class="mc-row mc-g--3">
-            <div class="mc-col mc-col--12 mc-col--sm-6 mc-col--lg-3"><div class="mc-spacing-demo__item mc-p--3">12 / sm 6 / lg 3</div></div>
-            <div class="mc-col mc-col--12 mc-col--sm-6 mc-col--lg-6"><div class="mc-spacing-demo__item mc-p--3">12 / sm 6 / lg 6</div></div>
-            <div class="mc-col mc-col--12 mc-col--lg-3"><div class="mc-spacing-demo__item mc-p--3">12 / lg 3</div></div>
+            <div class="mc-col mc-col--12 mc-col--sm-6 mc-col--lg-3"><div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--3">12 / sm 6 / lg 3</div></div>
+            <div class="mc-col mc-col--12 mc-col--sm-6 mc-col--lg-6"><div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--3">12 / sm 6 / lg 6</div></div>
+            <div class="mc-col mc-col--12 mc-col--lg-3"><div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--3">12 / lg 3</div></div>
           </div>
           <table class="mc-mt--5">
             <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
@@ -689,13 +689,13 @@
         <pre class="mc-code-example" tabindex="0"><code>&lt;section class="mc-container mc-container--lg"&gt;
   &lt;div class="mc-row mc-g--3"&gt;
     &lt;div class="mc-col mc-col--12 mc-col--sm-6 mc-col--lg-3"&gt;
-      &lt;div class="mc-spacing-demo__item mc-p--3"&gt;12 / sm 6 / lg 3&lt;/div&gt;
+      &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--3"&gt;12 / sm 6 / lg 3&lt;/div&gt;
     &lt;/div&gt;
     &lt;div class="mc-col mc-col--12 mc-col--sm-6 mc-col--lg-6"&gt;
-      &lt;div class="mc-spacing-demo__item mc-p--3"&gt;12 / sm 6 / lg 6&lt;/div&gt;
+      &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--3"&gt;12 / sm 6 / lg 6&lt;/div&gt;
     &lt;/div&gt;
     &lt;div class="mc-col mc-col--12 mc-col--lg-3"&gt;
-      &lt;div class="mc-spacing-demo__item mc-p--3"&gt;12 / lg 3&lt;/div&gt;
+      &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--3"&gt;12 / lg 3&lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;</code></pre>
@@ -1001,9 +1001,9 @@
 
       <div class="mc-component-doc">
         <div class="mc-section-card">
-          <section class="mc-consent-banner mc-consent-banner--demo" aria-labelledby="consent-demo-title">
+          <section class="mc-grid mc-g--3 mc-bg--surface-strong mc-border mc-rounded--md mc-shadow--sm mc-text--accent mc-p--3 mc-max-w--md" aria-labelledby="consent-example-title">
             <div class="mc-stack mc-stack--sm">
-              <h3 id="consent-demo-title" class="mc-m--0 mc-fs--1">Analytics consent</h3>
+              <h3 id="consent-example-title" class="mc-m--0 mc-fs--1">Analytics consent</h3>
               <p class="mc-m--0 mc-text--muted mc-fs--1">
                 I use Google Tag Manager to understand how this site is used. You can accept or reject analytics tracking.
               </p>
@@ -1047,7 +1047,7 @@
           <table class="mc-table">
             <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
             <tbody>
-              <tr><td><ul class="mc-token-list"><li><code>mc-consent-banner</code></li><li><code>mc-consent-banner--demo</code></li></ul></td><td>Compact fixed consent surface and static documentation/demo variant.</td><td><code>&lt;section class="mc-consent-banner"&gt;</code></td></tr>
+              <tr><td><code>mc-consent-banner</code></td><td>Compact fixed consent surface.</td><td><code>&lt;section class="mc-consent-banner"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-stack mc-stack--sm</code></li><li><code>mc-m--0</code></li><li><code>mc-text--muted</code></li><li><code>mc-fs--1</code></li></ul></td><td>Composes compact banner copy.</td><td><code>&lt;div class="mc-stack mc-stack--sm"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-grid mc-grid--cols-2</code></li><li><code>mc-g--2</code></li></ul></td><td>Creates the always-two-column consent action layout.</td><td><code>&lt;div class="mc-grid mc-grid--cols-2 mc-g--2"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-button--sm</code></li><li><code>mc-button--block</code></li><li><code>mc-button--link</code></li></ul></td><td>Composes compact actions and the learn-more link.</td><td><code>&lt;button class="mc-button mc-button--sm mc-button--block"&gt;</code></td></tr>
