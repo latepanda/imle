@@ -116,7 +116,7 @@
               <tr><td><code>mercury.tokens</code></td><td>Themeable CSS variables and normalized aliases.</td></tr>
               <tr><td><code>mercury.reset</code></td><td>Browser reset and inherited defaults.</td></tr>
               <tr><td><code>mercury.base</code></td><td>Classless semantic element styling.</td></tr>
-              <tr><td><code>mercury.themes</code></td><td>Theme classes such as dark, light, paper, Mercury, and Grumbler.</td></tr>
+              <tr><td><code>mercury.themes</code></td><td>Theme classes for dark mode, light mode, and the Mercury page background.</td></tr>
               <tr><td><code>mercury.components</code></td><td>Reusable components and page-specific component sets.</td></tr>
               <tr><td><code>mercury.utilities</code></td><td>Late utility overrides.</td></tr>
               <tr><td><code>mercury.a11y</code></td><td>Reduced motion and forced-colours support.</td></tr>
@@ -151,7 +151,7 @@
               <tr><td><code>mc-theme--light</code></td><td>Light colour-scheme mode.</td><td><code>&lt;body class="mc-theme mc-theme--light"&gt;</code></td></tr>
               <tr><td><code>mc-theme--mercury</code></td><td>Animated Mercury page background.</td><td><code>&lt;body class="mc-theme mc-theme--mercury"&gt;</code></td></tr>
               <tr><td><code>mc-theme--paper</code></td><td>Light document palette. <span class="mc-text--warning">(Experimental)</span></td><td><code>&lt;body class="mc-theme mc-theme--paper"&gt;</code></td></tr>
-              <tr><td><code>mc-theme--grumbler</code></td><td>Warm case-study palette and Grumbler case components.</td><td><code>&lt;body class="mc-theme mc-theme--grumbler"&gt;</code></td></tr>
+              <tr><td><code>mc-theme--grumbler</code></td><td>Warm case-study palette and Grumbler case components. <span class="mc-text--warning">(Experimental)</span></td><td><code>&lt;body class="mc-theme mc-theme--grumbler"&gt;</code></td></tr>
             </tbody>
           </table>
         </div>
@@ -2401,67 +2401,39 @@
   <script>
     const themeToggle = document.querySelector('[data-theme-toggle]');
     const themeToggleLabel = document.querySelector('[data-theme-toggle-label]');
-    const themeSelect = document.querySelector('[data-theme-select]');
     const docsMenu = document.querySelector('[data-docs-menu]');
     const docsMenuLinks = document.querySelectorAll('.mc-docs-nav__link');
     const desktopMenuQuery = window.matchMedia('(min-width: 48rem)');
     const colourSchemeQuery = window.matchMedia('(prefers-color-scheme: light)');
-    let hasExplicitThemeChoice = false;
+    let hasManualThemeChoice = false;
 
     function setMercuryTheme(theme) {
       const isLight = theme === 'light';
       document.body.classList.toggle('mc-theme--light', isLight);
       document.body.classList.toggle('mc-theme--dark', !isLight);
-      themeToggle.setAttribute('aria-pressed', String(isLight));
-      themeToggleLabel.textContent = isLight ? 'Dark mode' : 'Light mode';
+      themeToggle?.setAttribute('aria-pressed', String(!isLight));
+      if (themeToggleLabel) {
+        themeToggleLabel.textContent = isLight ? 'Dark mode' : 'Light mode';
+      }
     }
-
-    themeToggle.addEventListener('click', () => {
-      setMercuryTheme(document.body.classList.contains('mc-theme--light') ? 'dark' : 'light');
-    });
 
     function preferredMercuryTheme() {
-      return colourSchemeQuery.matches ? 'light-mercury' : 'dark-mercury';
+      return colourSchemeQuery.matches ? 'light' : 'dark';
     }
 
-    // function setMercuryTheme(theme) {
-    //   document.body.classList.remove('mc-theme--dark', 'mc-theme--light', 'mc-theme--paper', 'mc-theme--mercury', 'mc-theme--grumbler');
-
-    //   if (theme === 'light-mercury') {
-    //     document.body.classList.add('mc-theme--light', 'mc-theme--mercury');
-    //     return;
-    //   }
-
-    //   if (theme === 'paper') {
-    //     document.body.classList.add('mc-theme--paper');
-    //     return;
-    //   }
-
-    //   if (theme === 'grumbler') {
-    //     document.body.classList.add('mc-theme--grumbler');
-    //     return;
-    //   }
-
-    //   document.body.classList.add('mc-theme--dark', 'mc-theme--mercury');
-    // }
-
     function applyPreferredMercuryTheme() {
-      const theme = preferredMercuryTheme();
-      if (themeSelect) {
-        themeSelect.value = theme;
-      }
-      setMercuryTheme(theme);
+      setMercuryTheme(preferredMercuryTheme());
     }
 
     applyPreferredMercuryTheme();
 
-    themeSelect?.addEventListener('change', (event) => {
-      hasExplicitThemeChoice = true;
-      setMercuryTheme(event.target.value);
+    themeToggle?.addEventListener('click', () => {
+      hasManualThemeChoice = true;
+      setMercuryTheme(document.body.classList.contains('mc-theme--light') ? 'dark' : 'light');
     });
 
     function handleColourSchemeChange() {
-      if (!hasExplicitThemeChoice) {
+      if (!hasManualThemeChoice) {
         applyPreferredMercuryTheme();
       }
     }
