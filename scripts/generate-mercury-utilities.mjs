@@ -59,6 +59,26 @@ const responsiveSelectors = breakpoints.flatMap((breakpoint) => [
   `.${breakpoint}\\:mc-text--center`,
   `.${breakpoint}\\:mc-text--end`,
   `.${breakpoint}\\:mc-grid--2`,
+  ...levels.map((step) => `.${breakpoint}\\:mc-gap--${step}`),
+  ...levels.map((step) => `.${breakpoint}\\:mc-g--${step}`),
+  ...levels.map((step) => `.${breakpoint}\\:mc-p--${step}`),
+  ...levels.flatMap((step) => [
+    `.${breakpoint}\\:mc-pt--${step}`,
+    `.${breakpoint}\\:mc-pr--${step}`,
+    `.${breakpoint}\\:mc-pb--${step}`,
+    `.${breakpoint}\\:mc-pl--${step}`,
+    `.${breakpoint}\\:mc-px--${step}`,
+    `.${breakpoint}\\:mc-py--${step}`,
+  ]),
+  ...levels.map((step) => `.${breakpoint}\\:mc-m--${step}`),
+  ...levels.flatMap((step) => [
+    `.${breakpoint}\\:mc-mx--${step}`,
+    `.${breakpoint}\\:mc-my--${step}`,
+    `.${breakpoint}\\:mc-mt--${step}`,
+    `.${breakpoint}\\:mc-mr--${step}`,
+    `.${breakpoint}\\:mc-mb--${step}`,
+    `.${breakpoint}\\:mc-ml--${step}`,
+  ]),
 ]);
 
 const expectedSelectors = [...new Set([...utilitySelectors, ...responsiveSelectors])];

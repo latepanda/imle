@@ -19,25 +19,13 @@
   <title>Mercury Alpha</title>
   <link href="assets/styles/design.css" rel="stylesheet">
 </head>
-<body class="mc-theme mc-theme--dark mc-theme--mercury">
+<body class="mc-theme mc-theme--mercury">
   <a class="mc-skip-link" href="#main-content">Skip to content</a>
 
   <header class="mc-site-header" aria-label="Site header">
     <a class="mc-brand" href="https://www.imle.uk" aria-label="Return to the IMLE homepage">
       <span class="mc-brand__logo" aria-hidden="true"></span>
     </a>
-    <div class="mc-top-actions" aria-label="Mercury actions">
-      <label class="mc-visually-hidden" for="theme-select">Theme</label>
-      <select class="mc-form__control mc-theme-select" id="theme-select" data-theme-select aria-label="Preview Mercury theme">
-        <option value="dark-mercury">Dark Mercury</option>
-        <option value="light-mercury">Light Mercury</option>
-        <option value="paper">Paper</option>
-        <option value="grumbler">Grumbler</option>
-      </select>
-      <a class="mc-button mc-button--primary" href="assets/styles/design.css" download="mercury.css">
-        Download Mercury<sup>&#40;&alpha;lpha&#41;</sup>
-      </a>
-    </div>
   </header>
 
   <div class="mc-docs-layout">
@@ -50,7 +38,7 @@
         <nav class="mc-docs-nav" aria-labelledby="docs-menu-title">
           <h2 id="docs-menu-title" class="mc-docs-nav__title">Mercury</h2>
           <ul class="mc-docs-nav__list">
-            <li><a class="mc-docs-nav__link" href="#overview">Overview</a></li>
+            <li><a class="mc-docs-nav__link" href="#main-content">Set up</a></li>
             <li><a class="mc-docs-nav__link" href="#tokens">Tokens</a></li>
             <li><a class="mc-docs-nav__link" href="#colours">Colours</a></li>
             <li><a class="mc-docs-nav__link" href="#variables">CSS variables</a></li>
@@ -68,6 +56,7 @@
             <li><a class="mc-docs-nav__link" href="#cards">Action cards</a></li>
             <li><a class="mc-docs-nav__link" href="#forms">Forms</a></li>
             <li><a class="mc-docs-nav__link" href="#tables">Tables</a></li>
+            <li><a class="mc-docs-nav__link" href="#graphs">Graphs</a></li>
             <li><a class="mc-docs-nav__link" href="#placeholders">Placeholders</a></li>
             <li><a class="mc-docs-nav__link" href="#status">Status panels</a></li>
             <li><a class="mc-docs-nav__link" href="#documents">Documents</a></li>
@@ -84,7 +73,17 @@
       <p class="mc-hero__summary">
         A modular, mobile-first class-light library for semantic HTML <a href="https://www.imle.uk">by Ellie</a>.
       </p>
+
+      <div class="mc-top-actions mc-mt--6 mc-d--flex mc-items--center mc-justify--center mc-flex--wrap mc-text--center" aria-label="Mercury actions">
+        <a class="mc-button mc-button--primary" href="assets/styles/design.css" download="mercury.css">
+          Download Mercury<sup>&#40;&alpha;lpha&#41;</sup>
+        </a>
+        <button class="mc-button mc-button--secondary" type="button" data-theme-toggle="" aria-pressed="false">
+          <span data-theme-toggle-label="">Light mode</span>
+        </button>
+      </div>
     </section>
+
 
     <section id="overview" class="mc-style-section" aria-labelledby="overview-title">
       <div class="mc-section-heading">
@@ -622,14 +621,14 @@
             </thead>
             <tbody>
               <tr><td><code>mc-p--0</code></td><td>Sets all padding to zero.</td><td><code>&lt;div class="mc-p--0"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-p--[1-6]</code></li></ul></td><td>Applies all-side padding from the Mercury spacing scale.</td><td><code>&lt;div class="mc-p--5"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-px--[4-5]</code></li></ul></td><td>Applies inline padding.</td><td><code>&lt;section class="mc-px--5"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-py--[5-7]</code></li></ul></td><td>Applies block padding.</td><td><code>&lt;section class="mc-py--7"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-p--[0-7]</code></li><li><code>mc-pt|pr|pb|pl--[0-7]</code></li></ul></td><td>Applies all-side or single-axis padding from the Mercury spacing scale.</td><td><code>&lt;div class="mc-p--5"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-px--[0-7]</code></li></ul></td><td>Applies inline padding.</td><td><code>&lt;section class="mc-px--5"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-py--[0-7]</code></li></ul></td><td>Applies block padding.</td><td><code>&lt;section class="mc-py--7"&gt;</code></td></tr>
               <tr><td><code>mc-m--0</code></td><td>Removes all margin.</td><td><code>&lt;h2 class="mc-m--0"&gt;</code></td></tr>
               <tr><td><code>mc-mx--auto</code></td><td>Centers a fixed-width element horizontally.</td><td><code>&lt;div class="mc-mx--auto"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-mt--[4-5]</code></li></ul></td><td>Applies margin-block-start.</td><td><code>&lt;div class="mc-mt--5"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-mb--[4-5]</code></li></ul></td><td>Applies margin-block-end.</td><td><code>&lt;div class="mc-mb--5"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-gap--[1-5]</code></li></ul></td><td>Applies gap to grid or flex layouts.</td><td><code>&lt;div class="mc-cluster mc-gap--3"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-m--[0-7]</code></li><li><code>mc-mt|mr|mb|ml--[0-7]</code></li></ul></td><td>Applies all-side or single-axis margin.</td><td><code>&lt;div class="mc-mt--5"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-mx--[0-7]</code></li><li><code>mc-my--[0-7]</code></li><li><code>mc-mx--auto</code></li></ul></td><td>Applies inline or block margin, including centering with auto.</td><td><code>&lt;div class="mc-mx--auto"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-gap--[0-7]</code></li><li><code>mc-g--[0-7]</code></li></ul></td><td>Applies gap to flex/grid layouts or the Mercury row gutter variable.</td><td><code>&lt;div class="mc-cluster mc-gap--3"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-stack</code></li><li><code>mc-stack--sm</code></li><li><code>mc-stack--lg</code></li></ul></td><td>Vertical stack layout and size variants.</td><td><code>&lt;div class="mc-stack mc-stack--sm"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-flow</code></li><li><code>mc-cluster</code></li></ul></td><td>Flow spacing and wrapping inline layout.</td><td><code>&lt;div class="mc-flow"&gt;</code></td></tr>
             </tbody>
@@ -680,7 +679,7 @@
               <tr><td><code>mc-col--sm-6</code></td><td>Six-column span at the small layout media query used by Mercury.</td><td><code>&lt;div class="mc-col mc-col--12 mc-col--sm-6"&gt;</code></td></tr>
               <tr><td><code>mc-col--md-6</code></td><td>Six-column span at the desktop media query used by Mercury.</td><td><code>&lt;div class="mc-col mc-col--12 mc-col--md-6"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-col--lg-3</code></li><li><code>mc-col--lg-4</code></li><li><code>mc-col--lg-6</code></li></ul></td><td>Quarter, third, and half-width desktop columns.</td><td><code>&lt;div class="mc-col mc-col--12 mc-col--lg-6"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-g--[0-5]</code></li></ul></td><td>Grid gutter utilities.</td><td><code>&lt;div class="mc-row mc-g--3"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-g--[0-7]</code></li></ul></td><td>Grid gutter utilities.</td><td><code>&lt;div class="mc-row mc-g--3"&gt;</code></td></tr>
               <tr><td><code>mc-layout mc-layout--adaptive</code></td><td>Responsive one/two/three-column layout.</td><td><code>&lt;div class="mc-layout mc-layout--adaptive"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-layout mc-layout--split</code></li><li><code>mc-layout__aside</code></li><li><code>mc-layout__main</code></li></ul></td><td>Responsive sidebar/content layout.</td><td><code>&lt;section class="mc-layout mc-layout--split"&gt;</code></td></tr>
             </tbody>
@@ -806,6 +805,44 @@
 &lt;/p&gt;</code></pre>
 
         <div class="mc-section-card">
+          <h3>Type scale</h3>
+          <div class="mc-stack">
+            <p class="mc-m--0 mc-fs--display mc-lh--solid">Display</p>
+            <p class="mc-m--0 mc-fs--5 mc-lh--heading">Font size 5</p>
+            <p class="mc-m--0 mc-fs--4 mc-lh--heading">Font size 4</p>
+            <p class="mc-m--0 mc-fs--3">Font size 3</p>
+            <p class="mc-m--0 mc-fs--2">Font size 2</p>
+            <p class="mc-m--0 mc-fs--1">Font size 1</p>
+            <p class="mc-m--0 mc-fs--0">Font size 0</p>
+          </div>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;div class="mc-stack"&gt;
+  &lt;p class="mc-m--0 mc-fs--display mc-lh--solid"&gt;Display&lt;/p&gt;
+  &lt;p class="mc-m--0 mc-fs--5 mc-lh--heading"&gt;Font size 5&lt;/p&gt;
+  &lt;p class="mc-m--0 mc-fs--4 mc-lh--heading"&gt;Font size 4&lt;/p&gt;
+  &lt;p class="mc-m--0 mc-fs--3"&gt;Font size 3&lt;/p&gt;
+  &lt;p class="mc-m--0 mc-fs--2"&gt;Font size 2&lt;/p&gt;
+  &lt;p class="mc-m--0 mc-fs--1"&gt;Font size 1&lt;/p&gt;
+  &lt;p class="mc-m--0 mc-fs--0"&gt;Font size 0&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="mc-section-card">
+          <h3>Text utility examples</h3>
+          <div class="mc-stack">
+            <p class="mc-m--0 mc-fw--700">Bold body text with <code>mc-fw--700</code>.</p>
+            <p class="mc-m--0 mc-text--uppercase mc-fw--700">Uppercase label text</p>
+            <p class="mc-m--0 mc-text--balance">Balanced display copy keeps short headings and summary lines from leaving awkward single words behind.</p>
+            <p class="mc-m--0 mc-text--truncate mc-w--1/2">Truncated text utility for constrained metadata rows.</p>
+          </div>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;p class="mc-fw--700"&gt;Bold body text with &lt;code&gt;mc-fw--700&lt;/code&gt;.&lt;/p&gt;
+&lt;p class="mc-text--uppercase mc-fw--700"&gt;Uppercase label text&lt;/p&gt;
+&lt;p class="mc-text--balance"&gt;Balanced display copy keeps short headings tidy.&lt;/p&gt;
+&lt;p class="mc-text--truncate mc-w--1/2"&gt;Truncated text utility for constrained metadata rows.&lt;/p&gt;</code></pre>
+
+        <div class="mc-section-card">
           <h3>Typography classes</h3>
           <table>
             <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
@@ -815,8 +852,9 @@
               <tr><td><code>mc-display-title</code></td><td>Large display heading.</td><td><code>&lt;h2 class="mc-display-title"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-lead</code></li><li><code>mc-body-copy</code></li></ul></td><td>Lead and muted body copy.</td><td><code>&lt;p class="mc-lead"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-eyebrow</code></li><li><code>mc-eyebrow--paper</code></li></ul></td><td>Uppercase label and paper variant.</td><td><code>&lt;p class="mc-eyebrow"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-fs--[1-5]</code></li></ul></td><td>Font-size utilities.</td><td><code>&lt;p class="mc-fs--3"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-fs--[0-7]</code></li><li><code>mc-fs--display</code></li></ul></td><td>Font-size utilities.</td><td><code>&lt;p class="mc-fs--3"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-fw--400</code></li><li><code>mc-fw--700</code></li></ul></td><td>Font-weight utilities.</td><td><code>&lt;strong class="mc-fw--700"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-lh--solid</code></li><li><code>mc-lh--heading</code></li><li><code>mc-lh--body</code></li></ul></td><td>Line-height utilities.</td><td><code>&lt;h2 class="mc-lh--heading"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-text--start</code></li><li><code>mc-text--center</code></li><li><code>mc-text--end</code></li></ul></td><td>Text alignment utilities.</td><td><code>&lt;p class="mc-text--center"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-text--accent</code></li><li><code>mc-text--muted</code></li><li><code>mc-text--brand</code></li></ul></td><td>Text colour utilities.</td><td><code>&lt;p class="mc-text--muted"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-text--wrap</code></li><li><code>mc-text--nowrap</code></li><li><code>mc-text--truncate</code></li></ul></td><td>Text wrapping and truncation utilities.</td><td><code>&lt;p class="mc-text--truncate"&gt;</code></td></tr>
@@ -1717,13 +1755,13 @@
               <tr>
                 <td>
                   <ul class="mc-token-list">
-                    <li><code>mc-p--[1-6]</code></li>
-                    <li><code>mc-px--[4-5]</code></li>
-                    <li><code>mc-py--[5-7]</code></li>
+                    <li><code>mc-p--[0-7]</code></li>
+                    <li><code>mc-px--[0-7]</code></li>
+                    <li><code>mc-py--[0-7]</code></li>
                   </ul>
                 </td>
                 <td>Use bracket notation in documentation when a set is a predictable range.</td>
-                <td><code>&lt;code&gt;mc-p--[1-6]&lt;/code&gt;</code></td>
+                <td><code>&lt;code&gt;mc-p--[0-7]&lt;/code&gt;</code></td>
               </tr>
               <tr>
                 <td><code>mc-token-list</code></td>
@@ -1751,13 +1789,13 @@
     &lt;tr&gt;
       &lt;td&gt;
         &lt;ul class="mc-token-list"&gt;
-          &lt;li&gt;&lt;code&gt;mc-p--[1-6]&lt;/code&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;code&gt;mc-px--[4-5]&lt;/code&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;code&gt;mc-py--[5-7]&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code&gt;mc-p--[0-7]&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code&gt;mc-px--[0-7]&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code&gt;mc-py--[0-7]&lt;/code&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/td&gt;
       &lt;td&gt;Use bracket notation in documentation when a set is a predictable range.&lt;/td&gt;
-      &lt;td&gt;&lt;code&gt;&amp;lt;code&amp;gt;mc-p--[1-6]&amp;lt;/code&amp;gt;&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;&amp;lt;code&amp;gt;mc-p--[0-7]&amp;lt;/code&amp;gt;&lt;/code&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code&gt;mc-token-list&lt;/code&gt;&lt;/td&gt;
@@ -1768,12 +1806,205 @@
 &lt;/table&gt;</code></pre>
 
         <div class="mc-section-card">
+          <h3>Data summary table</h3>
+          <table class="mc-table">
+            <caption>Example product metrics for compact reporting.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Metric</th>
+                <th scope="col">Current</th>
+                <th scope="col">Target</th>
+                <th scope="col">State</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Tutorial completion</th>
+                <td>68%</td>
+                <td>80%</td>
+                <td><span class="mc-badge mc-badge--muted">Watch</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Hint use</th>
+                <td>42%</td>
+                <td>35-50%</td>
+                <td><span class="mc-badge mc-badge--brand">Healthy</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Repeat failures</th>
+                <td>18%</td>
+                <td>&lt; 12%</td>
+                <td><span class="mc-badge mc-badge--danger">Review</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;table class="mc-table"&gt;
+  &lt;caption&gt;Example product metrics for compact reporting.&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Metric&lt;/th&gt;
+      &lt;th scope="col"&gt;Current&lt;/th&gt;
+      &lt;th scope="col"&gt;Target&lt;/th&gt;
+      &lt;th scope="col"&gt;State&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;Tutorial completion&lt;/th&gt;
+      &lt;td&gt;68%&lt;/td&gt;
+      &lt;td&gt;80%&lt;/td&gt;
+      &lt;td&gt;&lt;span class="mc-badge mc-badge--muted"&gt;Watch&lt;/span&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+        <div class="mc-section-card">
+          <h3>Plain semantic table</h3>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Element</th>
+                <th scope="col">Default treatment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><code>&lt;th scope="row"&gt;</code></th>
+                <td>Row headers keep table relationships clear to assistive technology.</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;caption&gt;</code></th>
+                <td>Captions describe the table before users enter the grid.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;table&gt;
+  &lt;caption&gt;Optional caption text.&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th scope="col"&gt;Element&lt;/th&gt;&lt;th scope="col"&gt;Default treatment&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;th scope="row"&gt;&amp;lt;th scope="row"&amp;gt;&lt;/th&gt;&lt;td&gt;Clear row relationships.&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+        <div class="mc-section-card">
           <h3>Table classes</h3>
           <table class="mc-table">
             <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
             <tbody>
               <tr><td><code>mc-table</code></td><td>Reusable full-width table styling for documentation, data summaries, and class references.</td><td><code>&lt;table class="mc-table"&gt;</code></td></tr>
               <tr><td><code>mc-token-list</code></td><td>Stacks grouped classes or variables inside a table cell.</td><td><code>&lt;ul class="mc-token-list"&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="graphs" class="mc-style-section" aria-labelledby="graphs-title">
+      <div class="mc-section-heading">
+        <p class="mc-eyebrow">Research visuals</p>
+        <h2 id="graphs-title">Graph and decision elements</h2>
+      </div>
+
+      <div class="mc-component-doc">
+        <div class="mc-section-card">
+          <h3>Decision matrix</h3>
+          <div class="mc-case-matrix" role="img" aria-label="Decision matrix showing urgent and important tutorial improvements.">
+            <article class="mc-case-quadrant">
+              <h3><span class="mc-dot mc-dot--green" aria-hidden="true"></span>Do first</h3>
+              <ul class="mc-case-list">
+                <li>Contextual exit hint portal.</li>
+                <li>Clear solved versus unsolved exit state.</li>
+              </ul>
+            </article>
+            <article class="mc-case-quadrant">
+              <h3><span class="mc-dot mc-dot--yellow" aria-hidden="true"></span>Schedule</h3>
+              <ul class="mc-case-list">
+                <li>Level 1 foreshadowing of state-change exits.</li>
+                <li>Improved hint settings copy.</li>
+              </ul>
+            </article>
+            <article class="mc-case-quadrant">
+              <h3><span class="mc-dot mc-dot--blue" aria-hidden="true"></span>Delegate</h3>
+              <ul class="mc-case-list">
+                <li>Small visual polish pass for hint bubbles.</li>
+                <li>QA pass on portal collision states.</li>
+              </ul>
+            </article>
+            <article class="mc-case-quadrant">
+              <h3><span class="mc-dot mc-dot--red" aria-hidden="true"></span>Eliminate</h3>
+              <ul class="mc-case-list">
+                <li>New cutscene tutorial.</li>
+                <li>Large redesign of the level layout.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;div class="mc-case-matrix" role="img" aria-label="Decision matrix showing urgent and important tutorial improvements."&gt;
+  &lt;article class="mc-case-quadrant"&gt;
+    &lt;h3&gt;&lt;span class="mc-dot mc-dot--green" aria-hidden="true"&gt;&lt;/span&gt;Do first&lt;/h3&gt;
+    &lt;ul class="mc-case-list"&gt;
+      &lt;li&gt;Contextual exit hint portal.&lt;/li&gt;
+      &lt;li&gt;Clear solved versus unsolved exit state.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="mc-section-card">
+          <h3>5 Whys graph</h3>
+          <div class="mc-case-five-whys" role="img" aria-label="5 Whys analysis. Problem: users are struggling to complete level 3. Root cause: I am trying to teach them too fast.">
+            <div class="mc-case-why-step mc-case-why-step--problem">
+              <span class="mc-case-why-step__label">Problem</span>
+              <p>Users are struggling to complete level 3.</p>
+            </div>
+            <div class="mc-case-why-step">
+              <span class="mc-case-why-step__label">Why?</span>
+              <p>Because they are struggling to solve the puzzle.</p>
+            </div>
+            <div class="mc-case-why-step">
+              <span class="mc-case-why-step__label">Why?</span>
+              <p>Because they are not combining all the information available.</p>
+            </div>
+            <div class="mc-case-why-step">
+              <span class="mc-case-why-step__label">Why?</span>
+              <p>There is too much going on at once, causing cognitive overload.</p>
+            </div>
+            <div class="mc-case-why-step mc-case-why-step--root">
+              <span class="mc-case-why-step__label">Root cause</span>
+              <p>Because I am trying to teach them too fast.</p>
+            </div>
+          </div>
+        </div>
+
+        <pre class="mc-code-example" tabindex="0"><code>&lt;div class="mc-case-five-whys" role="img" aria-label="5 Whys analysis."&gt;
+  &lt;div class="mc-case-why-step mc-case-why-step--problem"&gt;
+    &lt;span class="mc-case-why-step__label"&gt;Problem&lt;/span&gt;
+    &lt;p&gt;Users are struggling to complete level 3.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="mc-case-why-step"&gt;
+    &lt;span class="mc-case-why-step__label"&gt;Why?&lt;/span&gt;
+    &lt;p&gt;Because they are struggling to solve the puzzle.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="mc-case-why-step mc-case-why-step--root"&gt;
+    &lt;span class="mc-case-why-step__label"&gt;Root cause&lt;/span&gt;
+    &lt;p&gt;Because I am trying to teach them too fast.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="mc-section-card">
+          <h3>Graph classes</h3>
+          <table class="mc-table">
+            <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              <tr><td><ul class="mc-token-list"><li><code>mc-case-matrix</code></li><li><code>mc-case-quadrant</code></li></ul></td><td>Four-quadrant decision matrix layout.</td><td><code>&lt;div class="mc-case-matrix"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-dot</code></li><li><code>mc-dot--red</code></li><li><code>mc-dot--yellow</code></li><li><code>mc-dot--green</code></li><li><code>mc-dot--blue</code></li></ul></td><td>Small colour markers for matrix headings.</td><td><code>&lt;span class="mc-dot mc-dot--green"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-case-five-whys</code></li><li><code>mc-case-why-step</code></li><li><code>mc-case-why-step--problem</code></li><li><code>mc-case-why-step--root</code></li></ul></td><td>Stepped root-cause analysis graph.</td><td><code>&lt;div class="mc-case-five-whys"&gt;</code></td></tr>
             </tbody>
           </table>
         </div>
@@ -2168,35 +2399,78 @@
   </main>
   </div>
   <script>
+    const themeToggle = document.querySelector('[data-theme-toggle]');
+    const themeToggleLabel = document.querySelector('[data-theme-toggle-label]');
     const themeSelect = document.querySelector('[data-theme-select]');
     const docsMenu = document.querySelector('[data-docs-menu]');
     const docsMenuLinks = document.querySelectorAll('.mc-docs-nav__link');
-    const desktopMenuQuery = window.matchMedia('(min-width: 66rem)');
+    const desktopMenuQuery = window.matchMedia('(min-width: 48rem)');
+    const colourSchemeQuery = window.matchMedia('(prefers-color-scheme: light)');
+    let hasExplicitThemeChoice = false;
 
     function setMercuryTheme(theme) {
-      document.body.classList.remove('mc-theme--dark', 'mc-theme--light', 'mc-theme--paper', 'mc-theme--mercury', 'mc-theme--grumbler');
-
-      if (theme === 'light-mercury') {
-        document.body.classList.add('mc-theme--light', 'mc-theme--mercury');
-        return;
-      }
-
-      if (theme === 'paper') {
-        document.body.classList.add('mc-theme--paper');
-        return;
-      }
-
-      if (theme === 'grumbler') {
-        document.body.classList.add('mc-theme--grumbler');
-        return;
-      }
-
-      document.body.classList.add('mc-theme--dark', 'mc-theme--mercury');
+      const isLight = theme === 'light';
+      document.body.classList.toggle('mc-theme--light', isLight);
+      document.body.classList.toggle('mc-theme--dark', !isLight);
+      themeToggle.setAttribute('aria-pressed', String(isLight));
+      themeToggleLabel.textContent = isLight ? 'Dark mode' : 'Light mode';
     }
 
+    themeToggle.addEventListener('click', () => {
+      setMercuryTheme(document.body.classList.contains('mc-theme--light') ? 'dark' : 'light');
+    });
+
+    function preferredMercuryTheme() {
+      return colourSchemeQuery.matches ? 'light-mercury' : 'dark-mercury';
+    }
+
+    // function setMercuryTheme(theme) {
+    //   document.body.classList.remove('mc-theme--dark', 'mc-theme--light', 'mc-theme--paper', 'mc-theme--mercury', 'mc-theme--grumbler');
+
+    //   if (theme === 'light-mercury') {
+    //     document.body.classList.add('mc-theme--light', 'mc-theme--mercury');
+    //     return;
+    //   }
+
+    //   if (theme === 'paper') {
+    //     document.body.classList.add('mc-theme--paper');
+    //     return;
+    //   }
+
+    //   if (theme === 'grumbler') {
+    //     document.body.classList.add('mc-theme--grumbler');
+    //     return;
+    //   }
+
+    //   document.body.classList.add('mc-theme--dark', 'mc-theme--mercury');
+    // }
+
+    function applyPreferredMercuryTheme() {
+      const theme = preferredMercuryTheme();
+      if (themeSelect) {
+        themeSelect.value = theme;
+      }
+      setMercuryTheme(theme);
+    }
+
+    applyPreferredMercuryTheme();
+
     themeSelect?.addEventListener('change', (event) => {
+      hasExplicitThemeChoice = true;
       setMercuryTheme(event.target.value);
     });
+
+    function handleColourSchemeChange() {
+      if (!hasExplicitThemeChoice) {
+        applyPreferredMercuryTheme();
+      }
+    }
+
+    if (typeof colourSchemeQuery.addEventListener === 'function') {
+      colourSchemeQuery.addEventListener('change', handleColourSchemeChange);
+    } else {
+      colourSchemeQuery.addListener(handleColourSchemeChange);
+    }
 
     function setDocsMenuState(event) {
       if (!docsMenu) {
