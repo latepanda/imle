@@ -419,18 +419,18 @@ mark {
   --mc-color-lilac: #efe7f4;
   --mc-color-line: #d5c3df;
   --mc-color-paper: #ffffff;
-  --mc-color-error: #8b2635;
+  --mc-color-error: #a12f42;
   --mc-color-error-bg: #f9e7ea;
-  --mc-color-error-stroke: #d99aa4;
-  --mc-color-success: #2f6f48;
+  --mc-color-error-stroke: #dc8d9b;
+  --mc-color-success: #2a784b;
   --mc-color-success-bg: #e4f3e9;
-  --mc-color-success-stroke: #9ecfac;
-  --mc-color-warning: #72520d;
+  --mc-color-success-stroke: #93cfa9;
+  --mc-color-warning: #856000;
   --mc-color-warning-bg: #f8efd8;
-  --mc-color-warning-stroke: #d6b86b;
-  --mc-color-info: #315f96;
+  --mc-color-warning-stroke: #d9b55a;
+  --mc-color-info: #286aa8;
   --mc-color-info-bg: #e6effb;
-  --mc-color-info-stroke: #a9c5e8;
+  --mc-color-info-stroke: #98c1e8;
   --mc-gradient-brand: linear-gradient(135deg, #73548b, #9d3f83 54%, #9b555f);
   --mc-gradient-rule: linear-gradient(90deg, #73548b, #d871bb 55%, #d19292);
   --mc-gradient-bg: linear-gradient(135deg, #ffffff, #efe7f4 46%, #faf7fc 100%);
@@ -2548,18 +2548,18 @@ mark {
     --mc-color-lilac: #efe7f4;
     --mc-color-line: #d5c3df;
     --mc-color-paper: #ffffff;
-    --mc-color-error: #8b2635;
+    --mc-color-error: #a12f42;
     --mc-color-error-bg: #f9e7ea;
-    --mc-color-error-stroke: #d99aa4;
-    --mc-color-success: #2f6f48;
+    --mc-color-error-stroke: #dc8d9b;
+    --mc-color-success: #2a784b;
     --mc-color-success-bg: #e4f3e9;
-    --mc-color-success-stroke: #9ecfac;
-    --mc-color-warning: #72520d;
+    --mc-color-success-stroke: #93cfa9;
+    --mc-color-warning: #856000;
     --mc-color-warning-bg: #f8efd8;
-    --mc-color-warning-stroke: #d6b86b;
-    --mc-color-info: #315f96;
+    --mc-color-warning-stroke: #d9b55a;
+    --mc-color-info: #286aa8;
     --mc-color-info-bg: #e6effb;
-    --mc-color-info-stroke: #a9c5e8;
+    --mc-color-info-stroke: #98c1e8;
     --mc-gradient-brand: linear-gradient(135deg, #73548b, #9d3f83 54%, #9b555f);
     --mc-gradient-rule: linear-gradient(90deg, #73548b, #d871bb 55%, #d19292);
     --mc-gradient-bg: linear-gradient(135deg, #ffffff, #efe7f4 46%, #faf7fc 100%);
@@ -3309,7 +3309,7 @@ mark {
 .mc-case-copy,
 .mc-case-card p,
 .mc-case-list {
-  color: var(--mc-gr-muted);
+  color: var(--mc-graph-muted, var(--mc-gr-muted, var(--mc-color-muted)));
 }
 
 .mc-case-section__header p,
@@ -3563,13 +3563,25 @@ mark {
 }
 
 .mc-case-matrix {
+  --mc-graph-panel: var(--mc-color-surface);
+  --mc-graph-line: var(--mc-color-stroke);
+  --mc-graph-heading: var(--mc-color-accent);
+  --mc-graph-muted: var(--mc-color-muted);
+  --mc-graph-label-text: var(--mc-color-ink);
+  --mc-graph-red: var(--mc-color-error);
+  --mc-graph-red-soft: var(--mc-color-error-bg);
+  --mc-graph-yellow: var(--mc-color-warning);
+  --mc-graph-yellow-soft: var(--mc-color-warning-bg);
+  --mc-graph-green: var(--mc-color-success);
+  --mc-graph-blue: var(--mc-color-info);
+  --mc-graph-blue-soft: var(--mc-color-info-bg);
   display: grid;
   gap: 1rem;
 }
 
 .mc-case-quadrant {
-  background: var(--mc-gr-panel);
-  border: 1px solid var(--mc-gr-line);
+  background: var(--mc-graph-panel, var(--mc-gr-panel, var(--mc-color-surface)));
+  border: 1px solid var(--mc-graph-line, var(--mc-gr-line, var(--mc-color-stroke)));
   border-radius: 8px;
   min-height: 12rem;
   padding: 1rem;
@@ -3577,7 +3589,7 @@ mark {
 
 .mc-case-quadrant h3 {
   align-items: center;
-  color: var(--mc-gr-red-dark);
+  color: var(--mc-graph-heading, var(--mc-gr-red-dark, var(--mc-color-accent)));
   display: flex;
   gap: 0.55rem;
   margin: 0 0 0.8rem;
@@ -3591,22 +3603,33 @@ mark {
 }
 
 .mc-dot--red {
-  background: var(--mc-gr-red);
+  background: var(--mc-graph-red, var(--mc-gr-red, var(--mc-color-error)));
 }
 
 .mc-dot--yellow {
-  background: var(--mc-gr-yellow);
+  background: var(--mc-graph-yellow, var(--mc-gr-yellow, var(--mc-color-warning)));
 }
 
 .mc-dot--green {
-  background: var(--mc-gr-green);
+  background: var(--mc-graph-green, var(--mc-gr-green, var(--mc-color-success)));
 }
 
 .mc-dot--blue {
-  background: var(--mc-gr-blue);
+  background: var(--mc-graph-blue, var(--mc-gr-blue, var(--mc-color-info)));
 }
 
 .mc-case-five-whys {
+  --mc-graph-panel: var(--mc-color-surface);
+  --mc-graph-line: var(--mc-color-stroke);
+  --mc-graph-muted: var(--mc-color-muted);
+  --mc-graph-heading: var(--mc-color-accent);
+  --mc-graph-label-text: var(--mc-color-ink);
+  --mc-graph-red: var(--mc-color-error);
+  --mc-graph-red-soft: var(--mc-color-error-bg);
+  --mc-graph-yellow: var(--mc-color-warning);
+  --mc-graph-yellow-soft: var(--mc-color-warning-bg);
+  --mc-graph-blue: var(--mc-color-info);
+  --mc-graph-blue-soft: var(--mc-color-info-bg);
   display: grid;
   gap: 1rem;
   overflow: hidden;
@@ -3614,8 +3637,8 @@ mark {
 
 .mc-case-why-step {
   align-items: stretch;
-  background: var(--mc-gr-panel);
-  border: 1px solid var(--mc-gr-line);
+  background: var(--mc-graph-panel, var(--mc-gr-panel, var(--mc-color-surface)));
+  border: 1px solid var(--mc-graph-line, var(--mc-gr-line, var(--mc-color-stroke)));
   border-radius: 8px;
   display: grid;
   grid-template-columns: minmax(5.8rem, 0.32fr) minmax(0, 1fr);
@@ -3627,7 +3650,7 @@ mark {
 }
 
 .mc-case-why-step::before {
-  background: rgba(215, 53, 37, 0.44);
+  background: var(--mc-graph-red, var(--mc-gr-red, var(--mc-color-error)));
   content: "";
   height: 1rem;
   left: 2rem;
@@ -3642,8 +3665,8 @@ mark {
 
 .mc-case-why-step__label {
   align-items: center;
-  background: var(--mc-gr-yellow);
-  color: var(--mc-gr-charcoal);
+  background: var(--mc-graph-yellow-soft, var(--mc-color-warning-bg));
+  color: var(--mc-graph-yellow, var(--mc-gr-charcoal, var(--mc-color-warning)));
   display: flex;
   font-weight: 700;
   justify-content: center;
@@ -3653,22 +3676,24 @@ mark {
 
 .mc-case-why-step p {
   align-items: center;
-  color: var(--mc-gr-muted);
+  color: var(--mc-graph-muted, var(--mc-gr-muted, var(--mc-color-muted)));
   display: flex;
   margin: 0;
   padding: 0.9rem 1rem;
 }
 
 .mc-case-why-step--problem .mc-case-why-step__label {
-  background: #ff805f;
+  background: var(--mc-graph-red-soft, var(--mc-color-error-bg));
+  color: var(--mc-graph-red, var(--mc-gr-red-dark, var(--mc-color-error)));
 }
 
 .mc-case-why-step--root .mc-case-why-step__label {
-  background: var(--mc-gr-blue);
+  background: var(--mc-graph-blue-soft, var(--mc-color-info-bg));
+  color: var(--mc-graph-blue, var(--mc-gr-blue, var(--mc-color-info)));
 }
 
 .mc-case-why-step--root p {
-  color: var(--mc-gr-red-dark);
+  color: var(--mc-graph-heading, var(--mc-gr-red-dark, var(--mc-color-accent)));
   font-weight: 700;
 }
 
