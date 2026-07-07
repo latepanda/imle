@@ -976,6 +976,8 @@ mark {
 }
 
 .mc-style-section {
+  contain-intrinsic-size: auto 42rem;
+  content-visibility: auto;
   display: grid;
   min-width: 0;
   scroll-margin-block-start: var(--mc-space-5);
