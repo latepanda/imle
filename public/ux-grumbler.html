@@ -36,20 +36,20 @@
         <p class="mc-case-kicker">UX case study</p>
         <h1 id="case-study-title">The Grumbler</h1>
         <p class="mc-case-hero__summary">
-          A UX case study about making a puzzle tutorial clearer, kinder, and less annoying without taking the solve away from the player.
+          A UX case study about making a puzzle clearer without reducing the complexity.
         </p>
         <ul class="mc-case-hero__stats" aria-label="Headline outcomes">
           <li class="mc-case-stat">
-            <strong>40%</strong>
-            <span>more players were able to complete puzzle 4</span>
+            <strong>80%</strong>
+            <span>8 out of 10 players completed puzzle 4 after updating puzzle 3</span>
           </li>
           <li class="mc-case-stat">
-            <strong>40%</strong>
-            <span>more players were able to complete puzzle 4</span>
+            <strong>+50%</strong>
+            <span>3 out of 10 players completed puzzle 4 before improvements to puzzle 3. The study produced a 50% inprovement</span>
           </li>
           <li class="mc-case-stat">
-            <strong>40%</strong>
-            <span>more players were able to complete puzzle 4</span>
+            <strong>10</strong>
+            <span>A small cohort of university student participants took part throughout the study</span>
           </li>
         </ul>
       </div>
@@ -68,7 +68,8 @@
           <div class="mc-case-grid mc-case-grid--2">
             <div class="mc-case-card">
               <h3>Study result</h3>
-              <p>The most useful change was adding a smaller level prior to puzzle 4 and moving the old puzzle 4 to puzzle 5. The smaller level focused on teaching players the mechanic they needed to use before they entered the new puzzle 5.</p>
+              <p>The study aimed to determine why players were becoming stuck at the same section and failing to complete the 4th puzzle. The initial assumption was that the level was too complex, trying to teach the player to chain too many concepts together at once.</p>
+              <p>The most useful change I found was updating the projectiles to include a trajectory path to indicate where the projectile would land once thrown. The previous puzzle was also streamlined by removing two types of projectiles (Black, and Blue). These would be introduced slower and in later puzzles as to not overwhelm players with multiple choices too early and give the player more opportunities to practice throwing the green projectile.</p>
             </div>
             <blockquote class="mc-case-quote">
               "It was better the second time. I got to the end [of the game] this time."
@@ -89,15 +90,11 @@
               <li><a href="#research">Research type and findings</a></li>
               <li><a href="#needs">User needs and features</a></li>
               <li><a href="#challenges">User challenges</a></li>
-              <li><a href="#competitors">Competitor analysis</a></li>
-              <li><a href="#personas">User personas</a></li>
               <li><a href="#task-map">Task mapping table</a></li>
               <li><a href="#eisenhower">Decision matrix</a></li>
               <li><a href="#five-whys">5 Whys analysis graph</a></li>
-              <li><a href="#root-cause">Root cause analysis graph</a></li>
               <li><a href="#task-flows">Task flows</a></li>
               <li><a href="#prototypes">Designs and prototypes</a></li>
-              <li><a href="#index">Index</a></li>
               <li><a href="#last-page">Last page</a></li>
             </ol>
           </div>
@@ -105,14 +102,9 @@
 
         <section id="problem" class="mc-case-section" aria-labelledby="problem-title">
           <div class="mc-case-section__header">
-            <p class="mc-case-kicker">Problem statement</p>
-            <h2 id="problem-title">Puzzle 4 was asking for too much too soon</h2>
+            <h2 id="problem-title">Problem statement</h2>
             <p>
-              Players were reaching the fifth puzzle with basic movement knowledge, but they were not confident enough to read the exit, switch state, enemy timing, and hint toggle as one connected system. The puzzle itself was not the real problem. The issue was that the tutorial did not answer the next obvious question at the point where players became confused.
-            </p>
-            <p>
-              This puzzle originally appeared as level 3. User analysis showed it was trying to teach too many concepts at once, so I moved it to level 4 and added two puzzle levels before it. Those extra levels slowed the learning curve down and taught the core ideas separately before asking players to combine them.
-            </p>
+              On the 4th puzzle players were failing to unlock a certain passageway correctly, they would end up stuck with no obvious way forward.</p>
           </div>
           <div class="mc-case-media-grid">
             <article class="mc-case-media-card">
@@ -120,7 +112,10 @@
                 <img src="assets/images/grumbler/level-1.png" alt="Early level in The Grumbler showing the character, a button prompt, a gap, and a simple platform challenge." width="1920" height="1440">
                 <figcaption>
                   <h3>Early tutorial language</h3>
-                  <p>Level 1 introduced interaction prompts, movement timing, and signposting. It worked for isolated actions, but it did not yet prepare players to chain ideas together when the answer was less obvious.</p>
+                  <p>Puzzle 1 introduced interaction prompts, movement timing, basic object manipulation, and signposting. It succeeded in teaching players isolated actions.</p>
+                  <p>Puzzle 2 introduced advanced movement and advanced manipulation of objects. It succeeded in chaining these two concepts together.</p>
+                  <p>Puzzle 3 introduced 3 different types of projectiles (Black, Blue, and Green), basic throwing mechanics, 1 type of destructible block (Green), 1 enemy type (Green enemy), and basic combat. It was supposed to teach the player the differences in the types of projectiles available and the first type of danger.</p>
+                  <p>Puzzle 4 attempted to chain previous lessons together in a confined and concise puzzle.</p>
                 </figcaption>
               </figure>
             </article>
@@ -129,7 +124,8 @@
                 <img src="assets/images/grumbler/level-4.png" alt="Level 4 in The Grumbler with suspended switches, a level exit marker, enemy, and the Grumbler character." width="1920" height="1440">
                 <figcaption>
                   <h3>The stuck point</h3>
-                  <p>Puzzle 4 placed the exit above the interaction field. Players could see where they wanted to go, but they did not understand why the exit was not usable yet.</p>
+                  <p>On puzzle 4 players were given 1 green projectile which, when thrown at a certain angle, would destroy between 1 and 3 green blocks, opening a cave entrance below. If the player was able to destroy at least 1 block, the player was able to jump into the cave where two more green projectiles were waiting to give the player two more attempts to unlock the full cave entrance.</p>
+                  <p>There was no easy way to get out of the cave or restart the puzzle if they failed on all 3 attempts. If on their first attempt, they failed to destroy at least 1 green block they were unable to proceed or restart the puzzle.</p>
                 </figcaption>
               </figure>
             </article>
@@ -139,16 +135,16 @@
         <section id="objectives" class="mc-case-section" aria-labelledby="objectives-title">
           <div class="mc-case-section__header">
             <p class="mc-case-kicker">Objectives and goals</p>
-            <h2 id="objectives-title">Help players move forward without solving it for them</h2>
+            <h2 id="objectives-title">Help players move forward without frustration.</h2>
           </div>
           <div class="mc-case-grid mc-case-grid--3">
             <article class="mc-case-card">
               <h3>Player learning</h3>
-              <p>Make the exit communicate what was still missing, then reward the player with a clear state change once they had solved the puzzle.</p>
+              <p>Make the game communicate what skills were still needed, then reward the player with clear progression goals once they had solved the first part of each puzzle.</p>
             </article>
             <article class="mc-case-card">
               <h3>Progression</h3>
-              <p>Get more players through puzzle 4 without flattening the logic or making the answer feel handed over.</p>
+              <p>Get more players through puzzle 4 without reducing the complexity of the puzzle.</p>
             </article>
             <article class="mc-case-card">
               <h3>Production fit</h3>
@@ -165,7 +161,7 @@
           <div class="mc-case-grid mc-case-grid--4">
             <article class="mc-case-card">
               <h3>1. Diagnose</h3>
-              <p>I looked at fail points, abandon points, hint toggles, time on level, repeated deaths, and what players said while they were trying to work it out.</p>
+              <p>I looked at fail points, abandon points, hint toggles, time on level, repeated signs of frustration in body language, and what participants said while they were trying to work it out.</p>
             </article>
             <article class="mc-case-card">
               <h3>2. Model</h3>
@@ -185,24 +181,24 @@
         <section id="business" class="mc-case-section" aria-labelledby="business-title">
           <div class="mc-case-section__header">
             <p class="mc-case-kicker">Business challenges</p>
-            <h2 id="business-title">The solution had to fit a small game</h2>
+            <h2 id="business-title">The solution had to fit a small indie game with very limited time and resources.</h2>
           </div>
           <div class="mc-case-grid mc-case-grid--2">
             <article class="mc-case-card">
               <h3>Retention risk</h3>
-              <p>Level 4 was early enough that a bad experience could make players decide the game was unclear before they had seen enough of it.</p>
+              <p>Puzzle 4 was early enough that a bad experience could make players decide the game was unclear before they had seen enough of it.</p>
             </article>
             <article class="mc-case-card">
               <h3>Scope control</h3>
-              <p>A big tutorial rebuild, new voiceover, or a pile of new animation work would have been the wrong answer. Reusing the exit object kept the fix focused.</p>
+              <p>A big tutorial rebuild, or entire puzzle rework would have been the wrong answer. Improvements had to be small for time constraints.</p>
             </article>
             <article class="mc-case-card">
               <h3>Identity protection</h3>
-              <p>The Grumbler works because it is silly and handmade. The tutorial could not suddenly become a sterile onboarding system that felt like it belonged in another game.</p>
+              <p>The Grumbler works because it is slightly silly and concepts are supposed to be taught invisibly. The tutorial could not suddenly become a sterile onboarding system that felt like it belonged in another game.</p>
             </article>
             <article class="mc-case-card">
               <h3>Difficulty promise</h3>
-              <p>It still needed to feel like a puzzle platformer. The goal was guidance, not auto-solving.</p>
+              <p>It still needed to feel like a puzzle platformer. The goal was guidance, not reduced puzzle complexity.</p>
             </article>
           </div>
         </section>
@@ -210,16 +206,14 @@
         <section id="audience" class="mc-case-section" aria-labelledby="audience-title">
           <div class="mc-case-section__header">
             <p class="mc-case-kicker">Target audience</p>
-            <h2 id="audience-title">Curious players who would try things, but not forever</h2>
-            <p>
-              The audience for this study was players who were happy to experiment, but only while the game felt fair. The recruited participant group was white Scottish university students, predominantly male, with one female participant. They were close to the audience I expected for the game: curious, game-literate, and very quick to spot when a puzzle felt unclear rather than difficult.
-            </p>
+            <h2 id="audience-title">The game was designed to be played by novice and experienced puzzle platformers alike.</h2>
+            <p>The recruited participant group were exclusively white Scottish university students in their early 20s, predominantly self-identified 'gamers' ranging from casual to advanced, with one non-gamer participant. They were close to the audience I expected for the game.</p>
           </div>
           <ul class="mc-pill-row" aria-label="Target audience traits">
-            <li>PC and handheld players</li>
+            <li>Gamers and non-gamers</li>
             <li>Short-session play</li>
             <li>Humor-led indie game appeal</li>
-            <li>Moderate platforming skill</li>
+            <li>Low to advanced platforming skill</li>
             <li>Low tolerance for unclear failure</li>
             <li>Optional help preferred over forced help</li>
           </ul>
@@ -229,9 +223,7 @@
           <div class="mc-case-section__header">
             <p class="mc-case-kicker">Research type</p>
             <h2 id="research-title">Mixed method: quantitative and qualitative</h2>
-            <p>
-              I used quantitative data to see where progression was failing, then observation and questionnaires to understand why. That distinction mattered. I did not want to make the puzzle easier just because people were failing it. I wanted to know whether the failure was earned.
-            </p>
+            <p>I used quantitative data to see where progression was failing, along with observation and questionnaires to understand why. I did not want to make the puzzle easier just because people were failing it. I wanted to know whether the pain points were.</p>
           </div>
           <div class="mc-case-grid mc-case-grid--3">
             <article class="mc-case-card">
@@ -240,11 +232,13 @@
             </article>
             <article class="mc-case-card">
               <h3>Observations</h3>
-              <p>Participants kept saying the same kind of thing at the exit. They could see the goal, but they did not know what the game wanted from them before it would let them leave.</p>
+              <p>Participants kept saying the same kind of thing. They could see the goal, but they thought there was no way to achieve it at the point when they either asked for help, quit, or reported the level as broken.</p>
+              <p>Participants and their screens were recorded and viewed back to ensure I had not missed any details of their test.</p>
             </article>
             <article class="mc-case-card">
               <h3>Questionnaire</h3>
-              <p>The post-level questions focused on fairness, confidence, remembered objective, and whether the exit made sense.</p>
+              <p>The pre-game questions focused on participants' exposure to PC puzzle platform games including their dexterity regarding simultaneous keyboard and mouse movements.</p>
+              <p>The post-game questions focused on fairness, confidence, remembered objectives, and whether each puzzle's lessons were learned.</p>
             </article>
           </div>
           <div class="mc-table-wrap" style="margin-block-start: 1rem;">
@@ -261,21 +255,21 @@
               <tbody>
                 <tr>
                   <td>Gameplay analytics</td>
-                  <td>Instrumented tutorial sessions across the original and redesigned builds</td>
-                  <td>Completion, time, retries, hint use, exit touches</td>
-                  <td>Completion improved by 40% after contextual exit hints were added.</td>
+                  <td>Play test sessions across the original and after the trajectory guide and puzzle 3 update</td>
+                  <td>Completion, time, retries, hint use, exit touches, and quitting</td>
+                  <td>Completion improved by 66% after players were able to spend more time in puzzle 3 honing projectile throwing skills</td>
                 </tr>
                 <tr>
                   <td>Moderated observation</td>
-                  <td>White Scottish university student participants, predominantly male with one female participant</td>
-                  <td>Think-aloud reactions and visible stuck loops</td>
-                  <td>Players understood the separate mechanics, but the game had not taught them clearly enough how to combine them.</td>
+                  <td>Small cohort of white Scottish university students, 9 gamers with 1 non-gamer participant</td>
+                  <td>Think-aloud reactions, visible frustration, and quitting</td>
+                  <td>Players understood the mechanics, but the game had not taught them clearly enough how to use them</td>
                 </tr>
                 <tr>
                   <td>Questionnaire</td>
-                  <td>Same Scottish university student participant cohort after puzzle 4</td>
+                  <td>Same cohort before and after puzzle 3 redesign except for 1 gamer replaced with a different gamer</td>
                   <td>Confidence, fairness, remembered goal, perceived hint usefulness</td>
-                  <td>Players responded better to help at the point of need than to instructions shown at the start of the level.</td>
+                  <td>Players responded better to the tight restraints of the puzzle. They were more likely to complete the puzzle and continue to finish the game</td>
                 </tr>
               </tbody>
             </table>
@@ -300,34 +294,28 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Know why the exit is blocked</td>
-                  <td>Exit acts as a hint portal until the puzzle state is complete</td>
-                  <td>The place players naturally go when confused becomes the place that helps them.</td>
+                  <td>Understand when projectiles will land</td>
+                  <td>Trajectory guide for projectiles to teach players where they will land and how far they will go</td>
+                  <td>Helps to reduce cognitive load on players. They don't need trial and error to learn trajectory. It's shown to them</td>
                   <td>Highest</td>
                 </tr>
                 <tr>
-                  <td>Recognize when the puzzle is solved</td>
-                  <td>Portal switches from exclamation mark to check-mark exit state</td>
-                  <td>The same object confirms success and invites the player to leave immediately.</td>
+                  <td>Connect earlier lessons</td>
+                  <td>Level 3 foreshadowing of green projectiles</td>
+                  <td>Players first meet the idea in a larger, slower paced puzzle before they have to depend on it as a skill to continue</td>
                   <td>High</td>
                 </tr>
                 <tr>
-                  <td>Keep agency</td>
-                  <td>Hints reveal progressive nudges, not the full answer</td>
-                  <td>Players get unstuck without feeling like the game solved the puzzle for them.</td>
-                  <td>High</td>
+                  <td>Ability to restart a puzzle from anywhere</td>
+                  <td>Ability to restart the puzzle from the game's pause menu</td>
+                  <td>Players able to easily restart a puzzle quickly with little friction and frustration</td>
+                  <td>Medium</td>
                 </tr>
                 <tr>
                   <td>Understand hint controls</td>
                   <td>Clearer "Hints ON/OFF" copy and first-use feedback</td>
-                  <td>Players understand that hints are available and optional before the puzzle puts pressure on them.</td>
-                  <td>Medium</td>
-                </tr>
-                <tr>
-                  <td>Connect earlier lessons</td>
-                  <td>Level 1 foreshadowing of exit state changes</td>
-                  <td>Players meet the idea in a safer context before they have to use it in a multi-step puzzle.</td>
-                  <td>Medium</td>
+                  <td>Players understand that hints are available and optional before the puzzle puts pressure on them</td>
+                  <td>Low</td>
                 </tr>
               </tbody>
             </table>
@@ -341,171 +329,24 @@
           </div>
           <div class="mc-case-grid mc-case-grid--3">
             <article class="mc-case-card">
-              <h3>False completion</h3>
-              <p>Players reached the exit before solving the puzzle and thought the game had failed to respond.</p>
-            </article>
-            <article class="mc-case-card">
               <h3>Hidden dependency</h3>
-              <p>The sequence depended on object state, enemy position, and switch order, but those links were too quiet.</p>
+              <p>The sequence depended on advanced projectile handling but those skills weren't there yet.</p>
             </article>
             <article class="mc-case-card">
               <h3>Help avoidance</h3>
               <p>Some players ignored the hint toggle because it felt like a setting, not help that belonged to the current puzzle.</p>
             </article>
             <article class="mc-case-card">
-              <h3>Repeated fail loop</h3>
-              <p>When a plan failed, players repeated the same jump or attack timing instead of questioning the rule.</p>
+              <h3>Soft lock fails</h3>
+              <p>When players failed to open the entire cave entrance, there were repeated calls that the puzzle was broken or bugged.</p>
             </article>
             <article class="mc-case-card">
-              <h3>Unclear success state</h3>
-              <p>The difference between "this is your objective" and "this is now usable" needed to be much stronger.</p>
+              <h3>Unclear state</h3>
+              <p>Falling down the partially open cave some players tried multiple sequences and became frustrated and confused. Previous puzzle steps needed to be much clearer.</p>
             </article>
             <article class="mc-case-card">
               <h3>Break in tone</h3>
-              <p>Generic tutorial text would have broken the stomach-world tone. The help needed to feel like it belonged there.</p>
-            </article>
-          </div>
-        </section>
-
-        <section id="competitors" class="mc-case-section" aria-labelledby="competitors-title">
-          <div class="mc-case-section__header">
-            <p class="mc-case-kicker">Competitor analysis</p>
-            <h2 id="competitors-title">Looking at older puzzle-platformer patterns without copying them</h2>
-          </div>
-          <div class="mc-table-wrap">
-            <table class="mc-case-table">
-              <caption>Competitor features and unique opportunities for The Grumbler.</caption>
-              <thead>
-                <tr>
-                  <th>Reference</th>
-                  <th>Competitor feature</th>
-                  <th>Unique feature for The Grumbler</th>
-                  <th>Design takeaway</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Portal</td>
-                  <td>Test chambers teach through environmental staging</td>
-                  <td>Hinting lives inside the exit rather than a separate assist menu</td>
-                  <td>Put the help next to the thing the player is already trying to understand.</td>
-                </tr>
-                <tr>
-                  <td>Braid</td>
-                  <td>Small rule changes are introduced through contained puzzle rooms</td>
-                  <td>The exit can introduce the active rule without solving the final interaction</td>
-                  <td>Teach one conceptual shift at a time, then let the player do the work.</td>
-                </tr>
-                <tr>
-                  <td>Limbo</td>
-                  <td>Minimal interface with strong environmental readability</td>
-                  <td>Hints are diegetic, short, and timed to player intent</td>
-                  <td>Only add UI when the level itself cannot carry the message clearly enough.</td>
-                </tr>
-                <tr>
-                  <td>Super Meat Boy</td>
-                  <td>Fast restart loops make failure feel recoverable</td>
-                  <td>The hint portal reduces repeated wrong attempts before frustration builds</td>
-                  <td>If failure is quick, recovery guidance has to be quick as well.</td>
-                </tr>
-                <tr>
-                  <td>FEZ</td>
-                  <td>Progress depends on reading environmental clues and state changes</td>
-                  <td>The portal state change makes the hidden dependency visible at the goal</td>
-                  <td>Make state changes visible enough that players trust what just happened.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="personas" class="mc-case-section" aria-labelledby="personas-title">
-          <div class="mc-case-section__header">
-            <p class="mc-case-kicker">User personas</p>
-            <h2 id="personas-title">Four player mindsets</h2>
-            <p>
-              These personas are grounded in the study context rather than a broad market segment. They represent white Scottish university students, with a mostly male participant group and one female participant.
-            </p>
-          </div>
-          <div class="mc-case-grid mc-case-grid--2">
-            <article class="mc-case-card mc-case-persona">
-              <h3>Calum MacLeod</h3>
-              <h4>Personal details</h4>
-              <ul class="mc-case-persona__meta">
-                <li>Age: 20</li>
-                <li>Location: Glasgow, Scotland</li>
-                <li>Education: BSc Games Development undergraduate</li>
-                <li>Employment: Part-time cinema assistant</li>
-              </ul>
-              <p><span class="mc-highlight">Personality description:</span> Curious, playful, and quick to try things, but just as quick to lose interest when progress feels random.</p>
-              <h4>A day in the life</h4>
-              <ul class="mc-case-list">
-                <li>Plays short indie games between lectures and lab work.</li>
-                <li>Shares funny moments with friends on Discord.</li>
-                <li>Skips long tutorial text and prefers to learn by trying.</li>
-              </ul>
-              <p><span class="mc-highlight">Pain points with current problem:</span> Gets frustrated when a playful game suddenly feels like coursework.</p>
-              <p class="mc-case-persona__quote">"I do not mind failing if I can tell what I learned."</p>
-            </article>
-
-            <article class="mc-case-card mc-case-persona">
-              <h3>Fraser Campbell</h3>
-              <h4>Personal details</h4>
-              <ul class="mc-case-persona__meta">
-                <li>Age: 21</li>
-                <li>Location: Dundee, Scotland</li>
-                <li>Education: BSc Computer Games Technology undergraduate</li>
-                <li>Employment: Part-time bar staff</li>
-              </ul>
-              <p><span class="mc-highlight">Personality description:</span> Analytical and completion-focused. He is fine with challenge, but not with rules that feel inconsistent.</p>
-              <h4>A day in the life</h4>
-              <ul class="mc-case-list">
-                <li>Plays puzzle games in evening sessions after coursework.</li>
-                <li>Tests rules deliberately before moving on.</li>
-                <li>Notices unclear feedback quickly.</li>
-              </ul>
-              <p><span class="mc-highlight">Pain points with current problem:</span> Treats unclear feedback as a bug and starts losing trust in the level.</p>
-              <p class="mc-case-persona__quote">"Show me the rule once and I will do the work."</p>
-            </article>
-
-            <article class="mc-case-card mc-case-persona">
-              <h3>Eilidh Robertson</h3>
-              <h4>Personal details</h4>
-              <ul class="mc-case-persona__meta">
-                <li>Age: 19</li>
-                <li>Location: Edinburgh, Scotland</li>
-                <li>Education: BA Digital Media undergraduate</li>
-                <li>Employment: Part-time retail assistant</li>
-              </ul>
-              <p><span class="mc-highlight">Personality description:</span> Expressive, social, and sensitive to pacing. She enjoys the humour, but only while the game keeps moving.</p>
-              <h4>A day in the life</h4>
-              <ul class="mc-case-list">
-                <li>Plays indie games with flatmates between seminars.</li>
-                <li>Talks through puzzle logic while playing.</li>
-                <li>Needs the game state to be readable when returning after interruptions.</li>
-              </ul>
-              <p><span class="mc-highlight">Pain points with current problem:</span> Dead time during confusion makes the game feel less charming and more arbitrary.</p>
-              <p class="mc-case-persona__quote">"A hint can still be funny if it arrives in character."</p>
-            </article>
-
-            <article class="mc-case-card mc-case-persona">
-              <h3>Lewis Stewart</h3>
-              <h4>Personal details</h4>
-              <ul class="mc-case-persona__meta">
-                <li>Age: 22</li>
-                <li>Location: Aberdeen, Scotland</li>
-                <li>Education: Fourth-year Computer Science undergraduate</li>
-                <li>Employment: Student ambassador</li>
-              </ul>
-              <p><span class="mc-highlight">Personality description:</span> Methodical and time-poor. He likes clever mechanics, but not repeating the same unclear section.</p>
-              <h4>A day in the life</h4>
-              <ul class="mc-case-list">
-                <li>Plays PC and handheld games between classes and society events.</li>
-                <li>Resumes after interruptions and forgets small clues.</li>
-                <li>Uses hint settings when they feel like part of the game rather than a failure state.</li>
-              </ul>
-              <p><span class="mc-highlight">Pain points with current problem:</span> Needs quick reorientation after stepping away, otherwise the puzzle loses him.</p>
-              <p class="mc-case-persona__quote">"Respect my time, but do not remove the puzzle."</p>
+              <p>Generic tutorial text would have broken the stomach-world tone. The help needed to feel like it belonged in the game by being as invisible as possible.</p>
             </article>
           </div>
         </section>
@@ -517,56 +358,57 @@
           </div>
           <div class="mc-table-wrap">
             <table class="mc-case-table">
-              <caption>Task, environment, challenges, emotions, thoughts, urgency level, and design opportunity.</caption>
-              <thead>
                 <tr>
                   <th>Task</th>
-                  <th>Environment</th>
-                  <th>Challenges</th>
-                  <th>Emotions</th>
-                  <th>Thoughts</th>
-                  <th>Urgency level</th>
-                  <th>Design opportunity</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
+                  <td>Puzzle 3 learning projectiles</td>
                   <td>Enter puzzle 4 and scan the room</td>
-                  <td>Platform area with suspended switches, enemy, and exit marker</td>
-                  <td>Multiple new relationships compete for attention</td>
-                  <td>Curious, cautious</td>
-                  <td>"What does the exit need from me?"</td>
-                  <td>Medium</td>
-                  <td>Use the exit to preview what is still missing.</td>
+                  <td>Enter puzzle 4 and scan the room Puzzle 4 breaking green blocks with green projectile</td>
+                  <td>Puzzle 4 cave sequence and leave</td>
                 </tr>
-                <tr>
-                  <td>Try first solution path</td>
-                  <td>Ground platform, enemy lane, reachable objects</td>
-                  <td>Player tests dexterity when the blocker is actually puzzle state</td>
-                  <td>Focused, then uncertain</td>
-                  <td>"Maybe I just missed the timing."</td>
-                  <td>High</td>
-                  <td>Surface a contextual hint before repetition becomes frustration.</td>
+                  <tr>
+                    <th>Environment</th>
+                    <td>A large open area with many green blocks and many green projectiles</td>
+                    <td>A small platform area suspended in the air. Omi pointing down indicating player should jump</td>
+                    <td>3 green blocks blocking the cave entrance. Player can see entire cave</td>
+                    <td>Target is a pipe block the player needs to carry out of the cave from the cave</td>
+                  </tr>
+                  <tr>
+                    <th>Challenges</th>
+                    <td>Teach the player accuracy with projectiles. Teach the relationship between green projectiles and green blocks</td>
+                    <td>Convince the player jumping into unknown depth is safe</td>
+                    <td>Player needs to pick up and aim green projectile at the correct angle to destroy at least 2 green blocks with the 1 green projectile</td>
+                    <td>The entrance could be between 1 and 3 blocks wide. There are two additional green projectiles and only those green blocks above. There is a basic block players can use to leave the cave given at least 2 green blocks have been destroyed</td>
+                  </tr>
+                  <tr>
+                    <th>Emotions</th>
+                    <td>Safe, playful</td>
+                    <td>Curious, cautious</td>
+                    <td>Focused</td>
+                    <td>Intense focus</td>
+                  </tr>
+                  <tr>
+                    <th>Thoughts</th>
+                    <td>“Not really a challenge here”</td>
+                    <td>“Do I need to jump” “What if I die”</td>
+                    <td>“I'm pretty good at aiming these now but I still have to be careful”</td>
+                    <td>“If I get this wrong I'll be trapped in this cave. I must concentrate”</td>
+                  </tr>
+                  <tr>
+                    <th>Urgency level</th>
+                    <td>Low</td>
+                    <td>High</td>
+                    <td>Critical</td>
+                    <td>Critical</td>
+                  </tr>
+                  <tr>
+                    <th>Design opportunity</th>
+                    <td>Make the level a green maze. Sprinkle green enemies but have them easy to spot and safely destroyed at a safe distance</td>
+                    <td>Make jumping down the obvious and only option</td>
+                    <td>Trajectory guide on projectile to indicate where it will land once thrown</td>
+                    <td>Trajectory guide on green projectiles and previous lessons in handling green projectiles. Track all three blocks and three projectiles.
+                    If all 3 projectiles are used and less than 2 blocks are destroyed give the player a failed state message with the ability to restart the level immediately</td>
+                  </tr>
                 </tr>
-                <tr>
-                  <td>Return to exit while unsolved</td>
-                  <td>Exit marker above the puzzle field</td>
-                  <td>Exit looks like a goal but does not yet behave as one</td>
-                  <td>Confused, slightly annoyed</td>
-                  <td>"Why can I not leave?"</td>
-                  <td>Critical</td>
-                  <td>Make the exit answer the question at the exact point the player asks it.</td>
-                </tr>
-                <tr>
-                  <td>Complete required sequence and leave</td>
-                  <td>Same exit location, now active</td>
-                  <td>Success needs immediate confirmation</td>
-                  <td>Relieved, satisfied</td>
-                  <td>"I solved it. Now get me out."</td>
-                  <td>High</td>
-                  <td>Change icon, colour, sound, and collision together so success is unmissable.</td>
-                </tr>
-              </tbody>
             </table>
           </div>
         </section>
@@ -579,33 +421,32 @@
             <article class="mc-case-quadrant">
               <h3><span class="mc-dot mc-dot--green" aria-hidden="true"></span>Do first: urgent and important</h3>
               <ul class="mc-case-list">
-                <li>Contextual exit hint portal.</li>
-                <li>Clear solved versus unsolved exit state.</li>
-                <li>Short hint copy for puzzle 4.</li>
+                <li>Trajectory guide for projectiles.</li>
+                <li>Remove unused black and blue projectiles from puzzle 3.</li>
+                <li>Add more opportunities to practise green projectiles in puzzle 3.</li>
               </ul>
             </article>
             <article class="mc-case-quadrant">
               <h3><span class="mc-dot mc-dot--yellow" aria-hidden="true"></span>Schedule: important, less urgent</h3>
               <ul class="mc-case-list">
-                <li>Level 1 foreshadowing of state-change exits.</li>
-                <li>Improved hint settings copy.</li>
-                <li>Better analytics event naming.</li>
+                <li>Track projectile and block progress in Puzzle 4.</li>
+                <li>Immediate failed message with restart puzzle option.</li>
+                <li>Make jumping down the obvious and only answer.</li>
               </ul>
             </article>
             <article class="mc-case-quadrant">
               <h3><span class="mc-dot mc-dot--blue" aria-hidden="true"></span>Delegate: urgent, lower impact</h3>
               <ul class="mc-case-list">
                 <li>Small visual polish pass for hint bubbles.</li>
-                <li>QA pass on portal collision states.</li>
                 <li>Text proofreading across tutorial levels.</li>
+                <li>Move restart level sign from top of puzzle 4 to the same level as cave entrance.</li>
               </ul>
             </article>
             <article class="mc-case-quadrant">
               <h3><span class="mc-dot mc-dot--red" aria-hidden="true"></span>Eliminate: lower urgency and impact</h3>
               <ul class="mc-case-list">
-                <li>New cutscene tutorial.</li>
-                <li>Full companion guide character.</li>
-                <li>Large redesign of the level layout.</li>
+                <li>Secret cave exit for stuck players.</li>
+                <li>Large redesign of puzzle 4.</li>
               </ul>
             </article>
           </div>
@@ -614,58 +455,32 @@
         <section id="five-whys" class="mc-case-section" aria-labelledby="five-whys-title">
           <div class="mc-case-section__header">
             <p class="mc-case-kicker">5 Whys analysis graph</p>
-            <p>
-              This was part of the root cause analysis. I kept asking why the previous answer was happening until the problem stopped being "players are bad at the puzzle" and became "I am trying to teach them too fast."
-            </p>
+            <p>This was part of the root cause analysis. I kept asking why the previous answer was happening until the problem stopped being "players are bad at the puzzle" and became "I am not teaching them correctly."</p>
           </div>
-          <div class="mc-case-five-whys" role="img" aria-label="5 Whys analysis. Problem: users are struggling to complete level 3. Why: because they are struggling to solve the puzzle. Why: because they are not combining all the information available. Why: There is too much going on at once, causing cognitive overload. Why: because the level is too complex for this stage in the game. Root cause: I am trying to teach them too fast.">
+          <div class="mc-case-five-whys" role="img" aria-label="5 Whys analysis. Problem: Players are not completing the game. Why: Because they are rage quitting on puzzle 4. Why: Because they are getting frustrated and think the game is broken. Why: Because they are getting trapped in the cave. Why: Because they are not throwing the projectiles at the right areas. Root Because there's no feedback showing where the projectiles will land.">
             <div class="mc-case-why-step mc-case-why-step--problem">
               <span class="mc-case-why-step__label">Problem</span>
-              <p>Users are struggling to complete level 3.</p>
+              <p>Players are not completing the game</p>
             </div>
             <div class="mc-case-why-step">
               <span class="mc-case-why-step__label">Why?</span>
-              <p>Because they are struggling to solve the puzzle.</p>
+              <p>Because they are rage quitting on puzzle 4</p>
             </div>
             <div class="mc-case-why-step">
               <span class="mc-case-why-step__label">Why?</span>
-              <p>Because they are not combining all the information available.</p>
+              <p>Because they are getting frustrated and think the game is broken</p>
             </div>
             <div class="mc-case-why-step">
               <span class="mc-case-why-step__label">Why?</span>
-              <p>There is too much going on at once, causing cognitive overload.</p>
+              <p>Because they are getting trapped in the cave</p>
             </div>
             <div class="mc-case-why-step">
               <span class="mc-case-why-step__label">Why?</span>
-              <p>Because the level is too complex for this stage in the game.</p>
+              <p>Because they are not throwing the projectiles at the right areas</p>
             </div>
             <div class="mc-case-why-step mc-case-why-step--root">
               <span class="mc-case-why-step__label">Root cause</span>
-              <p>Because I am trying to teach them too fast.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="root-cause" class="mc-case-section" aria-labelledby="root-cause-title">
-          <div class="mc-case-section__header">
-            <p class="mc-case-kicker">Root cause analysis</p>
-          </div>
-          <div class="mc-case-cause-map" role="img" aria-label="Root cause analysis from observed failure to tutorial cause.">
-            <div class="mc-case-cause-node">
-              <strong>Observed failure</strong>
-              <span>Players abandoned the puzzle or repeated the same failed attempt.</span>
-            </div>
-            <div class="mc-case-cause-node">
-              <strong>Immediate cause</strong>
-              <span>They reached the exit before solving the puzzle and did not know why it was blocked.</span>
-            </div>
-            <div class="mc-case-cause-node">
-              <strong>System cause</strong>
-              <span>The hinting was separate from the object that created the question.</span>
-            </div>
-            <div class="mc-case-cause-node">
-              <strong>Root cause</strong>
-              <span>The tutorial taught mechanics individually, but not state-based exit behaviour at the point of need.</span>
+              <p>Because there's no feedback showing where the projectiles will land</p>
             </div>
           </div>
         </section>
@@ -747,28 +562,6 @@
               <p>The icon, sound, collision, and objective text change together so the state cannot be missed.</p>
             </article>
           </div>
-        </section>
-
-        <section id="index" class="mc-case-section" aria-labelledby="index-title">
-          <div class="mc-case-section__header">
-            <p class="mc-case-kicker">Index</p>
-            <h2 id="index-title">Case study index</h2>
-          </div>
-          <ul class="mc-case-index-list">
-            <li><a href="#abstract">Abstract summary</a></li>
-            <li><a href="#business">Business challenges</a></li>
-            <li><a href="#competitors">Competitor analysis</a></li>
-            <li><a href="#eisenhower">Decision matrix</a></li>
-            <li><a href="#five-whys">5 Whys analysis</a></li>
-            <li><a href="#needs">Features and functionalities</a></li>
-            <li><a href="#prototypes">Designs and prototypes</a></li>
-            <li><a href="#research">Observations and questionnaire</a></li>
-            <li><a href="#personas">Personas</a></li>
-            <li><a href="#problem">Problem statement</a></li>
-            <li><a href="#root-cause">Root cause analysis</a></li>
-            <li><a href="#task-flows">Task flows</a></li>
-            <li><a href="#task-map">Task mapping</a></li>
-          </ul>
         </section>
 
         <section id="last-page" class="mc-case-section" aria-labelledby="last-page-title">
