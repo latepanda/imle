@@ -109,7 +109,8 @@
           <div class="mc-case-media-grid">
             <article class="mc-case-media-card">
               <figure>
-                <img src="assets/images/grumbler/level-1.png" alt="Early level in The Grumbler showing the character, a button prompt, a gap, and a simple platform challenge." width="1920" height="1440">
+                <img class="mc-mb--4" src="assets/images/grumbler/level-02.png" alt="Early puzzle in The Grumbler showing the character, an pipe block, and a simple platform challenge." width="1920" height="1440">
+                <img src="assets/images/grumbler/level-02-complete.png" alt="Early puzzle in The Grumbler showing the character, an pipe block connected, and a simple platform challenge." width="1920" height="1440">
                 <figcaption>
                   <h3>Early tutorial language</h3>
                   <p>Puzzle 1 introduced interaction prompts, movement timing, basic object manipulation, and signposting. It succeeded in teaching players isolated actions.</p>
@@ -121,7 +122,8 @@
             </article>
             <article class="mc-case-media-card">
               <figure>
-                <img src="assets/images/grumbler/level-4.png" alt="Level 4 in The Grumbler with suspended switches, a level exit marker, enemy, and the Grumbler character." width="1920" height="1440">
+                <img class="mc-mb--4" src="assets/images/grumbler/level-03.png" alt="Puzzle 3 in The Grumbler throwing black projectile at green enemy." width="1920" height="1440">
+                <img src="assets/images/grumbler/level-04.png" alt="Puzzle 4 in The Grumbler with green projectile on the ground and 3 green blocks to destroy." width="1920" height="1440">
                 <figcaption>
                   <h3>The stuck point</h3>
                   <p>On puzzle 4 players were given 1 green projectile which, when thrown at a certain angle, would destroy between 1 and 3 green blocks, opening a cave entrance below. If the player was able to destroy at least 1 block, the player was able to jump into the cave where two more green projectiles were waiting to give the player two more attempts to unlock the full cave entrance.</p>
@@ -492,21 +494,23 @@
           </div>
           <div class="mc-case-grid mc-case-grid--2">
             <article class="mc-case-flow-card">
-              <h3>Scenario 1: Original level 4 flow</h3>
+              <h3>Scenario 1: Original  flow</h3>
               <div class="mc-case-flow">
-                <div class="mc-case-flow__step"><b>1</b><span>The player sees the exit and assumes it is already usable.</span></div>
-                <div class="mc-case-flow__step"><b>2</b><span>They experiment with switches and enemy timing.</span></div>
-                <div class="mc-case-flow__step"><b>3</b><span>They return to the exit before solving the required state.</span></div>
-                <div class="mc-case-flow__step"><b>4</b><span>The exit does not answer the question, so they repeat old actions or quit.</span></div>
+                <div class="mc-case-flow__step"><b>1</b><span>The player enters puzzle 3 and sees 1 green, 1 black, and 1 blue projectile and a green enemy.</span></div>
+                <div class="mc-case-flow__step"><b>2</b><span>The player can fire a projectile at the green enemy but this is not required.</span></div>
+                <div class="mc-case-flow__step"><b>3</b><span>The player completes puzzle 3 and enters puzzle 4.</span></div>
+                <div class="mc-case-flow__step"><b>4</b><span>The player sees 1 green projectile and 3 green blocks.</span></div>
+                <div class="mc-case-flow__step"><b>5</b><span>The player fires green projectiles at blocks with a high likelihood of missing multiple blocks.</span></div>
               </div>
             </article>
             <article class="mc-case-flow-card">
-              <h3>Scenario 2: Improved hint-exit flow</h3>
+              <h3>Scenario 2: Improved flow</h3>
               <div class="mc-case-flow">
-                <div class="mc-case-flow__step"><b>1</b><span>The player sees the exit marked as an unsolved hint portal.</span></div>
-                <div class="mc-case-flow__step"><b>2</b><span>They interact with it and get a short contextual nudge.</span></div>
-                <div class="mc-case-flow__step"><b>3</b><span>They complete the switch and enemy sequence with clearer intent.</span></div>
-                <div class="mc-case-flow__step"><b>4</b><span>The portal changes to an exit state, confirming that they can now progress.</span></div>
+                <div class="mc-case-flow__step"><b>1</b><span>The player enters puzzle 3 and sees green projectiles and green blocks.</span></div>
+                <div class="mc-case-flow__step"><b>2</b><span>The player is required to fire projectiles at blocks. There is a visible trajectory guide when a projectile is armed.</span></div>
+                <div class="mc-case-flow__step"><b>3</b><span>The player is required to fire green projectiles at green enemies. No other colour blocks or projectiles are used yet.</span></div>
+                <div class="mc-case-flow__step"><b>4</b><span>The player completes puzzle 3 and enters puzzle 4.</span></div>
+                <div class="mc-case-flow__step"><b>5</b><span>The player sees 1 green projectile within reach and 3 green blocks to destroy. They see 2 additional green projectiles past the green blocks.</span></div>
               </div>
             </article>
           </div>
@@ -515,51 +519,138 @@
         <section id="prototypes" class="mc-case-section" aria-labelledby="prototypes-title">
           <div class="mc-case-section__header">
             <p class="mc-case-kicker">Designs / Prototypes</p>
-            <h2 id="prototypes-title">The design that worked best: a portal that teaches, then exits</h2>
-            <p>
-              I avoided adding another tutorial overlay. Instead, I gave new behaviour to an object players already understood was important.
-            </p>
           </div>
           <div class="mc-case-media-grid">
+
             <article class="mc-case-media-card">
               <figure>
                 <div class="mc-annotated">
-                  <img src="assets/images/grumbler/level-4.png" alt="Prototype before completion, showing the level 4 exit as a hint marker above the puzzle." width="1920" height="1440">
-                  <span class="mc-pin mc-pin--portal" aria-label="Annotation 1">1</span>
-                  <span class="mc-pin mc-pin--hint" aria-label="Annotation 2">2</span>
+                  <img src="assets/images/grumbler/main-screen.png" alt="Prototype before completion, showing the level 4 exit as a hint marker above the puzzle." width="1920" height="1440">
+                  <span class="mc-pin mc-pin--pin" aria-label="Annotation 1">1</span>
+                  <span class="mc-pin mc-pin--pin" aria-label="Annotation 2">2</span>
                 </div>
                 <figcaption>
-                  <h3>Before completion</h3>
-                  <p><span class="mc-highlight">1.</span> The exit shows a hint state instead of pretending it is usable. <span class="mc-highlight">2.</span> The hint toggle stays visible, but the contextual portal carries the main support.</p>
+                  <h3>Main menu</h3>
+                  <p>
+                    <span class="mc-highlight">1.</span> The exit shows a hint state instead of pretending it is usable.
+                  </p>
                 </figcaption>
               </figure>
             </article>
+
             <article class="mc-case-media-card">
               <figure>
                 <div class="mc-annotated">
-                  <img src="assets/images/grumbler/level-4-complete.png" alt="Prototype after completion, showing the level 4 exit as a completed portal with the puzzle resolved." width="1920" height="1440">
-                  <span class="mc-pin mc-pin--state" aria-label="Annotation 1">1</span>
-                  <span class="mc-pin mc-pin--reward" aria-label="Annotation 2">2</span>
+                  <img src="assets/images/grumbler/level-01.png" alt="Prototype before completion, showing the level 4 exit as a hint marker above the puzzle." width="1920" height="1440">
+                  <span class="mc-pin mc-pin--pin" aria-label="Annotation 1">1</span>
+                  <span class="mc-pin mc-pin--pin" aria-label="Annotation 2">2</span>
                 </div>
                 <figcaption>
-                  <h3>After completion</h3>
-                  <p><span class="mc-highlight">1.</span> The portal changes to its completion state. <span class="mc-highlight">2.</span> The resolved enemy state and clear route reinforce that the player solved the level.</p>
+                  <h3>Puzzle 1 lessons</h3>
+                  <p>
+                    <span class="mc-highlight">1.</span> The exit shows a hint state instead of pretending it is usable.
+                    <span class="mc-highlight">2.</span> The hint toggle stays visible, but the contextual portal carries the main support.
+                  </p>
                 </figcaption>
               </figure>
             </article>
-          </div>
-          <div class="mc-case-grid mc-case-grid--3" style="margin-block-start: 1rem;">
-            <article class="mc-case-card">
-              <h3>Prototype rule</h3>
-              <p>If the puzzle condition is false, the portal gives the next useful hint. If the condition is true, it exits the level.</p>
+
+            <article class="mc-case-media-card">
+              <figure>
+                <div class="mc-annotated">
+                  <img src="assets/images/grumbler/level-02.png" alt="Prototype before completion, showing the level 4 exit as a hint marker above the puzzle." width="1920" height="1440">
+                  <span class="mc-pin mc-pin--pin" aria-label="Annotation 1">1</span>
+                </div>
+                <figcaption>
+                  <h3>Puzzle 2 lessons</h3>
+                  <p>
+                    <span class="mc-highlight">1.</span> The exit shows a hint state instead of pretending it is usable.
+                    <span class="mc-highlight">2.</span> The hint toggle stays visible, but the contextual portal carries the main support.
+                  </p>
+                </figcaption>
+              </figure>
             </article>
-            <article class="mc-case-card">
-              <h3>Hint copy rule</h3>
-              <p>Hints use one action verb, one object clue, and no full solution. The player still has to do the solve.</p>
+
+            <article class="mc-case-media-card">
+              <figure>
+                <div class="mc-annotated">
+                  <img src="assets/images/grumbler/level-02-complete.png" alt="Prototype before completion, showing the level 4 exit as a hint marker above the puzzle." width="1920" height="1440">
+                  <span class="mc-pin mc-pin--pin" aria-label="Annotation 1">1</span>
+                </div>
+                <figcaption>
+                  <h3>Puzzle 2 complete</h3>
+                  <p>
+                    <span class="mc-highlight">1.</span> The exit shows a hint state instead of pretending it is usable.
+                    <span class="mc-highlight">2.</span> The hint toggle stays visible, but the contextual portal carries the main support.
+                  </p>
+                </figcaption>
+              </figure>
             </article>
-            <article class="mc-case-card">
-              <h3>Feedback rule</h3>
-              <p>The icon, sound, collision, and objective text change together so the state cannot be missed.</p>
+
+            <article class="mc-case-media-card">
+              <figure>
+                <div class="mc-annotated">
+                  <img src="assets/images/grumbler/level-03.png" alt="Prototype before completion, showing the level 4 exit as a hint marker above the puzzle." width="1920" height="1440">
+                  <span class="mc-pin mc-pin--pin" aria-label="Annotation 1">1</span>
+                </div>
+                <figcaption>
+                  <h3>Puzzle 3 lessons - Before study </h3>
+                  <p>
+                    <span class="mc-highlight">1.</span> The exit shows a hint state instead of pretending it is usable.
+                    <span class="mc-highlight">2.</span> The hint toggle stays visible, but the contextual portal carries the main support.
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article class="mc-case-media-card">
+              <figure>
+                <div class="mc-annotated">
+                  <img src="assets/images/grumbler/level-03-guides.png" alt="Prototype before completion, showing the level 4 exit as a hint marker above the puzzle." width="1920" height="1440">
+                  <span class="mc-pin mc-pin--pin" aria-label="Annotation 1">1</span>
+                </div>
+                <figcaption>
+                  <h3>Puzzle 3 lessons - After study</h3>
+                  <p>
+                    <span class="mc-highlight">1.</span> The exit shows a hint state instead of pretending it is usable.
+                    <span class="mc-highlight">2.</span> The hint toggle stays visible, but the contextual portal carries the main support.
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article class="mc-case-media-card">
+              <figure>
+                <div class="mc-annotated">
+                  <img src="assets/images/grumbler/level-00.png" alt="Prototype after completion, showing the level 4 exit as a completed portal with the puzzle resolved." width="1920" height="1440">
+                  <span class="mc-pin mc-pin--pin" aria-label="Annotation 1">1</span>
+                  <span class="mc-pin mc-pin--pin" aria-label="Annotation 2">2</span>
+                </div>
+                <figcaption>
+                  <h3>Main Menu - Hat shop</h3>
+                  <p>
+                    <span class="mc-highlight">1.</span> The portal changes to its completion state.
+                    <span class="mc-highlight">2.</span> The resolved enemy state and clear route reinforce that the player solved the level.
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article class="mc-case-media-card">
+              <figure>
+                <div class="mc-annotated">
+                  <img src="assets/images/grumbler/level-04.png" alt="Prototype before completion, showing the level 4 exit as a hint marker above the puzzle." width="1920" height="1440">
+                  <span class="mc-pin mc-pin--pin" aria-label="Annotation 1">1</span>
+                  <span class="mc-pin mc-pin--pin" aria-label="Annotation 2">2</span>
+                </div>
+                <figcaption>
+                  <h3>Puzzle 4</h3>
+                  <p>
+                    <span class="mc-highlight">1.</span> The exit shows a hint state instead of pretending it is usable.
+                    <span class="mc-highlight">2.</span> The hint toggle stays visible, but the contextual portal carries the main support.
+                  </p>
+                </figcaption>
+              </figure>
             </article>
           </div>
         </section>
