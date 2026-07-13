@@ -3242,7 +3242,6 @@ mark {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
   list-style: none;
   margin: clamp(0.4rem, 1vw, 1rem) 0 0;
-  max-width: 54rem;
   padding: 0;
 }
 
@@ -4096,7 +4095,7 @@ mark {
 
 @media (max-width: 35rem) {
   .mc-case-hero h1 {
-    font-size: clamp(3.4rem, 22vw, 5rem);
+    font-size: clamp(3.4rem, 22vw, 4rem);
   }
 
   .mc-pin {
