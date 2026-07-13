@@ -3120,6 +3120,10 @@ mark {
   background: var(--mc-gr-paper);
 }
 
+.mc-theme--grumbler footer {
+  color: var(--mc-gr-paper);
+}
+
 .mc-theme--grumbler .mc-page-main {
   padding-block-end: clamp(1rem, 3vw, 2rem);
 }
@@ -4048,6 +4052,11 @@ mark {
   .mc-case-wireframes,
   .mc-case-media-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mc-case-last {
+    max-width: 42rem;
+    margin: auto;
   }
 
   .mc-case-why-step:nth-child(2) { --mc-gr-why-offset: 2rem; }
