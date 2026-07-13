@@ -16,8 +16,15 @@
   <link rel="manifest" href="favicon_data/site.webmanifest">
   <link rel="preload" href="/assets/fonts/Inter/Inter-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/assets/fonts/Inter/Inter-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-  <title>UX Case Studies Coming Soon</title>
+  <title>UX Case Studies</title>
   <link href="assets/styles/design.css" rel="stylesheet">
+  <style>
+    .mc-project-card__media > .ux-study-thumb {
+      background: #fff4df;
+      object-fit: cover;
+      object-position: left;
+    }
+  </style>
 </head>
 <body class="mc-theme mc-theme--mercury mc-page-shell">
   <a class="mc-skip-link" href="#main-content">Skip to content</a>
@@ -28,39 +35,38 @@
     </a>
   </header>
 
-  <main id="main-content" class="mc-page-main mc-page-main--center mc-container mc-container--lg" aria-labelledby="ux-title">
-    <article class="mc-status-panel mc-panel mc-panel--glass" aria-live="polite">
-      <div class="mc-status-panel__media" aria-hidden="true">
-        <div class="mc-placeholder-card">
-          <div class="mc-stack">
-            <span class="mc-placeholder-icon">
-              <span class="mc-icon-glyph mc-icon-glyph--design"></span>
-            </span>
-            <span class="mc-placeholder-title"></span>
-            <div class="mc-placeholder-grid">
-              <span class="mc-placeholder-block"></span>
-              <span class="mc-placeholder-block"></span>
-              <span class="mc-placeholder-block"></span>
-              <span class="mc-placeholder-block"></span>
-            </div>
-          </div>
-        </div>
-      </div>
+  <main id="main-content" class="mc-page-main mc-page-main--center mc-container mc-container--xl" aria-labelledby="ux-title">
+    <section class="mc-hero mc-hero--compact">
+      <p class="mc-eyebrow mc-text--brand">UX case studies and research</p>
+      <h1 id="ux-title" class="mc-hero__title">Case studies</h1>
+      <p class="mc-hero__summary">Selected research, design decisions, accessibility thinking, and product outcomes.</p>
 
-      <div class="mc-status-panel__content">
-        <p class="mc-status-pill">
-          <span class="mc-status-pill__dot" aria-hidden="true"></span>
-          Coming soon
-        </p>
-        <p class="mc-eyebrow">UX case studies and research</p>
-        <h1 id="ux-title">Case studies are being prepared</h1>
-        <p>
-          This space will soon share selected UX research, design decisions, accessibility thinking, and
-          outcomes from my portfolio. The studies are not quite ready to go online yet, but they are on the way.
-        </p>
-        <a class="mc-button mc-button--primary" href="https://www.imle.uk">Back to homepage</a>
-      </div>
-    </article>
+      <nav class="mc-container mc-container--lg mc-mt--5 mc-text--start" aria-label="UX case studies">
+        <ul class="mc-project-grid mc-grid mc-g--3">
+          <li>
+            <article class="mc-card mc-project-card mc-project-card--featured mc-project-card--media-top sm:mc-project-card--media-left">
+              <div class="mc-project-card__media" aria-hidden="true">
+                <img class="ux-study-thumb" alt="" src="assets/images/grumbler/grumbler-thumb.png" width="1920" height="1440" />
+              </div>
+              <div class="mc-card__body mc-project-card__body">
+                <header class="mc-project-card__header">
+                  <span class="mc-icon mc-icon--brand" aria-hidden="true">
+                    <span class="mc-icon-glyph mc-icon-glyph--pc"></span>
+                  </span>
+                  <h2 class="mc-project-card__title">The Grumbler</h2>
+                </header>
+                <p class="mc-project-card__description">A tutorial redesign for an indie 2D puzzle platformer, focused on increasing puzzle completion. After the redesign, puzzle 4 completion rose from 30% to 80%. Study completed in 2013.</p>
+              </div>
+              <footer class="mc-card__footer">
+                <a class="mc-button mc-button--link mc-button--sm mc-button--start mc-button--block" href="/ux-grumbler.html">
+                  <span class="mc-button__label">Read the case study</span>
+                </a>
+              </footer>
+            </article>
+          </li>
+        </ul>
+      </nav>
+    </section>
   </main>
 </body>
 </html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KBGZNV97');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="UX case study for improving the tutorial and level 4 completion rate in The Grumbler, a small indie 2D puzzle platformer." />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_data/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_data/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_data/favicon-16x16.png">
+  <link rel="manifest" href="favicon_data/site.webmanifest">
+  <link rel="preload" href="/assets/fonts/Inter/Inter-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/assets/fonts/Inter/Inter-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/assets/fonts/WesternIsles/WesternIsles-Light.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <title>UX Case Study - The Grumbler</title>
+  <link href="assets/styles/design.css" rel="stylesheet">
+</head>
+<body class="mc-theme mc-page-shell mc-theme--grumbler">
+  <a class="mc-skip-link" href="#main-content">Skip to content</a>
+
+  <header class="mc-site-header" aria-label="Site header">
+    <a class="mc-brand" href="https://www.imle.uk" aria-label="Return to the IMLE homepage">
+      <span class="mc-brand__logo" aria-hidden="true"></span>
+    </a>
+  </header>
+
+  <main id="main-content" class="mc-page-main">
+    <section id="cover" class="mc-case-hero" aria-labelledby="case-study-title">
+      <div class="mc-case-hero__content">
+        <p class="mc-case-kicker">UX case study</p>
+        <h1 id="case-study-title">The Grumbler</h1>
+        <p class="mc-case-hero__summary">
+          A UX case study about making a puzzle clearer without reducing the complexity.
+        </p>
+        <ul class="mc-case-hero__stats" aria-label="Headline outcomes">
+          <li class="mc-case-stat">
+            <strong>80%</strong>
+            <span>8 out of 10 players completed puzzle 4 after updating puzzle 3</span>
+          </li>
+          <li class="mc-case-stat">
+            <strong>+50%</strong>
+            <span>3 out of 10 players completed puzzle 4 before improvements to puzzle 3. The study produced a 50% inprovement</span>
+          </li>
+          <li class="mc-case-stat">
+            <strong>10</strong>
+            <span>A small cohort of university student participants took part throughout the study</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="mc-case-page">
+      <div class="mc-case-container">
+        <section id="abstract" class="mc-case-section" aria-labelledby="abstract-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Abstract summary</p>
+            <h2 id="abstract-title">Teaching without taking over</h2>
+            <p>
+              The Grumbler is a small indie 2D puzzle platformer about a hungry stomach monster collecting food (Omi), defeating enemies, and buying hats. Participants in the study understood the character and the basic movement quickly, but puzzle 4 was where we saw the most frustration and 'rage quitting'. The game was asking players to complete the level without the game first effectively teaching them the right lessons to succeed.
+            </p>
+          </div>
+          <div class="mc-case-grid mc-case-grid--2">
+            <div class="mc-case-card">
+              <h3>Study result</h3>
+              <p>The study aimed to determine why players were becoming stuck at the same section and failing to complete the 4th puzzle. The initial assumption was that the level was too complex, trying to teach the player to chain too many concepts together at once.</p>
+              <p>The most useful change I found was updating the projectiles to include a trajectory path to indicate where the projectile would land once thrown. The previous puzzle was also streamlined by removing two types of projectiles (Black, and Blue). These would be introduced slower and in later puzzles as to not overwhelm players with multiple choices too early and give the player more opportunities to practice throwing the green projectile.</p>
+            </div>
+            <div>
+              <blockquote class="mc-case-quote mc-mb--4">
+                "It was better the second time. I got to the end [of the game] this time."
+                <cite>Playtest participant no.1, post-redesign session</cite>
+              </blockquote>
+              <blockquote class="mc-case-quote mc-mb--4">
+                "Good update, the guides were very useful."
+                <cite>Playtest participant no.2, post-redesign session</cite>
+              </blockquote>
+              <blockquote class="mc-case-quote">
+                "You made it easier the second time but in a good way."
+                <cite>Playtest participant no.3, post-redesign session</cite>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <nav id="contents" class="mc-case-section" aria-labelledby="contents-title">
+          <div class="mc-case-toc">
+            <h2 id="contents-title">Table of Contents</h2>
+            <ol>
+              <li><a href="#problem">Problem statement</a></li>
+              <li><a href="#objectives">Objectives and goals</a></li>
+              <li><a href="#process">Process outline</a></li>
+              <li><a href="#business">Business challenges</a></li>
+              <li><a href="#audience">Target audience</a></li>
+              <li><a href="#research">Research type and findings</a></li>
+              <li><a href="#needs">User needs and features</a></li>
+              <li><a href="#challenges">User challenges</a></li>
+              <li><a href="#task-map">Task mapping table</a></li>
+              <li><a href="#eisenhower">Decision matrix</a></li>
+              <li><a href="#five-whys">5 Whys analysis graph</a></li>
+              <li><a href="#task-flows">Task flows</a></li>
+              <li><a href="#prototypes">Designs and prototypes</a></li>
+              <li><a href="#last-page">Last page</a></li>
+            </ol>
+          </div>
+        </nav>
+
+        <section id="problem" class="mc-case-section" aria-labelledby="problem-title">
+          <div class="mc-case-section__header">
+            <h2 id="problem-title">Problem statement</h2>
+            <p>
+              On the 4th puzzle players were failing to unlock a certain passageway correctly, they would end up stuck with no obvious way forward.</p>
+          </div>
+          <div class="mc-case-media-grid">
+            <article class="mc-case-media-card">
+              <figure>
+                <img class="mc-mb--4" src="assets/images/grumbler/level-02.png" alt="Early puzzle in The Grumbler showing the character, an pipe block, and a simple platform challenge." width="1920" height="1440">
+                <img src="assets/images/grumbler/level-02-complete.png" alt="Early puzzle in The Grumbler showing the character, an pipe block connected, and a simple platform challenge." width="1920" height="1440">
+                <figcaption>
+                  <h3>Early tutorial language</h3>
+                  <p>Puzzle 1 introduced interaction prompts, movement timing, basic object manipulation, and signposting. It succeeded in teaching players isolated actions.</p>
+                  <p>Puzzle 2 introduced advanced movement and advanced manipulation of objects. It succeeded in chaining these two concepts together.</p>
+                  <p>Puzzle 3 introduced 3 different types of projectiles (Black, Blue, and Green), basic throwing mechanics, 1 type of destructible block (Green), 1 enemy type (Green enemy), and basic combat. It was supposed to teach the player the differences in the types of projectiles available and the first type of danger.</p>
+                  <p>Puzzle 4 attempted to chain previous lessons together in a confined and concise puzzle.</p>
+                </figcaption>
+              </figure>
+            </article>
+            <article class="mc-case-media-card">
+              <figure>
+                <img class="mc-mb--4" src="assets/images/grumbler/level-03.png" alt="Puzzle 3 in The Grumbler throwing black projectile at green enemy." width="1920" height="1440">
+                <img src="assets/images/grumbler/level-04.png" alt="Puzzle 4 in The Grumbler with green projectile on the ground and 3 green blocks to destroy." width="1920" height="1440">
+                <figcaption>
+                  <h3>The stuck point</h3>
+                  <p>On puzzle 4 players were given 1 green projectile which, when thrown at a certain angle, would destroy between 1 and 3 green blocks, opening a cave entrance below. If the player was able to destroy at least 1 block, the player was able to jump into the cave where two more green projectiles were waiting to give the player two more attempts to unlock the full cave entrance.</p>
+                  <p>There was no easy way to get out of the cave or restart the puzzle if they failed on all 3 attempts. If on their first attempt, they failed to destroy at least 1 green block they were unable to proceed or restart the puzzle.</p>
+                </figcaption>
+              </figure>
+            </article>
+          </div>
+        </section>
+
+        <section id="objectives" class="mc-case-section" aria-labelledby="objectives-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Objectives and goals</p>
+            <h2 id="objectives-title">Help players move forward without frustration.</h2>
+          </div>
+          <div class="mc-case-grid mc-case-grid--3">
+            <article class="mc-case-card">
+              <h3>Player learning</h3>
+              <p>Make the game communicate what skills were still needed, then reward the player with clear progression goals once they had solved the first part of each puzzle.</p>
+            </article>
+            <article class="mc-case-card">
+              <h3>Progression</h3>
+              <p>Get more players through puzzle 4 without reducing the complexity of the puzzle.</p>
+            </article>
+            <article class="mc-case-card">
+              <h3>Production fit</h3>
+              <p>Use the level objects, UI language, and art constraints that already existed, because this was a small indie game and the fix needed to be realistic.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="process" class="mc-case-section" aria-labelledby="process-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Process outline</p>
+            <h2 id="process-title">Turning stuck moments into design decisions</h2>
+          </div>
+          <div class="mc-case-grid mc-case-grid--4">
+            <article class="mc-case-card">
+              <h3>1. Diagnose</h3>
+              <p>I looked at fail points, abandon points, hint toggles, time on level, repeated signs of frustration in body language, and what participants said while they were trying to work it out.</p>
+            </article>
+            <article class="mc-case-card">
+              <h3>2. Model</h3>
+              <p>I mapped the concepts puzzle 4 relied on and found where the earlier levels were under-teaching cause and effect.</p>
+            </article>
+            <article class="mc-case-card">
+              <h3>3. Prototype</h3>
+              <p>I tested contextual exit hints, stronger completion feedback, clearer hint language, and earlier foreshadowing.</p>
+            </article>
+            <article class="mc-case-card">
+              <h3>4. Measure</h3>
+              <p>I compared completion, solve time, hint use, and confidence between the original tutorial and the improved build.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="business" class="mc-case-section" aria-labelledby="business-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Business challenges</p>
+            <h2 id="business-title">The solution had to fit a small indie game with very limited time and resources.</h2>
+          </div>
+          <div class="mc-case-grid mc-case-grid--2">
+            <article class="mc-case-card">
+              <h3>Retention risk</h3>
+              <p>Puzzle 4 was early enough that a bad experience could make players decide the game was unclear before they had seen enough of it.</p>
+            </article>
+            <article class="mc-case-card">
+              <h3>Scope control</h3>
+              <p>A big tutorial rebuild, or entire puzzle rework would have been the wrong answer. Improvements had to be small for time constraints.</p>
+            </article>
+            <article class="mc-case-card">
+              <h3>Identity protection</h3>
+              <p>The Grumbler works because it is slightly silly and concepts are supposed to be taught invisibly. The tutorial could not suddenly become a sterile onboarding system that felt like it belonged in another game.</p>
+            </article>
+            <article class="mc-case-card">
+              <h3>Difficulty promise</h3>
+              <p>It still needed to feel like a puzzle platformer. The goal was guidance, not reduced puzzle complexity.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="audience" class="mc-case-section" aria-labelledby="audience-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Target audience</p>
+            <h2 id="audience-title">The game was designed to be played by novice and experienced puzzle platformers alike.</h2>
+            <p>The recruited participant group were exclusively white Scottish university students in their early 20s, predominantly self-identified 'gamers' ranging from casual to advanced, with one non-gamer participant. They were close to the audience I expected for the game.</p>
+          </div>
+          <ul class="mc-pill-row" aria-label="Target audience traits">
+            <li>Gamers and non-gamers</li>
+            <li>Short-session play</li>
+            <li>Humor-led indie game appeal</li>
+            <li>Low to advanced platforming skill</li>
+            <li>Low tolerance for unclear failure</li>
+            <li>Optional help preferred over forced help</li>
+          </ul>
+        </section>
+
+        <section id="research" class="mc-case-section" aria-labelledby="research-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Research type</p>
+            <h2 id="research-title">Mixed method: quantitative and qualitative</h2>
+            <p>I used quantitative data to see where progression was failing, along with observation and questionnaires to understand why. I did not want to make the puzzle easier just because people were failing it. I wanted to know whether the pain points were.</p>
+          </div>
+          <div class="mc-case-grid mc-case-grid--3">
+            <article class="mc-case-card">
+              <h3>Quantitative</h3>
+              <p>I tracked completion rate, level duration, retries, deaths, hint toggles, exit interactions before completion, and abandon rate.</p>
+            </article>
+            <article class="mc-case-card">
+              <h3>Observations</h3>
+              <p>Participants kept saying the same kind of thing. They could see the goal, but they thought there was no way to achieve it at the point when they either asked for help, quit, or reported the level as broken.</p>
+              <p>Participants and their screens were recorded and viewed back to ensure I had not missed any details of their test.</p>
+            </article>
+            <article class="mc-case-card">
+              <h3>Questionnaire</h3>
+              <p>The pre-game questions focused on participants' exposure to PC puzzle platform games including their dexterity regarding simultaneous keyboard and mouse movements.</p>
+              <p>The post-game questions focused on fairness, confidence, remembered objectives, and whether each puzzle's lessons were learned.</p>
+            </article>
+          </div>
+          <div class="mc-table-wrap" style="margin-block-start: 1rem;">
+            <table class="mc-case-table">
+              <caption>Research summary from the tutorial improvement study.</caption>
+              <thead>
+                <tr>
+                  <th>Research activity</th>
+                  <th>Sample</th>
+                  <th>Signal captured</th>
+                  <th>Finding</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Gameplay analytics</td>
+                  <td>Play test sessions across the original and after the trajectory guide and puzzle 3 update</td>
+                  <td>Completion, time, retries, hint use, exit touches, and quitting</td>
+                  <td>Completion improved by 66% after players were able to spend more time in puzzle 3 honing projectile throwing skills</td>
+                </tr>
+                <tr>
+                  <td>Moderated observation</td>
+                  <td>Small cohort of white Scottish university students, 9 gamers with 1 non-gamer participant</td>
+                  <td>Think-aloud reactions, visible frustration, and quitting</td>
+                  <td>Players understood the mechanics, but the game had not taught them clearly enough how to use them</td>
+                </tr>
+                <tr>
+                  <td>Questionnaire</td>
+                  <td>Same cohort before and after puzzle 3 redesign except for 1 gamer replaced with a different gamer</td>
+                  <td>Confidence, fairness, remembered goal, perceived hint usefulness</td>
+                  <td>Players responded better to the tight restraints of the puzzle. They were more likely to complete the puzzle and continue to finish the game</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="needs" class="mc-case-section" aria-labelledby="needs-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">User needs / Features and functionalities</p>
+            <h2 id="needs-title">What players needed the tutorial to do</h2>
+          </div>
+          <div class="mc-table-wrap">
+            <table class="mc-case-table">
+              <caption>User needs translated into changes I could actually build.</caption>
+              <thead>
+                <tr>
+                  <th>User need</th>
+                  <th>Feature or functionality</th>
+                  <th>Why it resolves the need</th>
+                  <th>Priority</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Understand when projectiles will land</td>
+                  <td>Trajectory guide for projectiles to teach players where they will land and how far they will go</td>
+                  <td>Helps to reduce cognitive load on players. They don't need trial and error to learn trajectory. It's shown to them</td>
+                  <td>Highest</td>
+                </tr>
+                <tr>
+                  <td>Connect earlier lessons</td>
+                  <td>Level 3 foreshadowing of green projectiles</td>
+                  <td>Players first meet the idea in a larger, slower paced puzzle before they have to depend on it as a skill to continue</td>
+                  <td>High</td>
+                </tr>
+                <tr>
+                  <td>Ability to restart a puzzle from anywhere</td>
+                  <td>Ability to restart the puzzle from the game's pause menu</td>
+                  <td>Players able to easily restart a puzzle quickly with little friction and frustration</td>
+                  <td>Medium</td>
+                </tr>
+                <tr>
+                  <td>Understand hint controls</td>
+                  <td>Clearer "Hints ON/OFF" copy and first-use feedback</td>
+                  <td>Players understand that hints are available and optional before the puzzle puts pressure on them</td>
+                  <td>Low</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="challenges" class="mc-case-section" aria-labelledby="challenges-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">User challenges</p>
+            <h2 id="challenges-title">Where the puzzle lost people</h2>
+          </div>
+          <div class="mc-case-grid mc-case-grid--3">
+            <article class="mc-case-card">
+              <h3>Hidden dependency</h3>
+              <p>The sequence depended on advanced projectile handling but those skills weren't there yet.</p>
+            </article>
+            <article class="mc-case-card">
+              <h3>Help avoidance</h3>
+              <p>Some players ignored the hint toggle because it felt like a setting, not help that belonged to the current puzzle.</p>
+            </article>
+            <article class="mc-case-card">
+              <h3>Soft lock fails</h3>
+              <p>When players failed to open the entire cave entrance, there were repeated calls that the puzzle was broken or bugged.</p>
+            </article>
+            <article class="mc-case-card">
+              <h3>Unclear state</h3>
+              <p>Falling down the partially open cave some players tried multiple sequences and became frustrated and confused. Previous puzzle steps needed to be much clearer.</p>
+            </article>
+            <article class="mc-case-card">
+              <h3>Break in tone</h3>
+              <p>Generic tutorial text would have broken the stomach-world tone. The help needed to feel like it belonged in the game by being as invisible as possible.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="task-map" class="mc-case-section" aria-labelledby="task-map-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Task mapping table</p>
+            <h2 id="task-map-title">The four moments that mattered most</h2>
+          </div>
+          <div class="mc-table-wrap">
+            <table class="mc-case-table">
+                <tr>
+                  <th>Task</th>
+                  <td>Puzzle 3 learning projectiles</td>
+                  <td>Enter puzzle 4 and scan the room</td>
+                  <td>Enter puzzle 4 and scan the room Puzzle 4 breaking green blocks with green projectile</td>
+                  <td>Puzzle 4 cave sequence and leave</td>
+                </tr>
+                  <tr>
+                    <th>Environment</th>
+                    <td>A large open area with many green blocks and many green projectiles</td>
+                    <td>A small platform area suspended in the air. Omi pointing down indicating player should jump</td>
+                    <td>3 green blocks blocking the cave entrance. Player can see entire cave</td>
+                    <td>Target is a pipe block the player needs to carry out of the cave from the cave</td>
+                  </tr>
+                  <tr>
+                    <th>Challenges</th>
+                    <td>Teach the player accuracy with projectiles. Teach the relationship between green projectiles and green blocks</td>
+                    <td>Convince the player jumping into unknown depth is safe</td>
+                    <td>Player needs to pick up and aim green projectile at the correct angle to destroy at least 2 green blocks with the 1 green projectile</td>
+                    <td>The entrance could be between 1 and 3 blocks wide. There are two additional green projectiles and only those green blocks above. There is a basic block players can use to leave the cave given at least 2 green blocks have been destroyed</td>
+                  </tr>
+                  <tr>
+                    <th>Emotions</th>
+                    <td>Safe, playful</td>
+                    <td>Curious, cautious</td>
+                    <td>Focused</td>
+                    <td>Intense focus</td>
+                  </tr>
+                  <tr>
+                    <th>Thoughts</th>
+                    <td>“Not really a challenge here”</td>
+                    <td>“Do I need to jump” “What if I die”</td>
+                    <td>“I'm pretty good at aiming these now but I still have to be careful”</td>
+                    <td>“If I get this wrong I'll be trapped in this cave. I must concentrate”</td>
+                  </tr>
+                  <tr>
+                    <th>Urgency level</th>
+                    <td>Low</td>
+                    <td>High</td>
+                    <td>Critical</td>
+                    <td>Critical</td>
+                  </tr>
+                  <tr>
+                    <th>Design opportunity</th>
+                    <td>Make the level a green maze. Sprinkle green enemies but have them easy to spot and safely destroyed at a safe distance</td>
+                    <td>Make jumping down the obvious and only option</td>
+                    <td>Trajectory guide on projectile to indicate where it will land once thrown</td>
+                    <td>Trajectory guide on green projectiles and previous lessons in handling green projectiles. Track all three blocks and three projectiles.
+                    If all 3 projectiles are used and less than 2 blocks are destroyed give the player a failed state message with the ability to restart the level immediately</td>
+                  </tr>
+                </tr>
+            </table>
+          </div>
+        </section>
+
+        <section id="eisenhower" class="mc-case-section" aria-labelledby="eisenhower-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Decision Matrix</p>
+          </div>
+          <div class="mc-case-matrix" role="img" aria-label="Eisenhower matrix showing urgent and important tutorial improvements.">
+            <article class="mc-case-quadrant">
+              <h3><span class="mc-dot mc-dot--green" aria-hidden="true"></span>Do first: urgent and important</h3>
+              <ul class="mc-case-list">
+                <li>Trajectory guide for projectiles.</li>
+                <li>Remove unused black and blue projectiles from puzzle 3.</li>
+                <li>Add more opportunities to practise green projectiles in puzzle 3.</li>
+              </ul>
+            </article>
+            <article class="mc-case-quadrant">
+              <h3><span class="mc-dot mc-dot--yellow" aria-hidden="true"></span>Schedule: important, less urgent</h3>
+              <ul class="mc-case-list">
+                <li>Track projectile and block progress in Puzzle 4.</li>
+                <li>Immediate failed message with restart puzzle option.</li>
+                <li>Make jumping down the obvious and only answer.</li>
+              </ul>
+            </article>
+            <article class="mc-case-quadrant">
+              <h3><span class="mc-dot mc-dot--blue" aria-hidden="true"></span>Delegate: urgent, lower impact</h3>
+              <ul class="mc-case-list">
+                <li>Small visual polish pass for hint bubbles.</li>
+                <li>Text proofreading across tutorial levels.</li>
+                <li>Move restart level sign from top of puzzle 4 to the same level as cave entrance.</li>
+              </ul>
+            </article>
+            <article class="mc-case-quadrant">
+              <h3><span class="mc-dot mc-dot--red" aria-hidden="true"></span>Eliminate: lower urgency and impact</h3>
+              <ul class="mc-case-list">
+                <li>Secret cave exit for stuck players.</li>
+                <li>Large redesign of puzzle 4.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="five-whys" class="mc-case-section" aria-labelledby="five-whys-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">5 Whys analysis graph</p>
+            <p>This was part of the root cause analysis. I kept asking why the previous answer was happening until the problem stopped being "players are bad at the puzzle" and became "I am not teaching them correctly."</p>
+          </div>
+          <div class="mc-case-five-whys" role="img" aria-label="5 Whys analysis. Problem: Players are not completing the game. Why: Because they are rage quitting on puzzle 4. Why: Because they are getting frustrated and think the game is broken. Why: Because they are getting trapped in the cave. Why: Because they are not throwing the projectiles at the right areas. Root Because there's no feedback showing where the projectiles will land.">
+            <div class="mc-case-why-step mc-case-why-step--problem">
+              <span class="mc-case-why-step__label">Problem</span>
+              <p>Players are not completing the game</p>
+            </div>
+            <div class="mc-case-why-step">
+              <span class="mc-case-why-step__label">Why?</span>
+              <p>Because they are rage quitting on puzzle 4</p>
+            </div>
+            <div class="mc-case-why-step">
+              <span class="mc-case-why-step__label">Why?</span>
+              <p>Because they are getting frustrated and think the game is broken</p>
+            </div>
+            <div class="mc-case-why-step">
+              <span class="mc-case-why-step__label">Why?</span>
+              <p>Because they are getting trapped in the cave</p>
+            </div>
+            <div class="mc-case-why-step">
+              <span class="mc-case-why-step__label">Why?</span>
+              <p>Because they are not throwing the projectiles at the right areas</p>
+            </div>
+            <div class="mc-case-why-step mc-case-why-step--root">
+              <span class="mc-case-why-step__label">Root cause</span>
+              <p>Because there's no feedback showing where the projectiles will land</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="task-flows" class="mc-case-section" aria-labelledby="task-flows-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Task flows</p>
+            <h2 id="task-flows-title">Two flows: getting stuck and getting unstuck</h2>
+          </div>
+          <div class="mc-case-grid mc-case-grid--2">
+            <article class="mc-case-flow-card">
+              <h3>Scenario 1: Original  flow</h3>
+              <div class="mc-case-flow">
+                <div class="mc-case-flow__step"><b>1</b><span>The player enters puzzle 3 and sees 1 green, 1 black, and 1 blue projectile and a green enemy.</span></div>
+                <div class="mc-case-flow__step"><b>2</b><span>The player can fire a projectile at the green enemy but this is not required.</span></div>
+                <div class="mc-case-flow__step"><b>3</b><span>The player completes puzzle 3 and enters puzzle 4.</span></div>
+                <div class="mc-case-flow__step"><b>4</b><span>The player sees 1 green projectile and 3 green blocks.</span></div>
+                <div class="mc-case-flow__step"><b>5</b><span>The player fires green projectiles at blocks with a high likelihood of missing multiple blocks.</span></div>
+              </div>
+            </article>
+            <article class="mc-case-flow-card">
+              <h3>Scenario 2: Improved flow</h3>
+              <div class="mc-case-flow">
+                <div class="mc-case-flow__step"><b>1</b><span>The player enters puzzle 3 and sees green projectiles and green blocks.</span></div>
+                <div class="mc-case-flow__step"><b>2</b><span>The player is required to fire projectiles at blocks. There is a visible trajectory guide when a projectile is armed.</span></div>
+                <div class="mc-case-flow__step"><b>3</b><span>The player is required to fire green projectiles at green enemies. No other colour blocks or projectiles are used yet.</span></div>
+                <div class="mc-case-flow__step"><b>4</b><span>The player completes puzzle 3 and enters puzzle 4.</span></div>
+                <div class="mc-case-flow__step"><b>5</b><span>The player sees 1 green projectile within reach and 3 green blocks to destroy. They see 2 additional green projectiles past the green blocks.</span></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="prototypes" class="mc-case-section" aria-labelledby="prototypes-title">
+          <div class="mc-case-section__header">
+            <p class="mc-case-kicker">Designs / Prototypes</p>
+          </div>
+          <div class="mc-case-media-grid">
+
+            <article class="mc-case-media-card">
+              <figure>
+                <div class="mc-annotated">
+                  <img loading="lazy" src="assets/images/grumbler/main-screen.png" alt="Main menu of The Grumbler showing a closed shop front, a sign to enter puzzle zone 1 and a cave enterence." width="1920" height="1440">
+                  <span class="mc-pin mc-pin--pin-0-1" aria-label="Annotation 1">1</span>
+                </div>
+                <figcaption>
+                  <h3>Main menu</h3>
+                  <p>The main menu acts as a safe zone to play around with all Grumbler abilities and eventually all hats.</p>
+                  <p>The hat shop is closed until the player returns from <span class="mc-highlight">puzzle zone 1</span> (Puzzles 1-3).</p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article class="mc-case-media-card">
+              <figure>
+                <div class="mc-annotated">
+                  <img loading="lazy" src="assets/images/grumbler/level-01.png" alt="Puzzle 1 showing pipe box on the other side of a gap. The Grumbler must jump!" width="1920" height="1440">
+                  <span class="mc-pin mc-pin--pin-1-1" aria-label="Annotation 1">1</span>
+                  <span class="mc-pin mc-pin--pin-1-2" aria-label="Annotation 2">2</span>
+                </div>
+                <figcaption>
+                  <h3>Puzzle 1 lessons</h3>
+                  <p><span class="mc-highlight">Lesson 1</span> Jump over gaps. No tutorial is given unless player gets stuck in the hole.</p>
+                  <p><span class="mc-highlight">Lesson 2</span> Pipe blocks can be pushed by simply walking into them.</p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article class="mc-case-media-card">
+              <figure>
+                <div class="mc-annotated">
+                  <img loading="lazy" src="assets/images/grumbler/level-02.png" alt="Puzzle 2 showing pipe box up a level after The Grumbler uses a basic block to get up high." width="1920" height="1440">
+                  <span class="mc-pin mc-pin--pin-2-1" aria-label="Annotation 1">1</span>
+                  <span class="mc-pin mc-pin--pin-2-2" aria-label="Annotation 2">2</span>
+                </div>
+                <figcaption>
+                  <h3>Puzzle 2 lessons</h3>
+                  <p><span class="mc-highlight">Lesson 1</span> Boxes can be jumped on to platform higher.</p>
+                  <p><span class="mc-highlight">Lesson 2</span> Boxes can picked up and dropped as well as pushed.</p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article class="mc-case-media-card">
+              <figure>
+                <div class="mc-annotated">
+                  <img loading="lazy" src="assets/images/grumbler/level-02-complete.png" alt="Puzzle 2 showing The Grumbler jumping down to exit portal once the puzzle has been completed." width="1920" height="1440">
+                  <span class="mc-pin mc-pin--pin-2-3" aria-label="Annotation 1">1</span>
+                  <span class="mc-pin mc-pin--pin-2-4" aria-label="Annotation 2">2</span>
+                </div>
+                <figcaption>
+                  <h3>Puzzle 2 complete</h3>
+                  <p><span class="mc-highlight">Lesson 1</span> The exit changes state once the puzzle is complete.</p>
+                  <p><span class="mc-highlight">Lesson 2</span> The Grumbler should be collecting the white dots (Omi).</p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article class="mc-case-media-card">
+              <figure>
+                <div class="mc-annotated">
+                  <img loading="lazy" src="assets/images/grumbler/level-03.png" alt="The Grumbler throwing a black projectile at a green enemy who is in turn throwing a green projectile back at The Grumbler." width="1920" height="1440">
+                  <span class="mc-pin mc-pin--pin-3-1" aria-label="Annotation 1">1</span>
+                  <span class="mc-pin mc-pin--pin-3-2" aria-label="Annotation 2">2</span>
+                  <span class="mc-pin mc-pin--pin-3-3" aria-label="Annotation 3">3</span>
+                </div>
+                <figcaption>
+                  <h3>Puzzle 3 lessons - Before study</h3>
+                  <p><span class="mc-highlight">Lesson 1</span> Coloured projectiles can be picked up and thrown.</p>
+                  <p><span class="mc-highlight">Lesson 2</span> Coloured projectiles can destory enemies.</p>
+                  <p><span class="mc-highlight">Lesson 3</span> Enemies can destory you with their own projectiles.</p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article class="mc-case-media-card">
+              <figure>
+                <div class="mc-annotated">
+                  <img loading="lazy" src="assets/images/grumbler/level-03-guides.png" alt="Puzzle 3 showing The Grumbler holding a green projectile and its trajectory path." width="1920" height="1440">
+                  <span class="mc-pin mc-pin--pin-3-4" aria-label="Annotation 1">1</span>
+                  <span class="mc-pin mc-pin--pin-3-5" aria-label="Annotation 2">2</span>
+                  <span class="mc-pin mc-pin--pin-3-6" aria-label="Annotation 3">3</span>
+                </div>
+                <figcaption>
+                  <h3>Puzzle 3 lessons - After study</h3>
+                  <p><span class="mc-highlight">Lesson 1</span> Off screen. Green block throwing practice.</p>
+                  <p><span class="mc-highlight">Lesson 2</span> Projectiles can be thrown at blocks and enemies.</p>
+                  <p><span class="mc-highlight">Lesson 3</span> Where projectiles are going to land once thrown.</p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article class="mc-case-media-card">
+              <figure>
+                <div class="mc-annotated">
+                  <img loading="lazy" src="assets/images/grumbler/level-00.png" alt="Back to the main menu but the hat shop is now open for business." width="1920" height="1440">
+                  <span class="mc-pin mc-pin--pin-0-2" aria-label="Annotation 1">1</span>
+                  <span class="mc-pin mc-pin--pin-0-3" aria-label="Annotation 2">2</span>
+                  <span class="mc-pin mc-pin--pin-0-4" aria-label="Annotation 3">3</span>
+                </div>
+                <figcaption>
+                  <h3>Main Menu - Hat shop open</h3>
+                  <p><span class="mc-highlight">Lesson 1</span> After each puzzle zone player will come back here.</p>
+                  <p><span class="mc-highlight">Lesson 2</span> Buy different hats with the Omi collected.</p>
+                  <p><span class="mc-highlight">Lesson 3</span> Off screen. Different hats unlock different zones.</p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article class="mc-case-media-card">
+              <figure>
+                <div class="mc-annotated">
+                  <img loading="lazy" src="assets/images/grumbler/level-04.png" alt="The Grumbler standing in Puzzle 4 wearing a bowler hat." width="1920" height="1440">
+                  <span class="mc-pin mc-pin--pin-4-1" aria-label="Annotation 1">1</span>
+                  <span class="mc-pin mc-pin--pin-4-2" aria-label="Annotation 2">2</span>
+                </div>
+                <figcaption>
+                  <h3>Puzzle 4</h3>
+                  <p><span class="mc-highlight">Lesson 1</span> One projectile can destory multiple coloured blocks.</p>
+                  <p><span class="mc-highlight">Lesson 2</span> Puzzles incorporate lessons from previous levels.</p>
+                </figcaption>
+              </figure>
+            </article>
+          </div>
+        </section>
+
+        <section id="last-page" class="mc-case-section" aria-labelledby="last-page-title">
+          <article class="mc-case-last">
+            <div class="mc-case-last__copy">
+              <h2 id="last-page-title mc-mb--3">Outcome: clearer learning, faster progress</h2>
+              <p>This study found that Puzzle 4 was not too difficult. Instead, the tutorial was asking players to use skills they had not yet learned with enough confidence. The redesign focused on teaching those skills earlier by simplifying Puzzle 3 and adding clearer projectile feedback. As a result, more players completed Puzzle 4 and continued through the rest of the game without reducing the intended challenge.</p>
+              <p>The solution was not to make the puzzle easier, but to teach it better.</p>
+            </div>
+          </article>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="mc-p--4 mc-fs--0">The Grumbler UX Case Study | By Ellie | Produced in 2013</footer>
+</body>
+</html>
