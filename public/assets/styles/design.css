@@ -3543,24 +3543,99 @@ mark {
   width: 2rem;
 }
 
-.mc-pin--portal {
+.mc-pin--pin {
   left: 58%;
   top: 36%;
 }
 
-.mc-pin--hint {
-  right: 10%;
-  top: 6%;
+.mc-pin--pin-0-1 {
+  left: 84%;
+  top: 79%;
 }
 
-.mc-pin--state {
-  left: 56%;
-  top: 36%;
+.mc-pin--pin-1-1 {
+  left: 60%;
+  top: 92%;
 }
 
-.mc-pin--reward {
-  right: 12%;
-  bottom: 18%;
+.mc-pin--pin-1-2 {
+  left: 80%;
+  top: 77%;
+}
+
+.mc-pin--pin-2-1 {
+  left: 44%;
+  top: 67%;
+}
+
+.mc-pin--pin-2-2 {
+  left: 61%;
+  top: 61%;
+}
+
+.mc-pin--pin-2-3 {
+  left: 70%;
+  top: 86%;
+}
+
+.mc-pin--pin-2-4 {
+  left: 92%;
+  top: 69%;
+}
+
+.mc-pin--pin-3-1 {
+  left: 52%;
+  top: 63%;
+}
+
+.mc-pin--pin-3-2 {
+  left: 66%;
+  top: 81%;
+}
+
+.mc-pin--pin-3-3 {
+  left: 83%;
+  top: 70%;
+}
+
+.mc-pin--pin-3-4 {
+  left: 0%;
+  top: 69%;
+}
+
+.mc-pin--pin-3-5 {
+  left: 58%;
+  top: 63%;
+}
+
+.mc-pin--pin-3-6 {
+  left: 79%;
+  top: 69%;
+}
+
+.mc-pin--pin-0-2 {
+  left: 84%;
+  top: 69%;
+}
+
+.mc-pin--pin-0-3 {
+  left: 23%;
+  top: 65%;
+}
+
+.mc-pin--pin-0-4 {
+  left: 94%;
+  top: 49%;
+}
+
+.mc-pin--pin-4-1 {
+  left: 53%;
+  top: 57%;
+}
+
+.mc-pin--pin-4-2 {
+  left: 13%;
+  top: 78%;
 }
 
 .mc-case-matrix {
@@ -3949,13 +4024,6 @@ mark {
   line-height: 1.7;
 }
 
-.mc-case-last img {
-  background: var(--mc-gr-panel-strong);
-  height: auto;
-  object-fit: contain;
-  width: 100%;
-}
-
 @media (min-width: 42rem) {
   .mc-case-grid--2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3980,10 +4048,6 @@ mark {
   .mc-case-wireframes,
   .mc-case-media-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .mc-case-last {
-    grid-template-columns: minmax(0, 0.86fr) minmax(16rem, 1fr);
   }
 
   .mc-case-why-step:nth-child(2) { --mc-gr-why-offset: 2rem; }
