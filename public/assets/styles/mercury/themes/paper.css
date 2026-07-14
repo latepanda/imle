@@ -1,0 +1,101 @@
+@layer mercury.themes {
+.mc-theme--paper {
+  --mc-color-ink: #201b18;
+  --mc-color-soft-ink: #403831;
+  --mc-color-bg: #f6efe4;
+  --mc-color-bg-soft: #fffaf2;
+  --mc-color-accent: #5f3f2d;
+  --mc-color-accent-soft: #76543f;
+  --mc-color-muted: #68584c;
+  --mc-color-surface: rgba(255, 250, 242, 0.82);
+  --mc-color-surface-strong: rgba(255, 255, 255, 0.94);
+  --mc-color-surface-top: rgba(176, 128, 76, 0.08);
+  --mc-color-stroke: rgba(95, 63, 45, 0.18);
+  --mc-color-purple: #704f80;
+  --mc-color-deep-purple: #5f3f2d;
+  --mc-color-pink: #9b5268;
+  --mc-color-rose: #9b5c47;
+  --mc-color-lilac: #f6efe4;
+  --mc-color-line: #e2d2bd;
+  --mc-color-paper: #fffdf8;
+  --mc-color-error: #8b2635;
+  --mc-color-error-bg: #f8e6e4;
+  --mc-color-error-stroke: #d7a09a;
+  --mc-color-success: #2f6f48;
+  --mc-color-success-bg: #e5f1e6;
+  --mc-color-success-stroke: #a4cda7;
+  --mc-color-warning: #6f4f10;
+  --mc-color-warning-bg: #f7ecd2;
+  --mc-color-warning-stroke: #d5b66f;
+  --mc-color-info: #315f96;
+  --mc-color-info-bg: #e7eff9;
+  --mc-color-info-stroke: #abc5e5;
+  --mc-gradient-brand: linear-gradient(135deg, #704f80, #9b5268 54%, #9b5c47);
+  --mc-gradient-rule: linear-gradient(90deg, #704f80, #b7804c 55%, #9b5c47);
+  --mc-gradient-bg: linear-gradient(135deg, #fffdf8, #f6efe4 52%, #fffaf2);
+  --mc-shadow-glass: 0 0.9rem 2.2rem rgba(95, 63, 45, 0.12);
+  --mc-shadow-soft: 0 0.55rem 1.45rem rgba(95, 63, 45, 0.09);
+  --mc-shadow-xs: 0 0.25rem 0.65rem rgba(95, 63, 45, 0.08);
+  --mc-shadow-md: 0 0.85rem 2rem rgba(95, 63, 45, 0.12);
+  background: var(--mc-gradient-bg);
+  color: var(--mc-color-ink);
+  color-scheme: light;
+}
+}
+
+@layer mercury.components {
+.mc-theme--paper .mc-hero__title,
+.mc-theme--paper .mc-display-title,
+.mc-theme--paper .mc-section-heading h2 {
+  color: var(--mc-color-accent);
+  filter: drop-shadow(0 0.35rem 0.95rem rgba(95, 63, 45, 0.12));
+}
+
+.mc-theme--paper .mc-docs-menu__summary,
+.mc-theme--paper .mc-docs-nav,
+.mc-theme--paper .mc-section-card,
+.mc-theme--paper .mc-card,
+.mc-theme--paper .mc-panel--glass,
+.mc-theme--paper .mc-action-card,
+.mc-theme--paper .mc-swatch {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.46), transparent 160%),
+    var(--mc-color-surface);
+  border-color: var(--mc-color-stroke);
+  box-shadow: var(--mc-shadow-soft);
+  color: var(--mc-color-ink);
+}
+
+.mc-theme--paper .mc-code-example {
+  background: var(--mc-color-paper);
+  border-color: var(--mc-color-line);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  color: var(--mc-color-soft-ink);
+}
+
+.mc-theme--paper .mc-section-card td,
+.mc-theme--paper .mc-table td,
+.mc-theme--paper .mc-card__text {
+  color: var(--mc-color-soft-ink);
+}
+
+.mc-theme--paper .mc-section-card td:first-child,
+.mc-theme--paper .mc-table td:first-child,
+.mc-theme--paper .mc-section-card th,
+.mc-theme--paper .mc-table th {
+  color: var(--mc-color-accent);
+}
+
+.mc-theme--paper .mc-section-card code,
+.mc-theme--paper .mc-table code {
+  background: rgba(246, 239, 228, 0.82);
+  border-color: rgba(95, 63, 45, 0.18);
+  color: var(--mc-color-ink);
+}
+
+.mc-theme--paper .mc-button--secondary {
+  background: var(--mc-color-surface-strong);
+  border-color: rgba(95, 63, 45, 0.28);
+  color: var(--mc-color-accent);
+}
+}

@@ -1,92 +1,33 @@
 @font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/assets/fonts/Inter/Inter-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/assets/fonts/Inter/Inter-Bold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Western Isles';
-  src: url('/assets/fonts/WesternIsles/WesternIsles-Light.ttf') format('truetype');
-  font-weight: 100 500;
-}
-
-@font-face {
   font-family: 'Western Isles';
   src: url('/assets/fonts/WesternIsles/WesternIsles-Bold.ttf') format('truetype');
   font-weight: 600 900;
+  font-display: swap;
 }
 
 :root {
-  --ink: #050505;
-  --soft-ink: #202020;
-  --purple: #7f6496;
-  --deep-purple: #73548b;
-  --lilac: #efe7f4;
-  --line: #e7daee;
-  --pink: #d871bb;
-  --rose: #d19292;
-  --gradient: linear-gradient(90deg, #7f559d, #d871bb 55%, #d19292);
-  --page-width: 72rem;
+  --ink: var(--mc-color-ink);
+  --soft-ink: var(--mc-color-soft-ink);
+  --purple: var(--mc-color-purple);
+  --deep-purple: var(--mc-color-deep-purple);
+  --lilac: var(--mc-color-lilac);
+  --line: var(--mc-color-line);
+  --pink: var(--mc-color-pink);
+  --gradient: var(--mc-gradient-rule);
   --pad: clamp(1.4rem, 5vw, 3rem);
-}
-
-* {
-  box-sizing: border-box;
 }
 
 html {
   background: var(--lilac);
   color: var(--ink);
-  font-family: 'Inter', Arial, sans-serif;
   line-height: 1.35;
 }
 
-body {
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.16em;
-}
-
-a:focus-visible {
-  border-radius: 0.25rem;
-  outline: 0.18rem solid var(--pink);
-  outline-offset: 0.18rem;
-}
-
-.redacted-contact {
-  cursor: default;
-}
-
 .cv-page {
-  background: white;
-  margin-inline: auto;
-  max-width: var(--page-width);
   min-height: 100svh;
-  overflow: hidden;
 }
 
 .cv-hero {
-  align-items: center;
-  display: grid;
   gap: clamp(1.25rem, 4vw, 2.4rem);
   padding: clamp(1.7rem, 5vw, 3.35rem) var(--pad) clamp(2rem, 5vw, 3.4rem);
   text-align: left;
@@ -111,6 +52,10 @@ a:focus-visible {
   width: 72%;
 }
 
+.cv-intro {
+  min-width: 0;
+}
+
 .cv-intro h1,
 .card h2 {
   color: var(--purple);
@@ -126,14 +71,8 @@ a:focus-visible {
   letter-spacing: -0.045em;
 }
 
-.cv-intro h1::after,
-.card h2::after {
-  background: var(--gradient);
-  content: "";
-  display: block;
-  height: 0.28rem;
+.cv-page .mc-rule {
   margin-block-start: clamp(0.65rem, 1.4vw, 0.9rem);
-  width: min(14rem, 58vw);
 }
 
 .cv-intro p {
@@ -145,20 +84,18 @@ a:focus-visible {
 
 .highlights {
   background: var(--lilac);
-  display: grid;
   gap: 1.4rem;
   padding: clamp(1.6rem, 4vw, 2.8rem) var(--pad);
 }
 
 .highlight {
-  align-items: center;
-  display: grid;
   gap: 1rem;
   grid-template-columns: 6.4rem 1fr;
 }
 
 .highlight h2 {
   color: var(--deep-purple);
+  font-size: 1.5rem;
   line-height: 1.12;
   margin: 0;
   text-wrap: balance;
@@ -166,34 +103,21 @@ a:focus-visible {
 
 .highlight-icon {
   color: var(--pink);
-  display: block;
   width: 4.4rem;
-}
-
-.highlight-icon svg {
-  display: block;
-  fill: none;
-  height: auto;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 3.8;
-  width: 100%;
 }
 
 .cv-body {
   background: var(--lilac);
-  display: grid;
   gap: 1.35rem;
 }
 
 .sidebar {
-  display: grid;
   gap: 1.35rem;
 }
 
 .card {
   background: white;
+  border-radius: 0;
   padding: clamp(1.6rem, 4vw, 2.3rem) var(--pad);
 }
 
@@ -222,48 +146,12 @@ a:focus-visible {
   margin: 0;
 }
 
-.contact-list {
-  display: grid;
-  gap: 1rem;
-  font-size: clamp(1rem, 3.4vw, 1.26rem);
-  list-style: none;
-  margin: clamp(1.55rem, 4vw, 2.25rem) 0 0;
-  padding: 0;
-}
-
-.contact-list li {
-  align-items: center;
-  display: grid;
-  gap: 0.85rem;
-  grid-template-columns: 2.1rem 1fr;
-}
-
-.contact-list svg {
-  color: var(--deep-purple);
-  fill: none;
-  height: 2rem;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.8;
-  width: 2rem;
-}
-
-.contact-list .linkedin-icon {
-  fill: var(--deep-purple);
-  stroke: white;
-  stroke-width: 1.6;
-}
-
 .experience {
   padding-block-end: clamp(2rem, 5vw, 3rem);
 }
 
 .timeline {
-  list-style: none;
   margin: clamp(2rem, 5vw, 2.8rem) 0 0;
-  padding: 0;
-  position: relative;
 }
 
 .timeline::before {
@@ -278,24 +166,15 @@ a:focus-visible {
 }
 
 .timeline-item {
-  display: grid;
   gap: 0.55rem;
   margin-block-start: clamp(1.7rem, 4vw, 2.35rem);
   position: relative;
-}
-
-.timeline-item:first-child {
-  margin-block-start: 0;
 }
 
 .timeline-date {
   color: var(--purple);
   font-size: clamp(1rem, 3.4vw, 1.24rem);
   margin: 0;
-}
-
-.timeline-dot {
-  display: none;
 }
 
 .timeline-content h3 {
@@ -318,9 +197,12 @@ a:focus-visible {
   padding-inline-start: 1.25rem;
 }
 
-.cv-request {
-  display: grid;
-  gap: 0.75rem;
+.timeline-content li {
+  line-height: 1.38;
+}
+
+.timeline-content li + li {
+  margin-block-start: 0;
 }
 
 .cv-request h3 {
@@ -332,51 +214,51 @@ a:focus-visible {
   margin: 0;
 }
 
-.cv-request label {
+.cv-request .mc-form__label {
+  color: var(--ink);
   font-size: 0.95rem;
-  font-weight: 700;
 }
 
-.cv-request input {
+.cv-request .mc-form__control {
   border: 0.12rem solid var(--line);
   border-radius: 0.45rem;
-  font: inherit;
   min-height: 2.8rem;
   padding: 0.65rem 0.8rem;
 }
 
-.cv-request input:focus {
+.cv-request .mc-form__control:focus {
   border-color: var(--pink);
   outline: 0.18rem solid rgba(216, 113, 187, 0.22);
 }
 
-.cv-request button {
+.cv-request .mc-button {
   background: var(--gradient);
   border: 0;
   border-radius: 0.45rem;
   color: white;
-  cursor: pointer;
-  font: inherit;
-  font-weight: 700;
   min-height: 2.9rem;
   padding: 0.75rem 1rem;
 }
 
-.cv-request button:hover {
+.cv-request .mc-button:hover {
   filter: brightness(1.04);
+  transform: none;
 }
 
 .cv-request-note {
   color: var(--purple);
   font-size: 0.92rem;
   line-height: 1.35;
-  margin: 0;
 }
 
 @media (min-width: 45rem) {
   .cv-hero {
     grid-template-columns: clamp(14rem, 22vw, 13.8rem) 1fr;
     text-align: left;
+  }
+
+  .cv-intro h1 {
+    white-space: normal;
   }
 
   .cv-mark {

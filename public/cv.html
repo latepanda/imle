@@ -17,78 +17,84 @@
   <link rel="preload" href="/assets/fonts/Inter/Inter-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/assets/fonts/Inter/Inter-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <title>Ellie's CV</title>
+  <link href="assets/styles/design.css" rel="stylesheet">
   <link href="assets/styles/cv.css" rel="stylesheet">
 </head>
 <body>
-  <main class="cv-page" aria-labelledby="cv-title">
-    <header class="cv-hero">
+  <main class="cv-page mc-max-w--page mc-mx--auto mc-bg--paper mc-overflow--hidden" aria-labelledby="cv-title">
+    <header class="cv-hero mc-grid mc-items--center">
       <div class="cv-mark" aria-hidden="true">
         <img src="assets/images/logo.svg" alt="" width="230" height="97" />
       </div>
 
       <div class="cv-intro">
-        <h1 id="cv-title">Hi, I'm Ellie ████</h1>
-        <p>I have been designing and building apps, websites, and games for 16+ years. My professional passion is user-focused UI/UX design and developing products with a strong emphasis on accessibility.</p>
+        <h1 id="cv-title" class="mc-text--nowrap">Hi, I'm Ellie ████</h1>
+        <div class="mc-rule" aria-hidden="true"></div>
+        <p class="mc-mb--0">I have been designing and building apps, websites, and games for 16+ years. My professional passion is user-focused UI/UX design and developing products with a strong emphasis on accessibility.</p>
       </div>
     </header>
 
-    <section class="highlights" aria-label="Career highlights">
-      <article class="highlight">
-        <span class="highlight-icon" aria-hidden="true">
-          <img src="assets/images/user.svg" width="100px" height="100px" alt="" />
+    <section class="highlights mc-grid" aria-label="Career highlights">
+      <article class="highlight mc-grid mc-items--center">
+        <span class="highlight-icon mc-d--block" aria-hidden="true">
+          <img class="mc-w--full" src="assets/images/user.svg" width="100" height="100" alt="" />
         </span>
-        <h2>16+ years of professional experience</h2>
+        <h2 class="mc-ma--0 mc-text--balance">16+ years of professional experience</h2>
       </article>
 
-      <article class="highlight">
-        <span class="highlight-icon" aria-hidden="true">
-          <img src="assets/images/design.svg" width="100px" height="100px" alt="" />
+      <article class="highlight mc-grid mc-items--center">
+        <span class="highlight-icon mc-d--block" aria-hidden="true">
+          <img class="mc-w--full" src="assets/images/design.svg" width="100" height="100" alt="" />
         </span>
-        <h2>Wireframing, prototyping &amp; user testing</h2>
+        <h2 class="mc-ma--0 mc-text--balance">Wireframing, prototyping &amp; user testing</h2>
       </article>
 
-      <article class="highlight">
-        <span class="highlight-icon" aria-hidden="true">
-          <img src="assets/images/mentor.svg" width="100px" height="100px" alt="" />
+      <article class="highlight mc-grid mc-items--center">
+        <span class="highlight-icon mc-d--block" aria-hidden="true">
+          <img class="mc-w--full" src="assets/images/mentor.svg" width="100" height="100" alt="" />
         </span>
-        <h2>Mentoring &amp; supporting junior developers</h2>
+        <h2 class="mc-ma--0 mc-text--balance">Mentoring &amp; supporting junior developers</h2>
       </article>
     </section>
 
-    <div class="cv-body">
-      <aside class="sidebar" aria-label="Skills and contact details">
-        <section class="card skills-card" aria-labelledby="skills-title">
-          <h2 id="skills-title">Skills</h2>
+    <div class="cv-body mc-grid">
+      <aside class="sidebar mc-stack" aria-label="Skills and contact details">
+        <section class="card skills-card mc-document-card" aria-labelledby="skills-title">
+          <h2 id="skills-title" class="mc-document-card__title">Skills</h2>
+          <div class="mc-rule" aria-hidden="true"></div>
 
           <section class="skill-group">
-            <h3>UI/UX Design &amp; Front-end Engineering</h3>
+            <h3 class="mc-document-card__subtitle">UI/UX Design &amp; Front-end Engineering</h3>
             <p>Figma · Balsamiq · WCAG · Core Web Vitals · User Testing · Accessibility Design · Wireframing · Prototyping · Web Performance · React · TypeScript · JavaScript · HTML5 · CSS3 · SCSS · React Testing Library · Cypress</p>
           </section>
 
           <section class="skill-group">
-            <h3>Full-stack &amp; CMS Engineering</h3>
+            <h3 class="mc-document-card__subtitle">Full-stack &amp; CMS Engineering</h3>
             <p>Ruby on Rails · Laravel · PHP · MySQL · CloudFlare (Workers/Pages/R2) · RSpec · WordPress</p>
           </section>
 
           <section class="skill-group">
-            <h3>Digital Products, Analytics &amp; Creative tools</h3>
+            <h3 class="mc-document-card__subtitle">Digital Products, Analytics &amp; Creative tools</h3>
             <p>Google Analytics (GA4) · Google Tag Manager · Google Search Console · Search Engine Optimisation (SEO) · Microsoft Clarity · DaVinci Resolve</p>
           </section>
         </section>
 
-        <section class="card contact-card" aria-labelledby="contact-title">
-          <form class="cv-request" action="/api/request-cv" method="post">
-            <h3>Request full CV</h3>
+        <section class="card contact-card mc-document-card" aria-labelledby="contact-title">
+          <form class="cv-request mc-form mc-gap--3" action="/api/request-cv" method="post">
+            <h3 id="contact-title" class="mc-document-card__subtitle mc-ma--0">Request full CV</h3>
 
-            <label for="requester-email">Email address</label>
-            <input
-              id="requester-email"
-              name="email"
-              type="email"
-              autocomplete="email"
-              placeholder="you@example.com"
-              required
-            />
+            <div class="mc-form__group mc-gap--3">
+              <label class="mc-form__label" for="requester-email">Email address</label>
+              <input
+                class="mc-form__control"
+                id="requester-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
 
             <div
               class="cf-turnstile"
@@ -96,9 +102,9 @@
               data-theme="light"
             ></div>
 
-            <button type="submit">Download full CV</button>
+            <button class="mc-button mc-button--primary mc-button--block mc-rounded--sm" type="submit">Download full CV</button>
 
-            <p class="cv-request-note">
+            <p class="cv-request-note mc-form__hint mc-ma--0">
               The public version is redacted. The full PDF is served after verification.
             </p>
           </form>
@@ -111,14 +117,15 @@
         </section>
       </aside>
 
-      <section class="experience card" aria-labelledby="experience-title">
-        <h2 id="experience-title">Experience</h2>
+      <section class="experience card mc-document-card" aria-labelledby="experience-title">
+        <h2 id="experience-title" class="mc-document-card__title">Experience</h2>
+        <div class="mc-rule" aria-hidden="true"></div>
 
-        <ol class="timeline">
-          <li class="timeline-item">
-            <p class="timeline-date">2019 - Now</p>
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <article class="timeline-content">
+        <ol class="timeline mc-timeline">
+          <li class="timeline-item mc-timeline__item">
+            <p class="timeline-date mc-timeline__date">2019 - Now</p>
+            <div class="timeline-dot mc-timeline__dot" aria-hidden="true"></div>
+            <article class="timeline-content mc-timeline__content">
               <h3>Front-end Engineer <span>| ██████ █████</span></h3>
               <ul>
                 <li>Subject-matter expert across multiple apps</li>
@@ -130,10 +137,10 @@
             </article>
           </li>
 
-          <li class="timeline-item">
-            <p class="timeline-date">2017 - 2019</p>
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <article class="timeline-content">
+          <li class="timeline-item mc-timeline__item">
+            <p class="timeline-date mc-timeline__date">2017 - 2019</p>
+            <div class="timeline-dot mc-timeline__dot" aria-hidden="true"></div>
+            <article class="timeline-content mc-timeline__content">
               <h3>CEO &amp; Co-founder <span>| ████ █████</span></h3>
               <ul>
                 <li>Led a cross-functional team of 6</li>
@@ -145,10 +152,10 @@
             </article>
           </li>
 
-          <li class="timeline-item">
-            <p class="timeline-date">2016 - 2017</p>
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <article class="timeline-content">
+          <li class="timeline-item mc-timeline__item">
+            <p class="timeline-date mc-timeline__date">2016 - 2017</p>
+            <div class="timeline-dot mc-timeline__dot" aria-hidden="true"></div>
+            <article class="timeline-content mc-timeline__content">
               <h3>Lead Developer <span>| ████████</span></h3>
               <ul>
                 <li>Led knowledge sharing sessions with team</li>
@@ -158,10 +165,10 @@
             </article>
           </li>
 
-          <li class="timeline-item">
-            <p class="timeline-date">2015 - 2015</p>
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <article class="timeline-content">
+          <li class="timeline-item mc-timeline__item">
+            <p class="timeline-date mc-timeline__date">2015 - 2015</p>
+            <div class="timeline-dot mc-timeline__dot" aria-hidden="true"></div>
+            <article class="timeline-content mc-timeline__content">
               <h3>Applications Developer <span>| █████</span></h3>
               <ul>
                 <li>Designed &amp; built social media web app</li>
@@ -170,10 +177,10 @@
             </article>
           </li>
 
-          <li class="timeline-item">
-            <p class="timeline-date">2014 - 2015</p>
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <article class="timeline-content">
+          <li class="timeline-item mc-timeline__item">
+            <p class="timeline-date mc-timeline__date">2014 - 2015</p>
+            <div class="timeline-dot mc-timeline__dot" aria-hidden="true"></div>
+            <article class="timeline-content mc-timeline__content">
               <h3>Graduate Developer <span>| ██████</span></h3>
               <ul>
                 <li>Modernised ██████.com into a single-page app</li>
@@ -183,10 +190,10 @@
             </article>
           </li>
 
-          <li class="timeline-item">
-            <p class="timeline-date">2010 - 2014</p>
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <article class="timeline-content">
+          <li class="timeline-item mc-timeline__item">
+            <p class="timeline-date mc-timeline__date">2010 - 2014</p>
+            <div class="timeline-dot mc-timeline__dot" aria-hidden="true"></div>
+            <article class="timeline-content mc-timeline__content">
               <h3>BSc Games Development <span>| ███</span></h3>
               <ul>
                 <li>Graduated from ███ in Jul '14</li>

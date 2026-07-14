@@ -1,0 +1,76 @@
+@layer mercury.components {
+.mc-form {
+  display: grid;
+  gap: var(--mc-space-4);
+  max-width: 34rem;
+}
+
+.mc-form__group {
+  display: grid;
+  gap: var(--mc-space-2);
+}
+
+.mc-form__label {
+  color: var(--mc-color-deep-purple);
+  font-weight: 700;
+}
+
+.mc-form__control {
+  background: #fff;
+  border: 0.12rem solid var(--mc-color-line);
+  border-radius: var(--mc-radius-sm);
+  color: var(--mc-color-ink);
+  min-height: 2.9rem;
+  padding: 0.65rem 0.8rem;
+  width: 100%;
+}
+
+.mc-form__control:focus {
+  border-color: var(--mc-color-pink);
+  outline: 0.18rem solid rgba(216, 113, 187, 0.24);
+}
+
+.mc-form__control--textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.mc-form__select {
+  appearance: none;
+  background:
+    linear-gradient(45deg, transparent 50%, var(--mc-color-deep-purple) 50%) calc(100% - 1.15rem) 50% / 0.45rem 0.45rem no-repeat,
+    #fff;
+}
+
+.mc-form__hint {
+  color: var(--mc-color-deep-purple);
+  font-size: var(--mc-step-1);
+  margin: 0;
+}
+
+.mc-form-check {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--mc-space-2);
+  min-width: 0;
+}
+
+.mc-form-check--inline {
+  display: inline-flex;
+  margin-inline-end: var(--mc-space-4);
+}
+
+.mc-form-check__input {
+  accent-color: var(--mc-color-pink);
+  flex: 0 0 auto;
+  height: 1.05rem;
+  margin: 0.22em 0 0;
+  width: 1.05rem;
+}
+
+.mc-form-check__label {
+  color: var(--mc-color-ink);
+  line-height: var(--mc-lh-body);
+  min-width: 0;
+}
+}

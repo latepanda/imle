@@ -1,0 +1,5 @@
+@layer mercury.themes {
+.mc-theme--dark {
+  color-scheme: dark;
+}
+}

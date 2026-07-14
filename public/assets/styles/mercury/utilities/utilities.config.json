@@ -1,0 +1,62 @@
+{
+  "scale": ["0", "1", "2", "3", "4", "5", "6", "7"],
+  "breakpoints": {
+    "sm": "36rem",
+    "md": "48rem",
+    "lg": "66rem",
+    "xl": "80rem"
+  },
+  "generation": {
+    "responsive": {
+      "spacing": {
+        "enabled": false,
+        "reason": "No public page currently uses breakpoint-prefixed spacing utilities; enable this family when responsive spacing enters authored markup."
+      },
+      "display": {
+        "enabled": false,
+        "reason": "No public page currently uses breakpoint-prefixed display utilities; enable this family before adding one to markup."
+      },
+      "flexDirection": {
+        "enabled": false,
+        "reason": "No public page currently uses breakpoint-prefixed flex-direction utilities; enable this family before adding one to markup."
+      },
+      "textAlign": {
+        "enabled": false,
+        "reason": "No public page currently uses breakpoint-prefixed text-alignment utilities; enable this family before adding one to markup."
+      },
+      "width": {
+        "enabled": false,
+        "reason": "No public page currently uses breakpoint-prefixed width utilities; enable this family before adding one to markup."
+      },
+      "columns": {
+        "enabled": true,
+        "reason": "Emit only the responsive column spans used by current public markup; extend the allowlist before introducing another span.",
+        "allowlist": {
+          "sm": [6],
+          "md": [],
+          "lg": [3, 6],
+          "xl": []
+        }
+      },
+      "grid": {
+        "enabled": true,
+        "reason": "Emit only the breakpoint grid variants used by the live Mercury documentation example.",
+        "allowlist": {
+          "sm": [],
+          "md": [2],
+          "lg": [4],
+          "xl": []
+        }
+      }
+    }
+  },
+  "contract": {
+    "prefix": "mc",
+    "layer": "mercury.utilities",
+    "principles": [
+      "Utilities are token-backed unless the value is structural.",
+      "Utilities are selector-stable and may be used in authored markup.",
+      "Generated output is compact; edit this config and the generator instead of hand-editing utilities.generated.css."
+    ]
+  }
+}
