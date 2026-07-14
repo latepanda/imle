@@ -1,0 +1,35 @@
+@layer mercury.reset {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--mc-color-bg);
+  color: var(--mc-color-accent);
+  font-family: var(--mc-font-body);
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  scroll-padding-block-start: var(--mc-space-5);
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+}

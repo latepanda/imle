@@ -1,0 +1,18 @@
+{
+  "scale": ["0", "1", "2", "3", "4", "5", "6", "7"],
+  "breakpoints": {
+    "sm": "36rem",
+    "md": "48rem",
+    "lg": "66rem",
+    "xl": "80rem"
+  },
+  "contract": {
+    "prefix": "mc",
+    "layer": "mercury.utilities",
+    "principles": [
+      "Utilities are token-backed unless the value is structural.",
+      "Utilities are selector-stable and may be used in authored markup.",
+      "Generated output is compact; edit this config and the generator instead of hand-editing utilities.generated.css."
+    ]
+  }
+}

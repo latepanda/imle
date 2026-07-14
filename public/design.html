@@ -19,7 +19,7 @@
   <title>Mercury Alpha</title>
   <link href="assets/styles/design.css" rel="stylesheet">
 </head>
-<body class="mc-theme mc-theme--mercury">
+<body class="mc-theme mc-theme--auto mc-theme--mercury">
   <a class="mc-skip-link" href="#main-content">Skip to content</a>
 
   <header class="mc-site-header" aria-label="Site header">
@@ -126,7 +126,7 @@
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;link href="assets/styles/mercury.css" rel="stylesheet"&gt;
 
-&lt;body class="mc-theme mc-theme--mercury"&gt;
+&lt;body class="mc-theme mc-theme--auto mc-theme--mercury"&gt;
   &lt;a class="mc-skip-link" href="#main-content"&gt;Skip to content&lt;/a&gt;
   &lt;main id="main-content" class="mc-container"&gt;
     &lt;section class="mc-hero"&gt;
@@ -147,9 +147,10 @@
             <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
             <tbody>
               <tr><td><code>mc-theme</code></td><td>Base Mercury page theme.</td><td><code>&lt;body class="mc-theme"&gt;</code></td></tr>
+              <tr><td><code>mc-theme--auto</code></td><td>Use the visitor's colour-scheme preference without overriding named themes.</td><td><code>&lt;body class="mc-theme mc-theme--auto"&gt;</code></td></tr>
               <tr><td><code>mc-theme--dark</code></td><td>Dark colour-scheme mode.</td><td><code>&lt;body class="mc-theme mc-theme--dark"&gt;</code></td></tr>
               <tr><td><code>mc-theme--light</code></td><td>Light colour-scheme mode.</td><td><code>&lt;body class="mc-theme mc-theme--light"&gt;</code></td></tr>
-              <tr><td><code>mc-theme--mercury</code></td><td>Animated Mercury page background.</td><td><code>&lt;body class="mc-theme mc-theme--mercury"&gt;</code></td></tr>
+              <tr><td><code>mc-theme--mercury</code></td><td>Animated Mercury page background.</td><td><code>&lt;body class="mc-theme mc-theme--auto mc-theme--mercury"&gt;</code></td></tr>
               <tr><td><code>mc-theme--paper</code></td><td>Light document palette. <span class="mc-text--warning">(Experimental)</span></td><td><code>&lt;body class="mc-theme mc-theme--paper"&gt;</code></td></tr>
               <tr><td><code>mc-theme--grumbler</code></td><td>Warm case-study palette and Grumbler case components. <span class="mc-text--warning">(Experimental)</span></td><td><code>&lt;body class="mc-theme mc-theme--grumbler"&gt;</code></td></tr>
             </tbody>
@@ -229,14 +230,14 @@
 
         <div class="mc-section-card">
           <h3>Token-based component preview</h3>
-          <div class="mc-bg--surface mc-border mc-rounded--lg mc-p--5">
-            <p class="mc-m--0 mc-fw--700">Custom component</p>
+          <div class="mc-bg--surface mc-border mc-rounded--lg mc-pa--5">
+            <p class="mc-ma--0 mc-fw--700">Custom component</p>
             <p class="mc-body-copy">This preview uses the same colour, border, radius, and spacing tokens shown in the code below.</p>
           </div>
         </div>
 
-        <pre class="mc-code-example" tabindex="0"><code>&lt;div class="mc-bg--surface mc-border mc-rounded--lg mc-p--5"&gt;
-  &lt;p class="mc-m--0 mc-fw--700"&gt;Custom component&lt;/p&gt;
+        <pre class="mc-code-example" tabindex="0"><code>&lt;div class="mc-bg--surface mc-border mc-rounded--lg mc-pa--5"&gt;
+  &lt;p class="mc-ma--0 mc-fw--700"&gt;Custom component&lt;/p&gt;
   &lt;p class="mc-body-copy"&gt;This preview uses the same colour, border, radius, and spacing tokens shown in the code below.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
       </div>
@@ -252,33 +253,33 @@
         <div class="mc-section-card">
           <h3>Brand colours</h3>
           <div class="mc-grid mc-grid--4 mc-g--3">
-            <div class="mc-bg--brand mc-rounded--md mc-p--4">
-              <p class="mc-m--0 mc-fw--700">Brand gradient</p>
+            <div class="mc-bg--brand mc-rounded--md mc-pa--4">
+              <p class="mc-ma--0 mc-fw--700">Brand gradient</p>
             </div>
-            <div class="mc-bg--paper mc-border mc-rounded--md mc-p--4">
-              <p class="mc-m--0 mc-text--ink mc-fw--700">Paper</p>
+            <div class="mc-bg--paper mc-border mc-rounded--md mc-pa--4">
+              <p class="mc-ma--0 mc-text--ink mc-fw--700">Paper</p>
             </div>
-            <div class="mc-bg--surface mc-border mc-rounded--md mc-p--4">
-              <p class="mc-m--0 mc-text--accent mc-fw--700">Surface</p>
+            <div class="mc-bg--surface mc-border mc-rounded--md mc-pa--4">
+              <p class="mc-ma--0 mc-text--accent mc-fw--700">Surface</p>
             </div>
-            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-p--4">
-              <p class="mc-m--0 mc-text--accent mc-fw--700">Strong surface</p>
+            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-pa--4">
+              <p class="mc-ma--0 mc-text--accent mc-fw--700">Strong surface</p>
             </div>
           </div>
         </div>
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;div class="mc-grid mc-grid--4 mc-g--3"&gt;
-  &lt;div class="mc-bg--brand mc-rounded--md mc-p--4"&gt;
-    &lt;p class="mc-m--0 mc-fw--700"&gt;Brand gradient&lt;/p&gt;
+  &lt;div class="mc-bg--brand mc-rounded--md mc-pa--4"&gt;
+    &lt;p class="mc-ma--0 mc-fw--700"&gt;Brand gradient&lt;/p&gt;
   &lt;/div&gt;
-  &lt;div class="mc-bg--paper mc-border mc-rounded--md mc-p--4"&gt;
-    &lt;p class="mc-m--0 mc-text--ink mc-fw--700"&gt;Paper&lt;/p&gt;
+  &lt;div class="mc-bg--paper mc-border mc-rounded--md mc-pa--4"&gt;
+    &lt;p class="mc-ma--0 mc-text--ink mc-fw--700"&gt;Paper&lt;/p&gt;
   &lt;/div&gt;
-  &lt;div class="mc-bg--surface mc-border mc-rounded--md mc-p--4"&gt;
-    &lt;p class="mc-m--0 mc-text--accent mc-fw--700"&gt;Surface&lt;/p&gt;
+  &lt;div class="mc-bg--surface mc-border mc-rounded--md mc-pa--4"&gt;
+    &lt;p class="mc-ma--0 mc-text--accent mc-fw--700"&gt;Surface&lt;/p&gt;
   &lt;/div&gt;
-  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-p--4"&gt;
-    &lt;p class="mc-m--0 mc-text--accent mc-fw--700"&gt;Strong surface&lt;/p&gt;
+  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-pa--4"&gt;
+    &lt;p class="mc-ma--0 mc-text--accent mc-fw--700"&gt;Strong surface&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
@@ -321,26 +322,26 @@
         <div class="mc-section-card">
           <h3>Text colour utilities</h3>
           <div class="mc-stack">
-            <p class="mc-m--0 mc-text--accent">Accent text for primary foreground content.</p>
-            <p class="mc-m--0 mc-text--muted">Muted text for secondary information.</p>
-            <p class="mc-m--0 mc-text--brand">Brand text for small accents.</p>
-            <p class="mc-m--0 mc-text--error">Error text for validation or destructive states.</p>
-            <p class="mc-m--0 mc-text--success">Success text for confirmed actions.</p>
-            <p class="mc-m--0 mc-text--warning">Warning text for cautionary states.</p>
-            <p class="mc-m--0 mc-text--info">Info text for neutral guidance.</p>
-            <p class="mc-m--0 mc-bg--paper mc-text--soft-ink mc-rounded--md mc-p--3">Soft ink text on paper.</p>
+            <p class="mc-ma--0 mc-text--accent">Accent text for primary foreground content.</p>
+            <p class="mc-ma--0 mc-text--muted">Muted text for secondary information.</p>
+            <p class="mc-ma--0 mc-text--brand">Brand text for small accents.</p>
+            <p class="mc-ma--0 mc-text--error">Error text for validation or destructive states.</p>
+            <p class="mc-ma--0 mc-text--success">Success text for confirmed actions.</p>
+            <p class="mc-ma--0 mc-text--warning">Warning text for cautionary states.</p>
+            <p class="mc-ma--0 mc-text--info">Info text for neutral guidance.</p>
+            <p class="mc-ma--0 mc-bg--paper mc-text--soft-ink mc-rounded--md mc-pa--3">Soft ink text on paper.</p>
           </div>
         </div>
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;div class="mc-stack"&gt;
-  &lt;p class="mc-m--0 mc-text--accent"&gt;Accent text for primary foreground content.&lt;/p&gt;
-  &lt;p class="mc-m--0 mc-text--muted"&gt;Muted text for secondary information.&lt;/p&gt;
-  &lt;p class="mc-m--0 mc-text--brand"&gt;Brand text for small accents.&lt;/p&gt;
-  &lt;p class="mc-m--0 mc-text--error"&gt;Error text for validation or destructive states.&lt;/p&gt;
-  &lt;p class="mc-m--0 mc-text--success"&gt;Success text for confirmed actions.&lt;/p&gt;
-  &lt;p class="mc-m--0 mc-text--warning"&gt;Warning text for cautionary states.&lt;/p&gt;
-  &lt;p class="mc-m--0 mc-text--info"&gt;Info text for neutral guidance.&lt;/p&gt;
-  &lt;p class="mc-m--0 mc-bg--paper mc-text--soft-ink mc-rounded--md mc-p--3"&gt;Soft ink text on paper.&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-text--accent"&gt;Accent text for primary foreground content.&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-text--muted"&gt;Muted text for secondary information.&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-text--brand"&gt;Brand text for small accents.&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-text--error"&gt;Error text for validation or destructive states.&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-text--success"&gt;Success text for confirmed actions.&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-text--warning"&gt;Warning text for cautionary states.&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-text--info"&gt;Info text for neutral guidance.&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-bg--paper mc-text--soft-ink mc-rounded--md mc-pa--3"&gt;Soft ink text on paper.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="mc-section-card">
@@ -402,12 +403,12 @@
               <tr><td><ul class="mc-token-list"><li><code>--mc-color-info</code></li><li><code>--mc-color-info-bg</code></li><li><code>--mc-color-info-stroke</code></li></ul></td><td>Info foreground, background, and border colours.</td><td><code>color: var(--mc-color-info);</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>--mc-gradient-brand</code></li><li><code>--mc-gradient-rule</code></li><li><code>--mc-gradient-bg</code></li></ul></td><td>Brand, divider, and page gradients.</td><td><code>background: var(--mc-gradient-brand);</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>--mc-font-body</code></li><li><code>--mc-font-display</code></li></ul></td><td>Font family stacks.</td><td><code>font-family: var(--mc-font-body);</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>--mc-step-[1-5]</code></li><li><code>--mc-step-display</code></li></ul></td><td>Fluid type scale.</td><td><code>font-size: var(--mc-step-3);</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>--mc-fs-[0-5]</code></li><li><code>--mc-fs-display</code></li></ul></td><td>Normalized aliases for the fluid type scale.</td><td><code>font-size: var(--mc-fs-3);</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>--mc-step-[0-7]</code></li><li><code>--mc-step-display</code></li></ul></td><td>Fluid type scale.</td><td><code>font-size: var(--mc-step-3);</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>--mc-fs-[0-7]</code></li><li><code>--mc-fs-display</code></li></ul></td><td>Normalized aliases for the fluid type scale.</td><td><code>font-size: var(--mc-fs-3);</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>--mc-fw-regular</code></li><li><code>--mc-fw-bold</code></li></ul></td><td>Named font-weight aliases.</td><td><code>font-weight: var(--mc-fw-bold);</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>--mc-lh-solid</code></li><li><code>--mc-lh-heading</code></li><li><code>--mc-lh-body</code></li></ul></td><td>Line-height scale.</td><td><code>line-height: var(--mc-lh-body);</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>--mc-space-[1-9]</code></li></ul></td><td>Spacing scale.</td><td><code>padding: var(--mc-space-5);</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>--mc-gutter-[0-5]</code></li></ul></td><td>Grid gutter scale.</td><td><code>gap: var(--mc-gutter-4);</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>--mc-space-[0-7]</code></li></ul></td><td>Core spacing scale.</td><td><code>padding: var(--mc-space-5);</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>--mc-gutter-[0-7]</code></li></ul></td><td>Grid gutter scale.</td><td><code>gap: var(--mc-gutter-4);</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>--mc-radius-sm</code></li><li><code>--mc-radius-md</code></li><li><code>--mc-radius-lg</code></li><li><code>--mc-radius-xl</code></li><li><code>--mc-radius-pill</code></li></ul></td><td>Radius scale.</td><td><code>border-radius: var(--mc-radius-lg);</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>--mc-border-width</code></li></ul></td><td>Default border width.</td><td><code>border: var(--mc-border-width) solid var(--mc-color-stroke);</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>--mc-shadow-xs</code></li><li><code>--mc-shadow-soft</code></li><li><code>--mc-shadow-md</code></li><li><code>--mc-shadow-glass</code></li></ul></td><td>Elevation tokens.</td><td><code>box-shadow: var(--mc-shadow-soft);</code></td></tr>
@@ -420,14 +421,14 @@
 
         <div class="mc-section-card">
           <h3>Variable example preview</h3>
-          <div class="mc-bg--surface mc-rounded--lg mc-p--5">
-            <p class="mc-m--0 mc-fw--700">Page card</p>
+          <div class="mc-bg--surface mc-rounded--lg mc-pa--5">
+            <p class="mc-ma--0 mc-fw--700">Page card</p>
             <p class="mc-body-copy">A compact surface using shared Mercury variables for colour, radius, and spacing.</p>
           </div>
         </div>
 
-        <pre class="mc-code-example" tabindex="0"><code>&lt;div class="mc-bg--surface mc-rounded--lg mc-p--5"&gt;
-  &lt;p class="mc-m--0 mc-fw--700"&gt;Page card&lt;/p&gt;
+        <pre class="mc-code-example" tabindex="0"><code>&lt;div class="mc-bg--surface mc-rounded--lg mc-pa--5"&gt;
+  &lt;p class="mc-ma--0 mc-fw--700"&gt;Page card&lt;/p&gt;
   &lt;p class="mc-body-copy"&gt;A compact surface using shared Mercury variables for colour, radius, and spacing.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
       </div>
@@ -457,9 +458,9 @@
           <h3>Adaptive card layout</h3>
           <p class="mc-body-copy">Use <code>mc-layout mc-layout--adaptive</code> when a group should move from one column, to two columns, to three columns as space becomes available.</p>
           <div class="mc-layout mc-layout--adaptive mc-mt--5">
-            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--4">Mobile: 1 column</div>
-            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--4">Tablet: 2 columns</div>
-            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--4">Desktop: 3 columns</div>
+            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--4">Mobile: 1 column</div>
+            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--4">Tablet: 2 columns</div>
+            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--4">Desktop: 3 columns</div>
           </div>
         </div>
 
@@ -467,12 +468,12 @@
           <h3>Split layout</h3>
           <p class="mc-body-copy">Use <code>mc-layout mc-layout--split</code> for pages that stack on mobile and become a sidebar/content layout on desktop.</p>
           <div class="mc-layout mc-layout--split mc-mt--5">
-            <aside class="mc-layout__aside mc-bg--surface mc-border mc-rounded--md mc-p--4">
-              <p class="mc-m--0 mc-fw--700">Sidebar</p>
+            <aside class="mc-layout__aside mc-bg--surface mc-border mc-rounded--md mc-pa--4">
+              <p class="mc-ma--0 mc-fw--700">Sidebar</p>
               <p class="mc-body-copy">Filters, menus, notes, or metadata.</p>
             </aside>
-            <div class="mc-layout__main mc-bg--surface mc-border mc-rounded--md mc-p--4">
-              <p class="mc-m--0 mc-fw--700">Main content</p>
+            <div class="mc-layout__main mc-bg--surface mc-border mc-rounded--md mc-pa--4">
+              <p class="mc-ma--0 mc-fw--700">Main content</p>
               <p class="mc-body-copy">Primary page content with room to breathe.</p>
             </div>
           </div>
@@ -481,37 +482,37 @@
         <div class="mc-section-card">
           <h3>Responsive containers</h3>
           <div class="mc-stack">
-            <div class="mc-container mc-container--sm mc-bg--surface mc-border mc-rounded--md mc-p--3">Small container: <code>mc-container--sm</code></div>
-            <div class="mc-container mc-container--md mc-bg--surface mc-border mc-rounded--md mc-p--3">Medium container: <code>mc-container--md</code></div>
-            <div class="mc-container mc-container--lg mc-bg--surface mc-border mc-rounded--md mc-p--3">Large container: <code>mc-container--lg</code></div>
-            <div class="mc-container mc-container--xl mc-bg--surface mc-border mc-rounded--md mc-p--3">Wide container: <code>mc-container--xl</code></div>
-            <div class="mc-container mc-container--breakout mc-bg--surface mc-border mc-rounded--md mc-p--3">Breakout container: <code>mc-container--breakout</code></div>
+            <div class="mc-container mc-container--sm mc-bg--surface mc-border mc-rounded--md mc-pa--3">Small container: <code>mc-container--sm</code></div>
+            <div class="mc-container mc-container--md mc-bg--surface mc-border mc-rounded--md mc-pa--3">Medium container: <code>mc-container--md</code></div>
+            <div class="mc-container mc-container--lg mc-bg--surface mc-border mc-rounded--md mc-pa--3">Large container: <code>mc-container--lg</code></div>
+            <div class="mc-container mc-container--xl mc-bg--surface mc-border mc-rounded--md mc-pa--3">Wide container: <code>mc-container--xl</code></div>
+            <div class="mc-container mc-container--breakout mc-bg--surface mc-border mc-rounded--md mc-pa--3">Breakout container: <code>mc-container--breakout</code></div>
           </div>
         </div>
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;div class="mc-layout mc-layout--adaptive mc-mt--5"&gt;
-  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--4"&gt;Mobile: 1 column&lt;/div&gt;
-  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--4"&gt;Tablet: 2 columns&lt;/div&gt;
-  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--4"&gt;Desktop: 3 columns&lt;/div&gt;
+  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--4"&gt;Mobile: 1 column&lt;/div&gt;
+  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--4"&gt;Tablet: 2 columns&lt;/div&gt;
+  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--4"&gt;Desktop: 3 columns&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class="mc-layout mc-layout--split mc-mt--5"&gt;
-  &lt;aside class="mc-layout__aside mc-bg--surface mc-border mc-rounded--md mc-p--4"&gt;
-    &lt;p class="mc-m--0 mc-fw--700"&gt;Sidebar&lt;/p&gt;
+  &lt;aside class="mc-layout__aside mc-bg--surface mc-border mc-rounded--md mc-pa--4"&gt;
+    &lt;p class="mc-ma--0 mc-fw--700"&gt;Sidebar&lt;/p&gt;
     &lt;p class="mc-body-copy"&gt;Filters, menus, notes, or metadata.&lt;/p&gt;
   &lt;/aside&gt;
-  &lt;div class="mc-layout__main mc-bg--surface mc-border mc-rounded--md mc-p--4"&gt;
-    &lt;p class="mc-m--0 mc-fw--700"&gt;Main content&lt;/p&gt;
+  &lt;div class="mc-layout__main mc-bg--surface mc-border mc-rounded--md mc-pa--4"&gt;
+    &lt;p class="mc-ma--0 mc-fw--700"&gt;Main content&lt;/p&gt;
     &lt;p class="mc-body-copy"&gt;Primary page content with room to breathe.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class="mc-stack"&gt;
-  &lt;div class="mc-container mc-container--sm mc-bg--surface mc-border mc-rounded--md mc-p--3"&gt;Small container: &lt;code&gt;mc-container--sm&lt;/code&gt;&lt;/div&gt;
-  &lt;div class="mc-container mc-container--md mc-bg--surface mc-border mc-rounded--md mc-p--3"&gt;Medium container: &lt;code&gt;mc-container--md&lt;/code&gt;&lt;/div&gt;
-  &lt;div class="mc-container mc-container--lg mc-bg--surface mc-border mc-rounded--md mc-p--3"&gt;Large container: &lt;code&gt;mc-container--lg&lt;/code&gt;&lt;/div&gt;
-  &lt;div class="mc-container mc-container--xl mc-bg--surface mc-border mc-rounded--md mc-p--3"&gt;Wide container: &lt;code&gt;mc-container--xl&lt;/code&gt;&lt;/div&gt;
-  &lt;div class="mc-container mc-container--breakout mc-bg--surface mc-border mc-rounded--md mc-p--3"&gt;Breakout container: &lt;code&gt;mc-container--breakout&lt;/code&gt;&lt;/div&gt;
+  &lt;div class="mc-container mc-container--sm mc-bg--surface mc-border mc-rounded--md mc-pa--3"&gt;Small container: &lt;code&gt;mc-container--sm&lt;/code&gt;&lt;/div&gt;
+  &lt;div class="mc-container mc-container--md mc-bg--surface mc-border mc-rounded--md mc-pa--3"&gt;Medium container: &lt;code&gt;mc-container--md&lt;/code&gt;&lt;/div&gt;
+  &lt;div class="mc-container mc-container--lg mc-bg--surface mc-border mc-rounded--md mc-pa--3"&gt;Large container: &lt;code&gt;mc-container--lg&lt;/code&gt;&lt;/div&gt;
+  &lt;div class="mc-container mc-container--xl mc-bg--surface mc-border mc-rounded--md mc-pa--3"&gt;Wide container: &lt;code&gt;mc-container--xl&lt;/code&gt;&lt;/div&gt;
+  &lt;div class="mc-container mc-container--breakout mc-bg--surface mc-border mc-rounded--md mc-pa--3"&gt;Breakout container: &lt;code&gt;mc-container--breakout&lt;/code&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="mc-section-card">
@@ -541,39 +542,39 @@
           <p class="mc-lead">Use shared spacing tokens and utility classes for consistent page rhythm.</p>
           <h3>Padding examples</h3>
           <div class="mc-stack mc-stack--lg">
-            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--3">Padding 3</div>
-            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--4">Padding 4</div>
-            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--5">Padding 5</div>
+            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--3">Padding 3</div>
+            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--4">Padding 4</div>
+            <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--5">Padding 5</div>
           </div>
           <h3>Margin examples</h3>
           <div class="mc-stack mc-stack--lg">
             <div class="mc-bg--surface mc-border mc-rounded--md">
-              <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-mt--4 mc-p--3">Margin top 4</div>
+              <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-mt--4 mc-pa--3">Margin top 4</div>
             </div>
             <div class="mc-bg--surface mc-border mc-rounded--md">
-              <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-mb--4 mc-p--3">Margin bottom 4</div>
+              <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-mb--4 mc-pa--3">Margin bottom 4</div>
             </div>
-            <div class="mc-bg--surface mc-border mc-rounded--md mc-p--3">
-              <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-m--0 mc-p--3">Margin 0</div>
+            <div class="mc-bg--surface mc-border mc-rounded--md mc-pa--3">
+              <div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-ma--0 mc-pa--3">Margin 0</div>
             </div>
           </div>
         </div>
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;div class="mc-stack mc-stack--lg"&gt;
-  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--3"&gt;Padding 3&lt;/div&gt;
-  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--4"&gt;Padding 4&lt;/div&gt;
-  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--5"&gt;Padding 5&lt;/div&gt;
+  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--3"&gt;Padding 3&lt;/div&gt;
+  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--4"&gt;Padding 4&lt;/div&gt;
+  &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--5"&gt;Padding 5&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class="mc-stack mc-stack--lg"&gt;
   &lt;div class="mc-bg--surface mc-border mc-rounded--md"&gt;
-    &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-mt--4 mc-p--3"&gt;Margin top 4&lt;/div&gt;
+    &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-mt--4 mc-pa--3"&gt;Margin top 4&lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="mc-bg--surface mc-border mc-rounded--md"&gt;
-    &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-mb--4 mc-p--3"&gt;Margin bottom 4&lt;/div&gt;
+    &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-mb--4 mc-pa--3"&gt;Margin bottom 4&lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class="mc-bg--surface mc-border mc-rounded--md mc-p--3"&gt;
-    &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-m--0 mc-p--3"&gt;Margin 0&lt;/div&gt;
+  &lt;div class="mc-bg--surface mc-border mc-rounded--md mc-pa--3"&gt;
+    &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-ma--0 mc-pa--3"&gt;Margin 0&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
@@ -581,8 +582,8 @@
           <h3>Rendered spacing example</h3>
           <section class="mc-container mc-py--7 mc-bg--surface mc-border mc-rounded--md">
             <div class="mc-stack mc-stack--lg">
-              <h4 class="mc-m--0">Section title</h4>
-              <p class="mc-m--0">Consistent vertical spacing between children.</p>
+              <h4 class="mc-ma--0">Section title</h4>
+              <p class="mc-ma--0">Consistent vertical spacing between children.</p>
             </div>
           </section>
           <div class="mc-cluster mc-gap--3 mc-mt--5">
@@ -594,8 +595,8 @@
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;section class="mc-container mc-py--7 mc-bg--surface mc-border mc-rounded--md"&gt;
   &lt;div class="mc-stack mc-stack--lg"&gt;
-    &lt;h4 class="mc-m--0"&gt;Section title&lt;/h4&gt;
-    &lt;p class="mc-m--0"&gt;Consistent vertical spacing between children.&lt;/p&gt;
+    &lt;h4 class="mc-ma--0"&gt;Section title&lt;/h4&gt;
+    &lt;p class="mc-ma--0"&gt;Consistent vertical spacing between children.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/section&gt;
 
@@ -605,7 +606,7 @@
   &lt;span class="mc-badge mc-badge--danger"&gt;Cluster item&lt;/span&gt;
 &lt;/div&gt;
 
-&lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-mt--4 mc-p--3"&gt;
+&lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-mt--4 mc-pa--3"&gt;
   Margin top 4
 &lt;/div&gt;</code></pre>
 
@@ -620,13 +621,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td><code>mc-p--0</code></td><td>Sets all padding to zero.</td><td><code>&lt;div class="mc-p--0"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-p--[0-7]</code></li><li><code>mc-pt|pr|pb|pl--[0-7]</code></li></ul></td><td>Applies all-side or single-axis padding from the Mercury spacing scale.</td><td><code>&lt;div class="mc-p--5"&gt;</code></td></tr>
+              <tr><td><code>mc-pa--0</code></td><td>Sets all padding to zero.</td><td><code>&lt;div class="mc-pa--0"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-pa--[0-7]</code></li><li><code>mc-pt|pr|pb|pl--[0-7]</code></li></ul></td><td>Applies all-side or single-axis padding from the Mercury spacing scale.</td><td><code>&lt;div class="mc-pa--5"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-px--[0-7]</code></li></ul></td><td>Applies inline padding.</td><td><code>&lt;section class="mc-px--5"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-py--[0-7]</code></li></ul></td><td>Applies block padding.</td><td><code>&lt;section class="mc-py--7"&gt;</code></td></tr>
-              <tr><td><code>mc-m--0</code></td><td>Removes all margin.</td><td><code>&lt;h2 class="mc-m--0"&gt;</code></td></tr>
+              <tr><td><code>mc-ma--0</code></td><td>Removes all margin.</td><td><code>&lt;h2 class="mc-ma--0"&gt;</code></td></tr>
               <tr><td><code>mc-mx--auto</code></td><td>Centers a fixed-width element horizontally.</td><td><code>&lt;div class="mc-mx--auto"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-m--[0-7]</code></li><li><code>mc-mt|mr|mb|ml--[0-7]</code></li></ul></td><td>Applies all-side or single-axis margin.</td><td><code>&lt;div class="mc-mt--5"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-ma--[0-7]</code></li><li><code>mc-mt|mr|mb|ml--[0-7]</code></li></ul></td><td>Applies all-side or single-axis margin.</td><td><code>&lt;div class="mc-mt--5"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-mx--[0-7]</code></li><li><code>mc-my--[0-7]</code></li><li><code>mc-mx--auto</code></li></ul></td><td>Applies inline or block margin, including centering with auto.</td><td><code>&lt;div class="mc-mx--auto"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-gap--[0-7]</code></li><li><code>mc-g--[0-7]</code></li></ul></td><td>Applies gap to flex/grid layouts or the Mercury row gutter variable.</td><td><code>&lt;div class="mc-cluster mc-gap--3"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-stack</code></li><li><code>mc-stack--sm</code></li><li><code>mc-stack--lg</code></li></ul></td><td>Vertical stack layout and size variants.</td><td><code>&lt;div class="mc-stack mc-stack--sm"&gt;</code></td></tr>
@@ -663,9 +664,9 @@
         <div class="mc-section-card">
           <h3>Grid system</h3>
           <div class="mc-row mc-g--3">
-            <div class="mc-col mc-col--12 mc-col--sm-6 mc-col--lg-3"><div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--3">12 / sm 6 / lg 3</div></div>
-            <div class="mc-col mc-col--12 mc-col--sm-6 mc-col--lg-6"><div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--3">12 / sm 6 / lg 6</div></div>
-            <div class="mc-col mc-col--12 mc-col--lg-3"><div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--3">12 / lg 3</div></div>
+            <div class="mc-col mc-col--12 sm:mc-col--6 lg:mc-col--3"><div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--3">12 / sm 6 / lg 3</div></div>
+            <div class="mc-col mc-col--12 sm:mc-col--6 lg:mc-col--6"><div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--3">12 / sm 6 / lg 6</div></div>
+            <div class="mc-col mc-col--12 lg:mc-col--3"><div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--3">12 / lg 3</div></div>
           </div>
           <table class="mc-mt--5">
             <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
@@ -676,9 +677,7 @@
               <tr><td><code>mc-row</code></td><td>12-column grid row.</td><td><code>&lt;div class="mc-row mc-g--4"&gt;</code></td></tr>
               <tr><td><code>mc-col</code></td><td>Auto full-width column.</td><td><code>&lt;div class="mc-col"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-col--[1-12]</code></li></ul></td><td>Column span utilities.</td><td><code>&lt;div class="mc-col mc-col--6"&gt;</code></td></tr>
-              <tr><td><code>mc-col--sm-6</code></td><td>Six-column span at the small layout media query used by Mercury.</td><td><code>&lt;div class="mc-col mc-col--12 mc-col--sm-6"&gt;</code></td></tr>
-              <tr><td><code>mc-col--md-6</code></td><td>Six-column span at the desktop media query used by Mercury.</td><td><code>&lt;div class="mc-col mc-col--12 mc-col--md-6"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-col--lg-3</code></li><li><code>mc-col--lg-4</code></li><li><code>mc-col--lg-6</code></li></ul></td><td>Quarter, third, and half-width desktop columns.</td><td><code>&lt;div class="mc-col mc-col--12 mc-col--lg-6"&gt;</code></td></tr>
+              <tr><td><code>{sm|md|lg|xl}:mc-col--[1-12]</code></td><td>Column spans applied from the selected Mercury breakpoint upward.</td><td><code>&lt;div class="mc-col mc-col--12 sm:mc-col--6 lg:mc-col--3"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-g--[0-7]</code></li></ul></td><td>Grid gutter utilities.</td><td><code>&lt;div class="mc-row mc-g--3"&gt;</code></td></tr>
               <tr><td><code>mc-layout mc-layout--adaptive</code></td><td>Responsive one/two/three-column layout.</td><td><code>&lt;div class="mc-layout mc-layout--adaptive"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-layout mc-layout--split</code></li><li><code>mc-layout__aside</code></li><li><code>mc-layout__main</code></li></ul></td><td>Responsive sidebar/content layout.</td><td><code>&lt;section class="mc-layout mc-layout--split"&gt;</code></td></tr>
@@ -688,14 +687,14 @@
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;section class="mc-container mc-container--lg"&gt;
   &lt;div class="mc-row mc-g--3"&gt;
-    &lt;div class="mc-col mc-col--12 mc-col--sm-6 mc-col--lg-3"&gt;
-      &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--3"&gt;12 / sm 6 / lg 3&lt;/div&gt;
+    &lt;div class="mc-col mc-col--12 sm:mc-col--6 lg:mc-col--3"&gt;
+      &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--3"&gt;12 / sm 6 / lg 3&lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class="mc-col mc-col--12 mc-col--sm-6 mc-col--lg-6"&gt;
-      &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--3"&gt;12 / sm 6 / lg 6&lt;/div&gt;
+    &lt;div class="mc-col mc-col--12 sm:mc-col--6 lg:mc-col--6"&gt;
+      &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--3"&gt;12 / sm 6 / lg 6&lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class="mc-col mc-col--12 mc-col--lg-3"&gt;
-      &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-p--3"&gt;12 / lg 3&lt;/div&gt;
+    &lt;div class="mc-col mc-col--12 lg:mc-col--3"&gt;
+      &lt;div class="mc-bg--surface-strong mc-border mc-rounded--md mc-text--accent mc-fw--700 mc-pa--3"&gt;12 / lg 3&lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/section&gt;</code></pre>
@@ -807,33 +806,37 @@
         <div class="mc-section-card">
           <h3>Type scale</h3>
           <div class="mc-stack">
-            <p class="mc-m--0 mc-fs--display mc-lh--solid">Display</p>
-            <p class="mc-m--0 mc-fs--5 mc-lh--heading">Font size 5</p>
-            <p class="mc-m--0 mc-fs--4 mc-lh--heading">Font size 4</p>
-            <p class="mc-m--0 mc-fs--3">Font size 3</p>
-            <p class="mc-m--0 mc-fs--2">Font size 2</p>
-            <p class="mc-m--0 mc-fs--1">Font size 1</p>
-            <p class="mc-m--0 mc-fs--0">Font size 0</p>
+            <p class="mc-ma--0 mc-fs--display mc-lh--solid">Display</p>
+            <p class="mc-ma--0 mc-fs--7 mc-lh--solid">Font step 7</p>
+            <p class="mc-ma--0 mc-fs--6 mc-lh--solid">Font step 6</p>
+            <p class="mc-ma--0 mc-fs--5 mc-lh--heading">Font step 5</p>
+            <p class="mc-ma--0 mc-fs--4 mc-lh--heading">Font step 4</p>
+            <p class="mc-ma--0 mc-fs--3">Font step 3</p>
+            <p class="mc-ma--0 mc-fs--2">Font step 2</p>
+            <p class="mc-ma--0 mc-fs--1">Font step 1</p>
+            <p class="mc-ma--0 mc-fs--0">Font step 0</p>
           </div>
         </div>
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;div class="mc-stack"&gt;
-  &lt;p class="mc-m--0 mc-fs--display mc-lh--solid"&gt;Display&lt;/p&gt;
-  &lt;p class="mc-m--0 mc-fs--5 mc-lh--heading"&gt;Font size 5&lt;/p&gt;
-  &lt;p class="mc-m--0 mc-fs--4 mc-lh--heading"&gt;Font size 4&lt;/p&gt;
-  &lt;p class="mc-m--0 mc-fs--3"&gt;Font size 3&lt;/p&gt;
-  &lt;p class="mc-m--0 mc-fs--2"&gt;Font size 2&lt;/p&gt;
-  &lt;p class="mc-m--0 mc-fs--1"&gt;Font size 1&lt;/p&gt;
-  &lt;p class="mc-m--0 mc-fs--0"&gt;Font size 0&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-fs--display mc-lh--solid"&gt;Display&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-fs--7 mc-lh--solid"&gt;Font step 7&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-fs--6 mc-lh--solid"&gt;Font step 6&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-fs--5 mc-lh--heading"&gt;Font step 5&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-fs--4 mc-lh--heading"&gt;Font step 4&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-fs--3"&gt;Font step 3&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-fs--2"&gt;Font step 2&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-fs--1"&gt;Font step 1&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-fs--0"&gt;Font step 0&lt;/p&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="mc-section-card">
           <h3>Text utility examples</h3>
           <div class="mc-stack">
-            <p class="mc-m--0 mc-fw--700">Bold body text with <code>mc-fw--700</code>.</p>
-            <p class="mc-m--0 mc-text--uppercase mc-fw--700">Uppercase label text</p>
-            <p class="mc-m--0 mc-text--balance">Balanced display copy keeps short headings and summary lines from leaving awkward single words behind.</p>
-            <p class="mc-m--0 mc-text--truncate mc-w--1/2">Truncated text utility for constrained metadata rows.</p>
+            <p class="mc-ma--0 mc-fw--700">Bold body text with <code>mc-fw--700</code>.</p>
+            <p class="mc-ma--0 mc-text--uppercase mc-fw--700">Uppercase label text</p>
+            <p class="mc-ma--0 mc-text--balance">Balanced display copy keeps short headings and summary lines from leaving awkward single words behind.</p>
+            <p class="mc-ma--0 mc-text--truncate mc-w--1/2">Truncated text utility for constrained metadata rows.</p>
           </div>
         </div>
 
@@ -852,7 +855,7 @@
               <tr><td><code>mc-display-title</code></td><td>Large display heading.</td><td><code>&lt;h2 class="mc-display-title"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-lead</code></li><li><code>mc-body-copy</code></li></ul></td><td>Lead and muted body copy.</td><td><code>&lt;p class="mc-lead"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-eyebrow</code></li><li><code>mc-eyebrow--paper</code></li></ul></td><td>Uppercase label and paper variant.</td><td><code>&lt;p class="mc-eyebrow"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-fs--[0-7]</code></li><li><code>mc-fs--display</code></li></ul></td><td>Font-size utilities.</td><td><code>&lt;p class="mc-fs--3"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-fs--[0-7]</code></li><li><code>mc-fs--display</code></li></ul></td><td>Nonzero fluid font-size steps; the numeric suffix is a scale index.</td><td><code>&lt;p class="mc-fs--3"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-fw--400</code></li><li><code>mc-fw--700</code></li></ul></td><td>Font-weight utilities.</td><td><code>&lt;strong class="mc-fw--700"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-lh--solid</code></li><li><code>mc-lh--heading</code></li><li><code>mc-lh--body</code></li></ul></td><td>Line-height utilities.</td><td><code>&lt;h2 class="mc-lh--heading"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-text--start</code></li><li><code>mc-text--center</code></li><li><code>mc-text--end</code></li></ul></td><td>Text alignment utilities.</td><td><code>&lt;p class="mc-text--center"&gt;</code></td></tr>
@@ -1001,10 +1004,10 @@
 
       <div class="mc-component-doc">
         <div class="mc-section-card">
-          <section class="mc-grid mc-g--3 mc-bg--surface-strong mc-border mc-rounded--md mc-shadow--sm mc-text--accent mc-p--3 mc-max-w--md" aria-labelledby="consent-example-title">
+          <section class="mc-grid mc-g--3 mc-bg--surface-strong mc-border mc-rounded--md mc-shadow--sm mc-text--accent mc-pa--3 mc-max-w--md" aria-labelledby="consent-example-title">
             <div class="mc-stack mc-stack--sm">
-              <h3 id="consent-example-title" class="mc-m--0 mc-fs--1">Analytics consent</h3>
-              <p class="mc-m--0 mc-text--muted mc-fs--1">
+              <h3 id="consent-example-title" class="mc-ma--0 mc-fs--1">Analytics consent</h3>
+              <p class="mc-ma--0 mc-text--muted mc-fs--1">
                 I use Google Tag Manager to understand how this site is used. You can accept or reject analytics tracking.
               </p>
               <a class="mc-button mc-button--link mc-button--sm" href="#consent">
@@ -1024,8 +1027,8 @@
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;section class="mc-consent-banner" data-consent-banner hidden aria-labelledby="consent-title"&gt;
   &lt;div class="mc-stack mc-stack--sm"&gt;
-    &lt;h2 id="consent-title" class="mc-m--0 mc-fs--1"&gt;Analytics consent&lt;/h2&gt;
-    &lt;p class="mc-m--0 mc-text--muted mc-fs--1"&gt;
+    &lt;h2 id="consent-title" class="mc-ma--0 mc-fs--1"&gt;Analytics consent&lt;/h2&gt;
+    &lt;p class="mc-ma--0 mc-text--muted mc-fs--1"&gt;
       I use Google Tag Manager to understand how this site is used. You can accept or reject analytics tracking.
     &lt;/p&gt;
     &lt;a class="mc-button mc-button--link mc-button--sm" href="/privacy.html"&gt;
@@ -1048,7 +1051,7 @@
             <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
             <tbody>
               <tr><td><code>mc-consent-banner</code></td><td>Compact fixed consent surface.</td><td><code>&lt;section class="mc-consent-banner"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-stack mc-stack--sm</code></li><li><code>mc-m--0</code></li><li><code>mc-text--muted</code></li><li><code>mc-fs--1</code></li></ul></td><td>Composes compact banner copy.</td><td><code>&lt;div class="mc-stack mc-stack--sm"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-stack mc-stack--sm</code></li><li><code>mc-ma--0</code></li><li><code>mc-text--muted</code></li><li><code>mc-fs--1</code></li></ul></td><td>Composes compact banner copy.</td><td><code>&lt;div class="mc-stack mc-stack--sm"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-grid mc-grid--cols-2</code></li><li><code>mc-g--2</code></li></ul></td><td>Creates the always-two-column consent action layout.</td><td><code>&lt;div class="mc-grid mc-grid--cols-2 mc-g--2"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-button--sm</code></li><li><code>mc-button--block</code></li><li><code>mc-button--link</code></li></ul></td><td>Composes compact actions and the learn-more link.</td><td><code>&lt;button class="mc-button mc-button--sm mc-button--block"&gt;</code></td></tr>
             </tbody>
@@ -1755,13 +1758,13 @@
               <tr>
                 <td>
                   <ul class="mc-token-list">
-                    <li><code>mc-p--[0-7]</code></li>
+                    <li><code>mc-pa--[0-7]</code></li>
                     <li><code>mc-px--[0-7]</code></li>
                     <li><code>mc-py--[0-7]</code></li>
                   </ul>
                 </td>
                 <td>Use bracket notation in documentation when a set is a predictable range.</td>
-                <td><code>&lt;code&gt;mc-p--[0-7]&lt;/code&gt;</code></td>
+                <td><code>&lt;code&gt;mc-pa--[0-7]&lt;/code&gt;</code></td>
               </tr>
               <tr>
                 <td><code>mc-token-list</code></td>
@@ -1789,13 +1792,13 @@
     &lt;tr&gt;
       &lt;td&gt;
         &lt;ul class="mc-token-list"&gt;
-          &lt;li&gt;&lt;code&gt;mc-p--[0-7]&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code&gt;mc-pa--[0-7]&lt;/code&gt;&lt;/li&gt;
           &lt;li&gt;&lt;code&gt;mc-px--[0-7]&lt;/code&gt;&lt;/li&gt;
           &lt;li&gt;&lt;code&gt;mc-py--[0-7]&lt;/code&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/td&gt;
       &lt;td&gt;Use bracket notation in documentation when a set is a predictable range.&lt;/td&gt;
-      &lt;td&gt;&lt;code&gt;&amp;lt;code&amp;gt;mc-p--[0-7]&amp;lt;/code&amp;gt;&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code&gt;&amp;lt;code&amp;gt;mc-pa--[0-7]&amp;lt;/code&amp;gt;&lt;/code&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;code&gt;mc-token-list&lt;/code&gt;&lt;/td&gt;
@@ -2246,7 +2249,7 @@
           <table>
             <thead><tr><th scope="col">Pattern</th><th scope="col">Example</th><th scope="col">Meaning</th></tr></thead>
             <tbody>
-              <tr><td><code>mc-{group}--{value}</code></td><td><code>mc-p--5</code></td><td>Set one property group directly.</td></tr>
+              <tr><td><code>mc-{group}--{value}</code></td><td><code>mc-pa--5</code></td><td>Set one property group directly.</td></tr>
               <tr><td><code>mc-{axis}--{value}</code></td><td><code>mc-mt--4</code></td><td>Set one logical spacing axis.</td></tr>
               <tr><td><code>{breakpoint}:mc-{group}--{value}</code></td><td><code>lg:mc-grid--4</code></td><td>Apply the utility from that breakpoint upward.</td></tr>
               <tr><td><code>mc-{group}--auto</code></td><td><code>mc-mx--auto</code></td><td>Use keyword values where they are predictable.</td></tr>
@@ -2281,40 +2284,40 @@
           <h3>Responsive variants</h3>
           <p>Use <code>sm:</code>, <code>md:</code>, <code>lg:</code>, and <code>xl:</code> prefixes for breakpoint-specific display, spacing, width, text alignment, and grid utilities.</p>
           <div class="mc-d--grid md:mc-grid--2 lg:mc-grid--4 mc-g--3">
-            <div class="mc-bg--surface mc-border mc-rounded--md mc-p--4">Default single column</div>
-            <div class="mc-bg--surface mc-border mc-rounded--md mc-p--4">Two columns at md</div>
-            <div class="mc-bg--surface mc-border mc-rounded--md mc-p--4">Four columns at lg</div>
-            <div class="mc-bg--surface mc-border mc-rounded--md mc-p--4">Same markup</div>
+            <div class="mc-bg--surface mc-border mc-rounded--md mc-pa--4">Default single column</div>
+            <div class="mc-bg--surface mc-border mc-rounded--md mc-pa--4">Two columns at md</div>
+            <div class="mc-bg--surface mc-border mc-rounded--md mc-pa--4">Four columns at lg</div>
+            <div class="mc-bg--surface mc-border mc-rounded--md mc-pa--4">Same markup</div>
           </div>
           <pre class="mc-code-example mc-mt--5" tabindex="0"><code>&lt;div class="mc-d--grid md:mc-grid--2 lg:mc-grid--4 mc-g--3"&gt;
-  &lt;div class="mc-bg--surface mc-border mc-rounded--md mc-p--4"&gt;Default single column&lt;/div&gt;
-  &lt;div class="mc-bg--surface mc-border mc-rounded--md mc-p--4"&gt;Two columns at md&lt;/div&gt;
-  &lt;div class="mc-bg--surface mc-border mc-rounded--md mc-p--4"&gt;Four columns at lg&lt;/div&gt;
-  &lt;div class="mc-bg--surface mc-border mc-rounded--md mc-p--4"&gt;Same markup&lt;/div&gt;
+  &lt;div class="mc-bg--surface mc-border mc-rounded--md mc-pa--4"&gt;Default single column&lt;/div&gt;
+  &lt;div class="mc-bg--surface mc-border mc-rounded--md mc-pa--4"&gt;Two columns at md&lt;/div&gt;
+  &lt;div class="mc-bg--surface mc-border mc-rounded--md mc-pa--4"&gt;Four columns at lg&lt;/div&gt;
+  &lt;div class="mc-bg--surface mc-border mc-rounded--md mc-pa--4"&gt;Same markup&lt;/div&gt;
 &lt;/div&gt;</code></pre>
         </div>
 
         <div class="mc-section-card">
           <h3>Utility source of truth</h3>
-          <p>The expected utility selector surface is tracked by <code>scripts/generate-mercury-utilities.mjs</code>. Run <code>npm run check:mercury-utilities</code> after changing the utility layer to catch missing selectors.</p>
+          <p>The expected utility selector surface is tracked by <code>src/generate-mercury-utilities.mjs</code>. Run <code>npm run check:mercury-utilities</code> after changing the utility layer to catch missing selectors.</p>
         </div>
 
         <div class="mc-section-card">
           <h3>Positioning and z-index</h3>
-          <div class="mc-position--relative mc-border mc-rounded--lg mc-p--5 mc-overflow--hidden">
+          <div class="mc-position--relative mc-border mc-rounded--lg mc-pa--5 mc-overflow--hidden">
             <span class="mc-badge mc-badge--brand mc-position--absolute mc-top--0 mc-end--0">Top end</span>
-            <p class="mc-m--0 mc-mt--5">Position utilities are intentionally small and predictable.</p>
+            <p class="mc-ma--0 mc-mt--5">Position utilities are intentionally small and predictable.</p>
           </div>
-          <pre class="mc-code-example mc-mt--5" tabindex="0"><code>&lt;div class="mc-position--relative mc-border mc-rounded--lg mc-p--5 mc-overflow--hidden"&gt;
+          <pre class="mc-code-example mc-mt--5" tabindex="0"><code>&lt;div class="mc-position--relative mc-border mc-rounded--lg mc-pa--5 mc-overflow--hidden"&gt;
   &lt;span class="mc-badge mc-badge--brand mc-position--absolute mc-top--0 mc-end--0"&gt;Top end&lt;/span&gt;
-  &lt;p class="mc-m--0 mc-mt--5"&gt;Position utilities are intentionally small and predictable.&lt;/p&gt;
+  &lt;p class="mc-ma--0 mc-mt--5"&gt;Position utilities are intentionally small and predictable.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
           <table class="mc-mt--5">
             <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>
             <tbody>
               <tr><td><ul class="mc-token-list"><li><code>mc-position--relative</code></li><li><code>mc-position--absolute</code></li><li><code>mc-position--fixed</code></li><li><code>mc-position--sticky</code></li></ul></td><td>Position utilities.</td><td><code>&lt;div class="mc-position--relative"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-top--0</code></li><li><code>mc-end--0</code></li><li><code>mc-bottom--0</code></li><li><code>mc-start--0</code></li></ul></td><td>Zero inset helpers.</td><td><code>&lt;span class="mc-position--absolute mc-top--0 mc-end--0"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>mc-z--[1-3]</code></li></ul></td><td>Z-index helpers.</td><td><code>&lt;div class="mc-z--2"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>mc-z--[0-7]</code></li></ul></td><td>Z-index helpers.</td><td><code>&lt;div class="mc-z--2"&gt;</code></td></tr>
             </tbody>
           </table>
         </div>
@@ -2322,14 +2325,14 @@
         <div class="mc-section-card">
           <h3>Borders, radius, and overflow</h3>
           <div class="mc-grid mc-grid--3 mc-g--3">
-            <div class="mc-border mc-rounded--sm mc-p--3">Small</div>
-            <div class="mc-border--brand mc-rounded--md mc-p--3">Brand</div>
-            <div class="mc-border mc-rounded--pill mc-p--3 mc-text--center">Pill</div>
+            <div class="mc-border mc-rounded--sm mc-pa--3">Small</div>
+            <div class="mc-border--brand mc-rounded--md mc-pa--3">Brand</div>
+            <div class="mc-border mc-rounded--pill mc-pa--3 mc-text--center">Pill</div>
           </div>
           <pre class="mc-code-example mc-mt--5" tabindex="0"><code>&lt;div class="mc-grid mc-grid--3 mc-g--3"&gt;
-  &lt;div class="mc-border mc-rounded--sm mc-p--3"&gt;Small&lt;/div&gt;
-  &lt;div class="mc-border--brand mc-rounded--md mc-p--3"&gt;Brand&lt;/div&gt;
-  &lt;div class="mc-border mc-rounded--pill mc-p--3 mc-text--center"&gt;Pill&lt;/div&gt;
+  &lt;div class="mc-border mc-rounded--sm mc-pa--3"&gt;Small&lt;/div&gt;
+  &lt;div class="mc-border--brand mc-rounded--md mc-pa--3"&gt;Brand&lt;/div&gt;
+  &lt;div class="mc-border mc-rounded--pill mc-pa--3 mc-text--center"&gt;Pill&lt;/div&gt;
 &lt;/div&gt;</code></pre>
           <table class="mc-mt--5">
             <thead><tr><th scope="col">Class</th><th scope="col">Purpose</th><th scope="col">Example</th></tr></thead>

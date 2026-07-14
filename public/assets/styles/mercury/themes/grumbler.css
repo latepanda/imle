@@ -1,0 +1,134 @@
+@layer mercury.themes {
+/* Grumbler theme and case study components. */
+.mc-theme--grumbler {
+  --mc-color-bg: #fff0d5;
+  --mc-color-bg-soft: #fff8ea;
+  --mc-color-paper: #fff4df;
+  --mc-color-surface: #fffaf0;
+  --mc-color-surface-strong: #fff2cf;
+  --mc-color-ink: #27100c;
+  --mc-color-soft-ink: #42251e;
+  --mc-color-muted: #684036;
+  --mc-color-accent: #8c160f;
+  --mc-color-accent-soft: #b62a18;
+  --mc-color-stroke: rgba(140, 22, 15, 0.2);
+  --mc-color-line: rgba(140, 22, 15, 0.2);
+  --mc-color-error: #8b2635;
+  --mc-color-error-bg: #f9e6df;
+  --mc-color-error-stroke: #d99b8c;
+  --mc-color-success: #25683f;
+  --mc-color-success-bg: #e2f1df;
+  --mc-color-success-stroke: #98c99d;
+  --mc-color-warning: #6d500d;
+  --mc-color-warning-bg: #f8edca;
+  --mc-color-warning-stroke: #d2b762;
+  --mc-color-info: #275f90;
+  --mc-color-info-bg: #e3eff6;
+  --mc-color-info-stroke: #9fc4dd;
+  --mc-gradient-brand: linear-gradient(90deg, #8c160f, #d73525 55%, #f0bd78);
+  --mc-gradient-bg: linear-gradient(135deg, #fffaf0, #fff0d5 52%, #f8dba5);
+  --mc-shadow-glass: 0 0.85rem 2.1rem rgba(140, 22, 15, 0.12);
+  --mc-shadow-soft: 0 0.5rem 1.35rem rgba(140, 22, 15, 0.09);
+  --mc-shadow-xs: 0 0.25rem 0.65rem rgba(140, 22, 15, 0.08);
+  --mc-shadow-md: 0 0.85rem 2rem rgba(140, 22, 15, 0.12);
+  --mc-gr-bg: #8c160f;
+  --mc-gr-bg-soft: #b62a18;
+  --mc-gr-paper: #fff4df;
+  --mc-gr-paper-soft: #f3c889;
+  --mc-gr-panel: #fffaf0;
+  --mc-gr-panel-strong: #f7d7a4;
+  --mc-gr-ink: #27100c;
+  --mc-gr-muted: #684036;
+  --mc-gr-line: rgba(140, 22, 15, 0.2);
+  --mc-gr-red: #d73525;
+  --mc-gr-red-dark: #8c160f;
+  --mc-gr-cream: #f0bd78;
+  --mc-gr-yellow: #f2d66b;
+  --mc-gr-green: #2cc96b;
+  --mc-gr-blue: #3eb4e6;
+  --mc-gr-charcoal: #1c1a18;
+  --mc-gr-gradient: linear-gradient(90deg, #8c160f, #d73525 55%, #f0bd78);
+  --mc-gr-page-width: 72rem;
+  --mc-gr-pad: clamp(1.4rem, 5vw, 3rem);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(240, 189, 120, 0.24), transparent 24rem),
+    var(--mc-gradient-bg);
+  color: var(--mc-gr-ink);
+  color-scheme: light;
+}
+}
+
+@layer mercury.components {
+.mc-theme--grumbler .mc-hero__title,
+.mc-theme--grumbler .mc-display-title,
+.mc-theme--grumbler .mc-section-heading h2 {
+  color: var(--mc-gr-red-dark);
+  filter: drop-shadow(0 0.35rem 0.95rem rgba(140, 22, 15, 0.12));
+}
+
+.mc-theme--grumbler .mc-docs-menu__summary,
+.mc-theme--grumbler .mc-docs-nav,
+.mc-theme--grumbler .mc-section-card,
+.mc-theme--grumbler .mc-card,
+.mc-theme--grumbler .mc-panel--glass,
+.mc-theme--grumbler .mc-action-card,
+.mc-theme--grumbler .mc-swatch {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.38), transparent 160%),
+    var(--mc-gr-panel);
+  border-color: var(--mc-gr-line);
+  box-shadow: var(--mc-shadow-soft);
+  color: var(--mc-gr-ink);
+}
+
+.mc-theme--grumbler .mc-code-example {
+  background: #fffaf0;
+  border-color: rgba(140, 22, 15, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  color: var(--mc-gr-ink);
+}
+
+.mc-theme--grumbler .mc-section-card td,
+.mc-theme--grumbler .mc-table td,
+.mc-theme--grumbler .mc-card__text {
+  color: var(--mc-gr-muted);
+}
+
+.mc-theme--grumbler .mc-section-card td:first-child,
+.mc-theme--grumbler .mc-table td:first-child,
+.mc-theme--grumbler .mc-section-card th,
+.mc-theme--grumbler .mc-table th {
+  color: var(--mc-gr-red-dark);
+}
+
+.mc-theme--grumbler .mc-section-card code,
+.mc-theme--grumbler .mc-table code {
+  background: rgba(240, 189, 120, 0.24);
+  border-color: rgba(140, 22, 15, 0.18);
+  color: var(--mc-gr-ink);
+}
+
+.mc-theme--grumbler .mc-brand__logo {
+  background: var(--mc-gr-paper);
+}
+
+.mc-theme--grumbler footer {
+  color: var(--mc-gr-paper);
+}
+
+.mc-theme--grumbler .mc-page-main {
+  padding-block-end: clamp(1rem, 3vw, 2rem);
+}
+
+.mc-theme--grumbler {
+  background: var(--mc-gr-bg)
+}
+
+.mc-theme--grumbler .mc-docs-layout {
+  background: var(--mc-gr-paper-soft);
+}
+
+.mc-theme--grumbler .mc-skip-link {
+  z-index: 9;
+}
+}

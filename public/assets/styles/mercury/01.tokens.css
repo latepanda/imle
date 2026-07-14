@@ -1,0 +1,127 @@
+@layer mercury.fonts {
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/Inter/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/Inter/Inter-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Western Isles';
+  src: url('/assets/fonts/WesternIsles/WesternIsles-Light.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+}
+
+@layer mercury.tokens {
+:root {
+  --mc-color-ink: #050505;
+  --mc-color-soft-ink: #202020;
+  --mc-color-bg: #080808;
+  --mc-color-bg-soft: #191919;
+  --mc-color-accent: #f0f0f0;
+  --mc-color-accent-soft: #d8d8d8;
+  --mc-color-muted: rgba(240, 240, 240, 0.68);
+  --mc-color-surface: rgba(255, 255, 255, 0.08);
+  --mc-color-surface-strong: rgba(255, 255, 255, 0.14);
+  --mc-color-surface-top: rgba(255, 255, 255, 0.2);
+  --mc-color-stroke: rgba(255, 255, 255, 0.16);
+  --mc-color-purple: #7f6496;
+  --mc-color-deep-purple: #73548b;
+  --mc-color-pink: #d871bb;
+  --mc-color-rose: #d19292;
+  --mc-color-lilac: #efe7f4;
+  --mc-color-line: #e7daee;
+  --mc-color-paper: #ffffff;
+  --mc-color-error: #f2b8b5;
+  --mc-color-error-bg: rgba(155, 85, 95, 0.2);
+  --mc-color-error-stroke: rgba(242, 184, 181, 0.42);
+  --mc-color-success: #a8d8b8;
+  --mc-color-success-bg: rgba(70, 126, 91, 0.2);
+  --mc-color-success-stroke: rgba(168, 216, 184, 0.42);
+  --mc-color-warning: #f1cf8b;
+  --mc-color-warning-bg: rgba(146, 105, 25, 0.22);
+  --mc-color-warning-stroke: rgba(241, 207, 139, 0.44);
+  --mc-color-info: #a9c9f5;
+  --mc-color-info-bg: rgba(69, 111, 166, 0.22);
+  --mc-color-info-stroke: rgba(169, 201, 245, 0.42);
+  --mc-gradient-brand: linear-gradient(135deg, #73548b, #9d3f83 54%, #9b555f);
+  --mc-gradient-rule: linear-gradient(90deg, #7f559d, #d871bb 55%, #d19292);
+  --mc-gradient-bg: linear-gradient(135deg, #080808, #191919 42%, #0d0d0d 100%);
+  --mc-font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mc-font-display: 'Western Isles', 'Inter', system-ui, sans-serif;
+  --mc-step-0: clamp(0.68rem, 0.64rem + 0.18vw, 0.78rem);
+  --mc-step-1: clamp(0.75rem, 0.7rem + 0.25vw, 0.9rem);
+  --mc-step-2: clamp(0.95rem, 0.9rem + 0.35vw, 1.08rem);
+  --mc-step-3: clamp(1.08rem, 1rem + 0.8vw, 1.35rem);
+  --mc-step-4: clamp(1.35rem, 1.16rem + 1.5vw, 2rem);
+  --mc-step-5: clamp(2.35rem, 1.35rem + 8vw, 5rem);
+  --mc-step-6: clamp(3.2rem, 12vw, 10rem);
+  --mc-step-7: clamp(4rem, 14vw, 12rem);
+  --mc-step-display: var(--mc-step-6);
+  --mc-space-0: 0;
+  --mc-space-1: 0.25rem;
+  --mc-space-2: 0.5rem;
+  --mc-space-3: 0.75rem;
+  --mc-space-4: 1rem;
+  --mc-space-5: clamp(1.2rem, 3vw, 1.8rem);
+  --mc-space-6: clamp(1.5rem, 4vw, 2.6rem);
+  --mc-space-7: clamp(2rem, 6vw, 4.5rem);
+  --mc-space-8: clamp(3rem, 9vw, 7rem);
+  --mc-space-9: clamp(4rem, 11vw, 9rem);
+  --mc-lh-solid: 1;
+  --mc-lh-heading: 1.15;
+  --mc-lh-body: 1.6;
+  --mc-gutter-0: 0;
+  --mc-gutter-1: var(--mc-space-1);
+  --mc-gutter-2: var(--mc-space-2);
+  --mc-gutter-3: var(--mc-space-3);
+  --mc-gutter-4: var(--mc-space-4);
+  --mc-gutter-5: var(--mc-space-5);
+  --mc-gutter-6: var(--mc-space-6);
+  --mc-gutter-7: var(--mc-space-7);
+  --mc-radius-sm: 0.45rem;
+  --mc-radius-md: 0.8rem;
+  --mc-radius-lg: 1.25rem;
+  --mc-radius-xl: clamp(1.4rem, 4vw, 2rem);
+  --mc-radius-pill: 999px;
+  --mc-border-width: 1px;
+  --mc-shadow-glass: 0 1.35rem 3rem rgba(0, 0, 0, 0.34);
+  --mc-shadow-soft: 0 0.9rem 2.4rem rgba(0, 0, 0, 0.24);
+  --mc-shadow-xs: 0 0.35rem 0.9rem rgba(0, 0, 0, 0.12);
+  --mc-shadow-md: 0 1.25rem 2.8rem rgba(0, 0, 0, 0.28);
+  --mc-page-width: 72rem;
+  --mc-content-width: 68rem;
+  --mc-breakpoint-sm: 36rem;
+  --mc-breakpoint-md: 48rem;
+  --mc-breakpoint-lg: 66rem;
+  --mc-breakpoint-xl: 80rem;
+  --mc-transition: 180ms ease;
+  --mc-fs-0: var(--mc-step-0);
+  --mc-fs-1: var(--mc-step-1);
+  --mc-fs-2: var(--mc-step-2);
+  --mc-fs-3: var(--mc-step-3);
+  --mc-fs-4: var(--mc-step-4);
+  --mc-fs-5: var(--mc-step-5);
+  --mc-fs-6: var(--mc-step-6);
+  --mc-fs-7: var(--mc-step-7);
+  --mc-fs-display: var(--mc-step-display);
+  --mc-fw-regular: 400;
+  --mc-fw-bold: 700;
+  --mc-size-container-sm: 36rem;
+  --mc-size-container-md: 48rem;
+  --mc-size-container-lg: 66rem;
+  --mc-size-container-xl: 80rem;
+}
+}

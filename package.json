@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check:mercury-utilities": "node scripts/generate-mercury-utilities.mjs --check",
+    "check:mercury-utilities": "node src/generate-mercury-utilities.mjs --check",
     "deploy": "wrangler deploy",
     "dev": "wrangler dev"
   },
