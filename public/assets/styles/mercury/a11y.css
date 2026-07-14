@@ -145,6 +145,10 @@
     color: FieldText;
   }
 
+  .mc-form__select {
+    appearance: auto;
+  }
+
   .mc-form__control:focus {
     border-color: Highlight;
     outline: 2px solid Highlight;

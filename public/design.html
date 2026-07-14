@@ -677,7 +677,8 @@
               <tr><td><code>mc-row</code></td><td>12-column grid row.</td><td><code>&lt;div class="mc-row mc-g--4"&gt;</code></td></tr>
               <tr><td><code>mc-col</code></td><td>Auto full-width column.</td><td><code>&lt;div class="mc-col"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-col--[1-12]</code></li></ul></td><td>Column span utilities.</td><td><code>&lt;div class="mc-col--6"&gt;</code></td></tr>
-              <tr><td><ul class="mc-token-list"><li><code>sm:mc-col--6</code></li><li><code>lg:mc-col--3</code></li><li><code>lg:mc-col--6</code></li></ul></td><td>Allowlisted column spans applied from the selected Mercury breakpoint upward.</td><td><code>&lt;div class="mc-col sm:mc-col--6 lg:mc-col--3"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>sm:mc-col--6</code></li><li><code>md:mc-col--4</code></li><li><code>md:mc-col--6</code></li><li><code>md:mc-col--8</code></li><li><code>lg:mc-col--3</code></li><li><code>lg:mc-col--4</code></li><li><code>lg:mc-col--6</code></li></ul></td><td>Allowlisted column spans applied from the selected Mercury breakpoint upward.</td><td><code>&lt;div class="mc-col sm:mc-col--6 lg:mc-col--3"&gt;</code></td></tr>
+              <tr><td><ul class="mc-token-list"><li><code>md:mc-col-start--4</code></li><li><code>lg:mc-col-start--5</code></li></ul></td><td>Allowlisted responsive column placement without empty grid placeholders.</td><td><code>&lt;div class="mc-col md:mc-col--6 md:mc-col-start--4 lg:mc-col--4 lg:mc-col-start--5"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-g--[0-7]</code></li></ul></td><td>Grid gutter utilities.</td><td><code>&lt;div class="mc-row mc-g--3"&gt;</code></td></tr>
               <tr><td><code>mc-layout mc-layout--adaptive</code></td><td>Responsive one/two/three-column layout.</td><td><code>&lt;div class="mc-layout mc-layout--adaptive"&gt;</code></td></tr>
               <tr><td><ul class="mc-token-list"><li><code>mc-layout mc-layout--split</code></li><li><code>mc-layout__aside</code></li><li><code>mc-layout__main</code></li></ul></td><td>Responsive sidebar/content layout.</td><td><code>&lt;section class="mc-layout mc-layout--split"&gt;</code></td></tr>
@@ -1311,26 +1312,28 @@
 &lt;/div&gt;</code></pre>
 
         <div class="mc-section-card">
-          <article class="mc-card mc-project-card">
-            <div class="mc-project-card__media" aria-hidden="true">
-              <span class="mc-icon-glyph mc-icon-glyph--imle-logo"></span>
-            </div>
-            <div class="mc-pa--5 mc-project-card__body">
-              <header class="mc-project-card__header">
-                <span class="mc-icon mc-icon--brand" aria-hidden="true">
-                  <span class="mc-icon-glyph mc-icon-glyph--design"></span>
-                </span>
-                <h2 class="mc-project-card__title">Project card</h2>
-              </header>
-              <p class="mc-project-card__description">Use project cards for destinations that need a title, visual cue, description, and footer link.</p>
-            </div>
-            <footer class="mc-card__footer">
-              <a class="mc-button mc-button--link mc-button--sm mc-button--start mc-button--block" target="_blank" rel="noopener noreferrer" href="https://mercury.imle.uk" aria-label="Open Mercury in a new tab">
-                <span class="mc-button__label">Open project with a longer label</span>
-                <span class="mc-button__icon mc-button__icon--end mc-icon-glyph mc-icon-glyph--new-window" aria-hidden="true"></span>
-              </a>
-            </footer>
-          </article>
+          <div class="mc-row mc-g--3">
+            <article class="mc-col md:mc-col--6 md:mc-col-start--4 lg:mc-col--4 lg:mc-col-start--5 mc-card mc-project-card">
+              <div class="mc-project-card__media" aria-hidden="true">
+                <span class="mc-icon-glyph mc-icon-glyph--imle-logo"></span>
+              </div>
+              <div class="mc-pa--5 mc-project-card__body">
+                <header class="mc-project-card__header">
+                  <span class="mc-icon mc-icon--brand" aria-hidden="true">
+                    <span class="mc-icon-glyph mc-icon-glyph--design"></span>
+                  </span>
+                  <h2 class="mc-project-card__title">Project card</h2>
+                </header>
+                <p class="mc-project-card__description">Use project cards for destinations that need a title, visual cue, description, and footer link.</p>
+              </div>
+              <footer class="mc-card__footer">
+                <a class="mc-button mc-button--link mc-button--sm mc-button--start mc-button--block" target="_blank" rel="noopener noreferrer" href="https://mercury.imle.uk" aria-label="Open Mercury in a new tab">
+                  <span class="mc-button__label">Open project with a longer label</span>
+                  <span class="mc-button__icon mc-button__icon--end mc-icon-glyph mc-icon-glyph--new-window" aria-hidden="true"></span>
+                </a>
+              </footer>
+            </article>
+          </div>
         </div>
 
         <pre class="mc-code-example" tabindex="0"><code>&lt;article class="mc-card mc-project-card"&gt;
@@ -1356,10 +1359,10 @@
 
         <div class="mc-section-card">
           <h3>Media positions</h3>
-        <div class="mc-grid mc-g--3">
-          <article class="mc-card mc-project-card">
-            <div class="mc-project-card__media" aria-hidden="true">
-              <div class="mc-placeholder-window">
+          <div class="mc-row mc-g--3">
+            <article class="mc-col md:mc-col--4 mc-card mc-project-card">
+              <div class="mc-project-card__media" aria-hidden="true">
+                <div class="mc-placeholder-window">
                   <span class="mc-placeholder-window__dot"></span>
                   <span class="mc-placeholder-window__bar" data-percentage="80"></span>
                   <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="60"></span>
@@ -1375,42 +1378,44 @@
                 <p class="mc-project-card__description">The preview sits above the content.</p>
               </div>
             </article>
-            <article class="mc-card mc-project-card mc-project-card--media-left">
-              <div class="mc-project-card__media" aria-hidden="true">
-                <div class="mc-placeholder-window">
-                  <span class="mc-placeholder-window__dot"></span>
-                  <span class="mc-placeholder-window__bar" data-percentage="80"></span>
-                  <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="60"></span>
+            <div class="mc-col md:mc-col--8 mc-grid mc-g--3">
+              <article class="mc-card mc-project-card mc-project-card--media-left">
+                <div class="mc-project-card__media" aria-hidden="true">
+                  <div class="mc-placeholder-window">
+                    <span class="mc-placeholder-window__dot"></span>
+                    <span class="mc-placeholder-window__bar" data-percentage="80"></span>
+                    <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="60"></span>
+                  </div>
                 </div>
-              </div>
-              <div class="mc-pa--5 mc-project-card__body">
-                <header class="mc-project-card__header">
-                  <span class="mc-icon mc-icon--brand" aria-hidden="true">
-                    <span class="mc-icon-glyph mc-icon-glyph--design"></span>
-                  </span>
-                  <h3 class="mc-project-card__title">Left media</h3>
-                </header>
-                <p class="mc-project-card__description">The preview sits to the left of the text.</p>
-              </div>
-            </article>
-            <article class="mc-card mc-project-card mc-project-card--media-right">
-              <div class="mc-project-card__media" aria-hidden="true">
-                <div class="mc-placeholder-window">
-                  <span class="mc-placeholder-window__dot"></span>
-                  <span class="mc-placeholder-window__bar" data-percentage="80"></span>
-                  <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="60"></span>
+                <div class="mc-pa--5 mc-project-card__body">
+                  <header class="mc-project-card__header">
+                    <span class="mc-icon mc-icon--brand" aria-hidden="true">
+                      <span class="mc-icon-glyph mc-icon-glyph--design"></span>
+                    </span>
+                    <h3 class="mc-project-card__title">Left media</h3>
+                  </header>
+                  <p class="mc-project-card__description">The preview sits to the left of the text.</p>
                 </div>
-              </div>
-              <div class="mc-pa--5 mc-project-card__body">
-                <header class="mc-project-card__header">
-                  <span class="mc-icon mc-icon--brand" aria-hidden="true">
-                    <span class="mc-icon-glyph mc-icon-glyph--chat"></span>
-                  </span>
-                  <h3 class="mc-project-card__title">Right media</h3>
-                </header>
-                <p class="mc-project-card__description">The preview sits to the right of the text.</p>
-              </div>
-            </article>
+              </article>
+              <article class="mc-card mc-project-card mc-project-card--media-right">
+                <div class="mc-project-card__media" aria-hidden="true">
+                  <div class="mc-placeholder-window">
+                    <span class="mc-placeholder-window__dot"></span>
+                    <span class="mc-placeholder-window__bar" data-percentage="80"></span>
+                    <span class="mc-placeholder-window__bar mc-placeholder-window__bar--accent" data-percentage="60"></span>
+                  </div>
+                </div>
+                <div class="mc-pa--5 mc-project-card__body">
+                  <header class="mc-project-card__header">
+                    <span class="mc-icon mc-icon--brand" aria-hidden="true">
+                      <span class="mc-icon-glyph mc-icon-glyph--chat"></span>
+                    </span>
+                    <h3 class="mc-project-card__title">Right media</h3>
+                  </header>
+                  <p class="mc-project-card__description">The preview sits to the right of the text.</p>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
 
@@ -1719,7 +1724,7 @@
               <tr><td><code>mc-form__label</code></td><td>Label styling.</td><td><code>&lt;label class="mc-form__label"&gt;</code></td></tr>
               <tr><td><code>mc-form__control</code></td><td>Base text/select/textarea control.</td><td><code>&lt;input class="mc-form__control"&gt;</code></td></tr>
               <tr><td><code>mc-form__control--textarea</code></td><td>Textarea size variant.</td><td><code>&lt;textarea class="mc-form__control mc-form__control--textarea"&gt;</code></td></tr>
-              <tr><td><code>mc-form__select</code></td><td>Select arrow styling.</td><td><code>&lt;select class="mc-form__control mc-form__select"&gt;</code></td></tr>
+              <tr><td><code>mc-form__select</code></td><td>Select control with a down-pointing triangle indicator.</td><td><code>&lt;select class="mc-form__control mc-form__select"&gt;</code></td></tr>
               <tr><td><code>mc-form__hint</code></td><td>Helper text.</td><td><code>&lt;p class="mc-form__hint"&gt;</code></td></tr>
               <tr><td><code>mc-form-check</code></td><td>Checkbox/radio row.</td><td><code>&lt;div class="mc-form-check"&gt;</code></td></tr>
               <tr><td><code>mc-form-check--inline</code></td><td>Inline checkbox/radio row.</td><td><code>&lt;div class="mc-form-check mc-form-check--inline"&gt;</code></td></tr>
@@ -2281,7 +2286,10 @@
 
         <div class="mc-section-card">
           <h3>Responsive variants</h3>
-          <p>The generated responsive contract currently includes <code>sm:mc-col--6</code>, <code>lg:mc-col--3</code>, <code>lg:mc-col--6</code>, <code>md:mc-grid--2</code>, and <code>lg:mc-grid--4</code>. Other responsive families remain available behind explicit configuration switches.</p>
+          <p>The generated responsive contract currently includes <code>sm:mc-col--6</code>, <code>md:mc-col--4</code>, <code>md:mc-col--6</code>, <code>md:mc-col--8</code>, <code>md:mc-col-start--4</code>, <code>lg:mc-col--3</code>, <code>lg:mc-col--4</code>, <code>lg:mc-col--6</code>, <code>lg:mc-col-start--5</code>, <code>md:mc-grid--2</code>, and <code>lg:mc-grid--4</code>.</p>
+          <p class="mc-alert mc-alert--warning">
+            <strong>Under development:</strong> breakpoint-prefixed spacing, display, flex-direction, text-alignment, and width utilities remain generator-capable but are disabled until the site adopts them. Enable the corresponding configuration switch before using them.
+          </p>
           <div class="mc-d--grid md:mc-grid--2 lg:mc-grid--4 mc-gap--3">
             <div class="mc-bg--surface mc-border mc-rounded--md mc-pa--4">Default single column</div>
             <div class="mc-bg--surface mc-border mc-rounded--md mc-pa--4">Two columns at md</div>

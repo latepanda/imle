@@ -33,8 +33,18 @@
         "reason": "Emit only the responsive column spans used by current public markup; extend the allowlist before introducing another span.",
         "allowlist": {
           "sm": [6],
-          "md": [],
-          "lg": [3, 6],
+          "md": [4, 6, 8],
+          "lg": [3, 4, 6],
+          "xl": []
+        }
+      },
+      "columnStart": {
+        "enabled": true,
+        "reason": "Emit only responsive column placement offsets used by current public markup; use these instead of empty grid placeholders.",
+        "allowlist": {
+          "sm": [],
+          "md": [4],
+          "lg": [5],
           "xl": []
         }
       },

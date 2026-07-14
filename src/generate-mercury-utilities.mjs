@@ -22,7 +22,7 @@ const responsiveFeature = (name) => {
 };
 
 const responsiveFeatures = Object.fromEntries(
-  ["spacing", "display", "flexDirection", "textAlign", "width", "columns", "grid"].map((name) => [
+  ["spacing", "display", "flexDirection", "textAlign", "width", "columns", "columnStart", "grid"].map((name) => [
     name,
     responsiveFeature(name),
   ]),
@@ -61,6 +61,7 @@ const responsiveAllowlist = (name, minimum, maximum) => {
 };
 
 const responsiveColumnAllowlist = responsiveAllowlist("columns", 1, 12);
+const responsiveColumnStartAllowlist = responsiveAllowlist("columnStart", 1, 12);
 const responsiveGridAllowlist = responsiveAllowlist("grid", 2, 4);
 
 const space = (step) => (step === "0" ? "0" : `var(--mc-space-${step})`);
@@ -112,10 +113,10 @@ baseRules.push(
   rule(".mc-grid--4", "grid-template-columns: 1fr;"),
   rule(".mc-grid--cols-2", "grid-template-columns: repeat(2, minmax(0, 1fr));"),
   rule(".mc-row", "display: grid; gap: var(--mc-gutter, var(--mc-gutter-4)); grid-template-columns: repeat(12, minmax(0, 1fr));"),
-  rule(".mc-col", "grid-column: span 12;"),
+  rule(".mc-col", "grid-column-end: span 12;"),
 );
 
-for (let i = 1; i <= 12; i += 1) baseRules.push(rule(`.mc-col--${i}`, `grid-column: span ${i};`));
+for (let i = 1; i <= 12; i += 1) baseRules.push(rule(`.mc-col--${i}`, `grid-column-end: span ${i};`));
 for (const step of levels) baseRules.push(rule(`.mc-g--${step}`, `--mc-gutter: ${gutter(step)};`));
 for (const step of levels) baseRules.push(rule(`.mc-z--${step}`, `z-index: ${step};`));
 
@@ -298,7 +299,12 @@ for (const [prefix, width] of breakpoints) {
   }
   if (responsiveFeatures.columns.enabled) {
     for (const span of responsiveColumnAllowlist[prefix]) {
-      lines.push(`  .${prefix}\\:mc-col--${span}{grid-column:span ${span}}`);
+      lines.push(`  .${prefix}\\:mc-col--${span}{grid-column-end:span ${span}}`);
+    }
+  }
+  if (responsiveFeatures.columnStart.enabled) {
+    for (const start of responsiveColumnStartAllowlist[prefix]) {
+      lines.push(`  .${prefix}\\:mc-col-start--${start}{grid-column-start:${start}}`);
     }
   }
   if (responsiveFeatures.grid.enabled) {
@@ -344,11 +350,12 @@ const utilityCss = [
 ].join("\n");
 
 const nextCss = utilityCss;
+const generatedUtilitiesAreCurrent = nextCss === css.replace(/\r\n/g, "\n");
 
 const selectors = [...utilityCss.matchAll(/(^|\n)\s*([.#][^{@\n]+?)\s*\{/g)].map((match) => match[2].trim());
 
 if (process.argv.includes("--check")) {
-  if (nextCss !== css) {
+  if (!generatedUtilitiesAreCurrent) {
     console.error("Mercury utilities are out of date. Run this generator with --write.");
     process.exit(1);
   }
@@ -358,7 +365,7 @@ if (process.argv.includes("--check")) {
 }
 
 if (process.argv.includes("--write")) {
-  if (nextCss === css) {
+  if (generatedUtilitiesAreCurrent) {
     console.log("Mercury utilities already up to date.");
   } else {
     fs.writeFileSync(cssPath, nextCss);

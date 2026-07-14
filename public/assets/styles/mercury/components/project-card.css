@@ -27,6 +27,20 @@
   grid-template-rows: minmax(0, 1fr) auto;
 }
 
+.mc-project-card--media-left .mc-project-card__media,
+.mc-project-card--media-right .mc-project-card__media {
+  align-self: stretch;
+  aspect-ratio: auto;
+  min-height: 100%;
+}
+
+.mc-project-card--media-left .mc-project-card__media > img,
+.mc-project-card--media-right .mc-project-card__media > img,
+.mc-project-card--media-left .mc-project-card__media .mc-placeholder-window,
+.mc-project-card--media-right .mc-project-card__media .mc-placeholder-window {
+  height: 100%;
+}
+
 @media (min-width: 36rem) {
   .sm\:mc-project-card--media-top {
     grid-template-areas:
