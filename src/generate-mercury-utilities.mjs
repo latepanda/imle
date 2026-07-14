@@ -7,6 +7,61 @@ const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
 
 const levels = config.scale;
 const breakpoints = Object.entries(config.breakpoints);
+const breakpointNames = breakpoints.map(([name]) => name);
+const responsiveConfig = config.generation?.responsive;
+
+const responsiveFeature = (name) => {
+  const feature = responsiveConfig?.[name];
+  if (!feature || typeof feature.enabled !== "boolean") {
+    throw new Error(`Responsive utility group "${name}" requires an enabled boolean.`);
+  }
+  if (typeof feature.reason !== "string" || feature.reason.trim() === "") {
+    throw new Error(`Responsive utility group "${name}" requires a non-empty reason.`);
+  }
+  return feature;
+};
+
+const responsiveFeatures = Object.fromEntries(
+  ["spacing", "display", "flexDirection", "textAlign", "width", "columns", "grid"].map((name) => [
+    name,
+    responsiveFeature(name),
+  ]),
+);
+
+const responsiveAllowlist = (name, minimum, maximum) => {
+  const allowlist = responsiveFeatures[name].allowlist;
+  if (!allowlist || typeof allowlist !== "object" || Array.isArray(allowlist)) {
+    throw new Error(`Responsive utility group "${name}" requires a per-breakpoint allowlist.`);
+  }
+
+  const unknownBreakpoints = Object.keys(allowlist).filter((name) => !breakpointNames.includes(name));
+  if (unknownBreakpoints.length > 0) {
+    throw new Error(`Responsive utility group "${name}" has unknown breakpoints: ${unknownBreakpoints.join(", ")}.`);
+  }
+
+  return Object.fromEntries(
+    breakpointNames.map((breakpoint) => {
+      const values = allowlist[breakpoint];
+      if (!Array.isArray(values)) {
+        throw new Error(`Responsive utility group "${name}" requires an allowlist for "${breakpoint}".`);
+      }
+      if (new Set(values).size !== values.length) {
+        throw new Error(`Responsive utility group "${name}" contains duplicate values for "${breakpoint}".`);
+      }
+      for (const value of values) {
+        if (!Number.isInteger(value) || value < minimum || value > maximum) {
+          throw new Error(
+            `Responsive utility group "${name}" value ${value} for "${breakpoint}" must be an integer from ${minimum} to ${maximum}.`,
+          );
+        }
+      }
+      return [breakpoint, values];
+    }),
+  );
+};
+
+const responsiveColumnAllowlist = responsiveAllowlist("columns", 1, 12);
+const responsiveGridAllowlist = responsiveAllowlist("grid", 2, 4);
 
 const space = (step) => (step === "0" ? "0" : `var(--mc-space-${step})`);
 const gutter = (step) => (step === "0" ? "0" : `var(--mc-gutter-${step})`);
@@ -137,9 +192,11 @@ const staticRules = {
   ".mc-text--success": "color: var(--mc-color-success);",
   ".mc-text--warning": "color: var(--mc-color-warning);",
   ".mc-text--info": "color: var(--mc-color-info);",
+  ".mc-text--paper": "color: var(--mc-color-paper);",
   ".mc-bg--surface": "background: var(--mc-color-surface); color: var(--mc-color-accent);",
   ".mc-bg--surface-strong": "background: var(--mc-color-surface-strong); color: var(--mc-color-accent);",
   ".mc-bg--paper": "background: var(--mc-color-paper); color: var(--mc-color-ink);",
+  ".mc-bg--paper-warm": "background: var(--mc-color-paper-warm); color: var(--mc-color-ink);",
   ".mc-bg--brand": "background: var(--mc-gradient-brand); color: #fff;",
   ".mc-bg--error": "background: var(--mc-color-error-bg); color: var(--mc-color-error);",
   ".mc-bg--success": "background: var(--mc-color-success-bg); color: var(--mc-color-success);",
@@ -183,33 +240,43 @@ const staticRules = {
   ".mc-max-w--page": "max-width: var(--mc-page-width);",
   ".mc-object--cover": "object-fit: cover;",
   ".mc-object--contain": "object-fit: contain;",
+  ".mc-object-position--center": "object-position: center;",
+  ".mc-object-position--top": "object-position: center top;",
+  ".mc-object-position--right": "object-position: right center;",
+  ".mc-object-position--bottom": "object-position: center bottom;",
+  ".mc-object-position--left": "object-position: left center;",
   ".mc-list--unstyled": "list-style: none; margin: 0; padding: 0;",
   ".mc-visually-hidden": "clip: rect(0 0 0 0); clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px;",
 };
 
 for (const [selector, declarations] of Object.entries(staticRules)) baseRules.push(rule(selector, declarations));
 
-const responsiveCore = [
-  ["mc-d--none", "display: none;"],
-  ["mc-d--block", "display: block;"],
-  ["mc-d--flex", "display: flex;"],
-  ["mc-d--grid", "display: grid;"],
-  ["mc-flex--row", "flex-direction: row;"],
-  ["mc-flex--column", "flex-direction: column;"],
-  ["mc-text--start", "text-align: start;"],
-  ["mc-text--center", "text-align: center;"],
-  ["mc-text--end", "text-align: end;"],
-  ["mc-w--auto", "width: auto;"],
-  ["mc-w--full", "width: 100%;"],
-  ["mc-w--1\\/2", "width: 50%;"],
-  ["mc-w--1\\/3", "width: 33.333333%;"],
-  ["mc-w--2\\/3", "width: 66.666667%;"],
-  ["mc-w--1\\/4", "width: 25%;"],
-  ["mc-w--3\\/4", "width: 75%;"],
-  ["mc-grid--2", "grid-template-columns: repeat(2, minmax(0, 1fr));"],
-  ["mc-grid--3", "grid-template-columns: repeat(3, minmax(0, 1fr));"],
-  ["mc-grid--4", "grid-template-columns: repeat(4, minmax(0, 1fr));"],
-];
+const responsiveCore = {
+  display: [
+    ["mc-d--none", "display: none;"],
+    ["mc-d--block", "display: block;"],
+    ["mc-d--flex", "display: flex;"],
+    ["mc-d--grid", "display: grid;"],
+  ],
+  flexDirection: [
+    ["mc-flex--row", "flex-direction: row;"],
+    ["mc-flex--column", "flex-direction: column;"],
+  ],
+  textAlign: [
+    ["mc-text--start", "text-align: start;"],
+    ["mc-text--center", "text-align: center;"],
+    ["mc-text--end", "text-align: end;"],
+  ],
+  width: [
+    ["mc-w--auto", "width: auto;"],
+    ["mc-w--full", "width: 100%;"],
+    ["mc-w--1\\/2", "width: 50%;"],
+    ["mc-w--1\\/3", "width: 33.333333%;"],
+    ["mc-w--2\\/3", "width: 66.666667%;"],
+    ["mc-w--1\\/4", "width: 25%;"],
+    ["mc-w--3\\/4", "width: 75%;"],
+  ],
+};
 
 const responsiveRules = [];
 responsiveRules.push("@media (min-width: 42rem) {");
@@ -223,28 +290,43 @@ responsiveRules.push("}");
 
 for (const [prefix, width] of breakpoints) {
   const lines = [];
-  for (const [name, declarations] of responsiveCore) lines.push(`  .${prefix}\\:${name}{${compactDeclarations(declarations)}}`);
-  for (let span = 1; span <= 12; span += 1) {
-    lines.push(`  .${prefix}\\:mc-col--${span}{grid-column:span ${span}}`);
+  for (const [featureName, rules] of Object.entries(responsiveCore)) {
+    if (!responsiveFeatures[featureName].enabled) continue;
+    for (const [name, declarations] of rules) {
+      lines.push(`  .${prefix}\\:${name}{${compactDeclarations(declarations)}}`);
+    }
   }
-  for (const step of levels) {
-    lines.push(`  .${prefix}\\:mc-pa--${step}{padding:${space(step)}}`);
-    lines.push(`  .${prefix}\\:mc-pt--${step}{padding-block-start:${space(step)}}`);
-    lines.push(`  .${prefix}\\:mc-pr--${step}{padding-inline-end:${space(step)}}`);
-    lines.push(`  .${prefix}\\:mc-pb--${step}{padding-block-end:${space(step)}}`);
-    lines.push(`  .${prefix}\\:mc-pl--${step}{padding-inline-start:${space(step)}}`);
-    lines.push(`  .${prefix}\\:mc-px--${step}{padding-inline:${space(step)}}`);
-    lines.push(`  .${prefix}\\:mc-py--${step}{padding-block:${space(step)}}`);
-    lines.push(`  .${prefix}\\:mc-ma--${step}{margin:${space(step)}}`);
-    lines.push(`  .${prefix}\\:mc-mt--${step}{margin-block-start:${space(step)}}`);
-    lines.push(`  .${prefix}\\:mc-mr--${step}{margin-inline-end:${space(step)}}`);
-    lines.push(`  .${prefix}\\:mc-mb--${step}{margin-block-end:${space(step)}}`);
-    lines.push(`  .${prefix}\\:mc-ml--${step}{margin-inline-start:${space(step)}}`);
-    lines.push(`  .${prefix}\\:mc-mx--${step}{margin-inline:${space(step)}}`);
-    lines.push(`  .${prefix}\\:mc-my--${step}{margin-block:${space(step)}}`);
-    lines.push(`  .${prefix}\\:mc-gap--${step}{gap:${space(step)}}`);
-    lines.push(`  .${prefix}\\:mc-g--${step}{--mc-gutter:${gutter(step)}}`);
+  if (responsiveFeatures.columns.enabled) {
+    for (const span of responsiveColumnAllowlist[prefix]) {
+      lines.push(`  .${prefix}\\:mc-col--${span}{grid-column:span ${span}}`);
+    }
   }
+  if (responsiveFeatures.grid.enabled) {
+    for (const columns of responsiveGridAllowlist[prefix]) {
+      lines.push(`  .${prefix}\\:mc-grid--${columns}{grid-template-columns:repeat(${columns},minmax(0,1fr))}`);
+    }
+  }
+  if (responsiveFeatures.spacing.enabled) {
+    for (const step of levels) {
+      lines.push(`  .${prefix}\\:mc-pa--${step}{padding:${space(step)}}`);
+      lines.push(`  .${prefix}\\:mc-pt--${step}{padding-block-start:${space(step)}}`);
+      lines.push(`  .${prefix}\\:mc-pr--${step}{padding-inline-end:${space(step)}}`);
+      lines.push(`  .${prefix}\\:mc-pb--${step}{padding-block-end:${space(step)}}`);
+      lines.push(`  .${prefix}\\:mc-pl--${step}{padding-inline-start:${space(step)}}`);
+      lines.push(`  .${prefix}\\:mc-px--${step}{padding-inline:${space(step)}}`);
+      lines.push(`  .${prefix}\\:mc-py--${step}{padding-block:${space(step)}}`);
+      lines.push(`  .${prefix}\\:mc-ma--${step}{margin:${space(step)}}`);
+      lines.push(`  .${prefix}\\:mc-mt--${step}{margin-block-start:${space(step)}}`);
+      lines.push(`  .${prefix}\\:mc-mr--${step}{margin-inline-end:${space(step)}}`);
+      lines.push(`  .${prefix}\\:mc-mb--${step}{margin-block-end:${space(step)}}`);
+      lines.push(`  .${prefix}\\:mc-ml--${step}{margin-inline-start:${space(step)}}`);
+      lines.push(`  .${prefix}\\:mc-mx--${step}{margin-inline:${space(step)}}`);
+      lines.push(`  .${prefix}\\:mc-my--${step}{margin-block:${space(step)}}`);
+      lines.push(`  .${prefix}\\:mc-gap--${step}{gap:${space(step)}}`);
+      lines.push(`  .${prefix}\\:mc-g--${step}{--mc-gutter:${gutter(step)}}`);
+    }
+  }
+  if (lines.length === 0) continue;
   responsiveRules.push("");
   responsiveRules.push(`@media (min-width: ${width}) {`);
   responsiveRules.push(...lines);

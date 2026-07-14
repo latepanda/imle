@@ -78,23 +78,6 @@
   max-width: 48rem;
 }
 
-.mc-case-hero__meta {
-  color: rgba(255, 244, 223, 0.82);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.mc-case-hero__meta li {
-  background: rgba(255, 244, 223, 0.08);
-  border: 1px solid rgba(255, 244, 223, 0.2);
-  border-radius: 999px;
-  padding: 0.45rem 0.75rem;
-}
-
 .mc-case-hero__stats {
   display: grid;
   gap: 0.75rem;
@@ -133,13 +116,6 @@
   padding-block: 0;
 }
 
-.mc-case-container {
-  margin-inline: auto;
-  max-width: none;
-  padding-inline: 0;
-  width: 100%;
-}
-
 .mc-case-section {
   background: var(--mc-gr-paper);
   border-block-start: 1.35rem solid var(--mc-gr-paper-soft);
@@ -169,14 +145,12 @@
 }
 
 .mc-case-section__header p,
-.mc-case-copy,
 .mc-case-card p,
 .mc-case-list {
   color: var(--mc-graph-muted, var(--mc-gr-muted, var(--mc-color-muted)));
 }
 
-.mc-case-section__header p,
-.mc-case-copy {
+.mc-case-section__header p {
   font-size: clamp(1rem, 0.94rem + 0.25vw, 1.13rem);
   line-height: 1.7;
   margin: 0;
@@ -197,7 +171,6 @@
 .mc-case-toc,
 .mc-case-quote,
 .mc-case-media-card,
-.mc-case-wireframe-card,
 .mc-case-flow-card,
 .mc-case-last {
   background: var(--mc-gr-panel);
@@ -249,8 +222,7 @@
   padding: 0;
 }
 
-.mc-pill-row li,
-.mc-tag {
+.mc-pill-row li {
   background: rgba(240, 189, 120, 0.28);
   border: 1px solid var(--mc-gr-line);
   border-radius: 999px;
@@ -283,11 +255,6 @@
   font-weight: 700;
   text-decoration-color: rgba(140, 22, 15, 0.32);
   text-underline-offset: 0.18rem;
-}
-
-.mc-highlight {
-  color: var(--mc-gr-red-dark);
-  font-weight: 700;
 }
 
 .mc-case-quote {
@@ -387,10 +354,6 @@
   margin-block-start: 1.05rem;
 }
 
-.mc-annotated {
-  position: relative;
-}
-
 .mc-pin {
   align-items: center;
   background: var(--mc-gr-yellow);
@@ -403,11 +366,6 @@
   justify-content: center;
   position: absolute;
   width: 2rem;
-}
-
-.mc-pin--pin {
-  left: 58%;
-  top: 36%;
 }
 
 .mc-pin--pin-0-1 {
@@ -505,7 +463,6 @@
   --mc-graph-line: var(--mc-color-stroke);
   --mc-graph-heading: var(--mc-color-accent);
   --mc-graph-muted: var(--mc-color-muted);
-  --mc-graph-label-text: var(--mc-color-ink);
   --mc-graph-red: var(--mc-color-error);
   --mc-graph-red-soft: var(--mc-color-error-bg);
   --mc-graph-yellow: var(--mc-color-warning);
@@ -561,7 +518,6 @@
   --mc-graph-line: var(--mc-color-stroke);
   --mc-graph-muted: var(--mc-color-muted);
   --mc-graph-heading: var(--mc-color-accent);
-  --mc-graph-label-text: var(--mc-color-ink);
   --mc-graph-red: var(--mc-color-error);
   --mc-graph-red-soft: var(--mc-color-error-bg);
   --mc-graph-yellow: var(--mc-color-warning);
@@ -635,30 +591,6 @@
   font-weight: 700;
 }
 
-.mc-case-cause-map {
-  display: grid;
-  gap: 1rem;
-}
-
-.mc-case-cause-node {
-  background: var(--mc-gr-panel);
-  border: 1px solid var(--mc-gr-line);
-  border-radius: 8px;
-  padding: 1rem;
-  position: relative;
-}
-
-.mc-case-cause-node strong {
-  color: var(--mc-gr-ink);
-  display: block;
-}
-
-.mc-case-cause-node span {
-  color: var(--mc-gr-muted);
-  display: block;
-  margin-block-start: 0.35rem;
-}
-
 .mc-case-flow {
   display: grid;
   gap: 0.65rem;
@@ -689,177 +621,6 @@
 
 .mc-case-flow__step span {
   color: var(--mc-gr-muted);
-}
-
-.mc-case-wireframes {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr;
-}
-
-.mc-case-wireframe-card {
-  overflow: hidden;
-}
-
-.mc-case-wireframe {
-  aspect-ratio: 16 / 9;
-  background: #3a0f0b;
-  border-block-end: 1px solid var(--mc-gr-line);
-  min-height: 14rem;
-  overflow: hidden;
-  position: relative;
-}
-
-.mc-case-wireframe__platform,
-.mc-case-wireframe__ledge,
-.mc-case-wireframe__avatar,
-.mc-case-wireframe__portal,
-.mc-case-wireframe__enemy,
-.mc-case-wireframe__hint,
-.mc-case-wireframe__toggle,
-.mc-case-wireframe__path {
-  position: absolute;
-}
-
-.mc-case-wireframe__platform,
-.mc-case-wireframe__ledge {
-  background: var(--mc-gr-cream);
-  border-block-start: 0.45rem solid var(--mc-gr-red);
-  border-radius: 6px;
-}
-
-.mc-case-wireframe__platform {
-  bottom: 10%;
-  height: 18%;
-  left: 8%;
-  width: 78%;
-}
-
-.mc-case-wireframe__ledge {
-  height: 14%;
-  right: 14%;
-  top: 24%;
-  width: 36%;
-}
-
-.mc-case-wireframe__avatar {
-  background: var(--mc-gr-red);
-  border-radius: 50% 50% 42% 42%;
-  bottom: 28%;
-  height: 2.3rem;
-  left: 42%;
-  width: 1.8rem;
-}
-
-.mc-case-wireframe__portal {
-  background: var(--mc-gr-cream);
-  border: 0.3rem solid rgba(255, 245, 231, 0.58);
-  border-radius: 6px 6px 0 0;
-  height: 2.8rem;
-  right: 21%;
-  top: 12%;
-  width: 3.5rem;
-}
-
-.mc-case-wireframe__portal::after {
-  color: var(--mc-gr-red-dark);
-  content: "!";
-  font-weight: 700;
-  inset: 0.2rem 0 0;
-  position: absolute;
-  text-align: center;
-}
-
-.mc-case-wireframe--after .mc-case-wireframe__portal::after {
-  content: "\2713";
-}
-
-.mc-case-wireframe__enemy {
-  background: var(--mc-gr-green);
-  border-radius: 50% 50% 0 0;
-  bottom: 28%;
-  height: 2.8rem;
-  right: 13%;
-  width: 3.4rem;
-}
-
-.mc-case-wireframe__hint {
-  background: #fff;
-  border-radius: 8px;
-  color: var(--mc-gr-charcoal);
-  font-size: 0.78rem;
-  font-weight: 700;
-  left: 51%;
-  max-width: 11rem;
-  padding: 0.45rem 0.6rem;
-  top: 9%;
-}
-
-.mc-case-wireframe__toggle {
-  color: var(--mc-gr-paper);
-  font-size: 0.78rem;
-  font-weight: 700;
-  right: 5%;
-  top: 6%;
-}
-
-.mc-case-wireframe__path {
-  border-block-start: 0.25rem dotted rgba(255, 245, 231, 0.58);
-  right: 11%;
-  top: 32%;
-  transform: rotate(-24deg);
-  width: 14rem;
-}
-
-.mc-case-wireframe-card figcaption {
-  color: var(--mc-gr-muted);
-  padding: 1rem;
-}
-
-.mc-case-persona__meta {
-  color: var(--mc-gr-muted);
-  display: grid;
-  gap: 0.3rem;
-  list-style: none;
-  margin: 0.55rem 0 0;
-  padding: 0;
-}
-
-.mc-case-persona h4 {
-  color: var(--mc-gr-red-dark);
-  font-size: 0.96rem;
-  letter-spacing: 0.04em;
-  margin: 1.35rem 0 0.55rem;
-  text-transform: uppercase;
-}
-
-.mc-case-persona h3 + h4 {
-  margin-block-start: 1rem;
-}
-
-.mc-case-persona h4 + .mc-case-list,
-.mc-case-persona h4 + .mc-case-persona__meta {
-  margin-block-start: 0.55rem;
-}
-
-.mc-case-persona__quote {
-  color: var(--mc-gr-red-dark);
-  margin-block-start: 1.25rem;
-  font-weight: 700;
-}
-
-.mc-case-index-list {
-  display: grid;
-  gap: 0.75rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.mc-case-index-list a {
-  color: var(--mc-gr-red-dark);
-  font-weight: 700;
 }
 
 .mc-case-last {
@@ -906,7 +667,6 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .mc-case-wireframes,
   .mc-case-media-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -944,10 +704,6 @@
 
   .mc-case-toc ol {
     columns: 3;
-  }
-
-  .mc-case-cause-map {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
 }

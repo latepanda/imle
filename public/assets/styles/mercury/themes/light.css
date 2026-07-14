@@ -8,8 +8,8 @@
   --mc-color-accent: #624678;
   --mc-color-accent-soft: #73548b;
   --mc-color-muted: #5d4d69;
-  --mc-color-surface: rgba(255, 255, 255, 0.72);
-  --mc-color-surface-strong: rgba(255, 255, 255, 0.94);
+  --mc-color-surface: #f4eef7;
+  --mc-color-surface-strong: #e7dced;
   --mc-color-surface-top: rgba(216, 113, 187, 0.08);
   --mc-color-stroke: rgba(127, 85, 157, 0.18);
   --mc-color-purple: #73548b;
@@ -49,8 +49,8 @@
     --mc-color-accent: #624678;
     --mc-color-accent-soft: #73548b;
     --mc-color-muted: #5d4d69;
-    --mc-color-surface: rgba(255, 255, 255, 0.72);
-    --mc-color-surface-strong: rgba(255, 255, 255, 0.94);
+    --mc-color-surface: #f4eef7;
+    --mc-color-surface-strong: #e7dced;
     --mc-color-surface-top: rgba(216, 113, 187, 0.08);
     --mc-color-stroke: rgba(127, 85, 157, 0.18);
     --mc-color-purple: #73548b;

@@ -11,15 +11,6 @@
   height: 100%;
 }
 
-.mc-project-card--media-top {
-  grid-template-areas:
-    "media"
-    "body"
-    "footer";
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: auto minmax(0, 1fr) auto;
-}
-
 .mc-project-card--media-left {
   grid-template-areas:
     "media body"

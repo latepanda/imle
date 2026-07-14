@@ -44,6 +44,7 @@
   --mc-color-lilac: #efe7f4;
   --mc-color-line: #e7daee;
   --mc-color-paper: #ffffff;
+  --mc-color-paper-warm: #fff4df;
   --mc-color-error: #f2b8b5;
   --mc-color-error-bg: rgba(155, 85, 95, 0.2);
   --mc-color-error-stroke: rgba(242, 184, 181, 0.42);
@@ -66,10 +67,10 @@
   --mc-step-2: clamp(0.95rem, 0.9rem + 0.35vw, 1.08rem);
   --mc-step-3: clamp(1.08rem, 1rem + 0.8vw, 1.35rem);
   --mc-step-4: clamp(1.35rem, 1.16rem + 1.5vw, 2rem);
-  --mc-step-5: clamp(2.35rem, 1.35rem + 8vw, 5rem);
-  --mc-step-6: clamp(3.2rem, 12vw, 10rem);
-  --mc-step-7: clamp(4rem, 14vw, 12rem);
-  --mc-step-display: var(--mc-step-6);
+  --mc-step-5: clamp(2.2rem, 1.65rem + 3vw, 4rem);
+  --mc-step-6: clamp(2.75rem, 1.9rem + 4.5vw, 5rem);
+  --mc-step-7: clamp(3.4rem, 2.25rem + 6vw, 6rem);
+  --mc-step-display: clamp(4.2rem, 2.7rem + 8vw, 7rem);
   --mc-space-0: 0;
   --mc-space-1: 0.25rem;
   --mc-space-2: 0.5rem;
@@ -79,7 +80,6 @@
   --mc-space-6: clamp(1.5rem, 4vw, 2.6rem);
   --mc-space-7: clamp(2rem, 6vw, 4.5rem);
   --mc-space-8: clamp(3rem, 9vw, 7rem);
-  --mc-space-9: clamp(4rem, 11vw, 9rem);
   --mc-lh-solid: 1;
   --mc-lh-heading: 1.15;
   --mc-lh-body: 1.6;
@@ -108,15 +108,6 @@
   --mc-breakpoint-lg: 66rem;
   --mc-breakpoint-xl: 80rem;
   --mc-transition: 180ms ease;
-  --mc-fs-0: var(--mc-step-0);
-  --mc-fs-1: var(--mc-step-1);
-  --mc-fs-2: var(--mc-step-2);
-  --mc-fs-3: var(--mc-step-3);
-  --mc-fs-4: var(--mc-step-4);
-  --mc-fs-5: var(--mc-step-5);
-  --mc-fs-6: var(--mc-step-6);
-  --mc-fs-7: var(--mc-step-7);
-  --mc-fs-display: var(--mc-step-display);
   --mc-fw-regular: 400;
   --mc-fw-bold: 700;
   --mc-size-container-sm: 36rem;

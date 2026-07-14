@@ -32,7 +32,6 @@
   --mc-shadow-xs: 0 0.25rem 0.65rem rgba(140, 22, 15, 0.08);
   --mc-shadow-md: 0 0.85rem 2rem rgba(140, 22, 15, 0.12);
   --mc-gr-bg: #8c160f;
-  --mc-gr-bg-soft: #b62a18;
   --mc-gr-paper: #fff4df;
   --mc-gr-paper-soft: #f3c889;
   --mc-gr-panel: #fffaf0;
@@ -110,10 +109,6 @@
 
 .mc-theme--grumbler .mc-brand__logo {
   background: var(--mc-gr-paper);
-}
-
-.mc-theme--grumbler footer {
-  color: var(--mc-gr-paper);
 }
 
 .mc-theme--grumbler .mc-page-main {
