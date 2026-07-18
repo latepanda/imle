@@ -162,6 +162,10 @@
   height: 0.28rem;
 }
 
+.mc-theme--board-game #case-study-title::after {
+  content: none;
+}
+
 .mc-theme--board-game .mc-case-page {
   background: var(--mc-gr-paper-soft);
 }
@@ -334,6 +338,240 @@
   line-height: 1.35;
   margin-block-start: 0.4rem;
   text-align: center;
+}
+
+.mc-board-photo-grid {
+  align-items: start;
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.mc-board-photo-grid--early {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.mc-board-photo {
+  background: var(--mc-gr-panel);
+  border: 1px solid var(--mc-gr-line);
+  border-radius: 0.8rem;
+  box-shadow: var(--mc-shadow-xs);
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.mc-board-photo img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.mc-board-photo figcaption {
+  color: var(--mc-gr-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  padding: 0.8rem 1rem 0.9rem;
+}
+
+.mc-board-photo-grid--early img {
+  aspect-ratio: 3 / 4;
+  background: #211914;
+  object-fit: contain;
+}
+
+.mc-board-photo--rulebook {
+  margin-inline: auto;
+  max-width: 28rem;
+}
+
+.mc-board-session-intro {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.mc-board-session-intro .mc-case-section__header {
+  margin-block-end: 0;
+}
+
+.mc-board-next-steps > .mc-case-card h3::after {
+  content: none;
+}
+
+.mc-board-playtest-table {
+  min-width: 52rem;
+}
+
+.mc-board-playtest-table tbody th {
+  background: transparent;
+  color: var(--mc-gr-ink);
+  font-size: inherit;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.mc-board-playtime-chart {
+  background: var(--mc-gr-panel);
+  border: 1px solid var(--mc-gr-line);
+  border-radius: 0.8rem;
+  color: var(--mc-gr-ink);
+  margin-inline: 0;
+  overflow: hidden;
+}
+
+.mc-board-playtime-chart__header {
+  padding: clamp(1rem, 3vw, 1.5rem) clamp(1rem, 4vw, 2rem) 0;
+}
+
+.mc-board-playtime-chart__header h3 {
+  color: var(--mc-board-gold);
+  line-height: 1.22;
+  margin: 0;
+}
+
+.mc-board-playtime-chart__header p {
+  color: var(--mc-gr-muted);
+  line-height: 1.65;
+  margin: 0.75rem 0 0;
+  max-width: 58rem;
+}
+
+.mc-board-playtime-chart__scroll {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  padding: 0.5rem 0 0;
+}
+
+.mc-board-playtime-chart__plot {
+  display: block;
+  font-family: var(--mc-font-body);
+  font-size: 1rem;
+  height: auto;
+  min-width: 48rem;
+  width: 100%;
+}
+
+.mc-board-playtime-chart__grid line {
+  stroke: var(--mc-gr-line);
+  stroke-width: 1;
+}
+
+.mc-board-playtime-chart__axes line {
+  stroke: var(--mc-gr-ink);
+  stroke-width: 2;
+}
+
+.mc-board-playtime-chart__ticks,
+.mc-board-playtime-chart__axis-title {
+  fill: var(--mc-gr-muted);
+}
+
+.mc-board-playtime-chart__axis-title,
+.mc-board-playtime-chart__point text {
+  font-weight: 700;
+}
+
+.mc-board-playtime-chart__line {
+  fill: none;
+  stroke: var(--mc-board-gold);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4;
+}
+
+.mc-board-playtime-chart__point text {
+  fill: var(--mc-gr-ink);
+}
+
+.mc-board-playtime-chart__point--indoc circle {
+  fill: var(--mc-board-blue);
+  stroke: var(--mc-gr-panel);
+  stroke-width: 3;
+}
+
+.mc-board-playtime-chart__point--tie rect {
+  fill: var(--mc-board-pink);
+  stroke: var(--mc-gr-panel);
+  stroke-width: 3;
+}
+
+.mc-board-playtime-chart__point--deprog path {
+  fill: var(--mc-board-orange);
+  stroke: var(--mc-gr-panel);
+  stroke-width: 3;
+}
+
+.mc-board-playtime-chart figcaption {
+  color: var(--mc-gr-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  padding: 0.25rem clamp(1rem, 4vw, 2rem) clamp(1rem, 3vw, 1.5rem);
+}
+
+.mc-board-playtime-data-table {
+  font-variant-numeric: tabular-nums;
+  min-width: 65rem;
+}
+
+.mc-board-playtime-data-table tbody th,
+.mc-board-playtime-data-table tfoot th {
+  color: var(--mc-gr-ink);
+  font-size: inherit;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.mc-board-playtime-data-table tbody th {
+  background: transparent;
+}
+
+.mc-board-playtime-data-table td {
+  color: var(--mc-gr-muted);
+  line-height: 1.5;
+}
+
+.mc-board-playtime-data-table td strong {
+  color: var(--mc-gr-ink);
+}
+
+.mc-board-playtime-data-table tfoot th,
+.mc-board-playtime-data-table tfoot td {
+  background: var(--mc-gr-panel-strong);
+  border-block-start: 2px solid var(--mc-board-gold);
+  color: var(--mc-gr-ink);
+  font-weight: 700;
+}
+
+.mc-board-playtime-list {
+  display: grid;
+  gap: 0.2rem 0.8rem;
+  grid-template-columns: repeat(2, max-content);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mc-board-playtime-list li:first-child {
+  margin-block-start: 0.2rem;
+}
+
+.mc-board-playtime-data__note {
+  border-block-start: 1px solid var(--mc-gr-line);
+  color: var(--mc-gr-muted);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 100%;
+  padding: 1rem;
+}
+
+.mc-board-photo--prototype img,
+.mc-board-photo--new-game img {
+  margin-inline: auto;
+  max-height: 56rem;
+  object-fit: contain;
 }
 
 .mc-board-step-media--single figure {
@@ -549,6 +787,10 @@
   border-inline-start: 0.65rem solid var(--mc-board-evidence-color, var(--mc-board-red));
 }
 
+.mc-board-evidence-card h3::after {
+  content: none;
+}
+
 .mc-board-evidence-card--gold { --mc-board-evidence-color: var(--mc-board-gold); }
 .mc-board-evidence-card--purple { --mc-board-evidence-color: var(--mc-board-pink); }
 .mc-board-evidence-card--blue { --mc-board-evidence-color: var(--mc-board-blue); }
@@ -585,6 +827,11 @@
 }
 
 @media (min-width: 42rem) {
+  .mc-board-session-intro {
+    align-items: start;
+    grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr);
+  }
+
   .mc-theme--board-game .mc-case-hero__stats {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -604,6 +851,18 @@
 
   .mc-board-step-media--guides figure:first-child {
     grid-column: auto;
+  }
+
+  .mc-board-photo-grid--session {
+    grid-template-columns: minmax(0, 1.78fr) minmax(0, 1fr);
+  }
+
+  .mc-board-photo-grid--early {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mc-board-photo-grid--diary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
