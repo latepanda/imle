@@ -612,15 +612,21 @@
 
 .mc-board-step-media--guides {
   align-items: start;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr) minmax(4.5rem, 7rem);
 }
 
-.mc-board-step-media--guides figure:first-child {
-  grid-column: 1 / -1;
+.mc-board-step-media--guides > figure {
   max-width: 36rem;
 }
 
-.mc-board-step-media--guides figure:not(:first-child) {
+.mc-board-guide-tokens {
+  align-content: start;
+  display: grid;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.mc-board-guide-tokens figure {
   max-width: 7rem;
 }
 
@@ -843,14 +849,6 @@
   .mc-board-step-media--rooms,
   .mc-board-step-media--scenarios {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .mc-board-step-media--guides {
-    grid-template-columns: minmax(0, 1fr) repeat(2, minmax(4.5rem, 0.18fr));
-  }
-
-  .mc-board-step-media--guides figure:first-child {
-    grid-column: auto;
   }
 
   .mc-board-photo-grid--session {
