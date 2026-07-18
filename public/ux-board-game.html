@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KBGZNV97');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A July 2019 UX case study covering two playtest days for an unnamed Late Panda board game: five games, 22 first-time players, replay intent, rules questions and pricing responses." />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_data/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_data/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_data/favicon-16x16.png">
+  <link rel="manifest" href="favicon_data/site.webmanifest">
+  <link rel="preload" href="/assets/fonts/Inter/Inter-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/assets/fonts/Inter/Inter-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <title>Board Game Playtest - Late Panda UX Case Study</title>
+  <link href="assets/styles/design.css" rel="stylesheet">
+</head>
+<body class="mc-theme mc-page-shell mc-theme--board-game">
+  <a class="mc-skip-link" href="#main-content">Skip to content</a>
+
+  <header class="mc-site-header" aria-label="Site header">
+    <a class="mc-d--inline-flex mc-rounded--sm mc-decoration--none" href="https://www.imle.uk" aria-label="Return to the IMLE homepage">
+      <span class="mc-brand__logo" aria-hidden="true"></span>
+    </a>
+  </header>
+
+  <main id="main-content" class="mc-page-main" tabindex="-1">
+    <section id="cover" class="mc-case-hero" aria-labelledby="case-study-title">
+      <div class="mc-case-hero__content">
+        <p class="mc-case-kicker">UX case study / July 2019 playtest</p>
+        <h1 id="case-study-title">Testing a board game where players change sides</h1>
+        <p class="mc-case-hero__summary">
+          I watched five groups learn the game from the rulebook across two playtest days. The response gave me confidence to continue, while the manufacturing estimate pointed to the next big design problem.
+        </p>
+
+        <figure class="mc-board-cover-meeples">
+          <img src="assets/images/board-game/meeples-six.png" alt="Six coloured wooden meeples arranged in two rows" width="810" height="592">
+        </figure>
+
+        <div class="mc-board-decks" role="group" aria-label="The prototype's five item decks: Weapon, Health, Companion, Alien Tech and Trap cards">
+          <img src="assets/images/board-game/weapon-cards.png" alt="Weapon Cards deck" width="525" height="750">
+          <img src="assets/images/board-game/health-cards.png" alt="Health Cards deck" width="525" height="750">
+          <img src="assets/images/board-game/companion-cards.png" alt="Companion Cards deck" width="525" height="750">
+          <img src="assets/images/board-game/alien-tech-cards.png" alt="Alien Tech Cards deck" width="525" height="750">
+          <img src="assets/images/board-game/trap-cards.png" alt="Trap Cards deck" width="525" height="750">
+        </div>
+
+        <ul class="mc-case-hero__stats" aria-label="Prototype facts">
+          <li class="mc-case-stat"><strong>2</strong><span>Playtest days</span></li>
+          <li class="mc-case-stat"><strong>5</strong><span>Games observed</span></li>
+          <li class="mc-case-stat"><strong>22</strong><span>First-time players</span></li>
+          <li class="mc-case-stat"><strong>Rules</strong><span>Self-led learning</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="mc-case-page">
+      <section id="game" class="mc-case-section" aria-labelledby="game-title">
+        <div class="mc-case-section__header">
+          <p class="mc-case-kicker">01 / The game</p>
+          <h2 id="game-title">The person helping you now may be on the other side later.</h2>
+          <p>This is an unnamed competitive sci-fi game from Late Panda. Players wake up on an alien ship and begin on one of two sides. Each side wants control of the ship, while each player has a private goal to complete. I treated the board, cards and tokens as one physical interface: players need to read the state quickly while that state keeps changing.</p>
+        </div>
+
+        <div class="mc-case-grid mc-case-grid--2 mc-mb--5">
+          <article class="mc-case-card">
+            <h3>Deprogrammed</h3>
+            <p>These are the humans resisting the aliens. They reveal rooms, complete scenarios and try to overrun the ship. They can also reverse the indoctrination of the opposing side.</p>
+            <strong class="mc-board-team__verb">Resist</strong>
+          </article>
+          <article class="mc-case-card mc-board-team--indoctrinated">
+            <h3>Indoctrinated</h3>
+            <p>These humans believe the aliens are helping. They inspect rooms in private, set traps and try to convert the Deprogrammed players.</p>
+            <strong class="mc-board-team__verb">Convert</strong>
+          </article>
+        </div>
+
+        <article class="mc-case-card">
+          <h3>The part I wanted to test</h3>
+          <ul class="mc-case-list">
+            <li>A player's team isn't fixed. Lose a fight and you may end up joining the other side.</li>
+            <li>When that happens, the player also loses their goal and starting items. Their definition of success changes halfway through the game.</li>
+            <li>The ship is modular, with room scenarios, traps and five item decks. The board presents a different problem each time.</li>
+            <li>The end has two results. One goes to the team that takes the ship; the other belongs to the players who complete their own goals.</li>
+          </ul>
+        </article>
+      </section>
+
+      <nav id="contents" class="mc-case-section" aria-labelledby="contents-title">
+        <div class="mc-case-toc">
+          <h2 id="contents-title">In this post</h2>
+          <ol>
+            <li><a href="#game">The game</a></li>
+            <li><a href="#player-journey">How it plays</a></li>
+            <li><a href="#session">The playtest</a></li>
+            <li><a href="#captured">The game log</a></li>
+            <li><a href="#signal">What players said</a></li>
+            <li><a href="#commercial">The awkward maths</a></li>
+            <li><a href="#earlier-tests">Earlier test notes</a></li>
+            <li><a href="#interpretation">What I can claim</a></li>
+            <li><a href="#next-steps">What happens next</a></li>
+            <li><a href="#reflection">Where I landed</a></li>
+          </ol>
+        </div>
+      </nav>
+
+      <section id="player-journey" class="mc-case-section" aria-labelledby="player-journey-title">
+        <div class="mc-case-section__header">
+          <p class="mc-case-kicker">02 / How it plays</p>
+          <h2 id="player-journey-title">A quick guide to what players are managing</h2>
+        </div>
+
+        <div class="mc-board-play-steps">
+          <article class="mc-board-play-step">
+            <div class="mc-board-play-step__copy">
+              <span class="mc-board-number">01</span>
+              <div>
+                <h3>Lay out the ship</h3>
+                <p>Players build the board from hexagonal room tiles. Four starting rooms are face up at the beginning.</p>
+              </div>
+            </div>
+            <div class="mc-board-step-media mc-board-step-media--rooms">
+              <figure>
+                <img src="assets/images/board-game/print-and-play/room-indoctrination-lounge.png" alt="Hexagonal Indoctrination Lounge room tile">
+                <figcaption>Indoctrination Lounge</figcaption>
+              </figure>
+              <figure>
+                <img loading="lazy" src="assets/images/board-game/print-and-play/room-teleportation.png" alt="Hexagonal Teleportation Room tile">
+                <figcaption>Teleportation Room</figcaption>
+              </figure>
+              <figure>
+                <img loading="lazy" src="assets/images/board-game/print-and-play/room-operating-theatre.png" alt="Hexagonal Operating Theater room tile">
+                <figcaption>Operating Theater</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="mc-board-play-step">
+            <div class="mc-board-play-step__copy">
+              <span class="mc-board-number mc-board-number--blue">02</span>
+              <div>
+                <h3>Get a side and a goal</h3>
+                <p>Each player starts as Indoctrinated or Deprogrammed. They receive a personal goal and take the items printed on that card.</p>
+              </div>
+            </div>
+            <div class="mc-board-step-media mc-board-step-media--goals">
+              <figure>
+                <img loading="lazy" src="assets/images/board-game/print-and-play/goal-deprogrammed.png" alt="The Escape Artist deprogrammed goal card">
+                <figcaption>Deprogrammed goal</figcaption>
+              </figure>
+              <figure>
+                <img loading="lazy" src="assets/images/board-game/print-and-play/goal-indoctrinated.png" alt="The Chef indoctrinated goal card">
+                <figcaption>Indoctrinated goal</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="mc-board-play-step">
+            <div class="mc-board-play-step__copy">
+              <span class="mc-board-number mc-board-number--yellow">03</span>
+              <div>
+                <h3>Search the rooms</h3>
+                <p>Players move, search and complete scenarios. Along the way they draw Weapon, Health, Companion, Alien Tech and Trap cards.</p>
+              </div>
+            </div>
+            <div class="mc-board-step-media mc-board-step-media--items" role="group" aria-label="Example card from each item deck">
+              <img loading="lazy" src="assets/images/board-game/print-and-play/item-weapon-light-sword.png" alt="Light Sword weapon card">
+              <img loading="lazy" src="assets/images/board-game/print-and-play/item-health-first-aid.png" alt="First Aid Kit health card">
+              <img loading="lazy" src="assets/images/board-game/print-and-play/item-companion-helpful-alien.png" alt="Helpful Alien companion card">
+              <img loading="lazy" src="assets/images/board-game/print-and-play/item-tech-processor.png" alt="Triphasic Layered Quantum Processor alien tech card">
+              <img loading="lazy" src="assets/images/board-game/print-and-play/item-trap-teddy-bear.png" alt="Teddy Bear with Concealed Weapon trap card">
+            </div>
+          </article>
+
+          <article class="mc-board-play-step">
+            <div class="mc-board-play-step__copy">
+              <span class="mc-board-number mc-board-number--coral">04</span>
+              <div>
+                <h3>Take control or pick a fight</h3>
+                <p>Players can set and disarm traps, complete room scenarios, use card effects or attack somebody else.</p>
+              </div>
+            </div>
+            <div class="mc-board-step-media mc-board-step-media--scenarios">
+              <figure>
+                <img loading="lazy" src="assets/images/board-game/print-and-play/scenario-kitchen.png" alt="Kitchen scenario card showing its challenge and rewards">
+                <figcaption>Kitchen</figcaption>
+              </figure>
+              <figure>
+                <img loading="lazy" src="assets/images/board-game/print-and-play/scenario-crew-quarters.png" alt="Crew Quarters scenario card showing its challenge and rewards">
+                <figcaption>Crew Quarters</figcaption>
+              </figure>
+              <figure>
+                <img loading="lazy" src="assets/images/board-game/print-and-play/scenario-teleportation-room.png" alt="Teleportation Room scenario card showing its challenge and rewards">
+                <figcaption>Teleportation Room</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="mc-board-play-step">
+            <div class="mc-board-play-step__copy">
+              <span class="mc-board-number mc-board-number--green">05</span>
+              <div>
+                <h3>Losing can change your team</h3>
+                <p>A defeated player removes one morale from their old team, discards their goal and items, then joins the opposing side with a new goal.</p>
+              </div>
+            </div>
+            <div class="mc-board-step-media mc-board-step-media--guides">
+              <figure>
+                <img loading="lazy" src="assets/images/board-game/print-and-play/player-guide-front.png" alt="Player guide listing turn, action and bonus-action rules">
+                <figcaption>Player Guide pg1: turn reference</figcaption>
+              </figure>
+              <figure>
+                <img loading="lazy" src="assets/images/board-game/print-and-play/player-guide-morale-tokens-grey.png" alt="Grey bordered morale token from Player Guide page 1">
+                <figcaption>Player Guide pg1: grey morale token</figcaption>
+              </figure>
+              <figure>
+                <img loading="lazy" src="assets/images/board-game/print-and-play/player-guide-morale-tokens.png" alt="Gold bordered morale token from Player Guide page 2">
+                <figcaption>Player Guide pg2: gold morale token</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+
+        <div class="mc-case-grid mc-case-grid--2 mc-mt--5">
+          <article class="mc-case-card">
+            <h3>On your turn</h3>
+            <p>Draw an item card. You can then move to an adjacent room, take one action and use a bonus action if you have one, in whichever order makes sense. An item card can also be discarded for its movement value.</p>
+          </article>
+          <article class="mc-case-card">
+            <h3>How winning works</h3>
+            <p>A personal win requires two things: completing your own goal and either removing the opposing team or emptying its morale. If your team finishes the game but your goal is incomplete, you haven't personally won.</p>
+          </article>
+        </div>
+
+      </section>
+
+      <section id="session" class="mc-case-section mc-case-section--dark" aria-labelledby="session-title">
+        <div class="mc-case-section__header">
+          <p class="mc-case-kicker">03 / The playtest</p>
+          <h2 id="session-title">Two playtest days, five games and 22 people learning from the rulebook</h2>
+          <p>Every participant was new to the game. We gave each group the rulebook and asked them to teach themselves. My partner and I stayed available for questions, and we wrote down every time somebody needed us to clarify a rule. I also asked questions once each game had finished.</p>
+        </div>
+
+        <article class="mc-case-card mc-mb--5">
+          <h3>What I was watching for</h3>
+          <ul class="mc-case-list">
+            <li>Could players use the rulebook to follow a turn and work out which actions were available?</li>
+            <li>Was room ownership clear? Did they understand traps and notice what changed when somebody switched teams?</li>
+            <li>After the board changed, did each player still see a possible route to winning?</li>
+            <li>When the game ended, did they actually want another go?</li>
+          </ul>
+        </article>
+
+        <div class="mc-case-grid mc-case-grid--2 mc-mb--5">
+          <article class="mc-case-card">
+            <h3>Playtest day one</h3>
+            <p class="mc-fs--7 mc-fw--700 mc-lh--solid mc-text--paper">13</p>
+            <p><strong>Participants across three concurrent games.</strong> One five-player game and two four-player games.</p>
+            <p>All 13 said they wanted to play again.</p>
+            <p>For price, 12 chose £11-£20 and one chose £21-£30.</p>
+          </article>
+          <article class="mc-case-card">
+            <h3>Playtest day two</h3>
+            <p class="mc-fs--7 mc-fw--700 mc-lh--solid mc-text--paper">9</p>
+            <p><strong>Participants across two concurrent games.</strong> One three-player game and one six-player game.</p>
+            <p>Seven wanted to play again. Two did not.</p>
+            <p>Seven answered the price question: five chose £11-£20 and two chose £21-£30.</p>
+          </article>
+        </div>
+
+        <article class="mc-case-card">
+          <h3>How I ran both days</h3>
+          <p>I observed the physical games, used one paper log per game and followed up with questions afterwards. The groups led their own play from the rulebook, while my partner and I answered rules questions and logged each interruption.</p>
+          <p>I recorded the course of each game, the result and the questions players asked. Looking only at the final score left out most of what I saw at the table.</p>
+        </article>
+      </section>
+
+      <section id="captured" class="mc-case-section" aria-labelledby="captured-title">
+        <div class="mc-case-section__header">
+          <p class="mc-case-kicker">04 / The game log</p>
+          <h2 id="captured-title">I recorded what happened between setup and the final score</h2>
+          <p>Each game had its own sheet. Afterwards, I used it to rebuild the starting position, see when players changed sides and check the final outcome alongside my notes from the table.</p>
+        </div>
+
+        <div class="mc-case-grid mc-case-grid--2">
+          <article class="mc-case-card mc-border--top mc-border--warning">
+            <h3>Setup</h3>
+            <ul class="mc-case-list"><li>Number of players</li><li>Starting team distribution</li><li>Starting goal per player</li><li>Easy or Hard setting</li></ul>
+          </article>
+          <article class="mc-case-card mc-border--top mc-border--info">
+            <h3>What changed</h3>
+            <ul class="mc-case-list"><li>Every player switch</li><li>When the switch happened</li><li>The new goal received</li><li>Cards held at the end</li></ul>
+          </article>
+          <article class="mc-case-card mc-border--top mc-border--brand">
+            <h3>How it ended</h3>
+            <ul class="mc-case-list"><li>Winning team</li><li>Personal goals completed</li><li>Each player's view of their chances</li><li>Total game time</li></ul>
+          </article>
+          <article class="mc-case-card mc-border--top mc-border--success">
+            <h3>How it felt</h3>
+            <ul class="mc-case-list"><li>Every rules question asked of us</li><li>Whether each player enjoyed it</li><li>Why they did or did not</li><li>Open notes on the game</li></ul>
+          </article>
+        </div>
+
+        <blockquote class="mc-case-quote mc-mt--5">
+          TODO: find suitable quote from paper docs or transcripts and insert here later.
+          <cite>Why I logged each game</cite>
+        </blockquote>
+      </section>
+
+      <section id="signal" class="mc-case-section" aria-labelledby="signal-title">
+        <div class="mc-case-section__header">
+          <p class="mc-case-kicker">05 / What players told me</p>
+          <h2 id="signal-title">20 of 22 wanted to play again</h2>
+        </div>
+
+        <div class="mc-board-signal mc-mb--6">
+          <strong>90.9%</strong>
+          <span>20 / 22<br><small class="mc-fs--1">answered yes</small></span>
+          <p class="mc-ma--0 mc-text--center"><em>“Is this the type of game you see yourself playing again?”</em></p>
+        </div>
+
+        <div class="mc-case-grid mc-case-grid--2 mc-mb--6">
+          <article class="mc-case-card mc-border--success">
+            <h3>Playtest day one</h3>
+            <p><strong>13 of 13 said yes.</strong> Everyone in the first session wanted another game.</p>
+          </article>
+          <article class="mc-case-card mc-border--warning">
+            <h3>Playtest day two</h3>
+            <p><strong>7 of 9 said yes.</strong> Two participants did not want to play again.</p>
+          </article>
+        </div>
+
+        <div class="mc-case-section__header mc-mb--4">
+          <p class="mc-case-kicker">What they thought it would cost</p>
+          <p>I also asked: “How much do you think this game could sell for?” Twenty participants answered this question across the two days.</p>
+        </div>
+        <ul class="mc-board-price-responses" aria-label="Perceived selling-price responses">
+          <li class="mc-board-price-response">
+            <strong>85%</strong>
+            <span>Estimated £11-£20</span>
+            <small>17 of 20 price responses</small>
+          </li>
+          <li class="mc-board-price-response mc-board-price-response--secondary">
+            <strong>15%</strong>
+            <span>Estimated £21-£30</span>
+            <small>3 of 20 price responses</small>
+          </li>
+        </ul>
+
+        <article class="mc-case-card mc-mt--5 mc-border--warning">
+          <h3>A starting price range</h3>
+          <p>These answers gave me a price range to work with while I reviewed the production cost. Twenty people answered the question, so I treated it as a useful starting point for the next prototype.</p>
+        </article>
+      </section>
+
+      <section id="commercial" class="mc-case-section mc-case-section--dark" aria-labelledby="commercial-title">
+        <div class="mc-case-section__header">
+          <p class="mc-case-kicker">06 / The awkward maths</p>
+          <h2 id="commercial-title">Players pictured an £11-£20 game. It currently costs £13 per unit to make.</h2>
+          <p>The estimate on the table is £65,000 for 5,000 units. That works out at £13 per game before distribution is added.</p>
+        </div>
+
+        <div class="mc-case-grid mc-case-grid--3 mc-mb--6">
+          <article class="mc-case-card"><strong class="mc-board-commercial-stat mc-text--paper">£65,000</strong><p>Estimated investment</p></article>
+          <article class="mc-case-card"><strong class="mc-board-commercial-stat mc-text--paper">5,000</strong><p>Units</p></article>
+          <article class="mc-case-card"><strong class="mc-board-commercial-stat mc-board-commercial-stat--accent">£13</strong><p>Cost per unit</p></article>
+        </div>
+
+        <div role="img" aria-label="Expected price range of £11 to £20 compared with £13 production cost">
+          <p class="mc-case-kicker">Price expectation against cost</p>
+          <div class="mc-board-price-line">
+            <div class="mc-board-price-range">17 respondents: £11-£20</div>
+            <div class="mc-board-price-cost">£13 production</div>
+            <span>£0</span><span>£10</span><span>£20</span><span>£30</span>
+          </div>
+        </div>
+
+        <article class="mc-case-card mc-mt--6">
+          <h3>The cost problem</h3>
+          <p>At £11, the selling price is lower than the production cost. At £20, only £7 remains before paying for distribution. This made reducing the manufacturing cost part of the design work, not a problem to leave until the end.</p>
+          <p><strong>The next phase pairs gameplay improvements with a more realistic production plan.</strong></p>
+        </article>
+      </section>
+
+      <section id="earlier-tests" class="mc-case-section" aria-labelledby="earlier-tests-title">
+        <div class="mc-case-section__header">
+          <p class="mc-case-kicker">07 / Notes from earlier rounds</p>
+          <h2 id="earlier-tests-title">The earlier sessions point to practical interface problems</h2>
+          <p>I kept the earlier playtest workbook separate from these two playtest days and their pricing answers. Those notes still matter because they describe specific problems people had with the physical game.</p>
+        </div>
+
+        <div class="mc-d--grid mc-gap--4">
+          <article class="mc-case-card mc-board-evidence-card"><h3>Identifying the item decks</h3><p>One note suggested clearer item-card names or a small guide card. Players needed to recognise each deck and its discard pile without having to ask.</p></article>
+          <article class="mc-case-card mc-board-evidence-card mc-board-evidence-card--gold"><h3>Showing room ownership</h3><p>Another note asked for a double-sided marker to show which team controls a room. It needs to be obvious from the other side of the table.</p></article>
+          <article class="mc-case-card mc-board-evidence-card mc-board-evidence-card--purple"><h3>Explaining trapped rooms</h3><p>Several records mention questions about receiving trap cards, entering a trapped room and moving past one.</p></article>
+          <article class="mc-case-card mc-board-evidence-card mc-board-evidence-card--blue"><h3>Long games and uneven goals</h3><p>Some two-player games ran long. The notes also mention uneven goal conditions and points where a player couldn't find a useful strategy.</p></article>
+        </div>
+
+        <blockquote class="mc-case-quote mc-mt--5">
+          TODO: find suitable quote from paper docs or transcripts and insert here later.
+          <cite>How I'm using the earlier notes</cite>
+        </blockquote>
+      </section>
+
+      <section id="interpretation" class="mc-case-section" aria-labelledby="interpretation-title">
+        <div class="mc-case-section__header">
+          <p class="mc-case-kicker">08 / What I can claim</p>
+          <h2 id="interpretation-title">How the sessions shaped the next version</h2>
+        </div>
+
+        <div class="mc-case-grid mc-case-grid--2 mc-mb--6">
+          <article class="mc-case-card mc-border--success">
+            <h3>A stronger base to build from</h3>
+            <p>The response to the game was encouraging, and the paper logs showed where the rules and physical components slowed people down. I left with clear changes to make and a better way to record the next round.</p>
+          </article>
+          <article class="mc-case-card mc-board-team--indoctrinated">
+            <h3>More room to test the idea</h3>
+            <p>An online prototype opens the game to a broader group and makes it easier to run sessions at different player counts. A rulebook-only session also gives the revised instructions a proper test without us beside the table.</p>
+          </article>
+        </div>
+
+        <article class="mc-case-card">
+          <h3>How I used the result</h3>
+          <p>This was an early test with volunteers, and we answered questions when groups got stuck. That made it useful for finding problems in the rules and preparing a broader, unmoderated round.</p>
+        </article>
+      </section>
+
+      <section id="next-steps" class="mc-case-section mc-case-section--dark" aria-labelledby="next-steps-title">
+        <div class="mc-case-section__header">
+          <p class="mc-case-kicker">09 / What I'm doing next</p>
+          <h2 id="next-steps-title">Plans after the sessions</h2>
+        </div>
+
+        <div class="mc-d--grid mc-gap--4">
+          <article class="mc-case-card mc-d--flex mc-gap--4 mc-items--start"><span class="mc-board-number">01</span><div><h3>Move the logs off paper</h3><p>The paper sheets worked, but comparing five games took time. One structured record per game makes the next round much easier to review.</p></div></article>
+          <article class="mc-case-card mc-d--flex mc-gap--4 mc-items--start"><span class="mc-board-number mc-board-number--blue">02</span><div><h3>Build the free Tabletop Simulator version</h3><p>A free online prototype takes the game beyond a single physical event and helps us find players for later tests.</p></div></article>
+          <article class="mc-case-card mc-d--flex mc-gap--4 mc-items--start"><span class="mc-board-number mc-board-number--yellow">03</span><div><h3>Run a test without us in the room</h3><p>These groups led their own play with us available for questions. The next group gets the revised rulebook and no live help.</p></div></article>
+          <article class="mc-case-card mc-d--flex mc-gap--4 mc-items--start"><span class="mc-board-number mc-board-number--coral">04</span><div><h3>Record the difficult moments</h3><p>The new log marks team switches and rules discussions as they happen. It also captures any goals left unfinished.</p></div></article>
+          <article class="mc-case-card mc-d--flex mc-gap--4 mc-items--start"><span class="mc-board-number mc-board-number--green">05</span><div><h3>Rework the cost and route to market</h3><p>A fresh production estimate gives me something useful to compare with the pricing answers. From there, I can explore publishing or licensing the game.</p></div></article>
+        </div>
+
+        <article class="mc-case-card mc-mt--6">
+          <h3>Why Tabletop Simulator comes first</h3>
+          <p>A free online version makes the next test cheaper and opens it to more people. It also gives the revised rulebook space to stand on its own.</p>
+        </article>
+      </section>
+
+      <section id="reflection" class="mc-case-section" aria-labelledby="reflection-title">
+        <article class="mc-case-last">
+          <div class="mc-case-last__copy">
+            <p class="mc-case-kicker">10 / July 2019</p>
+            <h2 id="reflection-title">I left with a practical plan for the next version</h2>
+            <p>The sessions made me want to keep developing the game. I came away knowing which rules to revise, how to improve the next playtest and why the production plan deserves the same attention as the gameplay. The online version gives us space to reach more players and see how the game grows outside a single event.</p>
+          </div>
+        </article>
+
+        <blockquote class="mc-case-quote mc-mt--6">
+          TODO: find suitable quote from paper docs or transcripts and insert here later.
+          <cite>Where I'm leaving it for now</cite>
+        </blockquote>
+
+        <div class="mc-mt--6">
+          <p class="mc-case-kicker mc-mb--4">Project notes and source material</p>
+          <ul class="mc-case-list">
+            <li><strong>The rules:</strong> the gameplay PDF, used to check details where versions differed.</li>
+            <li><strong>The artwork:</strong> Late Panda Board Game 2019 assets, cropped and scaled for this post.</li>
+            <li><strong>Earlier observations:</strong> the 2019 playtest workbook, kept separate from the two playtest days reported here.</li>
+            <li><strong>Session and production figures:</strong> two days, five games, 22 participants, replay and pricing answers, and the £65,000 / 5,000 / £13 estimates supplied by the project owner.</li>
+          </ul>
+        </div>
+        <div class="mc-board-stripe mc-mt--6" aria-hidden="true"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="mc-pa--4 mc-fs--0 mc-text--paper">Late Panda Board Game UX Case Study | July 2019 playtest notes</footer>
+</body>
+</html>
