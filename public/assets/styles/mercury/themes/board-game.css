@@ -707,6 +707,10 @@
     grid-template-columns: 1fr;
   }
 
+  .mc-board-price-line {
+    margin-block-start: 7.5rem;
+  }
+
   .mc-board-price-range {
     font-size: 0.78rem;
     line-height: 1.25;
