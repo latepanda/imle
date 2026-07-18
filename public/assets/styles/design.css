@@ -13,5 +13,6 @@
 @import url("./mercury/themes/paper.css");
 @import url("./mercury/themes/grumbler.css");
 @import url("./mercury/pages/grumbler-case.css");
+@import url("./mercury/themes/board-game.css");
 @import url("./mercury/utilities/utilities.generated.css");
 @import url("./mercury/a11y.css");
